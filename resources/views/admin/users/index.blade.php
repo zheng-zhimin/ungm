@@ -112,7 +112,6 @@
    @endsection
 
 
-
 @section('title')
-    绝地求升
+    九鼎智成
 @endsection

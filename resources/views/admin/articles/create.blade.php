@@ -81,3 +81,7 @@
         });
     </script>
 @endsection
+
+@section('title')
+    九鼎智成
+@endsection

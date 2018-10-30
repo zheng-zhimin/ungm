@@ -75,7 +75,7 @@ Route::post('/admin/advertise/able/{id}','Admin\AdvertiseController@able');
 //前台留言板路由
 route::get('/home/board','Home\HomeController@board');
 //前台关于我们路由
-route::get('/home/about','Home\HomeController@about');
+//route::get('/home/about','Home\HomeController@about');
 //前台文章列表路由
 route::get('/home/article','Home\HomeController@article');
 //前台各文章列表路由
@@ -162,10 +162,72 @@ route::get('/home/td','Home\NewhomeController@td');
 route::get('/home/md','Home\NewhomeController@md');
 //前台货币换算器(Currency converter)路由
 route::get('/home/cc','Home\NewhomeController@cc');
+//前台集客路由
+route::get('/home/jk','Home\NewhomeController@jk');
+//前台联系我们的路由
+route::get('/home/about','Home\NewhomeController@about');
+//前台百度地图页面路由
+Route::get('/home/map',function(){
+    return view('home.map');
+});
+
+
+//前台登录
+Route::controller('/home/newlogin','Home\NewloginController');
+//前台检测登录
+Route::post('/home/newajax',function(){
+
+   // return $_POST['uname'];
+   $uname=$_POST['username'];
+   //return $name;
+   $res=DB::table('ungm_users')->where('username','=',$uname)->first();
+   if($res){return 1;}else{
+    return 0;
+   }
+
+});
+//前台用户注册获取手机验证码的路由
+route::get('/code/phone_code','Home\NewloginController@phone_code');
+//前台货币转换ajax路由
+route::get('/newhome/currency','Home\NewhomeController@currency');
+//前台搜-搜路由(可以搜索英文数字汉子来关联表找到用户想要的)
+Route::get('/home/soso','SosoController@soso');
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 后台采购商招标信息发布管理的路由
+Route::resource('/admin/buyoffer','Admin\BuyofferController');
+//后台采购商审核通过路由
+Route::post('/admin/buyoffer/yes/{id}','Admin\BuyofferController@yes');
+//后台采购商审核否定路由
+Route::post('/admin/buyoffer/no/{id}','Admin\BuyofferController@no');
+
+// 后台供应商投标信息发布管理的路由
+Route::resource('/admin/selloffer','Admin\SellofferController');
+//后台供应商审核通过路由
+Route::post('/admin/selloffer/yes/{id}','Admin\SellofferController@yes');
+//后台供应商审核否定路由
+Route::post('/admin/selloffer/no/{id}','Admin\SellofferController@no');
 
 
 

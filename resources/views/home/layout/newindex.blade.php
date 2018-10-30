@@ -1,26 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title')</title>
+
+    
+    <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
+
+    <link rel="stylesheet" href="/ungmhome/css/header.css">
+    <link rel="stylesheet" href="/ungmhome/css/base.css">
+    <link rel="stylesheet" href="/ungmhome/css/footer.css">
+    
+    <script src="/ungmhome/js/jquery.js"></script>
+    <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
 
 
-    <!-- 这里放大网站header的html -->
-    <!DOCTYPE html>
-    <html>
-    <head>
-<title>@yield('title')</title>
-<meta charset="utf-8">
-<meta name="renderer" content="webkit|ie-comp|ie-stand">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="keywords" content="采购出口贸易">
-<meta name="description" content="货源出口贸易买卖网站。">
-<meta name="csrf-token" content="{{ csrf_token() }}">
-<LINK rel="Bookmark" href="/homeblog/favicon.ico" >
-<LINK rel="Shortcut Icon" href="/homeblog/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
-    </head>
-  
-    <div>
-        <img src="/newhome/img/1.jpg" alt="">
+
+</head>
+<style type="text/css">
+    .dropdown:hover .dropdown-menu{
+        display: block;
+    }
+    .xxx{
+    color: #3477ff !important;
+    background-color: #fff !important;
+    border-bottom: 2px solid;
+    };
+</style>
+
+<div class="top">
+        <div class="container">
+            <!--顶部-->
+            <div class="top-left">
+                <img class="img-responsive" src="/ungmhome/images/tel.png">
+                <img class="img-responsive" src="/ungmhome/images/mail.png">
+            </div>
+            <div class="top-right">
+                <span class=""><a href="#">登录</a></span>
+                <span class="">|</span>
+                <span class=""><a href="#">注册</a></span>
+            </div>
+        </div>
     </div>
+<div class="navbar navbar-default">       
+    <div class="container">
+        
+        <!--第一部分：导航头部=头部+汉堡包-->
+        <div class="navbar-header">
+            <img class="navbar-brand img-responsive" src="/ungmhome/images/ungm.png">
+            <a href="#menu" class="navbar-toggle" data-toggle="collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+        </div>
+        <!--第二部分：导航折叠=导航-->
+        <div id="menu"class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a class="a1" href="/">首页</a>
+                </li>
+                <li class="dropdown">
+                    <a class="a2" href="/home/gt" >全球贸易</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">UNGM</a></li>
+                        <li><a href="#">商务数据中心(进出口海关相关)</a></li>
+                        <li><a href="#">政策解读</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="a3" href="/home/ct" >国际贸易</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">国内贸易数据中心</a></li>
+                        <li><a href="#">商务热点</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="a4" href="/home/td" >招投标服务</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">搜索功能</a></li>
+                        <li><a href="#">招投标信息</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="a5" href="/home/jk" >集客</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="a6" href="/home/md" >会员发展</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="a7" href="/home/cc" >货币换算</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">货币换算器插件</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="search">
+            <div class="input-group">
+                <input type="text" class="form-control" id="keyword" placeholder="请输入关键字">
+                <span class="inp">
+                    <button onclick="find()"><img class="img-responsive"src="/ungmhome/images/search.png"></button>
+                    <script type="text/javascript">
+                        function find(){
+                            var keyword=$("#keyword").val();
+                            $.get('/home/soso',{'keyword':keyword},function (datas) {
+                                   alert(datas);
+                                },'json',false);
+                        }
+                    </script>
+                </span>
+            </div>   
+        </div>
+        </div>
+        <!--第三部分：搜索-->
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(".a1").click(function(){
+        $(".xxx").removeClass("xxx");
+        $(".a1").addClass("xxx");
+    })
+    $(".a2").click(function(){
+        $(".xxx").removeClass("xxx");
+        $(".a2").addClass("xxx");
+    })
+    $(".a3").click(function(){
+        $(".xxx").removeClass("xxx");
+        $(".a3").addClass("xxx");
+    })
+    $(".a4").click(function(){
+        $(".xxx").removeClass("xxx");
+        $(".a4").addClass("xxx");
+    })
+    $(".a5").click(function(){
+        $(".xxx").removeClass("xxx");
+        $(".a5").addClass("xxx");
+    })
+    $(".a6").click(function(){
+        $(".xxx").removeClass("xxx");
+        $(".a6").addClass("xxx");
+    })
+</script>
+
 
             <!-- 中间内容开始 -->
   <body>
@@ -34,8 +172,68 @@
 
 
 
-   <div>
-        <img src="/newhome/img/2.jpg" alt="">
+
+<div class="bot">
+    <div class="container" style="padding:0px;">
+        <div class="row bot-top">
+            <div class="col-md-3">
+                <div class="row tel">
+                    <img src="/ungmhome/images/icon-phone.png" alt="">
+                    <span>+86-10-66111661</span>
+                </div>
+                <div class="row log">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
+                </div>
+            </div>
+            <div class="col-md-6 bot-last">
+                <div  class="row bot-list">
+                    <ul>
+                        <li><a href="#">关于我们</a><b>|</b></li>
+                        <li><a href="#">招纳贤士</a><b>|</b></li>
+                        <li><a href="/home/about">联系我们</a><b>|</b></li>
+                        <li><a href="#">使用协议</a><b>|</b></li>
+                        <li><a href="#">版权隐私</a><b>|</b></li>
+                        <li><a href="#">广告服务</a><b>|</b></li>
+                        <li><a href="#">排名推广</a></li>
+                    </ul>
+                </div>
+                <div class="row info">
+                    <p style="margin-bottom:6px;">公司名称：九鼎智成（北京）信息技术股份有限公司</p>
+                    <p style="margin-bottom:6px;">地址：北京市通州区万达广场C座</p>
+                    <p>邮箱：ungm@ungm.org.cn</p>
+                </div>
+            </div>
+            <div class="col-md-3 qw">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="top-rt1">
+                            <img src="/ungmhome/images/qw1.jpg" alt="">
+                        </div>
+                        <p style="margin-left:52px;">关注订阅号</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="top-rt2">
+                            <img src="/ungmhome/images/qw2.jpg" alt="">
+                        </div>
+                        <p>关注服务号</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="container" style="padding:0px;">
+                <div class="row">
+                    <div class="copy">
+                        <span style="padding-left:260px;">九鼎智成（北京）信息技术股份有限公司版权所有</span>
+                        <span style="color:#434a66;">Copyright@1999-2018 300.cn All Rights Reserved</span>
+                        <span style="color:#434a66;">京ICP备111111-1</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-   <!--  这里放大网站fotter 的html-->
- </html> 
+</div>  
+
+

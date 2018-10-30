@@ -16,10 +16,12 @@
 
    <div class="mws-panel grid_8">
       <div class="mws-panel-header">
-        <span>
+        
          <span > <i class="icon-magic"></i>{{ $title }}</span>
       </div>
-      <div class="mws-panel-body no-padding">
+      <div class="mws-panel-body no-padding">        
+</div>
+
  <form class="mws-form" action="/admin/users/{{$id}}" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         {{ method_field('PUT') }}
@@ -113,5 +115,5 @@
 @endsection
 
 @section('title')
-    绝地求升
+    九鼎智成
 @endsection

@@ -165,12 +165,28 @@
             <!-- Main Navigation -->
             <div id="mws-navigation">
                 <ul>
-                    
+                   
+                  <!--   <li class="active">
+                      <a href="#"><i class="icon-list"></i> 文章管理</a>
+                      <ul>
+                          <li><a href="/admin/articles">文章列表</a></li>
+                          <li><a href="/admin/articles/create">文章添加</a></li>
+                      </ul>
+                  </li> -->
+
                     <li class="active">
-                        <a href="#"><i class="icon-list"></i> 文章管理</a>
+                        <a href="#"><i class="icon-list"></i>采购投标信息管理</a>
                         <ul>
-                            <li><a href="/admin/articles">文章列表</a></li>
-                            <li><a href="/admin/articles/create">文章添加</a></li>
+                            <li><a href="/admin/buyoffer">采购投标发布列表</a></li>
+                            
+                        </ul>
+                    </li>
+
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>供应商产品信息管理</a>
+                        <ul>
+                        <li><a href="/admin/selloffer">供应商产品发布列表</a></li> 
+                             
                         </ul>
                     </li>
 
@@ -183,10 +199,10 @@
                     </li>
 
                     <li class="active">
-                        <a href="#"><i class="icon-user"></i> 用户管理</a>
+                        <a href="#"><i class="icon-user"></i>管理员账号管理</a>
                         <ul>
-                            <li><a href="/admin/users">用户列表</a></li>
-                            <li><a href="/admin/users/create">用户添加</a></li>
+                            <li><a href="/admin/users">管理员列表</a></li>
+                            <li><a href="/admin/users/create">管理员添加</a></li>
                         </ul>
                     </li>
                     <li class="active">

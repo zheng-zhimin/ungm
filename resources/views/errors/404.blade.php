@@ -86,7 +86,7 @@ h2 {
 </section>
 <footer class="footer">
   <div class="container">
-    <p>&copy; 2016 <a href="">ylsat.com</a> &nbsp; <a href="javascript:;"rel="nofollow">豫ICP备20151109-1</a> &nbsp; &nbsp; <a href="/">掘地求升</a></p>
+    <p>&copy; 2016 <a href="">ylsat.com</a> &nbsp; <a href="javascript:;"rel="nofollow">豫ICP备20151109-1</a> &nbsp; &nbsp; <a href="/">九鼎智成</a></p>
   </div>
   <div id="gotop"><a class="gotop"></a></div>
 </footer>

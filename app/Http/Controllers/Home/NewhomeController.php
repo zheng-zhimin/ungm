@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
-
+use App\Models\Home\Currency;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use DB;
 class NewhomeController extends Controller
 {
     /**
@@ -68,8 +68,42 @@ class NewhomeController extends Controller
     public function cc(Request $requset)
     {
         return view('home.cc');
+    } 
+       /**
+     * Show the form for creating a new resource.
+     *前台集客
+     * @return \Illuminate\Http\Response
+     */
+    public function jk(Request $requset)
+    {
+        return view('home.jk');
     }
+
+         /**
+     * Show the form for creating a new resource.
+     *前台货币换算器(Currency converter)
+     * @return \Illuminate\Http\Response
+     */
+    public function about(Request $requset)
+    {
+        return view('home.newabout');
+    }
+
     
+    public function currency(Request $request)
+    {
+       // var_dump($request->n);
+        //var_dump($request->count);
+        $id=$request->n;
+        $count=$request->count;
+        $huilv=Currency::where('id',$id)->value('huilv');
+        $name=Currency::where('id',$id)->value('name');
+        $value=bcmul($count,$huilv,3);
+
+        return  $value;
+
+
+    }
 
    
 }
