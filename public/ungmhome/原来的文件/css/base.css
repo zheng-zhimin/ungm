@@ -1,0 +1,38 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,
+button,textarea,p,blockquote,th,td { margin:0; padding:0; }
+body { background:#fff; color:#555; font-size:14px; font-family: Verdana, Arial, Helvetica, sans-serif; }
+td,th,caption { font-size:14px; }
+h1, h2, h3, h4, h5, h6 { font-weight:normal; font-size:100%; }
+address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal;}
+a { color:#555; text-decoration:none; }
+a:hover { text-decoration:underline; }
+img { border:none; }
+ol,ul,li { list-style:none; }
+input, textarea, select, button { font:14px Verdana,Helvetica,Arial,sans-serif; }
+table { border-collapse:collapse; }
+html {overflow-y: scroll;}
+.clearfix:after {content: "."; display: block; height:0; clear:both; visibility: hidden;}
+.clearfix { *zoom:1; }
+.banner{width: 100%;}
+.content{
+	background-color: #f9f9f9;
+}
+input::-webkit-input-placeholder { /* WebKit browsers*/ 
+　　color: #d8d8d8;font-size:14px;
+　　}
+input::-moz-placeholder {  /* Mozilla Firefox 4 to 18*/ 
+　　color: #d8d8d8;font-size:14px;
+　　}
+input:-ms-input-placeholder { /* Internet Explorer 10+*/ 
+　　color: #d8d8d8;font-size:14px;
+}
+/*引入头部网页样式*/
+.header{
+    width:100%;   
+  }
+  
+  /*引入网页底部样式*/
+  .footer{
+    width:100%;
+  }
+  

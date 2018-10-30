@@ -7,6 +7,8 @@ use App\Models\Home\Currency;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use App\Models\Admin\Buyoffer;
+use App\Models\Admin\Advertise;//前台广告位模型,后台可管理
 class NewhomeController extends Controller
 {
     /**
@@ -16,7 +18,13 @@ class NewhomeController extends Controller
      */
     public function index(Request $request)
     {
-        return view('home.newindex');
+        //处理广告数据
+        $data=Advertise::where('status','1')->get();
+        //处理招商数据
+        $data2=Buyoffer::orderBy('id','desc')->get();
+        $data3=Buyoffer::orderBy('id','asc')->get();
+
+        return view('home.newindex',['data'=>$data,'data2'=>$data2,'data3'=>$data3]);
     }
 
     /**

@@ -1,29 +1,21 @@
-/**上部分**/
 .bot{
     width:100%;
-    height:270px;
-    background-color: #505879;
+    background-color: #2e3033;
 }
 .bot .bot-top{
     padding-top:60px;
 }
 .bot .tel{
     margin-top:20px;
-    margin-left:8px;
 }
-.bot .log{
-    margin-left:8px;
-    margin-top:20px;
-}
-/**上左部分**/
 .bot .tel img{
     width:24px;
     height:24px;
 }
 .bot .tel span{
     font-family: "MicrosoftYaHei-Bold";
-    font-size: 20px;
-    font-style: italic;
+	font-size: 20px;
+	font-style: italic;
     color: #00b7a1;
     padding-left:14px;
 }
@@ -33,7 +25,6 @@
     background-color: #00b7a1;
     margin-right: 4px;
 }
-/**上中部分**/
 .bot .bot-last{
     height:120px;
     border:2px solid #4c5473;
@@ -48,8 +39,8 @@
 }
 .bot .bot-list li a,b{
     font-family: "MicrosoftYaHei";
-    font-size: 14px;
-    color: #999999;
+	font-size: 14px;
+	color: #999999;
 }
 .bot .bot-list li b{
     width: 2px;
@@ -61,11 +52,10 @@
 }
 .bot .bot-last .info p{
     font-family: "MicrosoftYaHei";
-    font-size: 12px;
+	font-size: 12px;
     color: #999999;
     padding-left:54px;
 }
-/**上右部分**/
 .bot .qw .top-rt1,.top-rt2{
     width:66px;
     background-color: #464d6a;
@@ -86,11 +76,10 @@
 }
 .bot .qw p{
     font-family: "MicrosoftYaHei";
-    font-size: 12px;
+	font-size: 12px;
     color: #999999;
     margin-top:4px;
 }
-/**下部分**/
 .copy{
     border:2px solid #4c5473;
     border-width: 2px 0 0 0;
@@ -98,7 +87,8 @@
     margin-top:60px;
 }
 .copy span{
-    font-family: "MicrosoftYaHei";
+	font-family: "MicrosoftYaHei";
     font-size: 12px;
     color: #444b67;
+    margin:19px 0;
 }

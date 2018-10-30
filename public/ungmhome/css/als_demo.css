@@ -171,11 +171,11 @@ header {
 }
 
 #lista1 .als-prev {
-	left: 1230px;
+	right: 1230px;
 }
 
 #lista1 .als-next {
-	right: 1230px;
+	left: 1230px;
 }
 
 /************************

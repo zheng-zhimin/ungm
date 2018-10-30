@@ -166,13 +166,13 @@
             <div id="mws-navigation">
                 <ul>
                    
-                  <!--   <li class="active">
+                  <li class="active">
                       <a href="#"><i class="icon-list"></i> 文章管理</a>
                       <ul>
                           <li><a href="/admin/articles">文章列表</a></li>
                           <li><a href="/admin/articles/create">文章添加</a></li>
                       </ul>
-                  </li> -->
+                  </li> 
 
                     <li class="active">
                         <a href="#"><i class="icon-list"></i>采购投标信息管理</a>
@@ -212,6 +212,13 @@
                             <li><a href="/admin/friendlylink/create">链接添加</a></li>
                         </ul>
                     </li>
+                    <li class="active">
+                        <a href="#"><i class="icon-list"></i>广告位</a>
+                        <ul>
+                            <li><a href="/admin/advertise">广告列表</a></li>
+                            <li><a href="/admin/advertise/create">广告添加</a></li>
+                        </ul>
+                    </li> 
                     <li class="active">
                         <a href="#"><i class="icon-list"></i>广告位</a>
                         <ul>
