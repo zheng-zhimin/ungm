@@ -44,7 +44,9 @@
 
                     <table class="mws-datatable-fn mws-table dataTable" id="DataTables_Table_1" aria-describedby="DataTables_Table_1_info">
                         <tr>
-                            <td>ID</td>
+                            <!-- <td>ID</td> -->
+                            <td>广告类型</td>
+                            <td>广告大小</td>
                             <td>广告主题</td>
                             <td>链接地址</td>
                             <td>logo</td>
@@ -56,7 +58,19 @@
 
 
                             <tr>
-                                <td>{{ $v->id }}</td>
+                            @if($v->type == 1)
+                                <td>供应</td>
+                            @else
+                                <td>采购</td>
+                            @endif
+
+                            @if($v->big == 1)
+                                <td>小图广告</td>
+                            @elseif($v->big == 2)
+                                <td>中图广告</td>
+                            @elseif($v->big == 3)
+                                <td>大图广告</td>
+                            @endif
                                 <td>{{    $v->title  }}</td>
                                 <td>{{    $v->advertise_https  }}</td>
                                 <td>

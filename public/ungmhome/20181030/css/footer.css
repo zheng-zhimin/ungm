@@ -1,0 +1,94 @@
+.bot{
+    width:100%;
+    background-color: #2e3033;
+}
+.bot .bot-top{
+    padding-top:60px;
+}
+.bot .tel{
+    margin-top:20px;
+}
+.bot .tel img{
+    width:24px;
+    height:24px;
+}
+.bot .tel span{
+    font-family: "MicrosoftYaHei-Bold";
+	font-size: 20px;
+	font-style: italic;
+    color: #00b7a1;
+    padding-left:14px;
+}
+.bot .log div{
+    width:70px;
+    height:30px;
+    background-color: #00b7a1;
+    margin-right: 4px;
+}
+.bot .bot-last{
+    height:120px;
+    border:2px solid #4c5473;
+    border-width:0 2px;
+}
+.bot .bot-last .bot-list{
+    padding-top:8px;
+    padding-left:54px;
+}
+.bot .bot-list li{
+    float:left;
+}
+.bot .bot-list li a,b{
+    font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	color: #999999;
+}
+.bot .bot-list li b{
+    width: 2px;
+    height: 16px;
+    margin:0 4px;
+}
+.bot .bot-last .info{
+    margin-top:20px;
+}
+.bot .bot-last .info p{
+    font-family: "MicrosoftYaHei";
+	font-size: 12px;
+    color: #999999;
+    padding-left:54px;
+}
+.bot .qw .top-rt1,.top-rt2{
+    width:66px;
+    background-color: #464d6a;
+    margin-top:14px;
+}
+.bot .qw .top-rt1 img{
+    width:54px;
+    height:54px;
+    margin:6px;
+}
+.bot .qw .top-rt2 img{
+    width:54px;
+    height:54px;
+    margin:6px;
+}
+.bot .qw .top-rt1{
+    margin-left:50px;
+}
+.bot .qw p{
+    font-family: "MicrosoftYaHei";
+	font-size: 12px;
+    color: #999999;
+    margin-top:4px;
+}
+.copy{
+    border:2px solid #4c5473;
+    border-width: 2px 0 0 0;
+    width:100%;
+    margin-top:60px;
+}
+.copy span{
+	font-family: "MicrosoftYaHei";
+    font-size: 12px;
+    color: #444b67;
+    margin:19px 0;
+}

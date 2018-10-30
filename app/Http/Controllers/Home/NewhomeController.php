@@ -13,18 +13,23 @@ class NewhomeController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     *type:采购商供应商类型; big是广告大小;status是广告状态
      * @return \Illuminate\Http\Response
      */
     public function index(Request $request)
     {
-        //处理广告数据
-        $data=Advertise::where('status','1')->get();
+        //因为小图的位置只有六个位置,然后一个地方放三个
+        //处理小图 供应商 广告数据
+        $data4=Advertise::where('status','1')->where('type','1')->where('big','1')->get();
+        //处理小图 采购商 广告数据
+        $data5=Advertise::where('status','1')->where('type','2')->where('big','1')->get();
+
+
         //处理招商数据
         $data2=Buyoffer::orderBy('id','desc')->get();
         $data3=Buyoffer::orderBy('id','asc')->get();
 
-        return view('home.newindex',['data'=>$data,'data2'=>$data2,'data3'=>$data3]);
+        return view('home.newindex',['data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5]);
     }
 
     /**

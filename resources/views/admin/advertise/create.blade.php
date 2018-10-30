@@ -29,6 +29,28 @@
                             </select>
                         </div>
                     </div>
+
+                     <div class="mws-form-row" style="width: 800px;">
+                        <label class="mws-form-label">状态</label>
+                        <div class="mws-form-item">
+                            <select name="type" class="large">
+                                <option value="1">供应商</option>
+                                <option value="2">采购商</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mws-form-row" style="width: 800px;">
+                        <label class="mws-form-label">状态</label>
+                        <div class="mws-form-item">
+                            <select name="big" class="large">
+                                <option value="1">小图广告</option>
+                                <option value="2">中图广告</option>
+                                <option value="3">大图广告</option>
+                            </select>
+                        </div>
+                    </div>
+
                     <div class="mws-form-row">
                         <label class="mws-form-label">广告名:</label>
                         <div class="mws-form-item">

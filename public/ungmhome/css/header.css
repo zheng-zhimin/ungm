@@ -2,51 +2,51 @@
 	padding: 0;
 	margin: 0;
 }
-a:hover, a:focus{
+.headdddder a:hover, a:focus{
 	text-decoration:none !important;
 }
 
 
-.top{
+.headdddder .top{
 	width: 100%;
 	height: 40px;
 	background-color: #2e3033;
 	font-size: 12px;
 	color:#999999 !important; 	
 }
-.top a{
+.headdddder .top a{
 	color:#999999 !important;
 	text-decoration: none;
 }
-.container{
+.headdddder .container{
 	padding: 11px 0 14px 0;
 }
-.top .top-left{
+.headdddder .top .top-left{
 	float: left;
 }
-.top .top-left img{
+.headdddder .top .top-left img{
 	display:inline;
 	margin-right: 45px;
 }
-.top .top-right{
+.headdddder .top .top-right{
 	float: right;
 }
 /*-------------------导航栏开始--------------------*/
-#menu{
+.headdddder #menu{
 	padding:0 !important;
 }
-.nav > li > a{
+.headdddder .nav > li > a{
 	padding:0;
 }
-.navbar-default .navbar-nav > li > a{
+.headdddder .navbar-default .navbar-nav > li > a{
 	padding:0 0 10px 0 ;
     margin:15px 15px 0px 15px;
 }
-.navbar-default .navbar-nav > li > a:focus{
+.headdddder .navbar-default .navbar-nav > li > a:focus{
 	color: #3477ff;
 	border-bottom: 2px solid;
 }
-.navbar-default .navbar-nav > li > a{
+.headdddder .navbar-default .navbar-nav > li > a{
 	font-family: MicrosoftYaHei-Bold;
 	font-size: 16px;
 	font-weight: 800;
@@ -54,22 +54,22 @@ a:hover, a:focus{
 	letter-spacing: 0px;
 	color: #333333 ;
 }
-.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+.headdddder .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
 	color: #3477ff !important;
 	background-color: #fff !important;
 }
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
+.headdddder .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus{
 	background-color: #fff !important;
 }
-.navbar-default {
+.headdddder .navbar-default {
     background-color: #ffffff !important;
     border-color: #ffffff !important;
 }
-.search{
+.headdddder .search{
 	float:right;
 	margin-top: 12px;
 }
-.search .input-group{
+.headdddder .search .input-group{
 	width: 270px;
 	height: 30px;
 	background-color: #ffffff;
@@ -81,7 +81,7 @@ a:hover, a:focus{
 	letter-spacing: 0px;
 	color: #d8d8d8;
 }
-.search .input-group .form-control{
+.headdddder .search .input-group .form-control{
 	position:absolute;
 	 width:87%;
 	 height:100%;
@@ -92,7 +92,7 @@ a:hover, a:focus{
 	 border: 0;
      padding-left: 19px;
 }
-.search .input-group .inp{
+.headdddder .search .input-group .inp{
 	width: 36px;
 	text-align: center;
 	border-left: 2px solid;
@@ -100,7 +100,7 @@ a:hover, a:focus{
 	margin-top: 6px;
 	height: 17px;
 }
-.search .input-group .inp button{
+.headdddder .search .input-group .inp button{
 	border: 0;
     background: 0;
 }

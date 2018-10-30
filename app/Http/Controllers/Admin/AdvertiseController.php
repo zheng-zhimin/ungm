@@ -17,7 +17,7 @@ class AdvertiseController extends Controller
     public function index( Request $request )
     {
         //提示信息
-        echo  '当前访问的是广告';
+        //echo  '当前访问的是广告';
 
         //接收分页数据 默认为5
         $count=$request->input('count',5);
@@ -83,9 +83,13 @@ class AdvertiseController extends Controller
         //用模型方法添加数据
         //实例化模型
         $advertise = new Advertise;
-
+ 
         //向advertises数据表中添加title
         $advertise->title = $data['title'];
+        //向advertises数据表中添加type
+        $advertise->type = $data['type']; 
+        //向advertises数据表中添加big 广告大小
+        $advertise->big = $data['big'];
 
         //向advertises数据表中添加advertise_https
         $advertise->advertise_https = $data['advertise_https'];
@@ -128,7 +132,7 @@ class AdvertiseController extends Controller
     //返回修改视图
     public function edit($id)
     {
-        echo '您当前修改的是第'.$id.'条数据信息';
+        //echo '您当前修改的是第'.$id.'条数据信息';
         $data=Advertise::find($id);
 
         return view('admin.advertise.edit',['data'=>$data]);
@@ -191,7 +195,11 @@ class AdvertiseController extends Controller
 
        //向advertises数据表中添加status
         $advertise->status = $data['status'];
-
+        // 修改广告type类型
+        $advertise->type = $data['type'];
+        //修改 广告big大小
+        $advertise->big = $data['big'];
+        
         //保存
         $res = $advertise->save();
 

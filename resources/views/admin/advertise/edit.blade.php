@@ -38,12 +38,57 @@
 
                         </div>
                     </div>
+
+
+                    <div class="mws-form-row" style="width: 800px;">
+                       <label class="mws-form-label">类型</label>
+                       <div class="mws-form-item">
+                   
+                           <select name="type" class="large">
+                           @if($data->type==1)
+                               <option value="1" selected>供应类型</option>
+                               <option value="2" >采购类型</option>
+                           @else
+                               <option value="2" selected>采购类型</option>
+                               <option value="1" >供应类型</option>
+                           @endif
+                   
+                           </select>
+                   
+                       </div>
+                   </div>
+                   
+                     <div class="mws-form-row" style="width: 800px;">
+                        <label class="mws-form-label">状态</label>
+                        <div class="mws-form-item">
+
+                            <select name="big" class="large">
+                            @if($data->big==1)
+                                <option value="1" selected >小图</option>
+                                <option value="2" >中图</option>
+                                <option value="3" >大图</option>
+                            @elseif($data->big==2)
+                                <option value="1" >小图</option>
+                                <option value="2" selected >中图</option>
+                                <option value="3" >大图</option>
+                            @elseif($data->big==3)
+                                <option value="1" >小图</option>
+                                <option value="2" >中图</option>
+                                <option value="3" selected >大图</option>
+                            @endif
+
+                            </select>
+
+                        </div>
+                    </div>
+                
                     <div class="mws-form-row">
                         <label class="mws-form-label">广告名:</label>
                         <div class="mws-form-item">
                             <input type="text" name="title" class="small" placeholder="广告名" disabled value="{{ $data->title }}">
                         </div>
                     </div>
+
                     <div class="mws-form-row">
                         <label class="mws-form-label">广告地址:</label>
                         <div class="mws-form-item">

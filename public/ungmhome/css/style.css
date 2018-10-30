@@ -445,7 +445,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
                                                                 float: left;
                                                                 padding: 0 5px;
                                                                 margin: 5px 0;
-                                                                border-left: 1px solid #666666;
+                                                                border-left: 1px solid #f9f9f9;
                                                                 color: #666666;
                                                                 font-weight: normal;
                                                             }
@@ -718,13 +718,99 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     -moz-transform:scale(1.1);     Firefox
     -webkit-transform:scale(1.1); Safari 和 Chrome
     -o-transform:scale(1.1); */
-        width: 104%;
+    width: 104%;
     height: 104%;
 }
 .indexUngm .cooperation .row .col-md-4 .cooperation-ph:hover{
      box-shadow:1px 1px 8px 1px #d6d6d6;
 }
-/* ---------------------------------------------------------首页结束招投标服务开始------------------------------------------------------------------------ */
+
+
+
+/* ---------------------------------------------------------首页结束登录开始------------------------------------------------------------------------ */
+
+ .loginNav{
+        height: 70px;
+        background-color: #ffffff; 
+        padding-top: 25px;
+        padding-bottom:25px;
+    }
+
+    .loginNav img{
+        display: inline;
+        width: 90px;
+        height: 20px;
+    }
+    .loginNav a{
+       float: right;
+    }
+    .loginPage{
+        background: url(images/log-bg.png) ;
+        padding-top: 222px;
+        padding-bottom: 164px;
+        height: 750px !important;
+    }
+    .login{
+        width: 370px;
+        height: 364px;
+        background-color:#ffffff;
+        padding: 40px 45px;
+        float: right;
+        text-align: center;
+    }
+    .login h3{
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 20px;
+        font-weight: 600;
+        font-stretch: normal;
+        line-height: 22px;
+        letter-spacing: 0px;
+        color: #00b7a1;
+        margin-bottom: 25px;
+    }
+    .login ul li{
+        width: 100%;
+        margin:15px 0px ;
+    }
+
+    .login ul li .form-control{
+        border: 1px solid #d8d8d8;
+        width: 238px;
+        display: inline;
+        height: 40px;
+        border-left: none;
+        border-bottom-left-radius: 0px;
+        border-top-left-radius: 0px;
+    }
+    .login ul li button{
+        float: left;
+        width: 42px;
+        height: 40px;
+        border-radius: 4px 0px 0px 4px;
+        border: solid 1px #d8d8d8;
+        background: #ffffff;
+    }
+    .login .loginBtn button{
+        width: 100%;
+        margin-bottom: 33px;
+        font-size: 14px;
+        height: 38px;
+        border-radius: 4px;
+    }
+    .login .loginBtn .a1{
+        float: left;
+        color: #00b7a1;
+    }
+    .login .loginBtn .a2{
+        float: right;
+    }
+    .login .loginBtn img{
+        margin-right: 10px;
+    }
+    .login .btn-success{
+        background-color: #00b7a1;
+    }
+/* ---------------------------------------------------------登录结束招投标服务开始------------------------------------------------------------------------ */
 .bid .bid-banner{
     height: 750px;
 }

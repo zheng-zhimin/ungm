@@ -19,7 +19,7 @@
    <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/ungmhome/css/base.css">
    <link rel="stylesheet" href="/ungmhome/css/style.css">
-    <!-- <link rel="stylesheet" href="/ungmhome/css/style.min.css">  -->
+   <!--  <link rel="stylesheet" href="/ungmhome/css/style.min.css">  -->
    <link rel="stylesheet" type="text/css" href="/ungmhome/css/CSSreset.min.css" />
    <link rel="stylesheet" type="text/css" media="screen" href="/ungmhome/css/als_demo.css" />
   <link rel="stylesheet" href="/ungmhome/css/swiper.min.css"> 
@@ -174,7 +174,7 @@
                                                    
                                                 
                                                <div class="row" align="center">
-                                                @foreach($data as $v)
+                                                @foreach($data4 as $v)
                                                    <div class="col-md-12 padd advertising">
                                                    <a href="{{$v->advertise_https}}" target="blank" >
                                                      <img class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
@@ -191,7 +191,7 @@
                                         <div class="row">
                                            <div class="col-md-8"> 
                                                <div class="row">
-                                                    <div class="col-md-10"><input class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应采购商" name=""></div>
+                                                    <div class="col-md-10"><input class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商" name=""></div>
                                                     <div class="col-md-2"><button type="" class="btn btn-lg btn-block btn-s btn-success"><i class="glyphicon glyphicon-search"></i></button></div>
                                                </div>
                                                <div class="row row-down padd row-down-1">
@@ -406,9 +406,18 @@
                                                    <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
                                                </div> -->
                                                <div class="row" align="center">
-                                                   <div class="col-md-12 padd advertising"><img class="img-responsive" src="/ungmhome/images/advertising.png"></div>
-                                                   <div class="col-md-12 padd advertising"><img class="img-responsive" src="/ungmhome/images/advertising.png"></div>
-                                                   <div class="col-md-12 padd advertising"><img class="img-responsive" src="/ungmhome/images/advertising.png"></div>
+
+                                                   @foreach($data5 as $v)
+                                                   <div class="col-md-12 padd advertising">
+                                                   <a href="{{$v->advertise_https}}" target="blank" >
+                                                     <img class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
+                                                   </a>
+                                                   
+                                                   </div>
+                                                @endforeach
+                                                   
+                                                   
+
                                                </div>
                                             </div>
                                         </div>
