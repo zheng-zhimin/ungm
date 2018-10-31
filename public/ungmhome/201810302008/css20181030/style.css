@@ -152,63 +152,63 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 /*----------------------首页------------------------------*/
 /*-------------标签页------------------*/
-.globalTrade .vtabs {
+.vtabs {
   display: table; }
-  .globalTrade .vtabs .tabs-vertical {
+  .vtabs .tabs-vertical {
     width: 150px;
     border-bottom: 0px;
     border-right: 1px solid #e9ecef;
     display: table-cell;
     vertical-align: top; }
-    .globalTrade .vtabs .tabs-vertical li .nav-link {
+    .vtabs .tabs-vertical li .nav-link {
       color: #343a40;
       margin-bottom: 10px;
       border: 0px;
       border-radius: 0.25rem 0 0 0.25rem; 
       font-weight: 600;
   }
-  .globalTrade .vtabs .tab-content {
+  .vtabs .tab-content {
     display: table-cell;
    /*  padding: 20px; */
     vertical-align: top; }
 
-.globalTrade .tabs-vertical li .nav-link.active,
-.globalTrade .tabs-vertical li .nav-link:hover,
-.globalTrade .tabs-vertical li .nav-link.active:focus {
+.tabs-vertical li .nav-link.active,
+.tabs-vertical li .nav-link:hover,
+.tabs-vertical li .nav-link.active:focus {
   background: #fb9678;
   border: 0px;
   color: #fff; }
 
 /*Custom vertical tab*/
-.globalTrade .customvtab .tabs-vertical li .nav-link.active,
-.globalTrade .customvtab .tabs-vertical li .nav-link:hover,
-.globalTrade .customvtab .tabs-vertical li .nav-link:focus {
+.customvtab .tabs-vertical li .nav-link.active,
+.customvtab .tabs-vertical li .nav-link:hover,
+.customvtab .tabs-vertical li .nav-link:focus {
       background: #f9f9f9;
     border: 0px;
     border-right: 2px solid #3477ff;
     margin-right: -1px;
     color: #3477ff; }
 
-.globalTrade .tabcontent-border {
+.tabcontent-border {
   border: 1px solid #ddd;
   border-top: 0px; 
   box-shadow: 2px 4px 4px 0px rgba(0, 0, 0, 0.1);
 }
 
-.globalTrade .customtab2 li a.nav-link {
+.customtab2 li a.nav-link {
   border: 0px;
   margin-right: 3px;
   color: #212529; }
-.globalTrade .customtab2 li a.nav-link.active {
+.customtab2 li a.nav-link.active {
     background: #fb9678;
     color: #fff; }
-.globalTrade .customtab2 li a.nav-link:hover {
+.customtab2 li a.nav-link:hover {
     color: #fff;
     background: #fb9678; }
-.globalTrade .nav-item-right,.nav-item-left{
+.nav-item-right,.nav-item-left{
     width: 50%;
 }
-.globalTrade .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active{
     box-shadow: 2px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 /* -------------gundong */
@@ -723,8 +723,4 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 .indexUngm .cooperation .row .col-md-4 .cooperation-ph:hover{
      box-shadow:1px 1px 8px 1px #d6d6d6;
-}
-/* ---------------------------------------------------------首页结束招投标服务开始------------------------------------------------------------------------ */
-.bid .bid-banner{
-    height: 750px;
 }

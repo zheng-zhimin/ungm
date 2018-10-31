@@ -18,6 +18,7 @@
 
 
 
+
 </head>
 <style type="text/css">
     .dropdown:hover .dropdown-menu{
@@ -37,11 +38,24 @@
                 <img class="img-responsive" src="/ungmhome/images/tel.png">
                 <img class="img-responsive" src="/ungmhome/images/mail.png">
             </div>
+@if( ! Cache::has('homeuser') )
             <div class="top-right">
-                <span class=""><a href="#">登录</a></span>
+                <span class=""><a href="/home/newlogin/login">登录</a></span>
                 <span class="">|</span>
-                <span class=""><a href="#">注册</a></span>
+                <span class=""><a href="/home/newlogin/register">注册</a></span>
             </div>
+@else
+            <div class="top-right">
+                <!-- <span class=""><img src="{{Cache::get('homeuser')->profile}}" ></span> -->
+                
+                
+                <span class="">|</span>
+                <span class="">{{Cache::get('homeuser')->username}}</span>
+                <span class="">|</span>
+                <span class=""><a href="/home/logout">退出</a></span>
+                <span class="">|</span>
+            </div>
+@endif
         </div>
     </div>
 <div class="navbar navbar-default">       
@@ -171,6 +185,12 @@
 
 
 
+  
+
+
+   
+
+
 
 
 <div class="bot">
@@ -190,13 +210,13 @@
             <div class="col-md-6 bot-last">
                 <div  class="row bot-list">
                     <ul>
-                        <li><a href="#">关于我们</a><b>|</b></li>
-                        <li><a href="#">招纳贤士</a><b>|</b></li>
-                        <li><a href="/home/about">联系我们</a><b>|</b></li>
-                        <li><a href="#">使用协议</a><b>|</b></li>
-                        <li><a href="#">版权隐私</a><b>|</b></li>
-                        <li><a href="#">广告服务</a><b>|</b></li>
-                        <li><a href="#">排名推广</a></li>
+                        <li><a href="/home/about">关于我们</a><b>|</b></li>
+                        <li><a href="/home/job">招纳贤士</a><b>|</b></li>
+                        <li><a href="/home/contact">联系我们</a><b>|</b></li>
+                        <li><a href="/home/dns">使用协议</a><b>|</b></li>
+                        <li><a href="/home/copy">版权隐私</a><b>|</b></li>
+                        <li><a href="/home/">广告服务</a><b>|</b></li>
+                        <li><a href="/home/rank">排名推广</a></li>
                     </ul>
                 </div>
                 <div class="row info">

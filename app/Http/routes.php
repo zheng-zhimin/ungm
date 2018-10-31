@@ -99,7 +99,7 @@ route::get('home/label/{label}','Home\HomeController@label');
 //前台登录
 Route::controller('/home/login','Home\LoginController');
 //前台用户退出路由
-Route::get('/home/logout','Home\HomeController@logout');
+//Route::get('/home/logout','Home\HomeController@logout');
 //前台主页面
 Route::get('/home/home','Home\LoginController@index');
 //前台检测登录
@@ -165,7 +165,18 @@ route::get('/home/cc','Home\NewhomeController@cc');
 //前台集客路由
 route::get('/home/jk','Home\NewhomeController@jk');
 //前台联系我们的路由
+route::get('/home/contact','Home\NewhomeController@contact');
+//前台关于我们的路由
 route::get('/home/about','Home\NewhomeController@about');
+//前台招贤纳士的路由
+route::get('/home/job','Home\NewhomeController@job');
+//前台排名推广的路由
+route::get('/home/rank','Home\NewhomeController@rank');
+//前台使用协议的路由
+route::get('/home/dns','Home\NewhomeController@dns');
+//前台隐私条款的路由
+route::get('/home/copy','Home\NewhomeController@copy');
+
 //前台百度地图页面路由
 Route::get('/home/map',function(){
     return view('home.map');
@@ -174,7 +185,7 @@ Route::get('/home/map',function(){
 
 //前台登录
 Route::controller('/home/newlogin','Home\NewloginController');
-//前台检测登录
+/*//前台检测登录
 Route::post('/home/newajax',function(){
 
    // return $_POST['uname'];
@@ -185,13 +196,21 @@ Route::post('/home/newajax',function(){
     return 0;
    }
 
-});
+});*/
+//前台用户退出路由
+Route::get('/home/logout','Home\NewloginController@logout');
+
+
 //前台用户注册获取手机验证码的路由
 route::get('/code/phone_code','Home\NewloginController@phone_code');
 //前台货币转换ajax路由
 route::get('/newhome/currency','Home\NewhomeController@currency');
 //前台搜-搜路由(可以搜索英文数字汉子来关联表找到用户想要的)
 Route::get('/home/soso','SosoController@soso');
+
+//前台获取分类栏目儿子栏目数据ajax路由
+Route::post('/list/son','Home\NewhomeController@son');//前台获取分类栏目儿子广告图片数据ajax路由
+Route::post('/list/pic','Home\NewhomeController@pic');
 
 
 

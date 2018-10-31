@@ -21,7 +21,7 @@ class ColumnController extends Controller
         // 获取搜索的关键字
         $ss = $request -> input('sousuo');
         // 获取数据,按paths排序,每页显示5条
-        $data = DB::table('column') -> select('id','cname','pid','path','status','created_at','updated_at',DB::raw("concat(path,',',id) as paths")) -> where('cname','like','%'.$ss.'%') -> orderBy('paths','asc') -> paginate(5);
+        $data = DB::table('column') -> select('id','cname','pid','path','status','created_at','updated_at','pic_path',DB::raw("concat(path,',',id) as paths")) -> where('cname','like','%'.$ss.'%') -> orderBy('paths','asc') -> paginate(5);
         foreach ($data as $key => $value) {
             // 统计字符串出现的次数
             $n = substr_count($value -> paths,',');
@@ -40,7 +40,7 @@ class ColumnController extends Controller
     public function create()
     {
         // 获取所属栏目数据,按paths排序
-        $data = DB::table('column') -> select('id','cname','pid','path','status','created_at','updated_at',DB::raw("concat(path,',',id) as paths")) -> orderBy('paths','asc') -> get();
+        $data = DB::table('column') -> select('id','cname','pid','path','status','created_at','updated_at','pic_path',DB::raw("concat(path,',',id) as paths")) -> orderBy('paths','asc') -> get();
 
         foreach ($data as $key => $value) {
 
@@ -82,9 +82,27 @@ class ColumnController extends Controller
             // 拼接子栏目的path
             $path = $parent_data['path'].','.$parent_data['id'];
         }
+
+        //处理图片
+         if($request->hasFile('pic_path')){
+            $pic_path=$request->file('pic_path');
+            // 处理图片路径和图片名称
+            // 获取后缀
+            $ext = $pic_path -> getClientOriginalExtension();
+            $temp_name = time().rand(1000,9999).'.'.$ext;
+
+            $dir_name = '/uploads/'.date('Ymd',time());
+            $name = $dir_name.'/'.$temp_name;  // 拼接路径方便存储
+
+            $pic_path -> move('.'.$dir_name,$temp_name);
+           //$name就是拼接好的路径
+        }
         // 添加到数据库
         $column = new Column;
         $column -> cname = $request -> input('cname');
+        if (isset($name)) {
+            $column -> pic_path=$name;
+        }
         $column -> pid = $pid;
         $column -> path = $path;
         $res = $column -> save();
@@ -117,7 +135,7 @@ class ColumnController extends Controller
         // 获取数据
         $data = Column::find($id);
         // 获取所属栏目数据,按paths排序
-        $datas = DB::table('column') -> select('id','cname','pid','path','status','created_at','updated_at',DB::raw("concat(path,',',id) as paths")) -> orderBy('paths','asc') -> get();
+        $datas = DB::table('column') -> select('id','cname','pid','path','status','created_at','updated_at','pic_path',DB::raw("concat(path,',',id) as paths")) -> orderBy('paths','asc') -> get();
         foreach ($datas as $key => $value) {
             // 统计字符串出现的次数
             $n = substr_count($value -> paths,',');
@@ -137,6 +155,7 @@ class ColumnController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         // 判断字段的合法性
         $this -> validate($request,[
                 'cname' => 'required',
@@ -161,11 +180,31 @@ class ColumnController extends Controller
             // 拼接子分类的path
             $path = $parent_data['path'].','.$parent_data['id'];
         }
+
+         //处理图片
+         if($request->hasFile('pic_path')){
+
+            $pic_path=$request->file('pic_path');
+            // 处理图片路径和图片名称
+            // 获取后缀
+            $ext = $pic_path -> getClientOriginalExtension();
+            $temp_name = time().rand(1000,9999).'.'.$ext;
+
+            $dir_name = '/uploads/'.date('Ymd',time());
+            $name = $dir_name.'/'.$temp_name;  // 拼接路径方便存储
+
+            $pic_path -> move('.'.$dir_name,$temp_name);
+           //$name就是拼接好的路径
+        }
         // 修改数据添加到数据库
         $column = Column::find($id);
         $column -> cname = $request -> input('cname');
+        if (isset($name)) {
+            $column -> pic_path=$name;
+        }
         $column -> pid = $pid;
         $column -> path = $path;
+       
         $res = $column -> save();
 
         if ($res) {

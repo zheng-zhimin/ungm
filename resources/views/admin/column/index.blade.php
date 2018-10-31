@@ -31,6 +31,8 @@
                         <th>所属栏目</th>
                         <th>栏目路径</th>
                         <th>添加时间</th>
+                        <th>对应栏目广告位</th>
+
                         <th>操作</th>
                     </tr>
                 </thead>
@@ -42,6 +44,8 @@
                         <td>{{ $v -> pid }}</td>
                         <td>{{ $v -> path }}</td>
                         <td>{{ $v -> created_at }}</td>
+                        <td><img src="{{ $v -> pic_path }}"></td>
+
                         <td>
                             <a href="/admin/column/{{$v->id}}/edit" class="btn btn-warning">修改</a>
                             <form action="/admin/column/{{$v->id}}" method="post" style="display: inline;">

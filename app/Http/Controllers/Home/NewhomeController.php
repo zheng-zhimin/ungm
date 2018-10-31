@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use DB;
 use App\Models\Admin\Buyoffer;
 use App\Models\Admin\Advertise;//前台广告位模型,后台可管理
+use App\Models\Admin\Column;//用到了栏目
 class NewhomeController extends Controller
 {
     /**
@@ -29,6 +30,11 @@ class NewhomeController extends Controller
         $data2=Buyoffer::orderBy('id','desc')->get();
         $data3=Buyoffer::orderBy('id','asc')->get();
 
+
+        //分配顶级栏目
+        //$firstlanmu=Column::where('pid','0')->get();
+        ///,'firstlanmu'=>$firstlanmu
+        
         return view('home.newindex',['data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5]);
     }
 
@@ -37,7 +43,7 @@ class NewhomeController extends Controller
      *前台全球贸易(Global-Trade)简称gt
      * @return \Illuminate\Http\Response
      */
-    public function gt(Request $requset)
+    public function gt(Request $request)
     {
         return view('home.gt');
     }
@@ -58,7 +64,7 @@ class NewhomeController extends Controller
      *前台招投标服务(tender 投标)简称td
      * @return \Illuminate\Http\Response
      */
-    public function td(Request $requset)
+    public function td(Request $request)
     {
         return view('home.td');
     }
@@ -68,7 +74,7 @@ class NewhomeController extends Controller
      *前台会员发展(Member Development)
      * @return \Illuminate\Http\Response
      */
-    public function md(Request $requset)
+    public function md(Request $request)
     {
         return view('home.md');
     }  
@@ -78,7 +84,7 @@ class NewhomeController extends Controller
      *前台货币换算器(Currency converter)
      * @return \Illuminate\Http\Response
      */
-    public function cc(Request $requset)
+    public function cc(Request $request)
     {
         return view('home.cc');
     } 
@@ -87,22 +93,62 @@ class NewhomeController extends Controller
      *前台集客
      * @return \Illuminate\Http\Response
      */
-    public function jk(Request $requset)
+    public function jk(Request $request)
     {
         return view('home.jk');
     }
-
-         /**
-     * Show the form for creating a new resource.
-     *前台货币换算器(Currency converter)
-     * @return \Illuminate\Http\Response
-     */
-    public function about(Request $requset)
+    public function about(Request $request)
     {
         return view('home.newabout');
     }
 
-    
+         /**
+     * Show the form for creating a new resource.
+     *前台联系我们()
+     * @return \Illuminate\Http\Response
+     */
+    public function contact(Request $request)
+    {
+        return view('home.newcontact');
+    }      
+    /**
+     * Show the form for creating a new resource.
+     *前台招贤纳士
+     * @return \Illuminate\Http\Response
+     */
+    public function job(Request $request)
+    {
+        return view('home.newjob');
+    }     
+     /**
+     * Show the form for creating a new resource.
+     *前台排名推广
+     * @return \Illuminate\Http\Response
+     */
+    public function rank(Request $request)
+    {
+        return view('home.newrank');
+    }     
+     /**
+     * Show the form for creating a new resource.
+     *前台使用协议
+     * @return \Illuminate\Http\Response
+     */
+    public function dns(Request $request)
+    {
+        return view('home.newdns');
+    }  
+    /**
+     * Show the form for creating a new resource.
+     *前台隐私条款
+     * @return \Illuminate\Http\Response
+     */
+    public function copy(Request $request)
+    {
+        return view('home.newcopy');
+    }
+
+    //获取数据库费率的方法
     public function currency(Request $request)
     {
        // var_dump($request->n);
@@ -117,6 +163,29 @@ class NewhomeController extends Controller
 
 
     }
+
+    //接收主页分类栏目表发送的pid数据
+    public function son(Request $req){
+        //获取pid然后查column表的数据
+        $pid= $req->pid;
+        $son =Column::where('pid',$pid)->get();
+        
+
+        return $son;
+
+    }
+
+    //接收主页分类列表下广告的数据
+    public function pic(Request $req){
+        $pid=$req->pid;
+
+       /* //属于查到的那五个pid=0的父类
+        $res=Advertise::where('pid',$pid)->where('big','2')->get()->except('item','_token');*/
+        $res=Column::where('pid',$pid)->limit(2)->get();
+        return $res;
+        
+    }
+
 
    
 }

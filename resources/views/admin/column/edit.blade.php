@@ -15,7 +15,7 @@
             <span>栏目添加</span>
         </div>
         <div class="mws-panel-body no-padding">
-            <form class="mws-form" action="/admin/column/{{ $data -> id }}" method="post">
+            <form class="mws-form" action="/admin/column/{{ $data -> id }}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
             {{ method_field('PUT') }}
                 <div class="mws-form-inline">
@@ -43,6 +43,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="mws-form-inline">
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">栏目广告图片</label>
+                        <div class="mws-form-item">
+                            <input type="file" name="pic_path" id="pic_path" class="small">
+                        </div>
+                    </div>
+                </div>
+
                 <div class="mws-button-row">
                     <input type="submit" value="修改" class="btn btn-warning">
                 </div>

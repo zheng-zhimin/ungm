@@ -11,6 +11,7 @@ use App\Models\Home\UserDetail;
 use DB;
 use Mail;
 use Hash;
+use Cache;
 use App\Models\Home\History;
 class NewloginController extends Controller
 {
@@ -70,6 +71,8 @@ class NewloginController extends Controller
                             {  
                                 session(['homeFlag'=>true]);
                                 session(['homeuser'=>$user]);
+                                Cache::put('homeuser',$user,720);
+                                //Cache::forget('homeuser');//退出是清除记录用法
                                 echo 'success' ;     
                             }else{
                                 echo'后期维护时在这里发送数据库查询字段即可';
@@ -109,7 +112,7 @@ class NewloginController extends Controller
              dump($request -> all());*/
 
               $this->validate($request,[
-            'phone' => 'required|',
+            'phone' => 'required|unique:ungm_users',
             'phone_code'=>'required',
             'password' => 'required|between:6,12',
             'repassword' => 'required|same:password',
@@ -129,12 +132,12 @@ class NewloginController extends Controller
              $phone_code=session('phone_code');
              //如果验证码也正确就将新伙伴入库吧
              if($phone_code==$inputcode){
-                    dd('hah');
+                    
                     $phone = $request -> input('phone','15843321521');
                     $pass = Hash::make($request -> input('password','123456'));
-                    $profile='/homeblog/img/timg.jpg';//给个默认头像
+                    $profile='/homeblog/img/dt.png';//给个默认头像
                     $token = str_random(50);
-                    $id = Newusers::insertGetId(['profile'=>$profile,'username'=>$phone,'password'=>$pass,'token'=>$token]);
+                    $id = Newusers::insertGetId(['profile'=>$profile,'username'=>$phone,'phone'=>$phone,'password'=>$pass,'token'=>$token]);
                     //UserDetail::insert(['phone'=>$phone,'uid'=>$id]);
 
                     // dd($id);
@@ -150,7 +153,7 @@ class NewloginController extends Controller
                         dd('注册失败');
                     }
              }else{
-                  
+                //$phone = $request -> input('phone');
                return redirect('/home/newlogin/register')->withErrors(['cuowu'=>'验证码不正确']);
 
             }
@@ -214,8 +217,14 @@ class NewloginController extends Controller
                 });
             }  */
 
-           
-  
+    //前台用户退出控制器方法       
+   public function logout()
+    {
+         
+         Cache::forget('homeuser');
+         session(['homeFlag'=>false]);
+         return redirect('/');
+    }
     
 
      

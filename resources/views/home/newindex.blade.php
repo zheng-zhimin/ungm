@@ -153,26 +153,31 @@
                                                     </div>
                                                </div>
                                            </div> 
-                                           <div class="col-md-4 SUPPLIER-r" align="center">
-                                               <div class="row padd SUPPLIER-r-top" align="center">
-                                                    <div class="col-md-4" style="padding-bottom: 10px;">
-                               
-                                                    <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
-                               
-                                                    </div>
-                                                   <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
-                                                  <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
-                                                  <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block">登录</bottom></p></div>
-                                                  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success">注册</bottom></p></div>
-                                                  <!-- <div class="col-md-4" style="padding-bottom: 10px;"><img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">    </div>
-                                                  <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
-                                                  <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p>
-                                                  </div> -->
-                                               </div>
+                                           <div class="col-md-4 SUPPLIER-r" align="center"> 
+
+                                           <div class="row padd SUPPLIER-r-top" align="center">
+@if( ! Cache::has('homeuser') )
+  <div class="col-md-4" style="padding-bottom: 10px;">
+  <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
+  </div>
+  <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
+  <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
+  <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block"><a href="/home/newlogin/login">登录</a></bottom></p></div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success"><a href="/home/newlogin/register">注册</a></bottom></p></div>
+@else
+
+    <div class="col-md-4" style="padding-bottom: 10px;">
+    <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">    
+    </div>
+    <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
+    <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
+@endif                                              
+                                             
                                                
                                                 
                                                    
-                                                
+                                              </div> 
+
                                                <div class="row" align="center">
                                                 @foreach($data4 as $v)
                                                    <div class="col-md-12 padd advertising">
@@ -196,166 +201,378 @@
                                                </div>
                                                <div class="row row-down padd row-down-1">
                                                     <div class="vtabs customvtab">
-                                                        <ul class="nav nav-tabs tabs-vertical vtabs-1" role="tablist">
-                                                            <li class=" nav-item"> <a class="nav-link active" data-toggle="tab" href="#industrialproducts" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">工业品</span> </a> </li>
-                                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#rawmaterial" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">原材料</span></a> </li>
-                                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#consumer" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">消费品</span></a> </li>
-                                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#greenfood" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">绿色食品</span></a> </li>
-                                                            <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#commercialservices" role="tab"><span class="hidden-sm-up"><i class="ti-email"></i></span> <span class="hidden-xs-down">商务服务</span></a> </li>
-                                                        </ul>
+
+  <ul class="nav nav-tabs tabs-vertical vtabs-1" role="tablist">
+
+    <li class=" nav-item"> 
+        <a onclick="getson()" class="nav-link active" data-toggle="tab" href="#industrialproducts" role="tab">
+            <span class="hidden-sm-up"> <i class="ti-home"></i> </span>
+              <input type="hidden" name="pid1" value="28">
+             <span class="hidden-xs-down" id="28">工业品</span> 
+         </a> 
+    </li>
+
+    <li class="nav-item"> 
+        <a onclick="getson2()"  class="nav-link" data-toggle="tab" href="#rawmaterial" role="tab">
+            <span class="hidden-sm-up"><i class="ti-user"></i></span>
+            <input type="hidden" name="pid2" value="47">
+            <span class="hidden-xs-down" id="47">原材料</span>
+        </a> 
+    </li>
+
+  <li class="nav-item"> 
+        <a onclick="getson3()"  class="nav-link" data-toggle="tab" href="#consumer" role="tab">
+            <span class="hidden-sm-up"><i class="ti-email"></i></span>
+            <input type="hidden" name="pid3" value="58">
+            <span class="hidden-xs-down" id="58">消费品</span>
+        </a> 
+  </li>
+
+  <li class="nav-item"> 
+      <a  onclick="getson4()"  class="nav-link" data-toggle="tab" href="#greenfood" role="tab">
+           <span class="hidden-sm-up"><i class="ti-email"></i></span>
+            <input type="hidden" name="pid4" value="73">
+           <span class="hidden-xs-down" id="73">绿色食品</span>
+       </a> 
+   </li>
+
+   <li class="nav-item">
+        <a  onclick="getson5()"  class="nav-link" data-toggle="tab" href="#commercialservices" role="tab">
+            <span class="hidden-sm-up"><i class="ti-email"></i></span> 
+            <input type="hidden" name="pid5" value="84">
+            <span class="hidden-xs-down" >商务服务</span>
+       </a>
+    </li>
+</ul>
                                                         
+<script type="text/javascript">
+
+  function getson()
+  {
+    var pid1 = $("input:hidden[name='pid1']").val();
+    //alert(pid1);
+       $.post('/list/son',{'pid':pid1,'_token':'{{csrf_token()}}'}, function(datas) {
+          //alert(datas);
+           $('.xiangqing01').children().empty();
+           
+
+                     for(var i=0;i<datas.length;i++){
+
+                        var xiangqing1= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        $('.xiangqing1').append(xiangqing1);
+                      }
+
+           });  
+
+             $.post('/list/pic',{'pid':pid1,'_token':'{{csrf_token()}}'}, function(datas) {       
+                     $('.pic').empty();
+                    //alert(datas);
+                     for(var i=0;i<datas.length;i++){
+                        var zzm=" <div class='col-md-6 '>"+
+                         "<img class='img-industrial zzm'"+
+                         " src='"+datas[i].pic_path+"'>"+
+                              "</div>";
+                          $('.pic').append(zzm);
+                      }
+             });  
+
+  }
+
+   function getson2()
+  {
+    var pid2 = $("input:hidden[name='pid2']").val();
+    //alert(pid1);
+       $.post('/list/son',{'pid':pid2,'_token':'{{csrf_token()}}'}, function(datas) {
+          //alert(datas);
+           $('.xiangqing02').children().empty();
+           
+
+                     for(var i=0;i<datas.length;i++){
+
+                        var xiangqing2= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        $('.xiangqing2').append(xiangqing2);
+                      }
+
+           });  
+
+             $.post('/list/pic',{'pid':pid2,'_token':'{{csrf_token()}}'}, function(datas) {       
+                     $('.pic').empty();
+                    //alert(datas);
+                     for(var i=0;i<datas.length;i++){
+                        var zzm=" <div class='col-md-6 '>"+
+                         "<img class='img-industrial zzm'"+
+                         " src='"+datas[i].pic_path+"'>"+
+                              "</div>";
+                          $('.pic').append(zzm);
+                      }
+             });  
+
+  }
+
+   function getson3()
+  {
+    var pid3 = $("input:hidden[name='pid3']").val();
+    //alert(pid1);
+       $.post('/list/son',{'pid':pid3,'_token':'{{csrf_token()}}'}, function(datas) {
+          //alert(datas);
+           $('.xiangqing03').children().empty();
+           
+
+                     for(var i=0;i<datas.length;i++){
+
+                        var xiangqing3= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        $('.xiangqing3').append(xiangqing3);
+                      }
+
+           });  
+
+             $.post('/list/pic',{'pid':pid3,'_token':'{{csrf_token()}}'}, function(datas) {       
+                     $('.pic').empty();
+                    //alert(datas);
+                     for(var i=0;i<datas.length;i++){
+                        var zzm=" <div class='col-md-6 '>"+
+                         "<img class='img-industrial zzm'"+
+                         " src='"+datas[i].pic_path+"'>"+
+                              "</div>";
+                          $('.pic').append(zzm);
+                      }
+             });  
+
+  }
+   function getson4()
+  {
+    var pid4 = $("input:hidden[name='pid4']").val();
+    //alert(pid1);
+       $.post('/list/son',{'pid':pid4,'_token':'{{csrf_token()}}'}, function(datas) {
+          //alert(datas);
+           $('.xiangqing04').children().empty();
+           
+
+                     for(var i=0;i<datas.length;i++){
+
+                        var xiangqing4= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        $('.xiangqing4').append(xiangqing4);
+                      }
+
+           });  
+
+             $.post('/list/pic',{'pid':pid4,'_token':'{{csrf_token()}}'}, function(datas) {       
+                     $('.pic').empty();
+                    //alert(datas);
+                     for(var i=0;i<datas.length;i++){
+                        var zzm=" <div class='col-md-6 '>"+
+                         "<img class='img-industrial zzm'"+
+                         " src='"+datas[i].pic_path+"'>"+
+                              "</div>";
+                          $('.pic').append(zzm);
+                      }
+             });  
+
+  }
+  function getson5()
+  {
+    var pid5 = $("input:hidden[name='pid5']").val();
+    //alert(pid1);
+       $.post('/list/son',{'pid':pid5,'_token':'{{csrf_token()}}'}, function(datas) {
+          //alert(datas);
+           $('.xiangqing05').children().empty();
+           
+
+                     for(var i=0;i<datas.length;i++){
+
+                        var xiangqing5= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        $('.xiangqing5').append(xiangqing5);
+                      }
+
+           });  
+
+             $.post('/list/pic',{'pid':pid5,'_token':'{{csrf_token()}}'}, function(datas) {       
+                     $('.pic').empty();
+                    //alert(datas);
+                     for(var i=0;i<datas.length;i++){
+                        var zzm=" <div class='col-md-6 '>"+
+                         "<img class='img-industrial zzm'"+
+                         " src='"+datas[i].pic_path+"'>"+
+                              "</div>";
+                          $('.pic').append(zzm);
+                      }
+             });  
+
+  }
+
+
+</script>
+
+
+
+
                                                         <!-- Tab panes -->
                                                         <div class="tab-content tab-content-1">
                                                             <div class="tab-pane active" id="industrialproducts" role="tabpanel">
-                                                                <div class="p-20 industrial industrial-1 industrial-2">
-                                                                    <b>工业品</b>
-                                                                    <ul style="margin-top: 25px;">
-                                                                        <li><a href="#">机械及行业设备</a></li>
-                                                                        <li><a href="#">仪器仪表</a></li>
-                                                                        <li><a href="#">照明工业</a></li>
-                                                                        <li><a href="#">安全防护</a></li>
-                                                                        <li><a href="#">电工电气</a></li>
-                                                                    </ul>
-                                                                    <ul>
-                                                                        <li><a href="#">电子元器件</a></li>
-                                                                        <li><a href="#">五金工具</a></li>
-                                                                        <li><a href="#">包装</a></li>
-                                                                        <li><a href="#">环保</a></li>
-                                                                        <li><a href="#">家装、建材</a></li>
-                                                                        <li><a href="#">交通运输</a></li>
-                                                                    </ul>
-                                                                    <ul>
-                                                                        <li><a href="#">医药保健</a></li>
-                                                                        <li><a href="#">印刷</a></li>
-                                                                        <li><a href="#">二手设备转让</a></li>
-                                                                        <li><a href="#">加工</a></li>
-                                                                        <li><a href="#">LED</a></li>
-                                                                        <li><a href="#">个人防护</a></li>
-                                                                        <li><a href="#">专用设备</a></li>
-                                                                    </ul>
-                                                                    <br>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                        <div class="p-20 industrial industrial-1 industrial-2 ">
+                            <b>工业品</b>
+                            <div class="xiangqing01">                           
+                            <ul style="margin-top: 25px;" class="xiangqing1">
+                                <li><a href="javascript:;">机械及行业设备</a></li>
+                                <li><a href="javascript:;">仪器仪表</a></li>
+                                <li><a href="javascript:;">照明工业</a></li>
+                                <li><a href="javascript:;">安全防护</a></li>
+                                <li><a href="javascript:;">电工电气</a></li>
+                            </ul>
+                             <ul >
+                                <li><a href="javascript:;">电子元器件</a></li>
+                                <li><a href="javascript:;">五金工具</a></li>
+                                <li><a href="javascript:;">包装</a></li>
+                                <li><a href="javascript:;">环保</a></li>
+                                <li><a href="javascript:;">家装、建材</a></li>
+                                <li><a href="javascript:;">交通运输</a></li>
+                            </ul>
+                            <ul >
+                                <li><a href="javascript:;">医药保健</a></li>
+                                <li><a href="javascript:;">印刷</a></li>
+                                <li><a href="javascript:;">二手设备转让</a></li>
+                                <li><a href="javascript:;">加工</a></li>
+                                <li><a href="javascript:;">LED</a></li>
+                                <li><a href="javascript:;">个人防护</a></li>
+                                <li><a href="javascript:;">专用设备</a></li>
+                            </ul> 
+                            </div>
+
+                            <br>
+
+                            <div class="row pic" >
+                                
+                                <div class="col-md-6 zzm">
+                                    <img  class="img-industrial " src="/ungmhome/images/advertising.png">
+                                </div> 
+                                <div class="col-md-6 zzm">
+                                    <img  class="img-industrial " src="/ungmhome/images/advertising.png">
+                                </div>
+
+                            </div>
+                  </div>
                                                             </div>
                                                             <div class="tab-pane  p-20" id="rawmaterial" role="tabpanel">
                                                                 <div class="p-20 industrial industrial-2">
-                                                                    <b>原材料</b>
-                                                                    <ul style="margin-top: 25px;">
-                                                                        <li><a href="#">纸业</a></li>
-                                                                        <li><a href="#">纺织及皮革</a></li>
-                                                                        <li><a href="#">化工</a></li>
-                                                                        <li><a href="#">精细化学品</a></li>
-                                                                        <li><a href="#">橡塑</a></li>
-                                                                        <li><a href="#">家纺家饰</a></li>
-                                                                        <li><a href="#">能源</a></li>
-                                                                    </ul>
-                                                                    <ul>
-                                                                        <li><a href="#">家用电器</a></li>
-                                                                        <li><a href="#">冶金矿产</a></li>
-                                                                        <li><a href="#">钢铁</a></li>
-                                                                    </ul>
-                                                                    <br>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                    </div>
+          <b>原材料</b>
+           <div class="xiangqing02">  
+              <ul style="margin-top: 25px;" class="xiangqing2">
+                  <li><a href="javascript:;">纸业</a></li>
+                  <li><a href="javascript:;">纺织及皮革</a></li>
+                  <li><a href="javascript:;">化工</a></li>
+                  <li><a href="javascript:;">精细化学品</a></li>
+                  <li><a href="javascript:;">橡塑</a></li>
+                  <li><a href="javascript:;">家纺家饰</a></li>
+                  <li><a href="javascript:;">能源</a></li>
+              </ul>
+              <ul>
+                  <li><a href="javascript:;">家用电器</a></li>
+                  <li><a href="javascript:;">冶金矿产</a></li>
+                  <li><a href="javascript:;">钢铁</a></li>
+              </ul>
+            </div>
+                    <br>
+                    <div class="row pic">
+                        <div class="col-md-6 ">
+                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                        </div>
+                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="tab-pane p-20" id="consumer" role="tabpanel">
                                                                 <div class="p-20 industrial industrial-2">
-                                                                    <b>消费品</b>
-                                                                    <ul style="margin-top: 25px;">
-                                                                        <li><a href="#">汽车用品</a></li>
-                                                                        <li><a href="#"> 办公文教 </a></li>
-                                                                        <li><a href="#">电脑数码类产品</a></li>
-                                                                        <li><a href="#">箱包皮具</a></li>
-                                                                        <li><a href="#">日用百货</a></li>
-                                                                    </ul>
-                                                                    <ul>
-                                                                        <li><a href="#">母婴用品</a></li>
-                                                                        <li><a href="#"> 美妆日化</a></li>
-                                                                        <li><a href="#">家用电器</a></li>
-                                                                        <li><a href="#">工艺品及礼品</a></li>
-                                                                        <li><a href="#">气摩及配件</a></li>
-                                                                    </ul>
-                                                                    <ul>
-                                                                        <li><a href="#">食品及饮料</a></li>
-                                                                        <li><a href="#">玩具</a></li>
-                                                                        <li><a href="#">运动户外</a></li>
-                                                                        <li><a href="#">服装鞋帽</a></li>
-                                                                    </ul>
-                                                                    <br>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                    </div>
+              <b>消费品</b>
+              <div class="xiangqing03"> 
+                <ul style="margin-top: 25px;" class="xiangqing3">
+                    <li><a href="javascript:;">汽车用品</a></li>
+                    <li><a href="javascript:;"> 办公文教 </a></li>
+                    <li><a href="javascript:;">电脑数码类产品</a></li>
+                    <li><a href="javascript:;">箱包皮具</a></li>
+                    <li><a href="javascript:;">日用百货</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript:;">母婴用品</a></li>
+                    <li><a href="javascript:;"> 美妆日化</a></li>
+                    <li><a href="javascript:;">家用电器</a></li>
+                    <li><a href="javascript:;">工艺品及礼品</a></li>
+                    <li><a href="javascript:;">气摩及配件</a></li>
+                </ul>
+                <ul>
+                    <li><a href="javascript:;">食品及饮料</a></li>
+                    <li><a href="javascript:;">玩具</a></li>
+                    <li><a href="javascript:;">运动户外</a></li>
+                    <li><a href="javascript:;">服装鞋帽</a></li>
+                </ul>
+              </div>
+                    <br>
+                    <div class="row pic">
+                        <div class="col-md-6">
+                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                        </div>
+                    </div>
                                                                 </div>
                                                             </div>
                                                             <div class="tab-pane  p-20" id="greenfood" role="tabpanel">
                                                                 <div class="p-20 industrial industrial-2">
-                                                                    <b>绿色食品</b>
-                                                                    <ul style="margin-top: 25px;">
-                                                                        <li><a href="#">特色农产品</a></li>
-                                                                        <li><a href="#">生鲜蔬果</a></li>
-                                                                        <li><a href="#">粮油/干货</a></li>
-                                                                        <li><a href="#">调味品类</a></li>
-                                                                        <li><a href="#">茗茶/冲饮</a></li>
-                                                                    </ul>
-                                                                    <ul>
-                                                                        <li><a href="#">营养保健食品 </a></li>
-                                                                        <li><a href="#">休闲零食 </a></li>
-                                                                        <li><a href="#">饮料</a></li>
-                                                                        <li><a href="#">牛奶乳品 </a></li>
-                                                                        <li><a href="#">美酒佳酿</a></li>
-                                                                    </ul>
-                                                                    <br>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                    </div>
+            <b>绿色食品</b>
+            <div class="xiangqing04"> 
+              <ul style="margin-top: 25px;" class="xiangqing4">
+                  <li><a href="javascript:;">特色农产品</a></li>
+                  <li><a href="javascript:;">生鲜蔬果</a></li>
+                  <li><a href="javascript:;">粮油/干货</a></li>
+                  <li><a href="javascript:;">调味品类</a></li>
+                  <li><a href="javascript:;">茗茶/冲饮</a></li>
+              </ul>
+              <ul>
+                  <li><a href="javascript:;">营养保健食品 </a></li>
+                  <li><a href="javascript:;">休闲零食 </a></li>
+                  <li><a href="javascript:;">饮料</a></li>
+                  <li><a href="javascript:;">牛奶乳品 </a></li>
+                  <li><a href="javascript:;">美酒佳酿</a></li>
+              </ul>
+            </div>
+                    <br>
+                    <div class="row pic">
+                        <div class="col-md-6">
+                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                        </div>
+                        <div class="col-md-6">
+                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                        </div>
+                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="tab-pane p-20" id="commercialservices" role="tabpanel">
+                                                            <div class="tab-pane p-20 " id="commercialservices" role="tabpanel">
                                                                 <div class="p-20 industrial industrial-2">
-                                                                    <b>商务服务</b>
-                                                                    <ul style="margin-top: 25px;">
-                                                                        <li><a href="#">广电传媒</a></li>
-                                                                        <li><a href="#">商务服务</a></li>
-                                                                        <li><a href="#">项目合作</a></li>
-                                                                        <li><a href="#">代理</a></li>
-                                                                    </ul>
-                                                                    <br>
-                                                                    <div class="row">
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                        <div class="col-md-6">
-                                                                            <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
-                                                                        </div>
-                                                                    </div>
+                  <b>商务服务</b>
+                  <div class="xiangqing05"> 
+                    <ul style="margin-top: 25px;"class="xiangqing5">
+                        <li><a href="javascript:;">广电传媒</a></li>
+                        <li><a href="javascript:;">商务服务</a></li>
+                        <li><a href="javascript:;">项目合作</a></li>
+                        <li><a href="javascript:;">代理</a></li>
+                    </ul>
+                  </div>
+                          <br>
+                          <div class="row pic">
+                              <div class="col-md-6">
+                                  <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                              </div>
+                              <div class="col-md-6">
+                                  <img class="img-industrial" src="/ungmhome/images/advertising.png"> 
+                              </div>
+                          </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
+
                                                </div>
                                                <div class="row-roll padd wrap wrap-1">
                                                     <div class="col-md-3" align="center">
@@ -392,6 +609,7 @@
                                                     </div>
                                                </div>
                                            </div> 
+
                                            <div class="col-md-4 SUPPLIER-r" align="center">
                                                <div class="row padd SUPPLIER-r-top" align="center">
                                                    <div class="col-md-4" style="padding-bottom: 10px;"><img class="img-responsive" src="/ungmhome/images/user.png" style="background-color: #f9f9f9;border-radius: 4px;"></div>
