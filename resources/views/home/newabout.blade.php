@@ -6,18 +6,19 @@
 
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
 <body>
     <div class="main">
        
         <!--2.图片区-->
         <div class="img-responsive pic">
-            <img href="/ungmhome/images/aboutus.jpg" alt="">
+            <img src="/ungmhome/images/aboutus.jpg" alt="">
         </div>
         <!--3.公司介绍区-->
         <div class="company">
             <div class="container">
                 <div class="text-center">
-                    <img href="/ungmhome/images/aboutus1.png" alt="">
+                    <img src="/ungmhome/images/aboutus1.png" alt="">
                 </div>
                 <div class="txt">
                     <p>
@@ -28,13 +29,13 @@
                     </p>
                 </div>
                 <div class="img-responsive">
-                    <img href="/ungmhome/images/aboutus.jpg" alt="">
+                    <img src="/ungmhome/images/aboutus.jpg" alt="">
                 </div>
             </div>
             <div class="brand">
                 <div class="container">
                     <div class="text-center brand1">
-                        <img href="/ungmhome/images/aboutus2.png" alt="">
+                        <img src="/ungmhome/images/aboutus2.png" alt="">
                     </div>
                     <div class="row brand-top">
                         <div class="col-md-6">

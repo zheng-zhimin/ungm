@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="/ungmhome/css/header.css">
     <link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
     <link rel="stylesheet" href="/ungmhome/css/footer.css">
-
+    <link href="/ungmhome/images/ungm.png" type="image/x-iocn" rel="shortcut icon" />
     
 </head>
-<style type="text/css">
+<!-- <style type="text/css">
     /**注册页面样式**/
 .logNav{
     background-color: #ffffff;
@@ -145,7 +145,7 @@
 .logBox .logBtn input.logonHide{
     background-color: #999999;
 }
-</style>
+</style> -->
 <body>
     <div class="main">
         <!--1.网页头部-->
@@ -174,12 +174,14 @@
         <div class="container">
             <div class="logBox">
 
+
+
 <!-- 显示错误的信息-->
 @if (count($errors) > 0)
-    <div class="mws-form-message error">
-        <ul>
+    <div  class="alert alert-warning" data-dismiss="alert" aria-label="Close">
+        <ul class="text-warning">
             @foreach ($errors->all() as $error)
-                <li><!-- 做个样式 -->{{ $error }}</li>
+                <li  class="fa fa-exclamation-triangle">{{ $error }}</li>
             @endforeach
         </ul>
     </div>
@@ -294,7 +296,7 @@
 <script src="/ungmhome/js/jquery.js"></script>
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
 <script>
-/*$(".logon").click(function(){
+$(".logon").click(function(){
     var phone=$("#phone").val();
     var password=$("#password").val();
     var passwordagain=$("#passwordagain").val();
@@ -302,15 +304,19 @@
     var sel=$(".sel").val();
     if(phone==""||password==""||passwordagain==""||code1==""){
         alert("请输入完整");
+        return false;
     }else if(!phone.match(/^1(3[0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|8[0-9]|9[89])\d{8}$/)) {
         alert("手机号码格式不正确！请重新输入");
         $("#phone").focus();
+        return false;
     }else if(!password.match(/^(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/)){
         alert("密码必须6位数以上且不能是纯字母！请重新输入");
         $("#password").focus();
+        return false;
     }else if(password!=passwordagain){
         alert("两次输入的密码不一致，请重新输入");
         $("#passwordagain").focus();
+        return false;
     }else{
        // alert("注册成功");
         //function hello(){ 
@@ -327,7 +333,7 @@ $('.sel').click(function(){
     } else {
         $('.logon').attr('disabled',false).removeClass('logonHide');
     }
-})*/
+})
 </script>
 
 <script type="text/javascript">

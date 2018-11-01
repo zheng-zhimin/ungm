@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-
+    <link href="/ungmhome/images/ungm.png" type="image/x-iocn" rel="shortcut icon" />
     
     <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
 
@@ -85,7 +85,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="a3" href="/home/ct" >国际贸易</a>
+                    <a class="a3" href="/home/ct" >国内贸易</a>
                     <ul class="dropdown-menu">
                         <li><a href="#">国内贸易数据中心</a></li>
                         <li><a href="#">商务热点</a></li>

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/ungmhome/css/base.css">
     <link rel="stylesheet" href="/ungmhome/css/header.css">
     <link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
-
+     <link href="/ungmhome/images/ungm.png" type="image/x-iocn" rel="shortcut icon" />
     <link rel="stylesheet" href="/ungmhome/css/footer.css">
   
     
@@ -206,12 +206,15 @@
         var pass=$(".pass").val();
         if(!pho.match(/^1(3[0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|8[0-9]|9[89])\d{8}$/)) {
             alert("手机号码格式不正确！请重新输入");
+        
         $(".phone").focus();
+        return false;
         }else if( !pass.match(/^(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/) ) 
             {
                  alert("密码必须6位数以上且不能是纯字母！请重新输入");
 
                 $(".pass").focus();
+                return false;
 
             }else{
               // alert("登录成功");

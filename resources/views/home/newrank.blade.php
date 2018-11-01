@@ -9,22 +9,22 @@
 
        
 
-
+<link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
     <div class="main">
       
        
         <!--2.图片区-->
         <div class="img-responsive pic">
-            <img src="images/aboutus.jpg" alt="">
+            <img src="/ungmhome/images/aboutus.jpg" alt="">
         </div>
         <!--3.排名推广区-->   
         <div class="ranking">
             <div class="container">
                 <div class="text-center">
-                    <img src="images/ranking1.png" alt="">
+                    <img src="/ungmhome/images/ranking1.png" alt="">
                 </div>
                 <div class="rankingOne">
-                    <img src="images/ranking2.png" alt="">
+                    <img src="/ungmhome/images/ranking2.png" alt="">
                 </div>
                 <div class="rankingTwo">
                     <div class="rankList">

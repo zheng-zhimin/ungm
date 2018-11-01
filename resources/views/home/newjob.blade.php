@@ -7,7 +7,7 @@
 
 @section('content')
 
-
+<link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
 <style>
   .col-md-6{
     padding-right:20px;

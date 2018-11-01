@@ -7,7 +7,7 @@
 
 @section('content')
 
-  
+  <link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
     <div class="main">
        
         <!--2.图片区-->
