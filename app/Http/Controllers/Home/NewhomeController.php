@@ -10,6 +10,12 @@ use DB;
 use App\Models\Admin\Buyoffer;
 use App\Models\Admin\Advertise;//前台广告位模型,后台可管理
 use App\Models\Admin\Column;//用到了栏目
+
+use App\Models\Sup\Sup;   //四个供应商推荐表
+use App\Models\Sup\Server;//四个供应商推荐表
+use App\Models\Sup\Active;//四个供应商推荐表
+use App\Models\Sup\Credit;//四个供应商推荐表
+
 class NewhomeController extends Controller
 {
     /**
@@ -29,13 +35,23 @@ class NewhomeController extends Controller
         //处理招商数据
         $data2=Buyoffer::orderBy('id','desc')->get();
         $data3=Buyoffer::orderBy('id','asc')->get();
+        $buyinfo=Buyoffer::orderBy('id','asc')->limit(3)->get();//
 
 
         //分配顶级栏目
         //$firstlanmu=Column::where('pid','0')->get();
         ///,'firstlanmu'=>$firstlanmu
         
-        return view('home.newindex',['data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5]);
+        //处理四种供应商推荐位置
+        $server=Server::limit(3)->get()->toArray();
+        $sup   =   Sup::limit(3)->get()->toArray();
+        $credit=Credit::limit(3)->get()->toArray();
+        $active=Active::limit(3)->get()->toArray();
+       /* echo '<pre>';
+        var_dump($server,$sup,$credit,$active);
+        dd(0);*/
+        
+        return view('home.newindex',['data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5,'buyinfo'=>$buyinfo,'server'=>$server,'sup'=>$sup,'credit'=>$credit,'active'=>$active]);
     }
 
     /**
@@ -185,6 +201,99 @@ class NewhomeController extends Controller
         return $res;
         
     }
+
+    //findbuy() 前台用户搜索信息匹配买家
+    public function findbuy(Request $request)
+    {
+        $key=$request->key;
+        $datas=Buyoffer::where('project','like','%'.$key.'%')->limit(3)->get();
+       return $datas;
+    }
+
+  /*  //findsell() 前台用户搜索信息匹配卖家
+    public function findsell(Request $request)
+    {
+        $key=$request->key;
+        $datas=Buyoffer::where('project','like','%'.$key.'%')->limit(3)->get();
+       return $datas;
+    }
+*/
+    //前台超级搜搜
+    public function search(Request $req)
+    {
+
+        $key=$req->input('findbuy');
+        $data=Buyoffer::where('project','like','%'.$key.'%')->paginate(5);
+        var_dump($data);
+        return view('home.search',['data'=>$data]);
+
+       /*  //接收分页数据 默认为5
+        $count=$request->input('count',5);
+
+        //接收搜索数据 默认为空
+        $for = $request -> input('for','');
+
+        //以数组的形式接收分页和搜索数据，目的是返回给主页面
+        $params=$request->all();
+
+        //按照搜索查询数据，不传值全搜索。并进行分页
+        $data = FriendlyLink:: where('title','like','%'.$for.'%')->paginate($count);
+
+        //返回视图
+        return view('home.search',['data'=>$data,'params'=>$params]);*/
+    }
+
+
+
+    //供应商发布产品
+    public function subpublish()
+    {
+
+        return view('home.subpublish');
+    }
+
+
+
+
+
+
+
+
+
+
+    //三个商务热点
+    public function hone()
+    {
+        return view('home.businesshot.one');
+    } 
+
+    public function htwo()
+    {
+        return view('home.businesshot.two');
+    }
+
+     public function hthree()
+    {
+        return view('home.businesshot.three');
+    }
+
+    //三个政策解读
+    public function pone()
+    {
+        return view('home.businesspolicy.one');
+    } 
+
+    public function ptwo()
+    {
+        return view('home.businesspolicy.two');
+    }
+
+     public function pthree()
+    {
+        return view('home.businesspolicy.three');
+    }
+
+
 
 
    

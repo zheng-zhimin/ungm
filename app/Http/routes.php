@@ -210,7 +210,23 @@ Route::get('/home/soso','SosoController@soso');
 
 //前台获取分类栏目儿子栏目数据ajax路由
 Route::post('/list/son','Home\NewhomeController@son');//前台获取分类栏目儿子广告图片数据ajax路由
-Route::post('/list/pic','Home\NewhomeController@pic');
+Route::post('/list/pic','Home\NewhomeController@pic');//获取栏目下广告图片的ajax路由,后期这些都可以加缓存
+/*Route::post('/list/fb','Home\NewhomeController@findbuy');//获取搜索框查询采购商的ajax路由,后期这些都可以加缓存
+Route::post('/list/fs','Home\NewhomeController@findsell');//获取搜索框查询供应商的ajax路由,后期这些都可以加缓存*/
+//q前台超级搜索
+Route::post('/home/search','Home\NewhomeController@search');
+//点击发布供应产品的路由
+Route::get('/home/subpublish','Home\NewhomeController@subpublish');
+
+//商务三个热点页面
+Route::get('/home/businesshot/one','Home\NewhomeController@hone');
+Route::get('/home/businesshot/two','Home\NewhomeController@htwo');
+Route::get('/home/businesshot/three','Home\NewhomeController@hthree');
+//政策解读三个页面
+Route::get('/home/businesspolicy/one','Home\NewhomeController@pone');
+Route::get('/home/businesspolicy/two','Home\NewhomeController@ptwo');
+Route::get('/home/businesspolicy/three','Home\NewhomeController@pthree');
+
 
 
 

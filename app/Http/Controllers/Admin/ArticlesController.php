@@ -86,7 +86,7 @@ class ArticlesController extends Controller
 
         }
         //获取文章的作者
-        $articles -> author = session('adminUser')->username;
+        //$articles -> author = session('adminUser')->username;
         //把数据保存到数据库
         $res = $articles -> save();
         if($res){
