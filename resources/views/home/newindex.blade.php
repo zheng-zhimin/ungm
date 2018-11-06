@@ -30,7 +30,13 @@
     }
     .viewPager img{
             width:100%;
-            height:600px;}
+            height:600px;
+          }
+    .slh{
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+    }
 </style>
 
 <body>
@@ -75,53 +81,42 @@
                                         <div class="row">
                                            <div class="col-md-8"> 
                                                <div class="row">
-                                                    <div class="col-md-10"><input class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应采购商" name=""></div>
-                                                    <div class="col-md-2" style="padding-right: 0px;"><button type="" class="btn btn-lg btn-block btn-s btn-success" ><i class="glyphicon glyphicon-search"></i></button></div>
+                                                    <div class="col-md-10">
+                                                    <form action="/home/search" method="post" accept-charset="utf-8">
+                                                    {{csrf_field()}}
+                                                      <input class="form-control" type="text"  placeholder="请输入您的产品名称，为您匹配对应采购商" name="findbuy">
+                                                    
+                                                   
+                                                   
+                                                    </div>
+                                                    <div class="col-md-2" style="padding-right: 0px;">
+                                                      <button type="submit" class="btn btn-lg btn-block btn-s btn-success" ><i class="glyphicon glyphicon-search"></i></button>
+                                                    </div>
+                                                  </form>
                                                </div>
-                                               <div class="row row-down">
-                                                    <div class="col-md-4" align="center">
-                                                        <div class="padd">
-                                                            <h4>快恢复二极管&nbsp;GP30KL</h4>
-                                                            <p>采购数量：大量</p>
-                                                            <hr>
-                                                            <ul align="left">
-                                                                <li>发布时间：<span>2018-10-25</span></li>
-                                                                <li>戒指日期：<span>长期有效</span></li>
-                                                                <li>采购类型：<span>二极管</span></li>
-                                                                <li>已有报价：<span>0条</span></li>
-                                                            </ul>
-                                                            <button type="" class="btn btn-lg btn-block btn-success">立即沟通</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4" align="center">
-                                                        <div class="padd">
-                                                            <h4>快恢复二极管&nbsp;GP30KL</h4>
-                                                            <p>采购数量：大量</p>
-                                                            <hr>
-                                                            <ul align="left">
-                                                                <li>发布时间：<span>2018-10-25</span></li>
-                                                                <li>戒指日期：<span>长期有效</span></li>
-                                                                <li>采购类型：<span>二极管</span></li>
-                                                                <li>已有报价：<span>0条</span></li>
-                                                            </ul>
-                                                            <button type="" class="btn btn-lg btn-block btn-success">立即沟通</button>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-4" align="center">
-                                                        <div class="padd">
-                                                            <h4>快恢复二极管&nbsp;GP30KL</h4>
-                                                            <p>采购数量：大量</p>
-                                                            <hr>
-                                                            <ul align="left">
-                                                                <li>发布时间：<span>2018-10-25</span></li>
-                                                                <li>戒指日期：<span>长期有效</span></li>
-                                                                <li>采购类型：<span>二极管</span></li>
-                                                                <li>已有报价：<span>0条</span></li>
-                                                            </ul>
-                                                            <button type="" class="btn btn-lg btn-block btn-success">立即沟通</button>
-                                                        </div>
-                                                    </div>
-                                               </div>
+
+                   <div class="row row-down xq">
+
+                      @foreach( $buyinfo as $v )
+                        <div class="col-md-4" align="center">
+                            <div class="padd">
+                                <h4 class="slh">{{$v['project']}}</h4>
+                                <p  class="slh">采购数量：{{$v['count']}}</p>
+                                <hr>
+                                <ul align="left">
+                                    <li class="slh">发布时间：<span>{{$v['published']}}</span></li>
+                                    <li class="slh">戒指日期：<span>{{$v['deadline']}}</span></li>
+                                    <li class="slh">采购类型：<span>{{$v['xingzhi']}}</span></li>
+                                    <li class="slh">报价：<span>{{$v['price']}}</span></li>
+                                </ul>
+                                <button type="" class="btn btn-lg btn-block btn-success">立即沟通</button>
+                            </div>
+                        </div>
+                      @endforeach
+
+                   </div>
+
+
                                                <div class="row-roll padd wrap" style="width: 681px;">
                                                     <div class="col-md-4 dowebok" align="left">
                                                        <ul>
@@ -149,7 +144,7 @@
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-4 p" align="center">
-                                                       <p><a href="#">查看更多求购动态</a></p>
+                                                       <p><a href="/home/buymessage/second">查看更多求购动态</a></p>
                                                     </div>
                                                </div>
                                            </div> 
@@ -160,16 +155,16 @@
   <div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
-  <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
+  <div class="col-md-4 con"><p><a href="/home/subpublish">发布产品</a></p><p><a href="#">我的关注</a></p></div>
   <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
   <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block"><a href="/home/newlogin/login">登录</a></bottom></p></div>
   <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success"><a href="/home/newlogin/register">注册</a></bottom></p></div>
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
-    <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">    
+    <img class="img-responsive"src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
-    <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
+    <div class="col-md-4 con"><p><a href="#">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
     <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
 @endif                                              
                                              
@@ -258,7 +253,7 @@
 
                      for(var i=0;i<datas.length;i++){
 
-                        var xiangqing1= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        var xiangqing1= "<li><a href='/home/product/third'>"+datas[i].cname+"</a></li>";
                         $('.xiangqing1').append(xiangqing1);
                       }
 
@@ -578,33 +573,39 @@
                                                     <div class="col-md-3" align="center">
                                                        <ul>
                                                             <li><span>诚信供应商推荐</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站1</span></li>
+                                                          @foreach($credit as $v)
+                                                            <li><span>{{$v['name']}}</span></li>
+                                                          @endforeach
+                                                           
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3" align="center">
                                                        <ul>
                                                             <li><span>活跃供应商推荐</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站1</span></li>
+                                                          @foreach($active as $v)
+                                                            <li><span>{{$v['name']}}</span></li>
+                                                          @endforeach
+                                                            
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3" align="center">
                                                        <ul>
                                                             <li><span>UNGM供应商推荐</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站1</span></li>
+
+                                                            @foreach($sup as $v)
+                                                            <li><span>{{$v['name']}}</span></li>
+                                                          @endforeach
+                                                          
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3" align="center">
                                                        <ul>
                                                             <li><span>UNGM服务商推荐</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站位</span></li>
-                                                            <li><span>占位文字站位站1</span></li>
+
+                                                            @foreach($server as $v)
+                                                            <li><span>{{$v['name']}}</span></li>
+                                                          @endforeach
+                                                          
                                                         </ul>
                                                     </div>
                                                </div>
@@ -612,17 +613,26 @@
 
                                            <div class="col-md-4 SUPPLIER-r" align="center">
                                                <div class="row padd SUPPLIER-r-top" align="center">
-                                                   <div class="col-md-4" style="padding-bottom: 10px;"><img class="img-responsive" src="/ungmhome/images/user.png" style="background-color: #f9f9f9;border-radius: 4px;"></div>
-                                                   <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
-                                                   <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
-                                                   <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block">登录</bottom></p></div>
-                                                   <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success">注册</bottom></p></div>
-                                               </div>
-                                               <!-- <div class="row padd SUPPLIER-r-top" align="center">
-                                                   <div class="col-md-4" style="padding-bottom: 10px;"><img class="img-responsive" src="/ungmhome/images/user.png" style="background-color: #f9f9f9;border-radius: 4px;"></div>
-                                                   <div class="col-md-4 con"><p><a href="#">发布产品</a></p><p><a href="#">我的订单</a></p></div>
-                                                   <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
-                                               </div> -->
+
+  @if( ! Cache::has('homeuser') )
+  <div class="col-md-4" style="padding-bottom: 10px;">
+  <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
+  </div>
+  <div class="col-md-4 con"><p><a href="/home/buypublish/">发布产品</a></p><p><a href="#">我的订单</a></p></div>
+  <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
+  <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block"><a href="/home/newlogin/login">登录</a></bottom></p></div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success"><a href="/home/newlogin/register">注册</a></bottom></p></div>
+@else
+
+    <div class="col-md-4" style="padding-bottom: 10px;">
+    <img class="img-responsive" src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
+    </div>
+    <div class="col-md-4 con"><p><a href="#">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
+    <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
+@endif
+
+                                               </div> 
+
                                                <div class="row" align="center">
 
                                                    @foreach($data5 as $v)

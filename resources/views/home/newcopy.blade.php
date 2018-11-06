@@ -14,7 +14,7 @@
        
         <!--2.图片区-->
         <div class="img-responsive pic">
-            <img src="/ungmhome/images/aboutus.jpg" alt="">
+            <img src="/ungmhome/images/使用协议版权隐私.jpg" alt="">
         </div>
         <!--3.版权隐私区-->
         <div class="privacy">

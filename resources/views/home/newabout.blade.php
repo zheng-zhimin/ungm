@@ -12,13 +12,13 @@
        
         <!--2.图片区-->
         <div class="img-responsive pic">
-            <img src="/ungmhome/images/aboutus.jpg" alt="">
+            <img src="/ungmhome/images/关于我们.jpg" alt="">
         </div>
         <!--3.公司介绍区-->
         <div class="company">
             <div class="container">
                 <div class="text-center">
-                    <img src="/ungmhome/images/aboutus1.png" alt="">
+                    <img src="/ungmhome/images/关于我们.png" alt="">
                 </div>
                 <div class="txt">
                     <p>
@@ -29,7 +29,7 @@
                     </p>
                 </div>
                 <div class="img-responsive">
-                    <img src="/ungmhome/images/aboutus.jpg" alt="">
+                    <img src="/ungmhome/images/关于我们.jpg" alt="">
                 </div>
             </div>
             <div class="brand">

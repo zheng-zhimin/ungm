@@ -186,7 +186,7 @@
         </ul>
     </div>
 @endif
-                <div class="logOne text-center">
+                <div class="logOne">
                     <p>
                         <span>注册全球购会员帐号</span>
                         <span class="one">已有账号，去<a href="/home/newlogin/login">登录</a></span>
@@ -196,19 +196,22 @@
 
         <form action="/home/newlogin/doregister" method="post">
                             {{csrf_field()}}
-                <div class="logTwo text-center">
+                <div class="logTwo">
                     <ul>
                         <li><!-- {{ old('phone') }} -->
                             <label for=""><span>手机号码 :</span></label>
                             <input type="phone" name="phone" id="phone" value="{{ old('phone') }}" placeholder="手机号码做为登录账号"/>
+                            <i></i>
                         </li>
                         <li>
                             <label for=""><span>设置密码 :</span></label>
-                            <input type="password" name="password" id="password" value="{{ old('password') }}" placeholder="建议使用至少两种字符组合"/>
+                            <input type="password" name="password" id="password" value="{{ old('password') }}" placeholder="建议使用至少两种字符组合6位数以上的密码格式"/>
+                            <i></i>
                         </li>
                         <li>
                             <label for=""><span>确认密码 :</span></label>
                             <input type="password" name="repassword" id="passwordagain" value="{{ old('repassword') }}" placeholder="再次输入密码"/>
+                            <i></i>
                         </li>
                         <li>
                             <label for=""><span>短信验证 :</span></label>
@@ -217,12 +220,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="readBtn text-center">
+                <div class="readBtn">
                     <label for="">
                         <input type="checkbox" class="sel" checked="checked"><span>阅读并接受<a href="/home/copy">《全球购网站服务协议》</a></span>
                     </label>
                 </div>
-                <div class="logBtn text-center">
+                <div class="logBtn">
                     <input type="submit" class="logon loginHide" value="立即注册">
                 </div>
         </form>
@@ -332,6 +335,46 @@ $('.sel').click(function(){
         $('.logon').attr('disabled',true).addClass('logonHide');
     } else {
         $('.logon').attr('disabled',false).removeClass('logonHide');
+    }
+})
+    //手机号
+$('#phone').blur(function(){
+    let $Val = $(this).val();
+    let patrn=/^[1][3,4,5,7,8][0-9]{9}$/;
+    if(!patrn.test($Val) && $Val != ''){
+        $(this).siblings('i').show().addClass('active').text('号码格式不正确');
+        $(this).val('');
+    } else if($Val == ''){
+        $(this).siblings('i').show().addClass('active').text('输入不能为空');
+    } else {
+        $(this).siblings('i').show().removeClass('active').text('');
+    }
+})
+
+//设置密码
+$('#password').blur(function(){
+    let $Val = $(this).val();
+    let patrn=/^(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/;
+    if(!patrn.test($Val) && $Val != ''){
+        $(this).siblings('i').show().addClass('active').text('密码格式不正确');
+        $(this).val('');
+    } else if($Val == ''){
+        $(this).siblings('i').show().addClass('active').text('输入不能为空');
+    } else {
+        $(this).siblings('i').show().removeClass('active').text('');
+    }
+})
+
+//确认密码
+$('#passwordagain').blur(function(){
+    let $Val = $(this).val();
+    if($Val != $('#password').val()){
+        $(this).siblings('i').show().addClass('active').text('密码输入不一致');
+        $(this).val('');
+    } else if($Val == ''){
+        $(this).siblings('i').show().addClass('active').text('输入不能为空');
+    } else {
+        $(this).siblings('i').show().removeClass('active').text('');
     }
 })
 </script>

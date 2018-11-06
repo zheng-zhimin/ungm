@@ -15,7 +15,7 @@
 
 
     <div class="content relationUs">
-        <img src="/ungmhome/images/v.jpg" class="img-responsive banner relationUs-banner" alt="">
+        <img src="/ungmhome/images/联系我们.jpg" class="img-responsive banner relationUs-banner" alt="">
         <div class="container">
             <div class="relation">
                 <h3><img src="/ungmhome/images/loc.png" class="img-responsive" alt="" style="display: inline;margin-right: 5px;">九鼎智成（北京）信息技术股份有限公司</h3>

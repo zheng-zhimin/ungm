@@ -1100,137 +1100,6 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 
 
 
-/**注册页面样式**/
-.logNav{
-	background-color: #ffffff;
-}
-.logNav img{
-	width: 90px;
-	height: 20px;
-	line-height: 70px;
-}
-.logNav a{
-	float:right;
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	color: #666666;
-}
-.logNav a:hover{
-	color: #3477ff;
-}
-.logBox{
-	width:1000px;
-	background-color: #ffffff;
-	box-shadow: 2px 4px 4px 0px 
-		rgba(0, 0, 0, 0.1);
-	margin:0 auto;
-	margin-top:40px;
-	margin-bottom:100px;
-}
-.logBox .logOne{
-	border-bottom:2px solid #f9f9f9;
-	padding-left:156px;
-}
-.logBox .logOne p{
-	font-family: "MicrosoftYaHei-Bold";
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 22px;
-	letter-spacing: 0px;
-	color: #333333;
-	padding:40px 0 20px 0;
-}
-.logBox .logOne .one{
-	float:right;
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	font-weight: normal;
-	line-height: 22px;
-	letter-spacing: 0px;
-	color: #333333;
-	padding-right:26px;
-}
-.logBox .logOne .one a{
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	font-weight: 600;
-	color: #3477ff;
-}
-.logBox .logTwo ul{
-	overflow: hidden;
-	margin-top:56px;
-}
-.logBox .logTwo ul li{
-    margin-bottom: 30px;
-}
-.logBox .logTwo ul li span{
-	font-family: "MicrosoftYaHei-Bold";
-	font-size: 14px;
-	font-weight: 800;
-	line-height: 22px;
-	letter-spacing: 0px;
-	color: #333333;
-	margin-right:16px;
-}
-.logBox .logTwo ul li input{
-	width: 336px;
-	height: 40px;
-	border-radius: 4px;
-	border: solid 1px #d8d8d8;
-	padding-left:14px;
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	color: #999999;
-}
-.logBox .logTwo ul li .code1{
-	width:230px;
-	border-radius: 4px 0 0 4px;
-}
-.logBox .logTwo ul li .code2{
-	width:106px;
-	margin-left:-6px;
-	border-radius: 0 4px 4px 0;
-	border: solid 1px #d8d8d8;
-	background:#ffffff;
-	padding-left:6px;
-}
-.logBox .readBtn{
-	margin-bottom:30px;
-}
-.logBox .readBtn input[type='checkbox']{
-    width: 14px;
-    height: 14px;
-	border-radius: 2px;
-}
-.logBox .readBtn label span{
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	font-weight: normal;
-	color: #999999;
-}
-.logBox .readBtn label a{
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	color: #3477ff;
-}
-.logBox .logBtn input{
-	width: 336px;
-	height: 46px;
-	background-color: #00b7a1;
-	border: none;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	font-family: "MicrosoftYaHei";
-	font-size: 14px;
-	letter-spacing: 0px;
-	color: #ffffff;
-	margin-bottom:40px;
-	margin-left:80px;
-}
-.logBox .logBtn input.logonHide{
-	background-color: #999999;
-}
 
 
 
@@ -1306,6 +1175,1841 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	color: #666666;
 }
 
+/**注册页面样式**/
+.logNav{
+	background-color: #ffffff;
+}
+.logNav img{
+	width: 90px;
+	height: 20px;
+	line-height: 70px;
+}
+.logNav a{
+	float:right;
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	color: #666666;
+}
+.logNav a:hover{
+	color: #3477ff;
+}
+.logBox{
+	width:1000px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	margin:0 auto;
+	margin-top:40px;
+	margin-bottom:100px;
+}
+.logBox .logOne{
+	border-bottom:2px solid #f9f9f9;
+	padding-left:156px;
+}
+.logBox .logOne p{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 22px;
+	letter-spacing: 0px;
+	color: #333333;
+	padding:40px 0 20px 0;
+}
+.logBox .logOne .one{
+	float:right;
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 22px;
+	letter-spacing: 0px;
+	color: #333333;
+	padding-right:26px;
+}
+.logBox .logOne .one a{
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	font-weight: 600;
+	color: #3477ff;
+}
+.logBox .logTwo{
+	width:700px;
+	margin:0 auto;
+}
+.logBox .logTwo ul{
+	overflow: hidden;
+	margin-top:56px;
+}
+.logBox .logTwo ul li{
+    margin-bottom: 30px;
+}
+.logBox .logTwo ul li span{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 14px;
+	font-weight: 800;
+	line-height: 22px;
+	letter-spacing: 0px;
+	color: #333333;
+	margin-right:16px;
+	padding-left:140px;
+}
+.logBox .logTwo ul li input{
+	width: 336px;
+	height: 40px;
+	border-radius: 4px;
+	border: solid 1px #d8d8d8;
+	padding-left:14px;
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	color: #999999;
+}
+.logBox .logTwo ul li .code1{
+	width:230px;
+	border-radius: 4px 0 0 4px;
+}
+.logBox .logTwo ul li .code2{
+	width:106px;
+	margin-left:-6px;
+	border-radius: 0 4px 4px 0;
+	border: solid 1px #d8d8d8;
+	background:#ffffff;
+	padding-left:6px;
+}
+.logBox .readBtn{
+	margin-bottom:30px;
+}
+.logBox .readBtn input[type='checkbox']{
+    width: 14px;
+    height: 14px;
+	border-radius: 2px;
+}
+.logBox .readBtn label span{
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	font-weight: normal;
+	color: #999999;
+}
+.logBox .readBtn label a{
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	color: #3477ff;
+}
+.logBox .logBtn input{
+	width: 336px;
+	height: 46px;
+	background-color: #00b7a1;
+	border: none;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	letter-spacing: 0px;
+	color: #ffffff;
+	margin-bottom:40px;
+	margin-left:80px;
+}
+.logBox .logBtn input.logonHide{
+	background-color: #999999;
+}
+.logOne,.readBtn,.logBtn{
+	text-align: center;
+}
+.logTwo ul li i{
+	display:none;
+	padding-left: 24px;
+	height: 20px;
+	background: url(/ungmhome/images/yes.png) no-repeat left center;
+	color: #999;
+	
+}
+.logTwo ul li i.active{
+	background: url(/ungmhome/images/no.png) no-repeat left center;
+	color: red;
+	
+}
+
+
+/* -------------------------------------------------------------国内贸易开始---------------------------------------------------------------------------- */
+ .domesticTrade .con-2 .row{
+    margin: 0px;
+ }
+ .domesticTrade .img-responsive{
+        display: inline;
+    }
+    .domesticTrade .con{
+        background: url(/ungmhome/images/bgr.png) no-repeat;
+    }
+    .domesticTrade .bid-banner{
+        height: 750px;
+    }
+    .domesticTrade .tex{
+        margin-top: 70px;
+        margin-bottom:38px;
+    }
+    .domesticTrade .tex img{
+        display: inline;
+    }
+    .domesticTrade .domestic{
+        margin-bottom: 50px;
+    }
+    .domesticTrade .domestic .lump{
+        border:1px solid #d8d8d8;
+        padding-top: 55px;
+        padding-bottom:55px;
+        width: 560px;
+        height: 150px;
+        color: #333333;
+    }
+    .domesticTrade .domestic .lump b{
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 30px;
+        font-weight: 900;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        
+    }
+    .domesticTrade .domestic .supplyDemand{
+        background: url(/ungmhome/images/blk1.png) no-repeat;
+        background-position:100px 55px;
+        float: left; 
+        margin:10px 0px;
+    }
+    .domesticTrade .domestic .supplyDemand:hover{
+        background: url(/ungmhome/images/bul1.png) no-repeat;
+        background-position:100px 55px;
+        box-shadow: 6px 6px 19px 0px 
+            rgba(0, 0, 0, 0.1);
+        color: #3477ff;
+    }
+    .domesticTrade .domestic .order{
+        background: url(/ungmhome/images/blk2.png) no-repeat;
+        background-position:100px 55px;
+        float: right; 
+        margin:10px 0px;
+    }
+    .domesticTrade .domestic .order:hover{
+        background: url(/ungmhome/images/bul2.png) no-repeat;
+        background-position:100px 55px;
+        box-shadow: 6px 6px 19px 0px 
+            rgba(0, 0, 0, 0.1);
+        color: #3477ff;
+    }
+    .domesticTrade .domestic .market{
+        background: url(/ungmhome/images/blk3.png) no-repeat;
+        background-position:100px 55px;
+        float: left;
+        margin:10px 0px; 
+    }
+    .domesticTrade .domestic .market:hover{
+        background: url(/ungmhome/images/bul3.png) no-repeat;
+        background-position:100px 55px;
+        box-shadow: 6px 6px 19px 0px
+            rgba(0, 0, 0, 0.1);
+        color: #3477ff;
+    }
+    .domesticTrade .domestic .NetworkStructures{
+        background: url(/ungmhome/images/blk4.png) no-repeat;
+        background-position:100px 55px;
+        float: right; 
+        margin:10px 0px;
+    }
+    .domesticTrade .domestic .NetworkStructures:hover{
+        background: url(/ungmhome/images/bul4.png) no-repeat;
+        background-position:100px 55px;
+        box-shadow: 6px 6px 19px 0px 
+            rgba(0, 0, 0, 0.1);
+        color: #3477ff;
+    }
+
+
+    .domesticTrade .con-3{
+        height: 530px;
+        background:url(/ungmhome/images/domesticTrade-bg.png) no-repeat;
+        padding-top: 50px;
+    }
+    .domesticTrade .con-3 .con-3-lump{
+     
+        height: 430px;
+        padding:40px 40px 35px 40px ;
+        background-color: #ffffff;
+        box-shadow: 2px 4px 4px 0px 
+            rgba(0, 0, 0, 0.1);
+        margin-left: 15px;
+
+    }
+    .domesticTrade .con-3 .con-3-lump:first-child{
+        
+        height: 430px;
+        padding:40px 40px 35px 40px ;
+        background-color: #ffffff;
+        box-shadow: 2px 4px 4px 0px 
+            rgba(0, 0, 0, 0.1);
+        margin-left: 0px;
+
+    }
+    .domesticTrade .con-3 .con-3-lump .lump1{
+        border-left: 6px solid #00b7a1;
+        height: 20px;
+    }
+    .domesticTrade .con-3 .con-3-lump .lump1 span{
+        float: left;
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 18px;
+        font-weight: 600;
+        font-stretch: normal;
+        line-height: 20px;
+        letter-spacing: 0px;
+        color: #333333;
+        margin-left: 10px;
+    }
+    .domesticTrade .con-3 .con-3-lump .lump1 b{
+        float: right;
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 20px;
+        letter-spacing: 0px;
+        color: #666666;
+        
+    }
+    .domesticTrade .con-3 .con-3-lump .lump1 b:hover{
+        color: #3477ff;
+    }
+    .domesticTrade .con-3 .con-3-lump .tex{
+        border-bottom: 1px solid #f9f9f9;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    
+    .domesticTrade .con-3 .con-3-lump .tex .p1{
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 14px;
+        font-weight: 600;
+        font-stretch: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #333333;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .domesticTrade .con-3 .con-3-lump .tex .p2{
+        font-family: ArialNarrow;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 24px;
+        letter-spacing: 0px;
+        color: #666666;
+    }
+
+    .domesticTrade .con-3 .con-3-lump .p1:hover{
+        color: #3477ff;
+    }
+    .domesticTrade .con-3 .con-3-lump .p2:hover{
+        color: #3477ff;
+    }
+/***************************政策解读区***************************/
+.domesticTrade .con-4 .policy{
+    background-color: #f9f9f9;
+    box-shadow: 2px 4px 4px 0px 
+        rgba(0, 0, 0, 0.1);
+    padding:40px 0 100px 0;
+}
+.domesticTrade .con-4 .policy .policyList ul{
+    overflow: hidden;
+    margin-top:40px;
+}
+.domesticTrade .con-4 .policy .policyList ul li{
+    background-color: #ffffff;
+    border:2px solid #efefef;   
+    margin-bottom:10px;
+    padding:30px 60px;
+}
+.domesticTrade .con-4 .policy .policyList ul li:hover{
+    box-shadow:2px 2px 10px 2px #d6d6d6;
+}
+.domesticTrade .con-4 .policy .policyList ul li h2{
+    font-family: "MicrosoftYaHei-Bold";
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #333333;
+}
+.domesticTrade .con-4 .policy .policyList ul li h5{
+    font-family: "MicrosoftYaHei-Bold";
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #666666;
+}
+.domesticTrade .con-4 .policy .policyList ul li h3{
+    font-family: "MicrosoftYaHei-Bold";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0px;
+    color: #333333;
+}
+.domesticTrade .con-4 .policy .policyList ul li h3:hover{
+    color: #3477ff;
+}
+.domesticTrade .con-4 .policy .policyList ul li p{
+    font-family: "MicrosoftYaHei";
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 14px;
+    letter-spacing: 0px;
+    color: #999999;
+    display:inline-block;
+}
+.domesticTrade .con-4 .policy .policyList ul li span{
+    float:right;
+    font-family: "MicrosoftYaHei";
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #999999;
+}
+.domesticTrade .con-4 .policy .policyList ul li span:hover{
+    color: #3477ff;
+}
+.domesticTrade .con-4 .policy .policyBtn{
+    text-align:right;
+    margin-top:40px;
+}
+.domesticTrade .con-4 .policy .policyBtn input{
+    width: 150px;
+    height: 40px;
+    background-color: #00b7a1;
+    border-radius: 4px;
+    border:none;
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 16px;
+    color: #ffffff;
+}
+.domesticTrade .policy .tex{
+    margin-top: 50px;
+    margin-bottom: 38px;
+}
+
+
+.domesticTrade ul,ol {
+    list-style: none;
+}
+
+.domesticTrade .ft-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.domesticTrade .ft-carousel .carousel-inner {
+    position: absolute;
+    bottom: 0;
+    height: 600px;
+}
+
+.domesticTrade .ft-carousel .carousel-inner .carousel-item {
+    float: left;
+    height: 100%;
+}
+
+.domesticTrade .ft-carousel .carousel-item .row{
+    width: 100%;
+    height: 296px;
+}
+.domesticTrade .ft-carousel .carousel-item .col-md-3{
+    height: 296px;
+    padding: 0px;
+}
+
+.domesticTrade .ft-carousel .carousel-indicators {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    text-align: center;
+    font-size: 0;
+    display: block !important;
+}
+
+.domesticTrade .ft-carousel .carousel-indicators span {
+    display: inline-block;
+    width: 30px;
+    height: 6px;
+    background-color: #b1afaf;
+    margin: 0 4px;
+    cursor: pointer;
+}
+
+.domesticTrade .ft-carousel .carousel-indicators span.active {
+    background-color: #00b7a1;
+}
+
+.domesticTrade .ft-carousel .carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 45px;
+    margin-top: -25px;
+    cursor: pointer;
+}
+
+.domesticTrade .ft-carousel .carousel-prev-btn {
+    display: none
+}
+
+.domesticTrade .ft-carousel .carousel-next-btn {
+    display: none
+}
+            .domesticTrade .example {
+                width: 100%;
+                height: 640px;
+                font-size: 40px;
+                text-align: center;
+                margin: 20px auto;
+            }
+            
+            .domesticTrade .carousel-item{ line-height: 336px;color: #fff;font-family:  Arial Black}
+            .domesticTrade .example .ft-carousel  .a{
+                display: block;
+                margin-top: 6px;
+                margin-right: 2px;
+                float: left;
+                width: 6px;
+                height: 19px;
+                background-color: #00b7a1;
+                border: none;
+            }
+            .domesticTrade .example .ft-carousel  b{
+                margin: 0;
+                padding: 0;
+                display: block;
+                float: left;
+                height: 18px;
+                font-family: MicrosoftYaHei-Bold;
+                font-size: 18px;
+                font-weight: 600;
+                font-stretch: normal;
+                line-height: 30px;
+                letter-spacing: 0px;
+                color: #333333;
+                padding-left: 7px;
+            }
+            .domesticTrade .example .ft-carousel .exhibition{
+                height: 30px;
+            }
+            /* .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump:first-child{
+                width: 296px;
+                height: 296px;
+                padding:60px 30px 50px 30px ;
+                background-color: #ffffff;
+                box-shadow: 2px 4px 4px 0px 
+                    rgba(0, 0, 0, 0.1);
+                margin-left: 0px;
+            } */
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .row{
+                margin-top: 7px;
+            }
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump{
+              
+                height: 296px;
+                padding:60px 20px 50px 20px ;
+                background-color: #ffffff;
+                box-shadow: 2px 4px 4px 0px 
+                    rgba(0, 0, 0, 0.1);
+
+                color: #333333;
+                margin-left: 3px;
+                margin-bottom: 6px;
+            }
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump .p1{
+                font-family: MicrosoftYaHei-Bold;
+                font-size: 16px;
+                font-weight: 600;
+                font-stretch: normal;
+                line-height: 24px;
+                letter-spacing: 0px;
+                clear: both;
+                
+            }
+             .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump .p1>span{
+                font-family: ArialNarrow;
+                font-size: 14px;
+                font-weight: 500;
+                letter-spacing: 0px;
+                color: #666666;
+            }
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump:hover{
+                color:#3477ff;
+            }
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump:hover>.p1>span{
+                color:#3477ff;
+            }    
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump img{
+                margin-top:20px;
+                margin-bottom:30px;
+                float: left;
+            }
+/* ------------------------------------------------------------国内贸易结束------------------------------------------------------------------------------------- */
+
+/***************采购发布*****************/
+.purchasingPic{
+	position: relative;
+}
+.purchasingPic .picOne{
+	width:100%;
+    height:400px;
+}
+.purchasingPic .picTwo{
+	position: absolute;
+	bottom: 100px;/*离底下像素*/
+    right: 162px;/*离左边像素*/
+    width: 280px;
+	height: 80px;
+}
+.purchasingDemand ul{
+	display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+.purchasingDemand ul li{
+	width:0;
+	-webkit-box-flex: 1;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.06);
+	margin:20px 24px 40px 0;
+	padding:30px 16px 28px 30px;
+}
+.purchasingDemand ul li:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.purchasingDemand ul .purchasingLast{
+	margin-right:0;
+}
+.purchasingDemand ul li h2{
+	width: 168px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	font-weight: 600;
+	color: #333333;
+}
+.purchasingDemand ul li h4{
+	height:14px;
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #333333;
+	padding:10px 0 40px 30px;
+}
+.purchasingDemand ul li p{
+	height:14px;
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #666666;
+	margin-bottom:8px;
+}
+.purchasingDemand ul li input{
+	width: 150px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	border:none;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	color: #ffffff;
+	margin-top:10px;
+}
+.purchasingOne{
+	margin-bottom:90px;
+}
+.purchasingOne .purchasingTwo{
+	margin-bottom:20px;
+}
+.purchasingOne .purchasingTwo .col-md-2{
+	padding-right:10px;
+}
+.purchasingOne .purchasingTwo .col-md-2 img{
+	width:100%;
+	height:196px;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	
+}
+.purchasingOne .purchasingTwo .col-md-10{
+	height: 198px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+}
+.purchasingOne .purchasingTwo .col-md-10:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.purchasingOne .purchasingTwo .demandLt ul{
+	margin:18px 0 20px 42px;
+	padding:18px 0;
+	border-right:2px solid #f9f9f9;
+}
+.purchasingOne .purchasingTwo .demandLt ul li h4{
+	font-family: MicrosoftYaHei-Bold;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #333333;
+	margin-bottom:18px;
+}
+.purchasingOne .purchasingTwo .demandLt ul li a{
+	font-family: MicrosoftYaHei;
+	height: 14px;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	color: #666666;
+	text-decoration:none;
+}
+.purchasingOne .purchasingTwo .demandLt ul li a:hover{
+	color:#3477ff;
+}
+.purchasingOne .purchasingTwo .demandLt ul li span{
+	color: #eeeeee;
+	margin-left:6px;
+}
+.purchasingOne .purchasingTwo .demandRt ul{
+	padding:36px 40px 40px 40px;
+}
+.purchasingOne .purchasingTwo .demandRt ul li h4{
+	font-family: MicrosoftYaHei-Bold;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #333333;
+	margin-bottom:12px;
+}
+.purchasingOne .purchasingTwo .demandRt ul li span{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height: 34px;
+	color: #666666;
+}
+.purchasingOne .purchasingTwo .demandRt ul li a{
+	font-size: 14px;
+	line-height: 34px;
+	float:right;
+	text-decoration:none;
+}
+.purchasingOne .purchasingTwo .demandRt ul li a:hover{
+	color:#3477ff;
+}
+.purchasingOne .purchasingTwo .demandRt .demandCity{
+	margin-left:114px;
+}
+.purchasingOne .purchasingTwo .demandRt .demandDate{
+	margin-left:30px;
+}
+.purchasingOne .purchasingTwo .demandRt .demandBorder{
+	border-top:2px solid #f9f9f9;
+	border-bottom:2px solid #f9f9f9;
+}
+
+/*********************商务热点（总版本）页面样式*************************/
+/*********************政策解读（总版本）页面样式*************************/
+.businessHot{
+    background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	padding:50px 100px 40px 100px;
+	margin:70px 0 100px 0;
+}
+.businessHot h1{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 38px;
+	font-weight: 600;
+	color: #333333;
+	text-align:center;
+}
+.businessHot p{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height: 24px;
+	color: #666666;
+	text-align:justify; 
+	text-justify:inter-ideograph;
+}
+.businessHot .oneHot{
+	font-size: 12px;
+	text-align:center;
+	margin:28px 0 50px 0;
+}
+.businessHot .oneHot span{
+	color: #5a67a6;
+}
+.businessHot .twoHot{
+	margin-top:20px;
+}
+.businessHot h4{
+	font-weight: 600;
+	margin-top:20px;
+}
+
+/*********************商务热点（总版本）页面样式*************************/
+/*********************政策解读（总版本）页面样式*************************/
+.businessHot{
+    background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	padding:50px 100px 40px 100px;
+	margin:70px 0 100px 0;
+}
+.businessHot h1{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 38px;
+	font-weight: 600;
+	color: #333333;
+	text-align:center;
+}
+.businessHot p{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height: 24px;
+	color: #666666;
+	text-align:justify; 
+	text-justify:inter-ideograph;
+}
+.businessHot .oneHot{
+	font-size: 12px;
+	text-align:center;
+	margin:28px 0 50px 0;
+}
+.businessHot .oneHot span{
+	color: #5a67a6;
+}
+.businessHot .twoHot{
+	margin-top:20px;
+}
+.businessHot h4{
+	font-weight: 600;
+	margin-top:20px;
+}
+/**全球贸易页面样式**/
+/**ungm板块样式**/
+.globalTrade .tradeUngm{
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+}
+.globalTrade .caption img{
+	margin-top:70px;
+}
+.globalTrade .caption h3{
+	margin-top:20px;
+	font-family:"MicrosoftYaHei-Bold";
+	font-size: 16px;
+	font-weight: 600;
+	color: #3477ff;
+}
+.globalTrade .caption p{
+	margin:10px 0 0 286px;;
+	width: 560px;
+	font-family: "MicrosoftYaHei";
+	font-size: 12px;
+	font-weight: 100;
+	letter-spacing: 0px;
+	color: #999999;
+}
+/**图表展示区样式**/
+.tradeList{
+	width: 1200px;
+	margin:44px 0 40px 0;
+}
+.tradeUl{
+	width: 100%;
+}
+.tradeUl ul{
+	overflow: hidden;
+	margin-bottom:88px;
+}
+.tradeUl ul li{
+	width: 274px;
+	padding: 44px 40px 20px 40px;
+	float: left;
+	border: 1px solid #ececec;
+	border-radius: 2px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	box-shadow: 0 1px 4px #0000002e;
+    -webkit-box-shadow: 0 1px 4px #0000002e;
+    -moz-box-shadow: 0 1px 4px #0000002e;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    margin:0 10px 10px 0;
+	height: 305px;
+}
+.tradeUl ul li:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.tradeUl li:nth-child(4n){
+	margin-right: 0;
+}
+.tradeUl li h2{
+	height: 50px;
+	display: -moz-box;
+	display: box;
+	display: -webkit-box;
+}
+.tradeUl li h2 span{
+	font-size: 48px;
+	color: #010101;
+	margin-right: 10px;
+}
+.tradeUl li h2 b{
+	font-size: 18px;
+	display: block;
+	color: #000000;
+	height: 46px;
+	line-height: 50px;
+	background: url(../images/bgBlue.png) no-repeat left bottom;
+}
+.tradeUl li h3{
+	font-size: 12px;
+	color: #333333;
+	padding: 30px 0 14px 0;
+    font-weight: 600;
+}
+.tradeUl li p{
+	font-size: 12px;
+	line-height: 18px;
+	color: #999;
+	text-justify:inter-ideograph;
+	text-align:justify;
+}
+.globalTrade .dataOne h1{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #3477ff;
+	margin-top:40px;
+}
+.globalTrade .dataOne .chartLt img{
+	height: 430px;
+	margin-top:30px;
+}
+.globalTrade .dataOne .chartRt img{
+	height: 430px;
+	margin-top:30px;
+}
+.globalTrade .dataTwo{
+	background-color: #ffffff;
+	box-shadow: 0 1px 4px #0000002e;
+	margin-top:10px;
+}
+.globalTrade .dataTwo h1{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #3477ff;
+	padding:40px 0 30px 0;
+}
+.globalTrade .dataTwo .chartBot img{
+    margin-bottom:68px;
+}
+.globalTrade .dataThree{
+	background-color: #ffffff;
+	box-shadow: 0 1px 4px #0000002e;
+	margin:10px 0 40px 0;
+}
+.globalTrade .dataThree h1{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #3477ff;
+	padding:40px 0 30px 0;
+}
+.globalTrade .dataThree p{
+	font-family: "MicrosoftYaHei";
+	font-size: 12px;
+	font-weight: 600;
+	color: #999999;
+	text-align:right;
+	padding:10px 40px 30px 0;
+}
+
+/**政策解读区样式**/
+.globalTrade .policy{
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	padding:40px 0 100px 0;
+}
+.globalTrade .policy .policyList ul{
+	overflow: hidden;
+	margin-top:40px;
+}
+.globalTrade .policy .policyList ul li{
+	background-color: #ffffff;
+	border:2px solid #f9f9f9;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	margin-bottom:10px;
+	padding:30px 60px;
+}
+.globalTrade .policy .policyList ul li:hover{
+	box-shadow:2px 2px 10px 2px #d6d6d6;
+}
+.globalTrade .policy .policyList ul li h2{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
+	color: #333333;
+}
+.globalTrade .policy .policyList ul li h5{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 16px;
+	font-weight: normal;
+	line-height: 36px;
+	letter-spacing: 0px;
+	color: #666666;
+}
+.globalTrade .policy .policyList ul li h3{
+	font-family: "MicrosoftYaHei-Bold";
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 36px;
+	letter-spacing: 0px;
+	color: #333333;
+}
+.globalTrade .policy .policyList ul li h3:hover{
+	color: #3477ff;
+}
+.globalTrade .policy .policyList ul li p{
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 14px;
+	letter-spacing: 0px;
+	color: #999999;
+	display:inline-block;
+}
+.globalTrade .policy .policyList ul li span{
+	float:right;
+	font-family: "MicrosoftYaHei";
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+.globalTrade .policy .policyList ul li span:hover{
+	color: #3477ff;
+}
+.globalTrade .policy .policyBtn{
+	text-align:right;
+	margin-top:40px;
+}
+.globalTrade .policy .policyBtn input{
+	width: 150px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	border:none;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	color: #ffffff;
+}
+
+/**商务热点查看更多跳转页面样式**/
+.businessMore{
+	padding:70px 0 100px 0;
+}
+.businessMore .businessMoreUl{
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	margin:40px 100px 40px 100px;
+}
+.businessMore .businessMoreUl ul{
+	padding:20px 50px 20px 34px;
+	Overflow:hidden;
+}
+.businessMore .businessMoreUl ul li{
+	border-bottom:1px dashed #eeeeee;
+}
+.businessMore .businessMoreUl ul li img{
+    width: 8px;
+	height: 9px;
+	margin-bottom:4px;
+}
+.businessMore .businessMoreUl ul li span{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 14px;
+	line-height: 70px;
+	font-weight: 600;
+	color: #333333;
+	margin-left:10px;
+}
+.businessMore .businessMoreUl ul li .businessMoreLi{
+	color: #999999;
+	font-weight: normal;
+	float:right;
+}
+.businessMore .businessMoreUl ul .businessMoreEnd{
+	border:none;
+}
+
+/**采购商工业品三级页面样式**/
+/**采购商绿色农业三级页面样式**/
+/**采购商商务服务三级页面样式**/
+/**采购商消费品三级页面样式**/
+/**采购商原材料三级页面样式**/
+.buyerSubpageMRO{
+	padding:40px 0 100px 0;
+}
+.buyerSubpageMRO .topMRO{
+	width:190px;
+	height:180px;
+	float:left;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	text-align:center;
+}
+.buyerSubpageMRO .topMRO h2{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 30px;
+	font-weight: 600;
+	color: #333333;
+	padding:66px 0 14px 0;
+}
+.buyerSubpageMRO .topMRO p{
+	font-family: ArialNarrow-BoldItalic;
+	font-size: 12px;
+	color: #666666;
+}
+.buyerSubpageMRO .botMRO{
+	height: 180px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	margin:0 0 20px 200px;
+}
+.buyerSubpageMRO .botMRO ul{
+	padding:14px 0;
+	text-align:center;
+}
+.buyerSubpageMRO .botMRO ul li{
+	float:left;
+	width:156px;
+	padding:8px 0;
+	border-right:1px solid #f9f9f9;
+}
+.buyerSubpageMRO .botMRO ul li a{
+	text-decoration:none;
+}
+.buyerSubpageMRO .botMRO ul li a:hover{
+	color: #3477ff;
+}
+.buyerSubpageMRO .oneMRO{
+	float:left;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.06);
+}
+.buyerSubpageMRO .oneMRO img{
+	width: 280px;
+	height: 280px;
+}
+.buyerSubpageMRO .twoMRO{
+	height: 280px;
+	margin-left:280px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	padding:40px;
+	margin-bottom:10px;
+}
+.buyerSubpageMRO .twoMRO:hover{
+    box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.buyerSubpageMRO .twoMRO .ltMRO{
+	border-right:2px solid #f9f9f9;
+	width:600px;
+	float:left;
+}
+.buyerSubpageMRO .twoMRO .ltMRO h1{
+    font-family: MicrosoftYaHei-Bold;
+	font-size: 24px;
+	font-weight: 600;
+	color: #333333;
+	margin-bottom:20px;
+}
+.buyerSubpageMRO .twoMRO .ltMRO h1 a{
+    text-decoration:none;
+}
+.buyerSubpageMRO .twoMRO .ltMRO h1 a:hover{
+	color:#3477ff;
+}
+.buyerSubpageMRO .twoMRO .ltMRO ul{
+    width: 540px;
+	height: 120px;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.06);
+	padding:10px 0;
+	border:1px solid #f9f9f9;
+}
+.buyerSubpageMRO .twoMRO .ltMRO ul li{
+	width:268px;
+	float:left;
+	border-right:2px solid #f9f9f9;
+	border-bottom:2px solid #f9f9f9;
+}
+.buyerSubpageMRO .twoMRO .ltMRO ul li label{
+	width:120px;
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height:34px;
+	color: #999999;
+	padding-left:20px;
+	margin-bottom: 0px; 
+	border-right:2px solid #f9f9f9;
+}
+.buyerSubpageMRO .twoMRO .ltMRO ul li input{
+	font-size: 14px;
+	line-height:34px;
+	font-family: MicrosoftYaHei;
+	color: #333333;
+	width:146px;
+	border:none;
+	padding-left:20px;
+}
+.buyerSubpageMRO .twoMRO .ltMRO .threeMRO{
+    border-right:none;
+}
+.buyerSubpageMRO .twoMRO .ltMRO .fourMRO{
+    border-bottom:none;
+}
+.buyerSubpageMRO .twoMRO .ltMRO p{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #999999;
+	margin-top:20px;
+}
+.buyerSubpageMRO .twoMRO .rtMRO{
+	text-align:right;
+}
+.buyerSubpageMRO .twoMRO .rtMRO h2{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 24px;
+	font-weight: 600;
+	color: #ed462f;
+	margin-bottom:20px;
+}
+.buyerSubpageMRO .twoMRO .rtMRO p{
+	font-family: MicrosoftYaHei;
+	font-size: 13px;
+	color: #333333;
+	margin-bottom:4px;
+}
+.buyerSubpageMRO .twoMRO .rtMRO .rtVip{
+	margin:20px 0 38px 0;
+}
+.buyerSubpageMRO .twoMRO .rtMRO input{
+	width: 120px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	border:none;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	color: #ffffff;
+}
 
 
 
+/**采购商绿色农业三级页面样式**/
+.buyerSubpageGF .topMRO{
+	height:110px;
+}
+.buyerSubpageGF .topMRO h2{
+	padding:28px 0 6px 0;
+}
+.buyerSubpageGF .topMRO p{
+	font-size: 16px;
+	color: #1da05b;
+}
+.buyerSubpageGF .botMRO{
+	height: 110px;
+}
+
+
+
+
+/**采购商商务服务三级页面样式**/
+.buyerSubpageBS .topMRO{
+	height:110px;
+}
+.buyerSubpageBS .topMRO h2{
+	padding:28px 0 8px 0;
+}
+.buyerSubpageBS .topMRO p{
+	font-size: 14px;
+	color: #4990ff;
+}
+.buyerSubpageBS .botMRO{
+	height: 110px;
+}
+.buyerSubpageBS .botMRO ul li{
+	padding:30px 0;
+}
+
+
+
+
+/**采购商消费品三级页面样式**/
+.buyerSubpageCG .topMRO{
+	height:150px;
+}
+.buyerSubpageCG .topMRO h2{
+	padding:50px 0 8px 0;
+}
+.buyerSubpageCG .topMRO p{
+	font-size: 14px;
+	color: #43c7e1;
+}
+.buyerSubpageCG .botMRO{
+	height: 150px;
+}
+
+
+
+/**采购商原材料三级页面样式**/
+.buyerSubpageRM .topMRO{
+	height:110px;
+}
+.buyerSubpageRM .topMRO h2{
+	padding:28px 0 6px 0;
+}
+.buyerSubpageRM .topMRO p{
+	font-size: 16px;
+	color: #f49a62;
+}
+.buyerSubpageRM .botMRO{
+	height: 110px;
+}
+
+/**采购商二级页面样式**/
+.purchasingPic .buyerPic{
+	bottom: 100px;/*离底下像素*/
+    left: 252px;/*离左边像素*/
+}
+.buyerSubpage{
+	padding-bottom:100px;
+}
+.buyerSubpage h4{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 24px;
+	font-weight: 600;
+	color: #333333;
+	margin:70px 0 30px 0;
+	padding-left:32px;
+}
+.buyerSubpage h4 i{
+	font-family: ArialNarrow-BoldItalic;
+	font-size: 36px;
+}
+.buyerSubpage h4 a{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	text-decoration:none;
+	float:right;
+	padding-top:20px;
+}
+.buyerSubpage h4 a:hover{
+	color: #3477ff;
+}
+.buyerSubpage .buyerSubpageOne{
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	margin-right:4px;
+	height:520px;
+}
+.buyerSubpage .buyerSubpageOne li{
+	margin:0 20px;
+    font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 56px;
+	color: #333333;
+	border-bottom:2px solid #f9f9f9;
+	text-decoration:none;
+}
+.buyerSubpage .buyerSubpageOne a{
+	text-decoration:none;
+}
+.buyerSubpage .buyerSubpageOne a:hover{
+	color: #3477ff;
+}
+.buyerSubpage .buyerSubpageOne .buyerLi{
+	margin:0;
+	background-color: #3477ff;
+	color: #ffffff;
+	padding:0 18px;
+}
+.buyerSubpage .buyerSubpageOne .buyerLi span{
+	float:right;
+}
+.buyerSubpage .buyerList{
+	position: absolute;
+	z-index:1000;
+	display:none;
+	left:376px;
+	width: 900px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	border: solid 2px #3477ff;
+	padding:20px 0;
+}
+.buyerSubpage .buyerList ul li{
+	float:left;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	line-height: 34px;
+	color: #666666;
+	width:148px;
+	text-align:center;
+}
+.buyerSubpage .buyerList ul li a{
+	text-decoration:none;
+}
+.buyerSubpage .buyerList ul li a:hover{
+	color: #3477ff;
+}
+.buyerSubpage .buyerSubpageTwo{
+	position: relative;
+	height:520px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	padding:20px 20px 30px 20px;
+	margin-left:2px;
+}
+.buyerSubpage .buyerSubpageTwo a{
+	text-decoration:none;
+}
+.buyerSubpage .buyerSubpageTwo a:hover{
+	color: #3477ff;
+}
+.buyerSubpage .buyerSubpageTwo ul{
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	text-align:center;
+}
+.buyerSubpage .buyerSubpageTwo ul li{
+	font-family: MicrosoftYaHei;
+	font-size: 12px;
+	color: #666666;
+}
+.buyerSubpage .buyerSubpageTwo ul li h5{
+	font-family: ArialNarrow-Bold;
+	font-size: 18px;
+	font-weight: 600;
+	color: #333333;
+	padding:34px 0 20px 0;
+}
+.buyerSubpage .buyerSubpageTwo ul .buyerBor{
+	padding-bottom:30px;
+	border-bottom:2px solid #f9f9f9;
+}
+.buyerSubpage .buyerSubpageTwo .buyerSubpageThree{
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	color: #333333;
+	
+}
+.buyerSubpage .buyerSubpageTwo .buyerSubpageThree:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+	color:#3477ff;
+}
+.buyerSubpage .buyerSubpageTwo .buyerTop{
+	margin-top:10px;
+}
+.buyerSubpage .buyerSubpageTwo .buyerSubpageThree img{
+	width:100%;
+	height:154px;
+}
+.buyerSubpage .buyerSubpageTwo .buyerSubpageThree h6{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 13px;
+	font-weight: 600;
+	margin:18px 0 12px 10px;
+}
+.buyerSubpage .buyerSubpageTwo .buyerSubpageThree p{
+	font-family: MicrosoftYaHei;
+	font-size: 12px;
+	color: #999999;
+	padding:0px 0px 20px 10px;
+}
+/***************供应商二级页页面样式*****************/
+.purchasingPic{
+	position: relative;
+}
+.purchasingPic .picOne{
+	width:100%;
+    height:400px;
+}
+.purchasingPic .picTwo{
+	position: absolute;
+	bottom: 100px;/*离底下像素*/
+    right: 162px;/*离左边像素*/
+    width: 280px;
+	height: 80px;
+}
+.purchasingDemand ul{
+	display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+.purchasingDemand ul li{
+	width:0;
+	-webkit-box-flex: 1;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.06);
+	margin:20px 24px 40px 0;
+	padding:30px 16px 28px 30px;
+}
+.purchasingDemand ul li:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.purchasingDemand ul .purchasingLast{
+	margin-right:0;
+}
+.purchasingDemand ul li h2{
+	width: 168px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	font-weight: 600;
+	color: #333333;
+}
+.purchasingDemand ul li h4{
+	height:14px;
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #333333;
+	padding:10px 0 40px 30px;
+}
+.purchasingDemand ul li p{
+	height:14px;
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #666666;
+	margin-bottom:8px;
+}
+.purchasingDemand ul li input{
+	width: 150px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	border:none;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	color: #ffffff;
+	margin-top:10px;
+}
+.purchasingOne{
+	margin-bottom:90px;
+}
+.purchasingOne .purchasingTwo{
+	margin-bottom:20px;
+}
+.purchasingOne .purchasingTwo .col-md-2{
+	padding-right:10px;
+}
+.purchasingOne .purchasingTwo .col-md-2 img{
+	width:100%;
+	height:196px;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	
+}
+.purchasingOne .purchasingTwo .col-md-10{
+	height: 198px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+}
+.purchasingOne .purchasingTwo .col-md-10:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.purchasingOne .purchasingTwo .demandLt ul{
+	margin:18px 0 20px 42px;
+	padding:18px 0;
+	border-right:2px solid #f9f9f9;
+}
+.purchasingOne .purchasingTwo .demandLt ul li h4{
+	font-family: MicrosoftYaHei-Bold;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #333333;
+	margin-bottom:18px;
+}
+.purchasingOne .purchasingTwo .demandLt ul li a{
+	font-family: MicrosoftYaHei;
+	height: 14px;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	color: #666666;
+	text-decoration:none;
+}
+.purchasingOne .purchasingTwo .demandLt ul li a:hover{
+	color:#3477ff;
+}
+.purchasingOne .purchasingTwo .demandLt ul li span{
+	color: #eeeeee;
+	margin-left:6px;
+}
+.purchasingOne .purchasingTwo .demandRt ul{
+	padding:36px 40px 40px 40px;
+}
+.purchasingOne .purchasingTwo .demandRt ul li h4{
+	font-family: MicrosoftYaHei-Bold;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 16px;
+	color: #333333;
+	margin-bottom:12px;
+}
+.purchasingOne .purchasingTwo .demandRt ul li span{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height: 34px;
+	color: #666666;
+}
+.purchasingOne .purchasingTwo .demandRt ul li a{
+	font-size: 14px;
+	line-height: 34px;
+	float:right;
+	text-decoration:none;
+}
+.purchasingOne .purchasingTwo .demandRt ul li a:hover{
+	color:#3477ff;
+}
+.purchasingOne .purchasingTwo .demandRt .demandCity{
+	margin-left:114px;
+}
+.purchasingOne .purchasingTwo .demandRt .demandDate{
+	margin-left:30px;
+}
+.purchasingOne .purchasingTwo .demandRt .demandBorder{
+	border-top:2px solid #f9f9f9;
+	border-bottom:2px solid #f9f9f9;
+}
+
+/**供应商工业品三级页面样式**/
+/**供应商绿色农业三级页面样式**/
+/**供应商商务服务三级页面样式**/
+/**供应商消费品三级页面样式**/
+/**供应商原材料三级页面样式**/
+.supplierMRO{
+	padding:40px 0 100px 0;
+}
+.supplierMRO .topMRO{
+	width:190px;
+	height:180px;
+	float:left;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	text-align:center;
+}
+.supplierMRO .topMRO h2{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 30px;
+	font-weight: 600;
+	color: #333333;
+	padding:66px 0 14px 0;
+}
+.supplierMRO .topMRO p{
+	font-family: ArialNarrow-BoldItalic;
+	font-weight: 600;
+	font-size: 12px;
+	color: #40b1ff;
+}
+.supplierMRO .botMRO{
+	height: 180px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	margin:0 0 20px 200px;
+}
+.supplierMRO .botMRO ul{
+	padding:14px 0;
+	text-align:center;
+}
+.supplierMRO .botMRO ul li{
+	float:left;
+	width:156px;
+	padding:8px 0;
+	border-right:1px solid #f9f9f9;
+}
+.supplierMRO .botMRO ul li a{
+	text-decoration:none;
+}
+.supplierMRO .botMRO ul li a:hover{
+	color: #3477ff;
+}
+.supplierMRO .oneMRO{
+	float:left;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.06);
+}
+.supplierMRO .oneMRO img{
+	width: 200px;
+	height: 200px;
+}
+.supplierMRO .twoMRO{
+	height: 200px;
+	margin-left:200px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	padding:40px 0px;
+	margin-bottom:10px;
+}
+.supplierMRO .twoMRO:hover{
+	box-shadow:2px 2px 8px 2px #d6d6d6;
+}
+.supplierMRO .twoMRO .ltMRO{
+	border-right:2px solid #f9f9f9;
+	width:600px;
+	float:left;
+	padding:0 60px;
+}
+.supplierMRO .twoMRO .ltMRO h1{
+    font-family: MicrosoftYaHei-Bold;
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom:20px;
+	color: #333333;
+}
+.supplierMRO .twoMRO .ltMRO h1 a{
+    text-decoration:none;
+}
+.supplierMRO .twoMRO .ltMRO h1 a:hover{
+	color:#3477ff;
+}
+.supplierMRO .twoMRO .ltMRO p{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	line-height: 22px;
+	color: #666666;
+	margin-top:16px;
+}
+.supplierMRO .twoMRO .rtMRO{
+	padding-left:660px;
+}
+.supplierMRO .twoMRO .rtMRO p{
+	font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #666666;
+	margin-bottom:6px;
+}
+.supplierMRO .twoMRO .rtMRO input{
+	width: 120px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	border:none;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	color: #ffffff;
+	margin-top:10px;
+}
+
+
+
+
+
+/**供应商绿色农业三级页面样式**/
+.supplierGF .topMRO{
+	height:110px;
+}
+.supplierGF .topMRO h2{
+	padding:28px 0 6px 0;
+}
+.supplierGF .topMRO p{
+	font-size: 16px;
+	color: #1da05b;
+}
+.supplierGF .botMRO{
+	height: 110px;
+}
+
+
+
+
+/**供应商商务服务三级页面样式**/
+.supplierBS .topMRO{
+	height:110px;
+}
+.supplierBS .topMRO h2{
+	padding:28px 0 8px 0;
+}
+.supplierBS .topMRO p{
+	font-size: 14px;
+	color: #4990ff;
+}
+.supplierBS .botMRO{
+	height: 110px;
+}
+.supplierBS .botMRO ul li{
+	padding:30px 0;
+}
+
+
+
+
+/**供应商消费品三级页面样式**/
+.supplierCG .topMRO{
+	height:150px;
+}
+.supplierCG .topMRO h2{
+	padding:50px 0 8px 0;
+}
+.supplierCG .topMRO p{
+	font-size: 14px;
+	color: #43c7e1;
+}
+.supplierCG .botMRO{
+	height: 150px;
+}
+
+
+
+/**供应商原材料三级页面样式**/
+.supplierRM .topMRO{
+	height:110px;
+}
+.supplierRM .topMRO h2{
+	padding:28px 0 6px 0;
+}
+.supplierRM .topMRO p{
+	font-size: 16px;
+	color: #f49a62;
+}
+.supplierRM .botMRO{
+	height: 110px;
+}

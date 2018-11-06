@@ -215,20 +215,48 @@ Route::post('/list/pic','Home\NewhomeController@pic');//获取栏目下广告图
 Route::post('/list/fs','Home\NewhomeController@findsell');//获取搜索框查询供应商的ajax路由,后期这些都可以加缓存*/
 //q前台超级搜索
 Route::post('/home/search','Home\NewhomeController@search');
-//点击发布供应产品的路由
+
+//采购商发布采购产品的路由
+Route::get('/home/buypublish','Home\NewhomeController@buypublish');
+//供应商点击发布供应产品的路由
 Route::get('/home/subpublish','Home\NewhomeController@subpublish');
+
+
+
 
 //商务三个热点页面
 Route::get('/home/businesshot/one','Home\NewhomeController@hone');
 Route::get('/home/businesshot/two','Home\NewhomeController@htwo');
 Route::get('/home/businesshot/three','Home\NewhomeController@hthree');
+//商务热点查看全部栏目下的文章
+Route::get('/home/businesshot/more','Home\NewhomeController@hmore');
+//前台商务热点文章列表专属路由
+Route::get('/home/article/businesshot/{id}','Home\NewhomeController@hmoredetail');
+
+
 //政策解读三个页面
 Route::get('/home/businesspolicy/one','Home\NewhomeController@pone');
 Route::get('/home/businesspolicy/two','Home\NewhomeController@ptwo');
 Route::get('/home/businesspolicy/three','Home\NewhomeController@pthree');
+//政策解读查看全部栏目下的文章
+Route::get('/home/businesspolicy/more','Home\NewhomeController@pmore');
+//前台政策解读文章列表专属路由
+Route::get('/home/article/businesspolicy/{id}','Home\NewhomeController@pmoredetail');
 
+//前台普通用户招标信息查询
+Route::post('/home/query/mess','Home\SearchController@query');
+//前台ungm招标信息查询
+Route::post('/home/query/ungmmess','Home\SearchController@ungmquery');
 
+//前台点击产品分类表直接跳到产品的全部(详细)三级页面
+Route::get('/home/product/third','Home\NewhomeController@thirdproduct');
+//前台产品列表二级页面
+Route::get('/home/product/second','Home\NewhomeController@secondproduct');
 
+//前台求购的二级页
+Route::get('/home/buymessage/second','Home\NewhomeController@secondbuymessage');
+//前台求购的三级页
+Route::get('/home/buymessage/third','Home\NewhomeController@thirdbuymessage');
 
 
 

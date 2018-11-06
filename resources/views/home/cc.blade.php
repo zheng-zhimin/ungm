@@ -86,7 +86,7 @@
   
     <!---内容开始-->
     <div class="content scaler">
-        <img src="/ungmhome/images/v.jpg" class="img-responsive banner currencyTranslation-banner" alt="">
+        <img src="/ungmhome/images/货币换算.jpg" class="img-responsive banner currencyTranslation-banner" alt="">
         <div class="container">
             <div class="currencyTranslation">
                 <img src="/ungmhome/images/currencyTranslation.png" alt="" class="img-responsive currencyTranslation-img">

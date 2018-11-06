@@ -19,7 +19,7 @@
        
         <!--2.图片区-->
         <div class="img-responsive pic">
-            <img src="/ungmhome/images/aboutus.jpg" alt="">
+            <img src="/ungmhome/images/招贤纳士.jpg" alt="">
         </div>
         <!--3.招聘区-->   
         <div class="join-us">

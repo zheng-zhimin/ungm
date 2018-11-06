@@ -16,6 +16,10 @@ use App\Models\Sup\Server;//四个供应商推荐表
 use App\Models\Sup\Active;//四个供应商推荐表
 use App\Models\Sup\Credit;//四个供应商推荐表
 
+use App\Models\Admin\Articles;//文章
+use App\Models\Admin\Label;//标签
+use App\Models\Home\Comment;//评论
+
 class NewhomeController extends Controller
 {
     /**
@@ -245,7 +249,13 @@ class NewhomeController extends Controller
 
 
 
-    //供应商发布产品
+    //采购商发布采购信息路由
+    public function buypublish()
+    {
+
+        return view('home.buypublish');
+    }
+    //供应商发布供应信息的路由
     public function subpublish()
     {
 
@@ -276,6 +286,126 @@ class NewhomeController extends Controller
     {
         return view('home.businesshot.three');
     }
+    //商务热点查看全部 就是查看商务热点栏目下的所有文章
+    public function hmore()
+    {
+        // 获取文章数据,按添加时间倒序排序
+        $data = Articles::where('lanmu',91)->orderBy('created_at','desc')->paginate(3);
+        // 获取文章数据,按评论数量排序
+        $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 获取一级栏目的数据
+        $column = Column::where('pid',0)-> get();
+
+
+        // 获取所有的标签
+        $label = Label::get();
+        $labels = array();
+        foreach ($label as $k => $v) {
+            array_push($labels,$v -> label);
+        }
+        $mylabel = implode(',', $labels);
+        $mylabel = explode(',', $mylabel);
+        $mylabel = array_unique($mylabel);
+        $mylabel = array_flip($mylabel);
+        $labelength = count($mylabel);
+        if ($labelength < 15) {
+            $mylabels = array_rand($mylabel,$labelength);
+        }else{
+            $mylabels = array_rand($mylabel,15);
+        }
+        $rand = rand(0,9);
+
+
+        // 遍历去除内容中的图片
+        foreach ($data as $k => $v) {
+            $content=$v['content'];
+            $preg = "/<img(.*?)>/i"     ;
+            $v['content'] = preg_replace($preg,'', $content);
+            $v['content'] = strip_tags($v['content']);
+        }
+
+        // 显示模板,传递数据
+        return view('home.businesshot.more',['data' => $data,'column' => $column,'hot' => $hot,'mylabels' => $mylabels,'rand' => $rand]);
+    }
+    //商务热点文章详情页控制器
+    public function hmoredetail($id)
+    {
+        // 获取该文章的评论信息,按添加时间倒序排序,每10条一页
+        $comment = Comment::where('aid',$id)->orderby('created_at','desc')->paginate(10);
+        $cid = array();
+        foreach ($comment as $key => $value) {
+            array_push($cid,$value['id']);
+        }
+        // 获取该文章的标签
+        if ($label = Label::where('aid',$id) -> first()) {
+            $label = Label::where('aid',$id) -> first() -> label;
+            $labels = explode(',',$label);
+        }else{
+            $labels = array();
+        }
+
+
+        // 获取文章数据,按评论数量排序
+        $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 遍历去除评论内容中的html代码
+        foreach ($comment as $k => $v) {
+            $comment[$k] -> content = strip_tags($comment[$k] -> content);
+        }
+        // 获取登录用户是否收藏该文章
+        $collect=DB::table('collect')->where('aid',$id)->where('uid',session('homeuser')['id'])->first();
+        // 获取当前用户举报的评论数据
+        $jubao = DB::table('report') -> where('uid',session('homeuser')['id']) ->get();
+        $jubao1 = array();
+        foreach ($jubao as $key => $value) {
+            array_push($jubao1,$value -> cid);
+        }
+
+
+        // 获取当前用户顶过的评论数据
+        $up = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','1') ->get();
+        $up1 = array();
+        foreach ($up as $key => $value) {
+            array_push($up1,$value -> cid);
+        }
+        // 获取当前用户踩过的评论数据
+        $down = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','2') ->get();
+        $down1 = array();
+        foreach ($down as $key => $value) {
+            array_push($down1,$value -> cid);
+        }
+
+
+        // 上一篇下一篇文章
+        $detail=Articles::find($id);
+        $previd= Articles::where('id', '<', $id)->max('id');
+        $prev = Articles::find($previd);
+        $nextid=Articles::where('id', '>', $id)->min('id');
+        $next = Articles::find($nextid);
+        // 显示模板,传递数据
+        return view('home.businesshot.moredetail', ['detail' => $detail,'prev'=>$prev,'next'=>$next,'comment'=>$comment,'collect'=>$collect,'hot' => $hot,'jubao' => $jubao1,'up' => $up1,'down' => $down1,'labels' => $labels]);
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //三个政策解读
     public function pone()
@@ -292,6 +422,148 @@ class NewhomeController extends Controller
     {
         return view('home.businesspolicy.three');
     }
+
+
+  
+    //政策解读查看全部栏目下的文章
+   public function pmore()
+    {
+        // 获取文章数据,按添加时间倒序排序
+        $data = Articles::where('lanmu',90)->orderBy('created_at','desc')->paginate(3);
+        // 获取文章数据,按评论数量排序
+        $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 获取一级栏目的数据
+        $column = Column::where('pid',0)-> get();
+
+
+        // 获取所有的标签
+        $label = Label::get();
+        $labels = array();
+        foreach ($label as $k => $v) {
+            array_push($labels,$v -> label);
+        }
+        $mylabel = implode(',', $labels);
+        $mylabel = explode(',', $mylabel);
+        $mylabel = array_unique($mylabel);
+        $mylabel = array_flip($mylabel);
+        $labelength = count($mylabel);
+        if ($labelength < 15) {
+            $mylabels = array_rand($mylabel,$labelength);
+        }else{
+            $mylabels = array_rand($mylabel,15);
+        }
+        $rand = rand(0,9);
+
+
+        // 遍历去除内容中的图片
+        foreach ($data as $k => $v) {
+            $content=$v['content'];
+            $preg = "/<img(.*?)>/i"     ;
+            $v['content'] = preg_replace($preg,'', $content);
+            $v['content'] = strip_tags($v['content']);
+        }
+
+        // 显示模板,传递数据
+        return view('home.businesspolicy.more',['data' => $data,'column' => $column,'hot' => $hot,'mylabels' => $mylabels,'rand' => $rand]);
+    }
+
+     //政策解读文章详情页控制器
+    public function pmoredetail($id)
+    {
+
+        // 获取该文章的评论信息,按添加时间倒序排序,每10条一页
+        $comment = Comment::where('aid',$id)->orderby('created_at','desc')->paginate(10);
+        $cid = array();
+        foreach ($comment as $key => $value) {
+            array_push($cid,$value['id']);
+        }
+        // 获取该文章的标签
+        if ($label = Label::where('aid',$id) -> first()) {
+            $label = Label::where('aid',$id) -> first() -> label;
+            $labels = explode(',',$label);
+        }else{
+            $labels = array();
+        }
+
+
+        // 获取文章数据,按评论数量排序
+        $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 遍历去除评论内容中的html代码
+        foreach ($comment as $k => $v) {
+            $comment[$k] -> content = strip_tags($comment[$k] -> content);
+        }
+        // 获取登录用户是否收藏该文章
+        $collect=DB::table('collect')->where('aid',$id)->where('uid',session('homeuser')['id'])->first();
+        // 获取当前用户举报的评论数据
+        $jubao = DB::table('report') -> where('uid',session('homeuser')['id']) ->get();
+        $jubao1 = array();
+        foreach ($jubao as $key => $value) {
+            array_push($jubao1,$value -> cid);
+        }
+
+
+        // 获取当前用户顶过的评论数据
+        $up = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','1') ->get();
+        $up1 = array();
+        foreach ($up as $key => $value) {
+            array_push($up1,$value -> cid);
+        }
+        // 获取当前用户踩过的评论数据
+        $down = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','2') ->get();
+        $down1 = array();
+        foreach ($down as $key => $value) {
+            array_push($down1,$value -> cid);
+        }
+
+
+        // 上一篇下一篇文章
+        $detail=Articles::find($id);
+        $previd= Articles::where('id', '<', $id)->max('id');
+        $prev = Articles::find($previd);
+        $nextid=Articles::where('id', '>', $id)->min('id');
+        $next = Articles::find($nextid);
+        // 显示模板,传递数据
+       
+        return view('home.businesspolicy.moredetail', ['detail' => $detail,'prev'=>$prev,'next'=>$next,'comment'=>$comment,'collect'=>$collect,'hot' => $hot,'jubao' => $jubao1,'up' => $up1,'down' => $down1,'labels' => $labels]);
+    } 
+
+   
+   //前台点击产品分类表直接跳到产品的全部(详细)三级页面
+   public function  thirdproduct() 
+   {
+
+        return view('home.product.third');
+
+
+   }
+ //前台产品二级级页面
+   public function  secondproduct() 
+   {
+
+        return view('home.product.second');
+
+
+   }
+
+   //前台求购信息二级页面
+   public function secondbuymessage()
+   {
+        return view('home.buymessage.second');
+   }
+   
+  //前台求购信息三级页面
+   public function thirdbuymessage()
+   {
+        return view('home.buymessage.third');
+   }
+
+
+
+
+
+
+
+
 
 
 

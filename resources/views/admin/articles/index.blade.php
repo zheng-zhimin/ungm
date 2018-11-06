@@ -58,7 +58,7 @@
 
                         <tr>
                             <td>{{$v->id}}</td>
-                            <td>{{$v->column->cname}}</td>
+                            <td>{{$v->column['cname'] }}</td>
                             <td>{{$v->title}}</td>
                             <td>{{$v->author}}</td>
                             <td>

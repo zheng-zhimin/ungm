@@ -15,7 +15,7 @@
        
         <!--2.图片区-->
         <div class="img-responsive pic">
-            <img src="/ungmhome/images/aboutus.jpg" alt="">
+            <img src="/ungmhome/images/排名推广.jpg" alt="">
         </div>
         <!--3.排名推广区-->   
         <div class="ranking">
