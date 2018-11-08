@@ -332,7 +332,7 @@
         </div>
         <div class="bid-con">
             <div class="container">
-                <div class="tex" align="center">
+                <div class="tex" align="center"><a name="1"></a> 
                     <img class="img-responsive" src="/ungmhome/images/busser.png">
                 </div>
                 <div class="label">
@@ -462,7 +462,7 @@
 </div>
 <div class="col-md-12 butt" align="right">
          <button type="" class="btn btn-lg btn1" onclick="cle();">清除全部</button>
-         <button type="" class="btn btn-lg btn2" onclick="ungmsearch()">立即搜索2</button>
+         <button type="" class="btn btn-lg btn2" onclick="ungmsearch()">立即搜索</button>
                                     </div>
                                
                             </div>
@@ -562,7 +562,7 @@
 
             <div class="bid-paging">
                 <div class="container">
-                    <div class="tex" align="center">
+                    <div class="tex" align="center"><a name="2"></a> 
                         <img class="img-responsive" src="/ungmhome/images/bid-search.png">
                     </div> 
 

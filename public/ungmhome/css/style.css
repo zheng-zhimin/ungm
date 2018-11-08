@@ -246,7 +246,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     margin-bottom: 15px;
     margin-left: -6px;
 }
-.globalTrade{
+.GlobalTrade{
     margin-top: 3rem;
     margin-bottom: 4rem;
     margin-left: -4px;
@@ -343,7 +343,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
         height: 80px !important;
 }
 #SUPPLIER .col-md-8 .row-roll ul li::before{
-    content: url(../images/r.png);
+    content: url(/ungmhome/images/r.png);
     padding-right: 8px;
 }
 #SUPPLIER .col-md-8 .padd p a{
@@ -574,82 +574,82 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     height: 500px;
 }
 .indexUngm .roll .als-item-1{
-    background:url(../images/rol1.png);
+    background:url(/ungmhome/images/rol1.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-1:hover{
-    background:url(../images/ro1.png);
+    background:url(/ungmhome/images/ro1.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-2{
-    background:url(../images/rol2.png);
+    background:url(/ungmhome/images/rol2.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-2:hover{
-    background:url(../images/ro2.png);
+    background:url(/ungmhome/images/ro2.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-3{
-    background:url(../images/rol3.png);
+    background:url(/ungmhome/images/rol3.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-3:hover{
-    background:url(../images/ro3.png);
+    background:url(/ungmhome/images/ro3.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-4{
-    background:url(../images/rol4.png);
+    background:url(/ungmhome/images/rol4.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-4:hover{
-    background:url(../images/ro4.png);
+    background:url(/ungmhome/images/ro4.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-5{
-    background:url(../images/rol5.png);
+    background:url(/ungmhome/images/rol5.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-5:hover{
-    background:url(../images/ro5.png);
+    background:url(/ungmhome/images/ro5.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-6{
-    background:url(../images/rol6.png);
+    background:url(/ungmhome/images/rol6.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-6:hover{
-    background:url(../images/ro6.png);
+    background:url(/ungmhome/images/ro6.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-7{
-    background:url(../images/rol7.png);
+    background:url(/ungmhome/images/rol7.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-7:hover{
-    background:url(../images/ro7.png);
+    background:url(/ungmhome/images/ro7.png);
     background-size: 100% 100%;
     color: #ffffff; 
 }
 .indexUngm .roll .als-item-8{
-    background:url(../images/rol8.png);
+    background:url(/ungmhome/images/rol8.png);
     background-size: 100% 100%;
     color: #999999;
 }
 .indexUngm .roll .als-item-8:hover{
-    background:url(../images/ro8.png);
+    background:url(/ungmhome/images/ro8.png);
     background-size: 100% 100%;
     color: #ffffff;             
 }
@@ -725,16 +725,16 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
      box-shadow:1px 1px 8px 1px #d6d6d6;
 }
 /* ---------------------------------------------------------首页结束招投标服务开始------------------------------------------------------------------------ */
-.bid .bid-banner{
-    height: 750px;
-}
+/*.bid .bid-banner{
+    height: 600px;
+}*/
 
 
 
 /**图片区**/
 .pic img{
     width:100%;
-    height:600px;
+    /*height:600px;*/
 }
 /**关于我们页面样式**/
 /**公司介绍部分**/
@@ -1339,9 +1339,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     .domesticTrade .con{
         background: url(/ungmhome/images/bgr.png) no-repeat;
     }
-    .domesticTrade .bid-banner{
-        height: 750px;
-    }
+    /*.domesticTrade .bid-banner{
+        height: 600px;
+    }*/
     .domesticTrade .tex{
         margin-top: 70px;
         margin-bottom:38px;
@@ -1904,10 +1904,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	color:#3477ff;
 }
 .purchasingOne .purchasingTwo .demandRt .demandCity{
-	margin-left:114px;
+	
 }
 .purchasingOne .purchasingTwo .demandRt .demandDate{
 	margin-left:30px;
+    float:right;
 }
 .purchasingOne .purchasingTwo .demandRt .demandBorder{
 	border-top:2px solid #f9f9f9;
@@ -2011,7 +2012,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	color: #3477ff;
 }
 .globalTrade .caption p{
-	margin:10px 0 0 286px;;
+	margin:10px 0 0 300px;
 	width: 560px;
 	font-family: "MicrosoftYaHei";
 	font-size: 12px;
@@ -2081,7 +2082,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 .tradeUl li p{
 	font-size: 12px;
-	line-height: 18px;
+	line-height: 16px;
 	color: #999;
 	text-justify:inter-ideograph;
 	text-align:justify;
@@ -2808,10 +2809,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	color:#3477ff;
 }
 .purchasingOne .purchasingTwo .demandRt .demandCity{
-	margin-left:114px;
+	
 }
 .purchasingOne .purchasingTwo .demandRt .demandDate{
 	margin-left:30px;
+    float:right;
 }
 .purchasingOne .purchasingTwo .demandRt .demandBorder{
 	border-top:2px solid #f9f9f9;

@@ -44,9 +44,9 @@
                     </ul>
            
                 </div>
-                        <div class="page dataTables_paginate paging_full_numbers">
-                        {!! $data->render() !!}
-                        </div>
+                        <div class="page dataTables_paginate paging_full_numbers text-center" style="margin-top:-10px;">
+                     {!! $data->render() !!}
+                     </div> 
             </div>
         </div>
        

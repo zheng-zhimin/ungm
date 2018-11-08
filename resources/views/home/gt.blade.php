@@ -22,7 +22,7 @@
         <div class="globalTrade">
             <!--UNGM介绍区-->
             <div class="tradeUngm">
-                <div class="container">
+                <div class="container"><a name="1"></a>
                     <div class="text-center caption">
                         <img src="/ungmhome/images/globalTrade1.png" alt="">
                         <h3>联合国全球采购市场（United Nations Global Marketplace，简称UNGM）</h3>
@@ -101,7 +101,7 @@
             </div>
             <!--图表展示区-->
             <div class="container">
-                <div class="text-center caption">
+                <div class="text-center caption"><a  name="2"></a>
                     <img src="/ungmhome/images/globalTrade2.png" alt="">
                 </div>
                 <div class="dataOne text-center">
@@ -137,8 +137,8 @@
             <!--政策解读区-->
             <div class="policy">
                 <div class="container">
-                    <div class="text-center caption">
-                        <img src="/ungmhome/images/globalTrade8.png" alt=""> 
+                    <div class="text-center caption"><a name="3"></a> 
+                        <img src="/ungmhome/images/globalTrade8.png" alt="">
                     </div>
                     <div class="policyList">
                         <ul>

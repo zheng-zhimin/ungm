@@ -403,9 +403,28 @@ $('#passwordagain').blur(function(){
                         $("#passwordagain").focus();
                         return false;
                     }
+
+                        //定时器
+                      var time = 60;
+                         var interval = setInterval(function(){
+                        //判断
+                        if(time > 0){
+                            time--;
+                            //修改btn的内容
+                            $('.code2').val('重新发送：' + time + 's');
+                            //禁用btn的点击效果  disabled属性 true
+                            $('.code2').attr('disabled', true);
+                        }else{
+                            //还原btn的内容
+                            $('.code2').val('发送验证码');
+                            //还原btn的点击效果  disabled属性 false
+                            $('.code2').attr('disabled', false);
+                            //清除定时器
+                            clearInterval(interval);
+                        }
+                    }, 1000);
         var  phone=$('#phone').val();
         $.get('/code/phone_code',{'phone':phone},function(msg){
-            /*alert(msg);*/
             if(msg.code==2){
                 alert('短信发送成功');
             }else{

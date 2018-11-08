@@ -19,7 +19,7 @@ class SosoController extends Controller
     public function soso()
     {
         //var_dump(11);
-        return 123456;
+        //return 123456;
     }
     /**
      * Display a listing of the resource.

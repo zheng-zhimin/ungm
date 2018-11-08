@@ -28,7 +28,7 @@
     color: #3477ff !important;
     background-color: #fff !important;
     border-bottom: 2px solid;
-    };
+    }
 </style>
 
 <div class="top">
@@ -58,7 +58,7 @@
 @endif
         </div>
     </div>
-<div class="navbar navbar-default">       
+<div class="navbar navbar-default" style="margin-bottom:0px;">       
     <div class="container">
         
         <!--第一部分：导航头部=头部+汉堡包-->
@@ -79,68 +79,72 @@
                 <li class="dropdown">
                     <a class="a2" href="/home/gt" >全球贸易</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">UNGM</a></li>
-                        <li><a href="#">商务数据中心(进出口海关相关)</a></li>
-                        <li><a href="#">政策解读</a></li>
+                        <li><a href="/home/gt/#1">UNGM</a></li>
+                        <li><a href="/home/gt/#2">商务数据中心(进出口海关相关)</a></li>
+                        <li><a href="/home/gt/#3">政策解读</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="a3" href="/home/ct" >国内贸易</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">国内贸易数据中心</a></li>
-                        <li><a href="#">商务热点</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="/home/ct/#1">商机服务</a></li>
+                        <li><a href="/home/ct/#2">展会论坛</a></li>
+                        <li><a href="/home/ct/#3">商务热点</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="a4" href="/home/td" >招投标服务</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">搜索功能</a></li>
-                        <li><a href="#">招投标信息</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="/home/td/#1">商机服务</a></li>
+                        <li><a href="/home/td/#2">投标信息搜索</a></li>
+                       
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="a5" href="/home/jk" >集客</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="/home/jk/#1">1</a></li>
+                        <li><a href="/home/jk/#2">2</a></li>
+                        <li><a href="/home/jk/#3">3</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="a6" href="/home/md" >会员发展</a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
+                        <li><a href="/home/md/#1">1</a></li>
+                        <li><a href="/home/md/#2">2</a></li>
+                        <li><a href="/home/md/#3">3</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="a7" href="/home/cc" >货币换算</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">货币换算器插件</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                    </ul>
+                   
                 </li>
             </ul>
-            <div class="search">
-            <div class="input-group">
-                <input type="text" class="form-control" id="keyword" placeholder="请输入关键字">
-                <span class="inp">
-                    <button onclick="find()"><img class="img-responsive"src="/ungmhome/images/search.png"></button>
-                    <script type="text/javascript">
-                        function find(){
-                            var keyword=$("#keyword").val();
-                            $.get('/home/soso',{'keyword':keyword},function (datas) {
-                                   alert(datas);
-                                },'json',false);
-                        }
-                    </script>
-                </span>
-            </div>   
-        </div>
+
+           <!--  <div class="search">
+           <div class="input-group">
+               <input type="text" class="form-control" id="keyword" placeholder="请输入关键字">
+               <span class="inp">
+                   <button onclick="find()">
+                       <img class="img-responsive"src="/ungmhome/images/search.png">
+                   </button>
+           
+                   <script type="text/javascript">
+                       function find(){
+                           var keyword=$("#keyword").val();
+                           $.get('/home/soso',{'keyword':keyword},function (datas) {
+                                  alert(datas);
+                               },'json',false);
+                       }
+                   </script>
+           
+               </span>
+           
+           </div>   
+                   </div> -->
+
+
         </div>
         <!--第三部分：搜索-->
     </div>

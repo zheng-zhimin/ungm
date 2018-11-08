@@ -26,8 +26,10 @@
         <div class="container">
 
             <div class="businessHot">
-                  <h1>{{$detail->title}}</h1>
-                  <br>
+                 <h1>{{$detail->title}}</h1>
+                <br>
+                <div class="text-center">{{$detail->created_at}}</div>
+                <br>
                 {!!$detail->content!!}
             </div>
             

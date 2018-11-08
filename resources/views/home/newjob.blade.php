@@ -32,7 +32,7 @@
                         <div class="recruit-lt">
                             <div class="row lt-top">
                                 <h2>产品经理（&nbsp;1人&nbsp;）</h2>
-                                <a href="#" class="btn btn-success">立即申请</a>
+                                <a href="/home/contact" class="btn btn-success">立即申请</a>
                             </div>
                             <div class="row lt-bot">
                                 <h4>岗位职责：</h4>
@@ -53,7 +53,7 @@
                         <div class="recruit-rt">
                             <div class="row rt-top">
                                 <h2>业务销售 （&nbsp;2人&nbsp;）</h2>
-                                <a href="" class="btn btn-success">立即申请</a>
+                                <a href="/home/contact" class="btn btn-success">立即申请</a>
                             </div>
                             <div class="row rt-bot">
                                 <h4>岗位职责：</h4>
@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="mail">
-                    <span>您可以将自己的简历发送至邮箱<a href="">&nbsp;ungm@ungm.org.cn</a>，或者直接点击上方的投递按钮。</span>
+                    <span>您可以将自己的简历发送至邮箱<a href="">&nbsp;ungm@ungm.org.cn</a></span>
                 </div>
             </div>
         </div>   

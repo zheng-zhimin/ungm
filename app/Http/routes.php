@@ -73,7 +73,7 @@ Route::post('/admin/advertise/able/{id}','Admin\AdvertiseController@able');
 //前台主页模板路径
 //route::get('/','Home\HomeController@index');
 //前台留言板路由
-route::get('/home/board','Home\HomeController@board');
+//route::get('/home/board','Home\HomeController@board');
 //前台关于我们路由
 //route::get('/home/about','Home\HomeController@about');
 //前台文章列表路由
@@ -86,22 +86,22 @@ route::get('/home/mood','Home\HomeController@mood');
 route::get('/home/articledetail/{id}','Home\HomeController@articledetail');
 
 // 前台评论
-route::get('/home/comment/{id}','Home\HomeController@comment');
-route::get('/home/recomment/{id}','Home\HomeController@recomment');
+//route::get('/home/comment/{id}','Home\HomeController@comment');
+//route::get('/home/recomment/{id}','Home\HomeController@recomment');
 // 前台评论举报
-route::get('/home/myreport/{id}','Home\HomeController@myreport');
+//route::get('/home/myreport/{id}','Home\HomeController@myreport');
 // 前台顶一下
-route::get('home/myup/{id}','Home\HomeController@myup');
+//route::get('home/myup/{id}','Home\HomeController@myup');
 // 前台踩一下
-route::get('home/mydown/{id}','Home\HomeController@mydown');
+//route::get('home/mydown/{id}','Home\HomeController@mydown');
 // 前台标签文章
 route::get('home/label/{label}','Home\HomeController@label');
 //前台登录
-Route::controller('/home/login','Home\LoginController');
+//Route::controller('/home/login','Home\LoginController');
 //前台用户退出路由
 //Route::get('/home/logout','Home\HomeController@logout');
 //前台主页面
-Route::get('/home/home','Home\LoginController@index');
+//Route::get('/home/home','Home\LoginController@index');
 //前台检测登录
 Route::post('/home/ajax1',function(){
 
@@ -115,7 +115,7 @@ Route::post('/home/ajax1',function(){
 
 });
 //邮箱激活路由
-Route::get('/home/jihuo','Home\LoginController@jihuo');
+//Route::get('/home/jihuo','Home\LoginController@jihuo');
 //用户点击头像显示个人中心路由
 Route::get('/home/userinfo/userinfo',function(){
     return view('home.userinfo.userinfo');
@@ -131,9 +131,9 @@ Route::post('/home/ler/uploads','Home\LerController@uploads');
 
 
 //前台踩一下路由
-Route::get('/home/cai/{id}','Home\CaiController@cai');
+//Route::get('/home/cai/{id}','Home\CaiController@cai');
 //前台顶一下路由
-Route::get('/home/ding/{id}','Home\CaiController@ding');
+//Route::get('/home/ding/{id}','Home\CaiController@ding');
 
 //-----------------------原始我的路由结束------------------------//
 
@@ -185,6 +185,11 @@ Route::get('/home/map',function(){
 
 //前台登录
 Route::controller('/home/newlogin','Home\NewloginController');
+//忘记密码路由
+Route::get('/home/forget','Home\NewloginController@forget');
+Route::post('/home/forgetpassword','Home\NewloginController@forgetpassword');
+Route::post('/home/forgetcode','Home\NewloginController@forgetcode');
+Route::post('/home/forgetphone','Home\NewloginController@forgetphone');
 /*//前台检测登录
 Route::post('/home/newajax',function(){
 
@@ -206,7 +211,7 @@ route::get('/code/phone_code','Home\NewloginController@phone_code');
 //前台货币转换ajax路由
 route::get('/newhome/currency','Home\NewhomeController@currency');
 //前台搜-搜路由(可以搜索英文数字汉子来关联表找到用户想要的)
-Route::get('/home/soso','SosoController@soso');
+//Route::get('/home/soso','SosoController@soso');
 
 //前台获取分类栏目儿子栏目数据ajax路由
 Route::post('/list/son','Home\NewhomeController@son');//前台获取分类栏目儿子广告图片数据ajax路由
@@ -214,7 +219,8 @@ Route::post('/list/pic','Home\NewhomeController@pic');//获取栏目下广告图
 /*Route::post('/list/fb','Home\NewhomeController@findbuy');//获取搜索框查询采购商的ajax路由,后期这些都可以加缓存
 Route::post('/list/fs','Home\NewhomeController@findsell');//获取搜索框查询供应商的ajax路由,后期这些都可以加缓存*/
 //q前台超级搜索
-Route::post('/home/search','Home\NewhomeController@search');
+Route::post('/home/searchbuy','Home\NewhomeController@searchbuy');
+Route::post('/home/searchsell','Home\NewhomeController@searchsell');
 
 //采购商发布采购产品的路由
 Route::get('/home/buypublish','Home\NewhomeController@buypublish');
@@ -248,18 +254,37 @@ Route::post('/home/query/mess','Home\SearchController@query');
 //前台ungm招标信息查询
 Route::post('/home/query/ungmmess','Home\SearchController@ungmquery');
 
-//前台点击产品分类表直接跳到产品的全部(详细)三级页面
-Route::get('/home/product/third','Home\NewhomeController@thirdproduct');
+
 //前台产品列表二级页面
 Route::get('/home/product/second','Home\NewhomeController@secondproduct');
+//前台点击产品分类表直接跳到产品的全部(详细)三级页面
+Route::get('/home/product/third','Home\NewhomeController@thirdproduct');
+Route::get('/home/product/third1','Home\NewhomeController@third1product');
+Route::get('/home/product/third2','Home\NewhomeController@third2product');
+Route::get('/home/product/third3','Home\NewhomeController@third3product');
+Route::get('/home/product/third4','Home\NewhomeController@third4product');
+
 
 //前台求购的二级页
 Route::get('/home/buymessage/second','Home\NewhomeController@secondbuymessage');
 //前台求购的三级页
 Route::get('/home/buymessage/third','Home\NewhomeController@thirdbuymessage');
+Route::get('/home/buymessage/third1','Home\NewhomeController@third1buymessage');
+Route::get('/home/buymessage/third2','Home\NewhomeController@third2buymessage');
+Route::get('/home/buymessage/third3','Home\NewhomeController@third3buymessage');
+Route::get('/home/buymessage/third4','Home\NewhomeController@third4buymessage');
 
 
+//国内贸易->会议展示全部栏目下的文章
+Route::get('/home/meeting/list','Home\NewhomeController@meetinglist');
+//国内贸易->会议展示文章详情
+Route::get('/home/meeting/detail/{id}','Home\NewhomeController@meetingdetail');
 
+
+//采购信息列表内容点击
+Route::post('/home/buymessage/list','Home\NewhomeController@buymessagelist');
+//供应信息列表内容点击
+Route::post('/home/product/list','Home\NewhomeController@productlist');
 
 
 

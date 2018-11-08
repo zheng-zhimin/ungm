@@ -24,8 +24,12 @@
         </div>
         <!--3.商务中心(国家邮政局)-->
         <div class="container">
-                {{$detail->title}}
+              
             <div class="businessHot">
+                <h1>{{$detail->title}}</h1>
+                <br>
+                <div class="text-center">{{$detail->created_at}}</div>
+                <br>
                 {!!$detail->content!!}
             </div>
             

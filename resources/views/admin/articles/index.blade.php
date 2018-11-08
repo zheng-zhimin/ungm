@@ -46,6 +46,7 @@
                         <tr>
                             <td>ID</td>
                             <td>所属栏目</td>
+                            <td>供求身份</td>
                             <td>文章标题</td>
                             <td>文章作者</td>
                             <td>文章图片</td>
@@ -59,6 +60,14 @@
                         <tr>
                             <td>{{$v->id}}</td>
                             <td>{{$v->column['cname'] }}</td>
+                            @if($v->relation==1)
+                            <td>供应商</td>
+                            @elseif($v->relation==2)
+                            <td>求购商</td>
+                            @else
+                            <td>无角色</td>
+                            @endif
+
                             <td>{{$v->title}}</td>
                             <td>{{$v->author}}</td>
                             <td>

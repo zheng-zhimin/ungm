@@ -23,7 +23,7 @@
             {{ csrf_field() }}
             <div class="mws-form-inline">
 
-                <div class="mws-form-inline">
+               
                     <div class="mws-form-row">
                         <label class="mws-form-label">所属栏目</label>
                         <div class="mws-form-item">
@@ -35,9 +35,22 @@
                             </select>
                         </div>
                     </div>
-                </div>
+
                     <div class="mws-form-row">
-                        <label class="mws-form-label">文章标题</label>
+                        <label class="mws-form-label">供应商/采购商</label>
+                        <div class="mws-form-item">
+                            <select class="small" name="relation">
+                                
+                                    <option value="0">无角色</option>
+                                    <option value="1">产品信息</option>
+                                    <option value="2">采购信息</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">文章/产品标题</label>
                         <div class="mws-form-item">
                             <input type="text" name="title" class="small" value="{{ old('title') }}">
                         </div>
@@ -45,11 +58,43 @@
 
 
                    <div class="mws-form-row" style="width: 800px;">
-                        <label class="mws-form-label">文章图片</label>
+                        <label class="mws-form-label">文章/产品图片</label>
                         <div class="mws-form-item" style="width: 465px;">
                             <input type="file" name="image" class="small">
                         </div>
                     </div>
+
+                    
+
+                  <div class="mws-form-row">
+                        <label class="mws-form-label">地区</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="area"  style="width: 200px;"  class="small" >
+                        </div>
+                    </div>
+
+                      <div class="mws-form-row">
+                        <label class="mws-form-label">行业</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="industry" style="width: 200px;" class="small" >
+                        </div>
+                    </div>
+
+                      <div class="mws-form-row">
+                        <label class="mws-form-label">公司</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="company" style="width: 200px;" class="small">
+                        </div>
+                    </div>
+
+                     <div class="mws-form-row">
+                        <label class="mws-form-label">时间区间</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="timezone" style="width: 200px;" class="small">
+                        </div>
+                    </div>
+               
+
 
                     <div class="mws-form-row">
                         <label class="mws-form-label">文章内容</label>

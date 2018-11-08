@@ -30,7 +30,7 @@
     }
     .viewPager img{
             width:100%;
-            height:600px;
+            /*height:750px;*/
           }
     .slh{
       overflow: hidden;
@@ -64,7 +64,7 @@
             <h3>一触即达的全球贸易</h3>
             <img src="/ungmhome/images/GL.png"  alt="">
         </div>
-        <div class="globalTrade content">
+        <div class="globalTrade GlobalTrade content">
             <div class="row">
                     <div class="col-md-12">
                         <div class="card">
@@ -80,9 +80,10 @@
                                     <div class="tab-pane active" id="SUPPLIER" role="tabpanel">
                                         <div class="row">
                                            <div class="col-md-8"> 
-                                               <div class="row">
+                                               <div class="row"> 
+                                               <form action="/home/searchbuy" method="post" accept-charset="utf-8">
                                                     <div class="col-md-10">
-                                                    <form action="/home/search" method="post" accept-charset="utf-8">
+                                                   
                                                     {{csrf_field()}}
                                                       <input class="form-control" type="text"  placeholder="请输入您的产品名称，为您匹配对应采购商" name="findbuy">
                                                     
@@ -90,10 +91,11 @@
                                                    
                                                     </div>
                                                     <div class="col-md-2" style="padding-right: 0px;">
-                                                      <button type="submit" class="btn btn-lg btn-block btn-s btn-success" ><i class="glyphicon glyphicon-search"></i></button>
+                                                    <button type="submit" class="btn btn-lg btn-block btn-s btn-success" ><i class="glyphicon glyphicon-search"></i></button>
                                                     </div>
-                                                  </form>
-                                               </div>
+                                                  
+                                                </div>
+                                               </form>
 
                    <div class="row row-down xq">
 
@@ -190,9 +192,19 @@
                                     <div class="tab-pane  p-20" id="BUYERS" role="tabpanel">
                                         <div class="row">
                                            <div class="col-md-8"> 
+                                           <form action="/home/searchsell" method="post" accept-charset="utf-8">
+                                             
+                                          
                                                <div class="row">
-                                                    <div class="col-md-10"><input class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商" name=""></div>
-                                                    <div class="col-md-2"><button type="" class="btn btn-lg btn-block btn-s btn-success"><i class="glyphicon glyphicon-search"></i></button></div>
+                                                    <div class="col-md-10">
+                                                     {{csrf_field()}}
+                                                    <input class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商" name="">
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                    <button type="" class="btn btn-lg btn-block btn-s btn-success"><i class="glyphicon glyphicon-search"></i>
+                                                    </button>
+                                                    </div>
+                                             </form>
                                                </div>
                                                <div class="row row-down padd row-down-1">
                                                     <div class="vtabs customvtab">
@@ -284,7 +296,7 @@
 
                      for(var i=0;i<datas.length;i++){
 
-                        var xiangqing2= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        var xiangqing2= "<li><a href='/home/product/third1'>"+datas[i].cname+"</a></li>";
                         $('.xiangqing2').append(xiangqing2);
                       }
 
@@ -315,7 +327,7 @@
 
                      for(var i=0;i<datas.length;i++){
 
-                        var xiangqing3= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        var xiangqing3= "<li><a href='/home/product/third2'>"+datas[i].cname+"</a></li>";
                         $('.xiangqing3').append(xiangqing3);
                       }
 
@@ -345,7 +357,7 @@
 
                      for(var i=0;i<datas.length;i++){
 
-                        var xiangqing4= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        var xiangqing4= "<li><a href='/home/product/third3'>"+datas[i].cname+"</a></li>";
                         $('.xiangqing4').append(xiangqing4);
                       }
 
@@ -375,7 +387,7 @@
 
                      for(var i=0;i<datas.length;i++){
 
-                        var xiangqing5= "<li><a href='#'>"+datas[i].cname+"</a></li>";
+                        var xiangqing5= "<li><a href='/home/product/third4'>"+datas[i].cname+"</a></li>";
                         $('.xiangqing5').append(xiangqing5);
                       }
 
@@ -408,28 +420,28 @@
                             <b>工业品</b>
                             <div class="xiangqing01">                           
                             <ul style="margin-top: 25px;" class="xiangqing1">
-                                <li><a href="javascript:;">机械及行业设备</a></li>
-                                <li><a href="javascript:;">仪器仪表</a></li>
-                                <li><a href="javascript:;">照明工业</a></li>
-                                <li><a href="javascript:;">安全防护</a></li>
-                                <li><a href="javascript:;">电工电气</a></li>
+                                <li><a href="/home/product/third">机械及行业设备</a></li>
+                                <li><a href="/home/product/third">仪器仪表</a></li>
+                                <li><a href="/home/product/third">照明工业</a></li>
+                                <li><a href="/home/product/third">安全防护</a></li>
+                                <li><a href="/home/product/third">电工电气</a></li>
                             </ul>
                              <ul >
-                                <li><a href="javascript:;">电子元器件</a></li>
-                                <li><a href="javascript:;">五金工具</a></li>
-                                <li><a href="javascript:;">包装</a></li>
-                                <li><a href="javascript:;">环保</a></li>
-                                <li><a href="javascript:;">家装、建材</a></li>
-                                <li><a href="javascript:;">交通运输</a></li>
+                                <li><a href="/home/product/third">电子元器件</a></li>
+                                <li><a href="/home/product/third">五金工具</a></li>
+                                <li><a href="/home/product/third">包装</a></li>
+                                <li><a href="/home/product/third">环保</a></li>
+                                <li><a href="/home/product/third">家装、建材</a></li>
+                                <li><a href="/home/product/third">交通运输</a></li>
                             </ul>
                             <ul >
-                                <li><a href="javascript:;">医药保健</a></li>
-                                <li><a href="javascript:;">印刷</a></li>
-                                <li><a href="javascript:;">二手设备转让</a></li>
-                                <li><a href="javascript:;">加工</a></li>
-                                <li><a href="javascript:;">LED</a></li>
-                                <li><a href="javascript:;">个人防护</a></li>
-                                <li><a href="javascript:;">专用设备</a></li>
+                                <li><a href="/home/product/third">医药保健</a></li>
+                                <li><a href="/home/product/third">印刷</a></li>
+                                <li><a href="/home/product/third">二手设备转让</a></li>
+                                <li><a href="/home/product/third">加工</a></li>
+                                <li><a href="/home/product/third">LED</a></li>
+                                <li><a href="/home/product/third">个人防护</a></li>
+                                <li><a href="/home/product/third">专用设备</a></li>
                             </ul> 
                             </div>
 

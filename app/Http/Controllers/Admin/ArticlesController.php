@@ -67,6 +67,20 @@ class ArticlesController extends Controller
         $articles -> title = $request -> input('title');
         //接收文章内容
         $articles -> content = $request -> input('content');
+        //接收地区
+        $articles -> area = $request -> input('area');
+        //接收行业
+        $articles -> industry = $request -> input('industry');
+        //接收公司
+        $articles -> company = $request -> input('company');
+         //接收公司
+        $articles -> timezone = $request -> input('timezone');
+        //接收供求关系身份1是供应商2是采购商信息
+        $articles -> relation = $request -> input('relation');
+        
+
+
+
         //处理上传的图片
         if($request -> hasFile('image')){
             //获取上传的图片
@@ -155,7 +169,13 @@ class ArticlesController extends Controller
             $articles -> articles_image_path = $image_dir;
 
         }
+        $articles -> area = $request -> input('area');
+        $articles -> industry = $request -> input('industry');
+        $articles -> company = $request -> input('company');
+        $articles -> timezone = $request -> input('timezone');
         $articles -> content = $request -> input('content');
+        //接收供求关系身份1是供应商2是采购商信息
+        $articles -> relation = $request -> input('relation');
 
         $res = $articles->save();
 

@@ -156,7 +156,7 @@
 
                         <div class="">
                             <a href="{{url('/home/newlogin/register')}}" class="a1"><img src="/ungmhome/images/log-u.png">立即注册</a>
-                            <a href="javascript:;" class="a2"><img src="/ungmhome/images/log-p.png">忘记密码</a>
+                            <a href="/home/forget" class="a2"><img src="/ungmhome/images/log-p.png">忘记密码</a>
                         </div>
 
                     </div>

@@ -142,11 +142,18 @@ class NewloginController extends Controller
 
                     // dd($id);
 
-                    // 发送邮件
+                    
                     if($id > 0){
                         // 注册成功
-                      
-                         return view('home.phone.success',['time'=>date( 'Y年m月d日 H:i:s',time() )]);
+                        echo'<script>
+                            alert("注册成功");
+                            function hello(){ 
+                            window.location = "/home/newlogin/login";
+                            } 
+                            window.setTimeout(hello,10);
+                        </script>';
+                        
+                         //return view('home.phone.success',['time'=>date( 'Y年m月d日 H:i:s',time() )]);
                     }else{
                         // 注册失败
                          return view('home.phone.fail',['time'=>date( 'Y年m月d日 H:i:s',time() )]);
@@ -217,83 +224,106 @@ class NewloginController extends Controller
                 });
             }  */
 
-    //前台用户退出控制器方法       
-   public function logout()
+            //忘记密码
+    public function forget()
     {
-         
-         Cache::forget('homeuser');
-         session(['homeFlag'=>false]);
-         return redirect('/');
+         return view('home.newlogin.forget');
     }
-    
+           
+          //接收忘记密码验证码
+    public function forgetcode(Request $request){
+        $phone = $request->phone;
+        $inputcode = $request -> code;
+         // $inputcode=$request->input('phone_code');
+        $phone_code=session('phone_code');
+        //判断验证码是否相同
+        if($phone_code==$inputcode){
+            $data = [
+                    'code' => '1000',
+                    'mes' => '验证码正确'
+                    
+                ];
+            return $data;
+        }else{
+            $data = [
+                    'code' => '1001',
+                    'mes' => '验证码错误'
+                    
+                ];
+            return $data;
+        }
+    }
+    //提交忘记密码
+    public function forgetpassword(Request $request){
+        //接收手机号和验证码
+        $phone = $request->phone;
+        $code = $request -> code;
+        $sessioncode = session('phone_code');
+        $newpassword = $request -> newpassword;
+        $renewpassword = $request -> renewpassword;
+        if ($newpassword == $renewpassword ) {
+            $user = Newusers::where('username',$phone)-> first();
+            // $user = Newusers::find();
+            // dd($user);
+            if ($user) {
+                //修改密码
+                // $user ->password = $newpassword;
+                 $user->password = Hash::make($newpassword);
+                //存入数据库
+                $user = $user -> save();
+                $data = [
+                    'code' => '1000',
+                    'mes' => '修改成功',
+                    'res' => $sessioncode
+                ];
+                return $data;
+            }else{
+                 $data = [
+                    'code' => '1001',
+                    'mes' => '未找到相关用户',
+                    'res' => $sessioncode
+                ];
+                return $data;
+            }
+        }
+       
+    }
 
-     
+     public function forgetphone(Request $request){
+        $phone = $request->phone;
+        $user = Newusers::where('username',$phone)-> first();
+         if ($user) {
+               
+            
+                $data = [
+                    'code' => '1000',
+                    'mes' => '手机号正确'
+                ];
+                return $data;
+            }else{
+                 $data = [
+                    'code' => '1001',
+                    'mes' => '未找到相关用户',
+                ];
+                return $data;
+            }
+    }
+
+
+
+
+            //前台用户退出控制器方法       
+           public function logout()
+            {
+                 
+                 Cache::forget('homeuser');
+                 session(['homeFlag'=>false]);
+                 return redirect('/');
+            }
+            
+
+             
         
  
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function getAbout(Request $request)
-    {
-        return view('home.index.about');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

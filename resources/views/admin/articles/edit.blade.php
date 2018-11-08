@@ -27,6 +27,33 @@
                             </select>
                         </div>
                     </div>
+        
+                <div class="mws-form-row">
+                        <label class="mws-form-label">供应商/采购商</label>
+                        <div class="mws-form-item">
+                            <select class="small" name="relation">
+                                
+                                @if($articles->relation == 1)
+                                    <option  value="0">无角色</option>
+                                    <option selected value="1">产品信息</option>
+                                    <option value="2">采购信息</option>
+                                @elseif($articles->relation == 2)
+                                     <option  value="0">无角色</option>
+                                     <option  value="1">产品信息</option>
+                                     <option selected value="2">采购信息</option>
+                                @else
+                                     <option  value="1">产品信息</option>
+                                     <option  value="2">采购信息</option>
+                                     <option selected value="0">无角色</option>
+                                    
+                                @endif
+
+                                
+                            </select>
+                        </div>
+                    </div>
+
+
                 <div class="mws-form-inline">
                     <div class="mws-form-row">
                         <label class="mws-form-label">文章标题</label>
@@ -40,6 +67,40 @@
                             <input type="file" name="image" class="small">
                         </div>
                     </div>
+
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">地区</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="area"  style="width: 200px;"  class="small" value="{{$articles->area}}">
+                        </div>
+                    </div>
+
+                      <div class="mws-form-row">
+                        <label class="mws-form-label">行业</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="industry" style="width: 200px;" class="small" value="{{$articles->industry}}" >
+                        </div>
+                    </div>
+
+                      <div class="mws-form-row">
+                        <label class="mws-form-label">公司</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="company" style="width: 200px;" class="small" value="{{$articles->company}}" >
+                        </div>
+                    </div>
+
+                     <div class="mws-form-row">
+                        <label class="mws-form-label">时间区间</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="timezone" style="width: 200px;" class="small" value="{{$articles->timezone}}">
+                        </div>
+                    </div>
+
+
+
+
+
+
                     <div class="mws-form-row">
                         <label class="mws-form-label">文章内容</label>
                         <div class="mws-form-item">

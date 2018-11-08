@@ -48,11 +48,11 @@
            
 
                 </div>
-                     <div class="page dataTables_paginate paging_full_numbers">
+                     <div class="page dataTables_paginate paging_full_numbers text-center" style="margin-top:-10px;">
                      {!! $data->render() !!}
                      </div>
                 </div>
-        </div>
+            </div>
        
     </div>
 
