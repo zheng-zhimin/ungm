@@ -29,7 +29,7 @@
                     </p>
                 </div>
                 <div class="img-responsive">
-                    <img src="/ungmhome/images/关于我们.jpg" alt="">
+                    <img src="/ungmhome/images/关于我们2.jpg" alt="">
                 </div>
             </div>
             <div class="brand">

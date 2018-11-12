@@ -117,9 +117,9 @@ Route::post('/home/ajax1',function(){
 //邮箱激活路由
 //Route::get('/home/jihuo','Home\LoginController@jihuo');
 //用户点击头像显示个人中心路由
-Route::get('/home/userinfo/userinfo',function(){
-    return view('home.userinfo.userinfo');
-});
+//Route::get('/home/userinfo/userinfo',function(){
+ //   return view('home.userinfo.userinfo');
+//});
 
 //添加收藏de 路由
 Route::get('/home/addcollection/{id}','Home\CollectController@add');
@@ -176,6 +176,8 @@ route::get('/home/rank','Home\NewhomeController@rank');
 route::get('/home/dns','Home\NewhomeController@dns');
 //前台隐私条款的路由
 route::get('/home/copy','Home\NewhomeController@copy');
+//前台广告服务的路由
+route::get('/home/adv','Home\NewhomeController@adv');
 
 //前台百度地图页面路由
 Route::get('/home/map',function(){
@@ -222,10 +224,7 @@ Route::post('/list/fs','Home\NewhomeController@findsell');//获取搜索框查�
 Route::post('/home/searchbuy','Home\NewhomeController@searchbuy');
 Route::post('/home/searchsell','Home\NewhomeController@searchsell');
 
-//采购商发布采购产品的路由
-Route::get('/home/buypublish','Home\NewhomeController@buypublish');
-//供应商点击发布供应产品的路由
-Route::get('/home/subpublish','Home\NewhomeController@subpublish');
+
 
 
 
@@ -286,11 +285,28 @@ Route::post('/home/buymessage/list','Home\NewhomeController@buymessagelist');
 //供应信息列表内容点击
 Route::post('/home/product/list','Home\NewhomeController@productlist');
 
+//供应商产品四级详情传递id的路由
+Route::get('/home/productfour/{id}','Home\NewhomeController@productfour');
+//采购商商信息四级详情传递id的路由
+Route::get('/home/buymessagefour/{id}','Home\NewhomeController@buymessagefour');
 
 
+//显示新个人中心的路由(信息管理)
+Route::get('/home/userinfo/index','Home\NewhomeController@usercenter');//显示新个人中心的路由(信息管理)
+Route::post('/home/userinfo/adduser','Home\NewhomeController@adduser');
+//交易管理
+Route::get('/home/userinfo/transaction','Home\NewhomeController@transaction');
+//个人中心账户管理
+Route::get('/home/userinfo/account/{id}','Home\NewhomeController@account');
+//修改个人信息
+Route::post('/center/update','Center\CenterController@userdetailupdate');
 
-
-
+//密码修改路由
+Route::post('/center/pwd','Center\CenterController@pwd');
+//显示新增收货地址
+Route::get('/center/addaddress','Center\CenterController@addaddress');
+//添加新增收货地址
+Route::post('/center/add/address','Center\CenterController@addbuyaddress');
 
 
 

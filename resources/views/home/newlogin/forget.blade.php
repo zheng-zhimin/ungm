@@ -65,7 +65,7 @@
         <div class="loginNav">
             <div class="container">
                 <img src="images/ungm.png" class="img-responsive" alt="">
-                <a href="index.html">返回首页</a>
+                <a href="/">返回首页</a>
             </div>
         </div>
         <!--2.登录框-->
@@ -547,7 +547,7 @@ $(".submit").click(function(){
                         <li><a href="/home/contact">联系我们</a><b>|</b></li>
                         <li><a href="/home/dns">使用协议</a><b>|</b></li>
                         <li><a href="/home/copy">版权隐私</a><b>|</b></li>
-                        <li><a href="/home/">广告服务</a><b>|</b></li>
+                        <li><a href="/home/adv">广告服务</a><b>|</b></li>
                         <li><a href="/home/rank">排名推广</a></li>
                     </ul>
                 </div>

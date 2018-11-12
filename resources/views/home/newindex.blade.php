@@ -111,7 +111,7 @@
                                     <li class="slh">采购类型：<span>{{$v['xingzhi']}}</span></li>
                                     <li class="slh">报价：<span>{{$v['price']}}</span></li>
                                 </ul>
-                                <button type="" class="btn btn-lg btn-block btn-success">立即沟通</button>
+                                <a href="/home/buymessagefour/{{$v['uid']}}"><button type="" class="btn btn-lg btn-block btn-success">立即沟通</button></a>
                             </div>
                         </div>
                       @endforeach
@@ -119,7 +119,7 @@
                    </div>
 
 
-                                               <div class="row-roll padd wrap" style="width: 681px;">
+                                               <div class="row-roll padd wrap" style="width: 704px;">
                                                     <div class="col-md-4 dowebok" align="left">
                                                        <ul>
                                                               @foreach($data2 as $v)  
@@ -157,17 +157,24 @@
   <div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
-  <div class="col-md-4 con"><p><a href="/home/subpublish">发布产品</a></p><p><a href="#">我的关注</a></p></div>
+  <div class="col-md-4 con"><p><a href="/home/product/second">发布产品</a></p><p><a href="">我的关注</a></p></div>
   <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
-  <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block"><a href="/home/newlogin/login">登录</a></bottom></p></div>
-  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success"><a href="/home/newlogin/register">注册</a></bottom></p></div>
+  <div class="col-md-7" style="float:right;">
+  <bottom class="btn btn-lg btn-success btn-block" style="float:right;margin-top: 15px;"><a href="/home/newlogin/login" style="line-height:0;color:#fff;">登录</a></bottom>
+  </div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8;height:41px;"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
     <img class="img-responsive"src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
-    <div class="col-md-4 con"><p><a href="#">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
+    <div class="col-md-4 con"><p><a href="/home/product/second">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
     <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
+      <div class="col-md-12" > <p>
+        <a href="/home/userinfo/index" style="color:#fff;">
+            <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
+        </a>
+    </p></div>
 @endif                                              
                                              
                                                
@@ -179,7 +186,7 @@
                                                 @foreach($data4 as $v)
                                                    <div class="col-md-12 padd advertising">
                                                    <a href="{{$v->advertise_https}}" target="blank" >
-                                                     <img class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
+                                                     <img style="height:92px;width:330px;" class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
                                                    </a>
                                                    
                                                    </div>
@@ -198,7 +205,7 @@
                                                <div class="row">
                                                     <div class="col-md-10">
                                                      {{csrf_field()}}
-                                                    <input class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商" name="">
+                                                    <input style="height:40px;padding-right:0px;" class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商" name="">
                                                     </div>
                                                     <div class="col-md-2">
                                                     <button type="" class="btn btn-lg btn-block btn-s btn-success"><i class="glyphicon glyphicon-search"></i>
@@ -276,7 +283,7 @@
                     //alert(datas);
                      for(var i=0;i<datas.length;i++){
                         var zzm=" <div class='col-md-6 '>"+
-                         "<img class='img-industrial zzm'"+
+                         "<img style='width:230px;height:90px;' class='img-industrial zzm'"+
                          " src='"+datas[i].pic_path+"'>"+
                               "</div>";
                           $('.pic').append(zzm);
@@ -307,7 +314,7 @@
                     //alert(datas);
                      for(var i=0;i<datas.length;i++){
                         var zzm=" <div class='col-md-6 '>"+
-                         "<img class='img-industrial zzm'"+
+                         "<img  style='width:230px;height:90px;' class='img-industrial zzm'"+
                          " src='"+datas[i].pic_path+"'>"+
                               "</div>";
                           $('.pic').append(zzm);
@@ -338,7 +345,7 @@
                     //alert(datas);
                      for(var i=0;i<datas.length;i++){
                         var zzm=" <div class='col-md-6 '>"+
-                         "<img class='img-industrial zzm'"+
+                         "<img  style='width:230px;height:90px;' class='img-industrial zzm'"+
                          " src='"+datas[i].pic_path+"'>"+
                               "</div>";
                           $('.pic').append(zzm);
@@ -368,7 +375,7 @@
                     //alert(datas);
                      for(var i=0;i<datas.length;i++){
                         var zzm=" <div class='col-md-6 '>"+
-                         "<img class='img-industrial zzm'"+
+                         "<img  style='width:230px;height:90px;' class='img-industrial zzm'"+
                          " src='"+datas[i].pic_path+"'>"+
                               "</div>";
                           $('.pic').append(zzm);
@@ -398,7 +405,7 @@
                     //alert(datas);
                      for(var i=0;i<datas.length;i++){
                         var zzm=" <div class='col-md-6 '>"+
-                         "<img class='img-industrial zzm'"+
+                         "<img style='width:230px;height:90px;'  class='img-industrial zzm'"+
                          " src='"+datas[i].pic_path+"'>"+
                               "</div>";
                           $('.pic').append(zzm);
@@ -450,10 +457,10 @@
                             <div class="row pic" >
                                 
                                 <div class="col-md-6 zzm">
-                                    <img  class="img-industrial " src="/ungmhome/images/advertising.png">
+                                    <img  class="img-industrial " src="/uploads/20181109/15417540495299.jpg">
                                 </div> 
                                 <div class="col-md-6 zzm">
-                                    <img  class="img-industrial " src="/ungmhome/images/advertising.png">
+                                    <img  class="img-industrial " src="/uploads/20181109/15417541638071.jpg">
                                 </div>
 
                             </div>
@@ -630,17 +637,27 @@
   <div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
-  <div class="col-md-4 con"><p><a href="/home/buypublish/">发布产品</a></p><p><a href="#">我的订单</a></p></div>
+  <div class="col-md-4 con"><p><a href="/home/buymessage/second">发布产品</a></p><p><a href="#">我的订单</a></p></div>
   <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
-  <div class="col-md-7"><p><bottom class="btn btn-lg btn-success btn-block"><a href="/home/newlogin/login">登录</a></bottom></p></div>
-  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block btn-outline-success"><a href="/home/newlogin/register">注册</a></bottom></p></div>
+  
+  <div class="col-md-7" style="float:right;">
+  <bottom class="btn btn-lg btn-success btn-block" style="float:right;margin-top: 15px;"><a href="/home/newlogin/login" style="line-height:0;color:#fff;">登录</a></bottom>
+  </div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
     <img class="img-responsive" src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
-    <div class="col-md-4 con"><p><a href="#">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
+    <div class="col-md-4 con"><p><a href="/home/product/second">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
     <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
+    <div class="col-md-12">
+    <p>
+        <a href="/home/userinfo/index" style="color:#fff;">
+            <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
+        </a>
+    </p>
+    </div>
 @endif
 
                                                </div> 
@@ -650,7 +667,7 @@
                                                    @foreach($data5 as $v)
                                                    <div class="col-md-12 padd advertising">
                                                    <a href="{{$v->advertise_https}}" target="blank" >
-                                                     <img class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
+                                                     <img style="height:92px;width:330px;" class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
                                                    </a>
                                                    
                                                    </div>

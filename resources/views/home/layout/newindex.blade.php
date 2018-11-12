@@ -29,6 +29,10 @@
     background-color: #fff !important;
     border-bottom: 2px solid;
     }
+    .blue li a:hover{
+       color:lightblue;
+    }
+    
 </style>
 
 <div class="top">
@@ -46,7 +50,7 @@
             </div>
 @else
             <div class="top-right">
-                <!-- <span class=""><img src="{{Cache::get('homeuser')->profile}}" ></span> -->
+               <!--  <span class=""><img src="{{Cache::get('homeuser')->profile}}" ></span>  -->
                 
                 
                 <span class="">|</span>
@@ -90,6 +94,7 @@
                         <li><a href="/home/ct/#1">商机服务</a></li>
                         <li><a href="/home/ct/#2">展会论坛</a></li>
                         <li><a href="/home/ct/#3">商务热点</a></li>
+                        <!-- <li><a href="/home/meeting/list">商务会议</a></li> -->
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -213,14 +218,14 @@
             </div>
             <div class="col-md-6 bot-last">
                 <div  class="row bot-list">
-                    <ul>
-                        <li><a href="/home/about">关于我们</a><b>|</b></li>
-                        <li><a href="/home/job">招纳贤士</a><b>|</b></li>
-                        <li><a href="/home/contact">联系我们</a><b>|</b></li>
-                        <li><a href="/home/dns">使用协议</a><b>|</b></li>
-                        <li><a href="/home/copy">版权隐私</a><b>|</b></li>
-                        <li><a href="/home/">广告服务</a><b>|</b></li>
-                        <li><a href="/home/rank">排名推广</a></li>
+                    <ul class="blue">
+                        <li ><a href="/home/about">关于我们</a><b>|</b></li>
+                        <li ><a href="/home/job">招纳贤士</a><b>|</b></li>
+                        <li ><a href="/home/contact">联系我们</a><b>|</b></li>
+                        <li ><a href="/home/dns">使用协议</a><b>|</b></li>
+                        <li ><a href="/home/copy">版权隐私</a><b>|</b></li>
+                        <li ><a href="/home/adv">广告服务</a><b>|</b></li>
+                        <li ><a href="/home/rank">排名推广</a></li>
                     </ul>
                 </div>
                 <div class="row info">
@@ -251,8 +256,8 @@
                 <div class="row">
                     <div class="copy">
                         <span style="padding-left:260px;">九鼎智成（北京）信息技术股份有限公司版权所有</span>
-                        <span style="color:#434a66;">Copyright@1999-2018 300.cn All Rights Reserved</span>
-                        <span style="color:#434a66;">京ICP备111111-1</span>
+                        <span>Copyright@1999-2018 300.cn All Rights Reserved</span>
+                        <span>京ICP备111111-1</span>
                     </div>
                 </div>
             </div>

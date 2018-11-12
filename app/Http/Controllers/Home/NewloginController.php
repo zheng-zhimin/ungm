@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Home\Newusers;
+use  App\Models\Admin\Ungmuserdetail;
 use App\Models\Home\UserDetail;
 use DB;
 use Mail;
@@ -127,7 +128,14 @@ class NewloginController extends Controller
             'password.between' => '密码格式不正确',
             'repassword.same' => '密码不一致',
             ]);
-              //判断验证码是否相同
+              //先判断普通验证码
+                $coderes= checkcode($request->input('code'));
+                 if(!$coderes)
+                {
+                    return back()->withErrors('验证码错误') -> withInput();
+                }
+
+              //判断短信验证码是否相同
              $inputcode=$request->input('phone_code');
              $phone_code=session('phone_code');
              //如果验证码也正确就将新伙伴入库吧
@@ -138,7 +146,7 @@ class NewloginController extends Controller
                     $profile='/homeblog/img/dt.png';//给个默认头像
                     $token = str_random(50);
                     $id = Newusers::insertGetId(['profile'=>$profile,'username'=>$phone,'phone'=>$phone,'password'=>$pass,'token'=>$token]);
-                    //UserDetail::insert(['phone'=>$phone,'uid'=>$id]);
+                    Ungmuserdetail::insert(['phone'=>$phone,'uid'=>$id]);
 
                     // dd($id);
 
@@ -161,7 +169,7 @@ class NewloginController extends Controller
                     }
              }else{
                 //$phone = $request -> input('phone');
-               return redirect('/home/newlogin/register')->withErrors(['cuowu'=>'验证码不正确']);
+               return back()->withErrors(['cuowu'=>'短信验证码不正确'])-> withInput();
 
             }
 

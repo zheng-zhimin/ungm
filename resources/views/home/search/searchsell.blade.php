@@ -50,7 +50,9 @@
                         <p>地区：{{$v['address']}}</p>
                         <p>行业：{{$v['industry']}}</p>
                         <p>公司：{{$v['company']}}</p>
-                        <input type="button" value="立即报价">
+                       
+                         <a href="/home/productfour/{{$v['uid']}}"><input type="button" value="立即询价"> </a>
+
                     </div>
                 </div>
             @endforeach

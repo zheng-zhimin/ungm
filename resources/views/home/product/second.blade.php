@@ -2,7 +2,7 @@
 @extends('home.layout.newindex')
 
 @section('title')
-    产品二级页面
+    产品信息
 @endsection
 
 

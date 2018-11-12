@@ -242,7 +242,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
    color: #999999;
 }
 .globalTrade .tab-content .SUPPLIER-r .SUPPLIER-r-top{
-    padding:0px 20px 20px 20px;
+    padding:20px 20px 20px 20px;
     margin-bottom: 15px;
     margin-left: -6px;
 }
@@ -259,9 +259,13 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 #SUPPLIER{
     padding: 3rem 2rem 1rem 3rem;
+    background:#fff;
+}
+#SUPPLIER .form-control{
+    height:40px;
 }
 #SUPPLIER .btn-s{
-    height: 38px;
+    height: 40px;
 }
 #SUPPLIER .col-md-8 {
     padding-right: 23px;
@@ -334,6 +338,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     margin-top: 20px;
     margin-bottom: 30px;
     border: 1px;
+    padding-top: 20px;
+    height: 138px;
 }
 #SUPPLIER .col-md-8 .row-roll .col-md-4{
     padding:0px 20px 20px 24px;
@@ -389,6 +395,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 #SUPPLIER .col-md-4 .padd p a:hover{
     color: #3477ff;
 }
+#BUYERS .col-md-4 .padd p a:hover{
+    color: #3477ff;
+}
 .tab-content-1{
         padding-left:0px !important;
 }
@@ -398,6 +407,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
                                                                 padding-bottom: 45px !important;
                                                                 padding-left: 40px !important;
                                                                 padding-right: 20px !important;
+                                                                background:#fff;
                                                             }
                                                             #BUYERS .col-md-8 .btn-group-lg>.btn, .btn-lg{
                                                                 line-height: 1;
@@ -674,7 +684,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     letter-spacing: 0px;
 }
 .als-item-1 .p-2, .als-item-2 .p-2, .als-item-3 .p-2, .als-item-4 .p-2, .als-item-5 .p-2, .als-item-6 .p-2, .als-item-7 .p-2, .als-item-8 .p-2{
-    margin-top: 40px;
+    margin-top: 60px;
     padding-left: 26px !important;
     padding-right: 26px !important;
     text-align: left;
@@ -3014,4 +3024,871 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 .supplierRM .botMRO{
 	height: 110px;
+}
+
+/**供应商四级页详情页页面样式**/
+.supplierDP .supplierDPone{
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+	margin-top:40px;
+	padding:60px 50px 50px 60px;
+	height:600px;
+}
+.supplierDP .supplierDPone .oneLt{
+	float:left;
+	width: 420px;
+}
+.supplierDP .supplierDPone .oneLt .ltTop img{
+	width: 360px;
+	height: 360px;
+	box-shadow: 0 0 15px 1px 
+	    rgba(0, 0, 0, 0.1);
+}
+.supplierDP .supplierDPone .oneLt .ltBot ul li{
+	float:left;
+}
+.supplierDP .supplierDPone .oneLt .ltBot img{
+	width: 80px;
+	height: 80px;
+	margin:20px 14px 20px 0;
+	box-shadow: 0 0 15px 1px 
+	    rgba(0, 0, 0, 0.1);
+}
+.supplierDP .supplierDPone .oneLt p{
+    font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #666666;
+	clear: both;
+}
+.supplierDP .supplierDPone .oneRt h1{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 30px;
+	font-weight: 600;
+	color: #333333;
+	margin:20px 0;
+}
+.supplierDP .supplierDPone .oneRt img{
+	width: 20px;
+	height: 6px;
+	margin:0px 0px 36px 0;
+}
+.supplierDP .supplierDPone .oneRt p{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 18px;
+	color: #999999;
+	padding-bottom:20px;
+}
+.supplierDP .supplierDPone .oneRt span{
+	margin-left:40px;
+	color:#333333;
+}
+.supplierDP .supplierDPone .oneRt .oneRtp{
+	padding-bottom:36px;
+	border-bottom:2px solid #f9f9f9;
+}
+.supplierDP .supplierDPone .oneRt ul{
+	padding-top:34px;
+}
+.supplierDP .supplierDPone .oneRt ul li{
+	width:280px;
+	float:left;
+	padding-bottom:14px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 18px;
+	color: #333333;
+}
+.supplierDP .supplierDPone .oneRt ul li label{
+	width:76px;
+	color: #999999;
+}
+.supplierDP .supplierDPtwo{
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+	    rgba(0, 0, 0, 0.1);
+	padding:40px 60px 50px 60px;
+	margin:40px 0 100px 0;
+}
+.supplierDP .supplierDPtwo p{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 18px;
+	line-height: 48px;
+	color: #666666;
+}
+.supplierDP .supplierDPtwo p span{
+	color:#ed462f;
+}
+.supplierDP .supplierDPthree{
+	background-color: #ffffff;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	line-height: 30px;
+	color: #999999;
+}
+.supplierDP .supplierDPthree h6{
+	margin-bottom:30px;
+	color: #666666;
+}
+.supplierDP .supplierDPthree p{
+	text-align:justify; 
+	text-justify:inter-ideograph;
+}
+.supplierDP .supplierDPthree .threeLt{
+	padding:100px 80px 106px 60px;
+	width:610px;
+	float:left;
+}
+.supplierDP .supplierDPthree .threeRt{
+	padding:100px 60px 0 0;
+}
+
+/**采购商四级页详情页页面样式**/
+.buyerSubpageDP .buyerSubpageDPone{
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+	margin-top:40px;
+	padding:60px 50px 50px 60px;
+	height:600px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneLt{
+	float:left;
+	width: 420px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneLt .ltTop img{
+	width: 360px;
+	height: 360px;
+	box-shadow: 0 0 15px 1px 
+	    rgba(0, 0, 0, 0.1);
+}
+.buyerSubpageDP .buyerSubpageDPone .oneLt .ltBot ul li{
+	float:left;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneLt .ltBot img{
+	width: 80px;
+	height: 80px;
+	margin:20px 14px 20px 0;
+	box-shadow: 0 0 15px 1px 
+	    rgba(0, 0, 0, 0.1);
+}
+.buyerSubpageDP .buyerSubpageDPone .oneLt p{
+    font-family: MicrosoftYaHei;
+	font-size: 14px;
+	color: #666666;
+	clear: both;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt h1{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 24px;
+	font-weight: 600;
+	color: #333333;
+	margin:20px 0;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt img{
+	width: 20px;
+	height: 6px;
+	margin:0 0 40px 0;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtTop{
+	padding:30px 0;
+	margin-left:420px;
+	border-top:2px solid #f9f9f9;
+	border-bottom:2px solid #f9f9f9;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtTop ul li{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 36px;
+	color: #666666;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtTop ul label{
+	width:142px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtTop ul b{
+	color:#ed462f;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtTop ul span{
+	color:#333333;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtCen{
+	padding-top:42px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtCen img{
+	width: 28px;
+	height: 28px;
+	margin-bottom:18px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtCen b{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 30px;
+	line-height:30px;
+	color: #00b7a1;
+	padding-left:10px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtCen span{
+	font-size: 16px;
+	line-height: 30px;
+	color: #00b7a1;
+	padding-left:20px;
+}
+.buyerSubpageDP .buyerSubpageDPone .oneRt .rtBot ul li{
+	width:150px;
+	float:left;
+	font-size: 14px;
+	color: #999999;
+}
+
+
+.buyerSubpageDP .buyerSubpageDPtwo{
+	margin:40px 0 100px 0;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+	padding:20px 60px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .tops{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 18px;
+	color: #999999;
+	padding:20px 0;
+	border-bottom:2px solid #3477ff;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .tops .topTwo{
+	padding-left:60px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo{
+	height:420px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo ul{
+	padding:60px 0 90px 70px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo ul li{
+	margin-bottom:10px;
+	font-size: 16px;
+	color: #333333;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo ul label{
+	width:120px;
+    color:#999999;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo .twoTop{
+	padding-bottom:30px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo .twoBot{
+	padding-top:40px;
+	border-top:2px solid #f9f9f9;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne{
+	padding:60px 0 30px 70px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 16px;
+	color: #333333;
+	height:420px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne ul li{
+	margin-bottom:10px;
+	float:left;
+	width:460px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne ul label{
+	color: #999999;
+	width:130px;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne .twoUl{
+	clear: both;
+	padding-top:40px;
+	border-top:2px solid #f9f9f9;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne .twoUl li{
+	clear: both;
+	width:86%;
+	font-size: 16px;
+	font-weight: 600;
+	color: #333333;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne .twoUl li .col-md-2{
+	padding-left:14px;
+	color: #999999;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botOne{
+	display:block;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .bots .botTwo{
+	display:none;
+}
+.buyerSubpageDP .buyerSubpageDPtwo .tops .topColor{
+	color:#3477ff;
+}
+/**广告服务页面样式**/
+.bgColor{
+	height: 150px;
+	background-color: #4f95e9;
+}
+.ad_Service{
+	padding:70px 0 112px 0;
+}
+.ad_Service .adRt p{
+	font-family: MicrosoftYaHei;
+	font-size: 26px;
+	color: #666666;
+}
+.ad_Service .adRt p a{
+	color: #3477ff;
+	text-decoration:none;
+}
+.ad_Service .adLt{
+	margin-top:70px;
+	float:left;
+	margin-right:20px;
+}
+.ad_Service .adRt{
+	margin-top:300px;
+}
+
+/*个人中心采购信息管理*/
+a:hover, a:focus{
+    text-decoration: none;
+}
+.puma-addPurchasing .container .top-menu{
+    background-color: #fff;
+    height: 1100px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.1);
+    padding-left: 30px;
+    margin-bottom: 100px;
+    margin-top:10px;
+}
+.puma-addPurchasing .container  .top-menu .row{ 
+    margin: 30px auto;
+}
+.puma-addPurchasing .container .top-menu{ 
+    margin: 0px 30px 30px 147px;
+}
+.puma-addPurchasing .container .row .col-md-1{
+    width:110px ;
+}
+.puma-addPurchasing .container .top-menu ul{
+    margin-top: 10px;
+}
+.puma-addPurchasing .container .top-menu ul a{
+    float: right;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #333333;
+    margin-right: 18px;
+}
+.puma-addPurchasing .container .top-menu ul a:last-child{
+   
+    float: right;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+}
+.puma-addPurchasing .container .two{
+    clear: both;
+}
+.puma-addPurchasing .container .two select{
+    width: 100px;
+    height: 30px;
+    background-color: #00b7a1;
+    border-radius: 4px;
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 13px;
+    font-weight: 600;
+    font-stretch: normal;
+
+    letter-spacing: 0px;
+    color: #ffffff;
+    float: left;
+}
+.puma-addPurchasing .container .two option{
+    background-color: #666666;
+}
+.puma-addPurchasing .container .two button{
+    width: 93px;
+    height: 30px;
+    background-color: #00b7a1;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    border: 1px;
+}
+.puma-addPurchasing .container .two input{
+    width: 271px;
+    height: 30px;
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    display: inline;
+}
+.puma-addPurchasing .container .two b{
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #666666;
+}
+.puma-addPurchasing .container .two .l-b{
+    margin-left: 10px;
+}
+.puma-addPurchasing .container .tex{
+    font-family: MicrosoftYaHei-Bold;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #333333;             
+    float: left;
+}
+.puma-addPurchasing .container .explain span{
+    
+}
+.puma-addPurchasing .container .explain textarea{
+    height: 260px;
+    border-radius: 4px;
+    border: solid 1px #d8d8d8;
+    width: 710px;
+}
+.puma-addPurchasing .container .row .uploading form input{
+    position: absolute;
+                width: 120px;
+                height: 120px;
+                opacity: 0;
+                z-index: 100;
+} 
+.puma-addPurchasing .container .row .uploading form .add{
+                width: 120px;
+                height: 120px;
+}
+.puma-addPurchasing .container .row .uploading .col-md-12 p{
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #666666;
+}
+.puma-addPurchasing .container .row .uploading .col-md-12 p span{
+    color: #eb5626;
+}
+.puma-addPurchasing .container .row .uploading .col-md-2{
+    text-align: center;
+}
+.puma-addPurchasing .container .row .uploading .col-md-12{
+    margin-top: 30px;
+}
+.puma-addPurchasing .container .row .tex-r .l-r-tex span{
+    float: left;
+}
+.puma-addPurchasing .container .row .tex-r input, .puma-addPurchasing .container .row .tex-r select{
+    display: inline;
+    width: 150px;
+    height: 30px;
+}
+.puma-addPurchasing .container .row .tex-r .tim{
+    font-size: 13px;
+}
+.puma-addPurchasing .container .row .tex-r div input{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.puma-addPurchasing .container .row .tex-r p{
+    font-family: MicrosoftYaHei;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 30px;
+    letter-spacing: 0px;
+    color: #666666;
+}
+.puma-addPurchasing .container .row .tex-r p a{
+    font-family: MicrosoftYaHei;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #00b7a1;
+}
+
+/**售后**/
+.myAfterSale{
+	font-family: MicrosoftYaHei;
+	margin:40px 0 100px 168px;
+	height: 400px;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+}
+.myAfterSale p{
+	font-size: 16px;
+	letter-spacing:2px;
+	color: #00b7a1;
+	text-align:center;
+	padding-top:140px;
+}
+
+
+/**账户设置页面样式**/
+/**个人资料**/
+/**密码管理**/
+.settingBtn{
+	float:left;
+	margin-top:40px;
+}
+.settingBtn p{
+	width: 120px;
+	height: 36px;
+	background-color: #00b7a1;
+	font-size: 14px;
+	line-height: 36px;
+	color: #ffffff;
+	text-align:center;
+}
+.settingBtn .btnColor{
+	background-color: #00d6bc;
+}
+.accountSetting .lastPass{
+	display:none;
+}
+.accountSetting{
+	margin:40px 0 100px 150px;
+	font-family: MicrosoftYaHei;
+	padding:10px 0 40px 30px;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+}
+.accountSetting p{
+	font-size: 16px;
+	color: #3477ff;
+}
+.accountSetting ul li{
+	font-size: 16px;
+	color: #333333;
+	margin-bottom:20px;
+}
+.accountSetting ul li label{
+	width:160px;
+	text-align:right;
+	padding-right:30px;
+}
+.accountSetting ul li img{
+	width:200px;
+	height:200px;
+}
+.accountSetting ul li input{
+	padding-left:10px;
+	width: 200px;
+	height: 40px;
+	font-size: 16px;
+	border-radius: 4px;
+	border:1px solid #d8d8d8;
+}
+.accountSetting ul li a{
+	color: #00b7a1;
+	text-decoration:none;
+}
+.accountSetting button{
+	width: 70px;
+	height: 30px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	font-size: 16px;
+	color: #ffffff;
+	border:none;
+	margin-left:160px;
+}
+.accountSetting .mySex input{
+	width: 12px;
+	height: 12px;
+}
+.accountSetting .mySex span{
+	padding:0 10px 0 10px;
+}
+.accountSetting .myName input{
+	width:100px;
+	text-align:center;
+	padding-left:0px;
+}
+.accountSetting .myOne input{
+	border:none;
+	padding-left:0px;
+	width: 150px;
+}
+.accountSetting .mySite input{
+	width:500px;
+}
+.accountSetting .myCity select{
+	width: 100px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 14px;
+	color: #ffffff;
+}
+.accountSetting .myCity select option{
+	background-color: #f4f4f4;
+	color: #666666;
+}
+.accountSetting .myCity .myTwo{
+	margin-left:30px;
+	width: 130px;
+}
+.accountSetting ul li i{
+	display:none;
+	padding-left: 16px;
+	height: 20px;
+	background: url(/ungmhome/images/yes.png) no-repeat left center;
+	color: #999;
+	
+}
+.accountSetting ul li i.active{
+	margin-left:10px;
+	background: url(/ungmhome/images/no.png) no-repeat left center;
+	color: red;
+}
+
+/**密码管理**/
+.lastPass .myLi{
+	margin-top:40px;
+}
+.lastPass ul li span{
+	font-size: 12px;
+	color: #999999;
+	padding-left:4px;
+}
+.lastPass .myRed span{
+	color: #eb5626;
+}
+.lastPass ul li .mySub{
+	width: 110px;
+	height: 30px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	font-size: 16px;
+	color: #ffffff;
+	margin-left:10px;
+	padding-left:0;
+}
+
+/**交易管理**/
+.myManagement .myShippingAddress{
+	display:none;
+}
+.myManagement .myAfterSale{
+	display:none;
+}
+.myManagement .myOrder .myNav .btnColor{
+	color:#00b7a1
+}
+.myManagement .myOrder .myHint .mySupplyOrder{
+	display:none;
+}
+.myManagement .myOrder .myHint .myInvoice{
+	display:none;
+}
+.myManagement .myOrder .myHint .myLogistics{
+	display:none;
+}
+/**我的订单页面样式--------主页面**/
+.myManagement .myOrder{
+	font-family: MicrosoftYaHei;
+	margin:40px 0 100px 168px;
+	padding:14px 0 0 30px;
+	height: 500px;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+}
+.myManagement .myOrder .myNav span{
+	font-size: 16px;
+	font-weight: 600;
+	color: #333333;
+	margin-right:36px;
+	text-decoration:none;
+}
+.myManagement .myOrder .myNav span:hover{
+	color: #00b7a1;
+}
+.myManagement .myOrder .myHint p{
+	font-size: 24px;
+	letter-spacing: 4px;
+	font-weight: 600;
+	color: #00b7a1;
+	text-align:center;
+	padding-top:124px;
+}
+
+
+
+
+/**售后**/
+.myManagement .myAfterSale{
+	font-family: MicrosoftYaHei;
+	margin:40px 0 100px 168px;
+	height: 400px;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+}
+.myManagement .myAfterSale p{
+	font-size: 16px;
+	letter-spacing:2px;
+	color: #00b7a1;
+	text-align:center;
+	padding-top:140px;
+}
+
+
+/**收货地址**/
+.myManagement .myShippingAddress{
+	font-family: MicrosoftYaHei;
+	margin:40px 0 30px 168px;
+	padding:0 30px 30px 30px;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+}
+.myManagement .myShippingAddress .addressOne{
+	font-size: 16px;
+	color: #333333;
+	padding:18px 0 40px 0;
+	font-weight: 600;
+}
+.myManagement .myShippingAddress .addressOne a{
+	text-decoration:none;
+	margin-right:34px;
+}
+.myManagement .myShippingAddress .addressOne a:hover{
+	color:#00b7a1;
+}
+.myManagement .myShippingAddress .addressOne .oneColor{
+	color:#00b7a1;
+}
+.myManagement .myShippingAddress .table-responsive table{
+	border-radius: 4px;
+}
+.myManagement .myShippingAddress .table-responsive thead tr th{
+	padding:10px 0;
+	height: 28px;
+	background-color: #00b7a1;
+	text-align:center;
+	color: #ffffff;
+}
+.myManagement .myShippingAddress .table-responsive tbody tr td{
+	padding:20px 0;
+	text-align:center;
+	color: #666666;
+}
+.myManagement .myShippingAddress .table-responsive tbody tr td b{
+	margin:0 10px;
+}
+.myManagement .myShippingAddress .table-responsive tbody tr td a{
+	text-decoration:none;
+}
+.myManagement .myShippingAddress .table-responsive tbody tr td a:hover{
+	color:#00b7a1;
+}
+.myManagement .myShippingAddress .table-responsive .tabWidth{
+	width:300px;
+}
+.myManagement .addressTwo{
+	width: 400px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	float:right;
+	margin-right:30px;
+	margin-top:60px;
+}
+.myManagement .addressTwo p{
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 14px;
+	line-height: 40px;
+	color: #ffffff;
+	text-align:center;
+	letter-spacing: 2px;
+}
+
+/**新增地址**/
+.myNewAddress{
+	font-family: MicrosoftYaHei;
+	margin:40px 0 100px 168px;
+	padding:74px 0 40px 106px;
+	background-color: #ffffff;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+	font-size: 18px;
+	font-weight: normal;
+	color: #333333;
+}
+.myNewAddress ul li{
+	margin-bottom:16px;
+}
+.myNewAddress ul li label{
+	margin-right:30px;
+}
+.myNewAddress ul li input{
+	width: 200px;
+	height: 40px;
+	border-radius: 4px;
+	border:1px solid #d8d8d8;
+	padding-left:10px;
+}
+.myNewAddress ul .addressOne select{
+    width: 90px;
+	height: 40px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 14px;
+	color: #ffffff;
+	margin-right:30px;
+}
+.myNewAddress ul .addressOne select option{
+	background-color: #f4f4f4;
+	color: #666666;
+}
+.myNewAddress ul .addressOne input{
+	width: 400px;
+}
+.myNewAddress ul .addressTwo input{
+	width: 370px;
+}
+.myNewAddress button{
+	width: 70px;
+	height: 30px;
+	background-color: #00b7a1;
+	border-radius: 4px;
+	font-size: 16px;
+	color: #ffffff;
+	border:none;
+	margin-left:100px;
+}
+.myNewAddress ul li i{
+	display:none;
+	padding-left: 16px;
+	background: url(/ungmhome/images/yes.png) no-repeat left center;
+	color: #999;
+	
+}
+.myNewAddress ul li i.active{
+	margin-left:10px;
+	background: url(/ungmhome/images/no.png) no-repeat left center;
+	color: red;
 }

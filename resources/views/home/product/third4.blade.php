@@ -63,7 +63,9 @@
                 "<p>地区全国:"+datas[i].area+"</p>"+
                 "<p>行业:"+datas[i].industry+"</p>"+
                 "<p>公司:"+datas[i].company+"</p>"+
+                "<a href='/home/productfour/"+datas[i].id+"' method='post'>"+
                 "<input type='button' value='在线询价'>"+
+                "</a>"+
                 "</div></div>";
             $('.ABC').append(zzm);
          }

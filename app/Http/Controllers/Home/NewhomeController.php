@@ -21,6 +21,9 @@ use App\Models\Admin\Articles;//文章
 use App\Models\Admin\Label;//标签
 use App\Models\Home\Comment;//评论
 
+use Cache;
+use App\Models\Admin\ungmuserdetail;
+use App\Models\Home\Address;
 
 class NewhomeController extends Controller
 {
@@ -170,6 +173,16 @@ class NewhomeController extends Controller
         return view('home.newcopy');
     }
 
+     /**
+     * Show the form for creating a new resource.
+     *前台隐私条款
+     * @return \Illuminate\Http\Response
+     */
+    public function adv(Request $request)
+    {
+        return view('home.newadv');
+    }
+
     //获取数据库费率的方法
     public function currency(Request $request)
     {
@@ -261,18 +274,6 @@ class NewhomeController extends Controller
     }
 
 
-    //采购商发布采购信息路由
-    public function buypublish()
-    {
-
-        return view('home.buypublish');
-    }
-    //供应商发布供应信息的路由
-    public function subpublish()
-    {
-
-        return view('home.subpublish');
-    }
 
 
 
@@ -609,6 +610,33 @@ class NewhomeController extends Controller
 
    }
 
+   //四级供应商产品传递id显示详情的页面
+   public function productfour(Request $req)
+   {
+      $id=$req->id;
+      $data=Articles::where('id',$id)->get()->toArray();
+      //少一个链表查这个人的电话之类的信息
+
+      return view('home.product.four',['data'=>$data['0'] ]);
+
+   }
+
+   //四级采购信息商产品传递id显示详情的页面
+   public function buymessagefour(Request $req)
+   {
+      $id=$req->id;
+      $data=Articles::where('id',$id)->get()->toArray();
+      //少一个链表查这个人的电话之类的信息
+
+      return view('home.buymessage.four',['data'=>$data['0'] ]);
+
+   }
+
+
+
+
+
+
 
 
 
@@ -779,9 +807,99 @@ class NewhomeController extends Controller
       
    }          
 
+   //显示个人中心的控制器(信息管理)
+   public function usercenter()
+   {
+        //从永久cache中拿出缓存的用户账号密码id信息
+        $user=Cache::get('homeuser');
+        $id=$user->id;
+        $username=$user->username;
+        $phone=$user->phone;
+
+        //关联用户详情表查询所查字段头像地址邮箱等信息(随便查所需要的字段)  
+        $userdetail=ungmuserdetail::where('uid',$id)->get();
+        
+        //供应发布动态
+        $selloffer=Selloffer::where('uid',$id)->get();
+       // dd($selloffer);
+        //发布的采购信息
+        $buyoffer=Buyoffer::where('uid',$id)->get();
+        //dd($buyoffer);
+        
+
+        //dd($user);
+       
+        //dd($id);
+        return view('home.newuserinfo.newindex',['user'=>$user,'userdetail'=>$userdetail]);
+   }
+
+   //接收个人中心的数据4
+   public function adduser(Request $request)
+   {
+    // echo(111);die;
+        $user=Cache::get('homeuser');
+        $id=$user->id;
+        $data = $request ->except('item','_token');
+        //接收修改供应商信息
+      $data = new Buyoffer;
+      //修改数据库字段
+       $data -> project = $request ->input('project');//招标项目名称
+       $data -> price = $request ->input('price');//招标项目价格
+       $data -> deadline = $request ->input('deadline') ? $request ->input('deadline') : '长期有效';//招标截至时间
+       $data -> uid = $id;//
+
+
+    /*  $data -> name = $request ->input('name');//招标人姓名
+      $data -> zizhi = $request ->input('zizhi');//招标人资质
+      $data -> address = $request ->input('address');//招标地址
+      $data -> count = $request ->input('count');//招标数量
+      $data -> xingzhi = $request ->input('xingzhi');//招标项目性质
+      $data -> published = $request ->input('published');//招标开始时间
+      $data -> status = $request ->input('status');//0就是未审核
+      $data -> industry = $request ->input('industry');//行业 
+      $data -> company = $request ->input('company');//公司
+      $data -> lanmu = $request ->input('lanmu');//*/
+      
+      //处理上传的图片
+        if($request -> hasFile('img')){
+            //获取上传的图片
+            $head = $request -> file('img');
+            //获取后缀
+            $ext = $head -> getClientOriginalExtension();
+            //为图片起新的名字
+            $temp_name = time().rand(1000,9999).'.'.$ext;
+            //设置路径名称
+            $dir_name = '/articles_heads/'.date('Ymd',time());
+            //路径的拼接
+            $head_dir = $dir_name.'/'.$temp_name;
+            //图片上传
+            $head -> move('.'.$dir_name,$temp_name);
+            //把图片的路径存到数据中
+            $data -> img = $head_dir;
+        }
 
 
 
+      //保存
+      $data -> save();
+      dd($data);
+
+   }
+ //显示交易管理的方法
+   public function transaction()
+   {
+    $id=Cache::get('homeuser')->id;
+    $address=Address::where('uid',$id)->get();
+
+    return view('home.newuserinfo.transaction',['address'=>$address]);
+   }
+   //个人中心账户管理
+   public function account($id)
+   {
+    $data=ungmuserdetail::where('uid',$id)->first();
+
+    return view('home.newuserinfo.account',['data'=>$data]);
+   }
 
 
 

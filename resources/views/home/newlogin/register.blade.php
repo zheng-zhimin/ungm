@@ -213,6 +213,24 @@
                             <input type="password" name="repassword" id="passwordagain" value="{{ old('repassword') }}" placeholder="再次输入密码"/>
                             <i></i>
                         </li>
+
+                         <li>
+                            <label for="">
+                                <span> 验_证_码 :</span>
+                            </label>
+
+                            <input type="text" name="code" id="code" value="" style="width:200px;margin-right:10px" placeholder="请填写图中验证码"/>
+
+                            <img src="/code" onclick="rand(this)" title="点击切换验证码" >
+                            <i></i>
+                        </li>
+ <script type="text/javascript">
+     function rand(obj)
+     {
+          obj.src='/code'+'?a='+Math.random();
+     }
+
+ </script> 
                         <li>
                             <label for=""><span>短信验证 :</span></label>
                             <input type="text" class="code1" id="phone_code" name="phone_code" value="{{ old('phone_code') }}" placeholder="请输入验证码"/>
@@ -254,7 +272,7 @@
                         <li><a href="/home/contact">联系我们</a><b>|</b></li>
                         <li><a href="/home/dns">使用协议</a><b>|</b></li>
                         <li><a href="/home/copy">版权隐私</a><b>|</b></li>
-                        <li><a href="/home/">广告服务</a><b>|</b></li>
+                        <li><a href="/home/adv">广告服务</a><b>|</b></li>
                         <li><a href="/home/rank">排名推广</a></li>
                     </ul>
                 </div>
@@ -305,7 +323,8 @@ $(".logon").click(function(){
     var passwordagain=$("#passwordagain").val();
     var code1=$(".code1").val();
     var sel=$(".sel").val();
-    if(phone==""||password==""||passwordagain==""||code1==""){
+    var code=$("#code").val();
+    if(phone==""||password==""||passwordagain==""||code1==""||code==""){
         alert("请输入完整");
         return false;
     }else if(!phone.match(/^1(3[0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|8[0-9]|9[89])\d{8}$/)) {

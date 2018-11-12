@@ -17,70 +17,52 @@ class SearchController extends Controller
         $title=$req->title;
         $miaoshu=$req->miaoshu;
         $type=$req->type;
-        $starttime=$req->starttime;
-        $endtime=$req->endtime;
-        /*$data=Selloffer::where('name','like','%'.$title.'%')->where('descript','like','%'.$type.'%')->where('published','like','%'.$starttime.'%')->where('deadline','like','%'.$endtime.'%')->get();*/
-        if(empty($title)&&empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)){
-            $data=[];
-            return $data;
-        }else if(empty($title)&&empty($miaoshu)&&empty($type)){
-            $data=Selloffer::whereDate('published', '>=',$starttime)->whereDate('deadline', '<=',$endtime)->get();
-          
-            return $data;
-        }else if (empty($starttime)&&empty($endtime)) {
-           $data=Selloffer::where('name','like','%'.$title.'%')->where('descript','like','%'.$type.'%')->get();
-           return $data;
-        }else if (empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)) {
-           $data=Selloffer::where('name','like','%'.$title.'%')->get();
-           return $data;
-        }else if (empty($title)&&empty($miaoshu)&&empty($starttime)&&empty($endtime)) {
-            $data=Selloffer::where('type','%'.$type.'%')->get();
-            return $data;
-        }else if (empty($title)&&empty($type)&&empty($starttime)&&empty($endtime)) {
-            $data=Selloffer::where('descript','%'.$miaoshu.'%')->get();
-            return $data;
-        }
-      
-        //return $data;
+        $title=empty($title) ? '' : $title;
+        $miaoshu=empty($miaoshu) ? '' : $miaoshu;
+        $type=empty($type) ? '' : $type;
+
+
+        $starttime= empty($req->starttime) ? '2017-11-01 16:29:08':$req->starttime;
+        $endtime=empty($req->endtime) ? '2020-11-01 16:29:08':$req->endtime;
+
+  
+
+        $data=Selloffer::whereDate('published', '>=',$starttime)->whereDate('deadline', '<=',$endtime)->where('name','like','%'.$title.'%')->where('descript','like','%'.$miaoshu.'%')->where('type','like','%'.$type.'%')->get();
+                                return $data;
+        
+
+        
     }
 
-        public function ungmquery(Request $req)
+    public function ungmquery(Request $req)
     {
-        $title=$req->title;
+         $title=$req->title;
         $miaoshu=$req->miaoshu;
         $type=$req->type;
+
         $starttime=$req->starttime;
         $endtime=$req->endtime;
+        
         $organization=$req->organization;
         $country=$req->country;
 
-        
-       if(empty($title)&&empty($miaoshu)&&empty($type)&&empty($organization)&&empty($country)){
-            $data=Ungmquery::whereDate('published', '>=',$starttime)->whereDate('deadline', '<=',$endtime)->get();
-          
-            return $data;
-        
-        }else if (empty($starttime)&&empty($endtime)&&empty($organization)&&empty($country)) {
-           $data=Ungmquery::where('title','like','%'.$title.'%')->where('noticetype','like','%'.$type.'%')->get();
-           return $data;
-        }else if (empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)&&empty($organization)&&empty($country)) {
-           $data=Ungmquery::where('title','like','%'.$title.'%')->get();
-           return $data;
-        }else if (empty($title)&&empty($miaoshu)&&empty($starttime)&&empty($endtime)&&empty($organization)&&empty($country)) {
-            $data=Ungmquery::where('noticetype','%'.$type.'%')->get();
-            return $data;
-        }else if (empty($title)&&empty($type)&&empty($starttime)&&empty($endtime)&&empty($organization)&&empty($country) ) {
-            $data=Ungmquery::where('descript','%'.$miaoshu.'%')->get();
-            return $data;
-        }else if (empty($title)&&empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)&&empty($organization)) {
-           $data=Ungmquery::where('country','like','%'.$country.'%')->get();
-           return $data;
-        }else if (empty($title)&&empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)&&empty($country)) {
-           $data=Ungmquery::where('organization','like','%'.$organization.'%')->get();
-           return $data;
-        }
-      
-        //return $data;
+       
+
+        $title=empty($title) ? '' : $title;
+        $miaoshu=empty($miaoshu) ? '' : $miaoshu;
+        $type=empty($type) ? '' : $type;
+        $organization=empty($organization) ? '' : $organization;
+        $country=empty($country) ? '' : $country;
+
+
+        $starttime= empty($req->starttime) ? '2017-11-01 16:29:08':$req->starttime;
+        $endtime=empty($req->endtime) ? '2020-11-01 16:29:08':$req->endtime;
+
+  
+
+        $data=Ungmquery::whereDate('published', '>=',$starttime)->whereDate('deadline', '<=',$endtime)->where('title','like','%'.$title.'%')->where('descript','like','%'.$miaoshu.'%')->where('noticetype','like','%'.$type.'%')->where('organization','like','%'.$organization.'%')->where('country','like','%'.$country.'%')->get();
+                                return $data;
+       
     }
 
 
