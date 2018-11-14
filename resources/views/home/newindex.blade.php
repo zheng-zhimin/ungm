@@ -18,6 +18,12 @@
     color: #3477ff !important;
     border-bottom: 2px solid #3477ff;
 }
+.one li{
+            width: 146px;
+            overflow: hidden;/*超出部分隐藏*/
+            white-space: nowrap;/*不换行*/
+            text-overflow:ellipsis;/*超出部分文字以...显示*/
+        }
   </style>
   <!--   <title>全球采购信息服务网</title> -->
    <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
@@ -181,12 +187,18 @@
   <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
 @else
 
-    <div class="col-md-4" style="padding-bottom: 10px;">
+    <div class="col-md-4" style="padding-right: 10px;">
     <img class="img-responsive"src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
-    <div class="col-md-4 con"><p><a href="/home/check/authentication">发布产品</a></p><p><a href="#"> 我的关注</a></p></div>
-    <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
-      <div class="col-md-12" > <p>
+    <div class="col-md-4 con">
+      <p><a href="/home/check/authentication">发布产品</a></p>
+     <!--  <p><a href="#"> 我的关注</a></p> -->
+    </div>
+    <div class="col-md-4 con">
+      <p><a href="/home/check/authentication">我的发布</a></p>
+      <!-- <p><a href="#">  我的消息</a></p> -->
+    </div>
+      <div class="col-md-6" style=" margin-left: 21px; margin-top:12px;"> <p>
              @if(Cache::get('homeuser')->identity==1)
                   <a style="color:#fff;"  href="/home/userinfo/index" >
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
@@ -282,7 +294,7 @@
     </li>
 </ul>
                                                         
-<script type="text/javascript">
+<script>
 
   function getson()
   {
@@ -613,39 +625,39 @@
                                                </div>
                                                <div class="row-roll padd wrap wrap-1">
                                                     <div class="col-md-3" align="center">
-                                                       <ul>
+                                                       <ul class="one">
                                                             <li><span>诚信供应商推荐</span></li>
                                                           @foreach($credit as $v)
-                                                            <li><span>{{$v['name']}}</span></li>
+                                                            <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
                                                            
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3" align="center">
-                                                       <ul>
+                                                       <ul class="one">
                                                             <li><span>活跃供应商推荐</span></li>
                                                           @foreach($active as $v)
-                                                            <li><span>{{$v['name']}}</span></li>
+                                                            <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
                                                             
                                                         </ul>
                                                     </div>
                                                     <div class="col-md-3" align="center">
-                                                       <ul>
+                                                       <ul class="one">
                                                             <li><span>UNGM供应商推荐</span></li>
 
                                                             @foreach($sup as $v)
-                                                            <li><span>{{$v['name']}}</span></li>
+                                                            <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
                                                           
                                                         </ul>
-                                                    </div>
+                                                    </div >
                                                     <div class="col-md-3" align="center">
-                                                       <ul>
+                                                       <ul class="one">
                                                             <li><span>UNGM服务商推荐</span></li>
 
                                                             @foreach($server as $v)
-                                                            <li><span>{{$v['name']}}</span></li>
+                                                            <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
                                                           
                                                         </ul>
@@ -686,13 +698,22 @@
   @else
     <p><a href="/home/userinfo/indexed">发布采购</a></p>
   @endif
-    <p><a href="#"> 我的关注</a></p>
-    
+   <!--  <p><a href="#"> 我的关注</a></p>
+        -->    
     </div>
 
-    <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
-    <div class="col-md-12">
-    <p>
+    <div class="col-md-4 con">
+     
+   @if(Cache::get('homeuser')->identity==1)
+    <p><a href="/home/userinfo/index">我的发布</a></p>
+   @else
+    <p><a href="/home/userinfo/indexed">我的发布</a></p>
+   @endif
+     <!--  <p><a href="#">  我的消息</a></p> -->
+    </div>
+
+    <div class="col-md-6" style=" margin-left: 21px; margin-top:12px;">
+              <p>
              @if(Cache::get('homeuser')->identity==1)
                   <a style="color:#fff;"  href="/home/userinfo/index" >
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
@@ -702,7 +723,7 @@
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
                   </a>
               @endif
-    </p>
+            </p>
     </div>
 @endif
 

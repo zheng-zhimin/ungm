@@ -128,6 +128,17 @@
             <!---内容开始-->
             <div class="content puma-addPurchasing">      
                 <div class="container">
+                   <!-- 显示错误的信息-->
+                @if (count($errors) > 0)
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                        <ul class="text-warning">
+                            @foreach ($errors->all() as $error)
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                 <span >{{ $error }}</span>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                     <div class="" style="float: left;">
                         <div class="menu1 menuu">
                             <ul class="">
@@ -155,16 +166,7 @@
                             <a class="nav-link " data-toggle="tab" href="#expired" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">已过期（<span>{{$countold}}</span>）</span></a> 
                         </li>
                     </ul>
-                <!-- 显示错误的信息-->
-@if (count($errors) > 0)
-    <div  class="alert alert-warning" data-dismiss="alert" aria-label="Close">
-        <ul class="text-warning">
-            @foreach ($errors->all() as $error)
-                 <span>{{ $error }}</span>
-            @endforeach
-        </ul>
-    </div>
-@endif
+
            
                   <form action="/home/userinfo/adduser2" method="post" enctype="multipart/form-data" >
                        {{ csrf_field() }}

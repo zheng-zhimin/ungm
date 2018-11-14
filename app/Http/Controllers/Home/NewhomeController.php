@@ -1161,8 +1161,10 @@ public function adduser(Request $request)
         {
             $id=Cache::get('homeuser')->id;
             $address=Address::where('uid',$id)->get();
+            $tiao=Address::where('uid',$id)->count();
 
-            return view('home.newuserinfo.transaction',['address'=>$address]);
+
+            return view('home.newuserinfo.transaction',['address'=>$address,'tiao'=>$tiao]);
         }
    //个人中心账户管理
         public function account($id)

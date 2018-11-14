@@ -293,6 +293,8 @@ Route::post('/center/pwd','Center\CenterController@pwd');
 Route::get('/center/addaddress','Center\CenterController@addaddress');
 //添加新增收货地址
 Route::post('/center/add/address','Center\CenterController@addbuyaddress');
+//删除收货地址
+Route::get('/center/deladdress/{id}','Center\CenterController@deladdress');
 
 //前台发布产品确定用户身份是否认证(如果是认证直接跳转到个人中心->发布产品;如果未提交企业执照就先跳到供应商企业认证界面->提交申请表单)
 Route::get('/home/check/authentication','Center\CenterController@authentication');

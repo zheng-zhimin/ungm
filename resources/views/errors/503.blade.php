@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="main">
-        <a href="index.html"><img src="/ungmhome/images/503.jpg" alt="" style="width:100%;"></a>
+        <a href="/"><img src="/ungmhome/images/503.jpg" alt="" style="width:100%;"></a>
     </div>
 </body>
 </html>

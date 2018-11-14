@@ -37,6 +37,7 @@
                     <a href="javascript:;" class="oneColor">收货地址</a>
                 </div>
                 <div class="table-responsive">
+               
                     <table class="table table-bordered table-hover ">
                         <thead>
                             <tr>
@@ -52,10 +53,16 @@
                            @foreach($address as $v)
                             <tr>
                                 <td>{{$v->name}}</td>
-                                <td>{{$v->area}}</td>
+                                <td style="width:100px;">{{$v->area}}</td>
                                 <td class="tabWidth">{{$v->address}}</td>
                                 <td>{{$v->phone}}</td>
-                                <td><a href="">修改</a><b>|</b><a href="">删除</a></td>
+
+                                <td style="width:100px;">
+                                    <a href="">修改</a>
+                                    <b>|</b>
+                                    <a href="/center/deladdress/{{$v->id}}">删除</a>
+                                </td>
+
                                 <td><a href="">默认地址</a></td>
                             </tr>
                            @endforeach
@@ -63,7 +70,7 @@
                     </table>
                 </div>
                 <div class="addressTwo">
-                    <p>共计保存20条  当前已存3条  还可以存17条</p>
+                    <p>共计保存20条  当前已存{{$tiao}}条  还可以存{{20-$tiao}}条</p>
                 </div>
             </div>
             <div class="myAfterSale managementUl">

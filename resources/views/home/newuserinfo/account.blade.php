@@ -12,6 +12,19 @@
 
 <body>
     <div class="container">
+
+       <!-- 显示错误的信息-->
+                @if (count($errors) > 0)
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                        <ul class="text-warning">
+                            @foreach ($errors->all() as $error)
+                                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                                 <span >{{ $error }}</span>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
         <div class="settingBtn">
             <p class="btnColor">基本资料</p>
             <p>密码管理</p>
@@ -188,7 +201,7 @@ $('.redoPwd').blur(function(){
     let $Val = $(this).val();
     if($Val != $('.newPwd').val()){
         $(this).siblings('i').show().addClass('active').text('密码输入不一致');
-        $(this).val('');
+        //$(this).val('');
     } else if($Val == ''){
         $(this).siblings('i').show().addClass('active').text('');
     } else {

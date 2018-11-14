@@ -9,12 +9,22 @@
 
 
 
+        
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 
 <body>
     <div class="container">
         <div class="myNewAddress">
-
+                <!-- 显示错误的信息-->
+@if (count($errors) > 0)
+    <div  class="alert alert-warning" data-dismiss="alert" aria-label="Close">
+        <ul class="text-warning">
+            @foreach ($errors->all() as $error)
+                 <span>{{ $error }}</span>
+            @endforeach
+        </ul>
+    </div>
+@endif
         <form action="/center/add/address" method="post" accept-charset="utf-8">
             {{ csrf_field() }}
            <ul> 
@@ -68,7 +78,7 @@
             <input type="text" name="address"></li>
          
             <li>
-            <label for="">真实姓名</label>
+            <label for="">姓名昵称</label>
             <input type="text" name="name">
             </li>
                 
@@ -94,12 +104,12 @@
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
 <script>
 //手机号
-$('.myPhone').click(function(){
+$('.myPhone').blur(function(){
     let $Val = $(this).val();
     let patrn=/^[1][3,4,5,7,8][0-9]{9}$/;
     if(!patrn.test($Val) && $Val != ''){
         $(this).siblings('i').show().addClass('active').text('号码格式不正确');
-        $(this).val('');
+        //$(this).val('');
     } else if($Val == ''){
         $(this).siblings('i').show().addClass('active').text('');
     } else {

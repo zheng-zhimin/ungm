@@ -99,6 +99,19 @@ class CenterController extends Controller
            $newpwd=$request->input('newpwd');
            $renewpwd=$request->input('renewpwd');
 
+            $this->validate($request,[
+            'oldpwd' => 'required',
+            'newpwd' => 'required',
+            'renewpwd' => 'required',
+
+            ],[
+            'oldpwd.required' => '请填写当前密码',
+            'newpwd.required' => '请输入新密码',
+            'renewpwd.required' => '请输入确认新密码',
+           
+
+            ]);
+
            $id=$request->input('id');
            $user=Newusers::where('id',$id)->first();
 
@@ -141,36 +154,58 @@ class CenterController extends Controller
           $area=$req->input('area');
            $this->validate($req,[
             'phone' => 'required|regex:/^1[3-9]{1}[\d]{9}$/',
+            'address' => 'required',
+            'name' => 'required',
+
             ],[
-            'phone.required' => '电话号码必填',
-            'phone.regex' => '电话格式不正确'
+            'phone.required' => '电话号码必填,',
+            'phone.regex' => '电话格式不正确,',
+            'address.required' => '详细地址必填,',
+            'name.required' => '请填入昵称姓名,',
+
             ]);
-
-        
-         
-         
-          $uid=Cache::get('homeuser')->id;
-          $newadd=new Address;
-          $data=[
-            'uid'=>$uid,
-            'name'=>$name,
-            'phone'=>$phone,
-            'address'=>$address,
-            'area'=>$area,
+           //地址添加超过20条返回错误信息
+           $uid=Cache::get('homeuser')->id;
+           $tiao=Address::where('uid',$uid)->count();
            
-          ];
-          
+           if($tiao>=20){
+             echo "<script>alert('您所添加的地址数量已达到20条,暂时不能继续添加了呢');history.go(-1);</script>";
+           }else{
 
-          $res=$newadd->insert($data);
+                  $uid=Cache::get('homeuser')->id;
+                  $newadd=new Address;
+                  $data=[
+                    'uid'=>$uid,
+                    'name'=>$name,
+                    'phone'=>$phone,
+                    'address'=>$address,
+                    'area'=>$area,
+                   
+                  ];
+                  
 
-          if($res){
-            echo "<script> alert('添加成功');history.go(-2);</script>";
-          }else{
-            return back();
-          }
-          
+                  $res=$newadd->insert($data);
 
+                  if($res){
+                    echo "<script> alert('添加成功');window.location.href='/home/userinfo/transaction';</script>";
+                  }else{
+                       return back();
+                  }
+           }
+           
+        
           
+     }
+
+     //删除地址操作
+     public function deladdress($id)
+     {
+           $res=Address::where('id',$id)->delete();
+           if($res){
+              echo "<script>alert('删除成功'); window.location.href='/home/userinfo/transaction'; </script>";
+           }else{
+               echo "<script>alert('删除失败'); history.go(-1); </script>";
+           }
      }
 
      //利用用户表查看供应商企业是否认证企业营业执照
