@@ -93,8 +93,7 @@
        
     </div>
 </body>
-<script src="js/jquery.js"></script>
-<script src="bootstrap/js/bootstrap.js"></script>
+
 <script>
     $('ul li').mouseenter(function(){
         $(this).children('.memberBtn1').show();
