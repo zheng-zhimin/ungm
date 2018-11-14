@@ -36,7 +36,7 @@ Route::post('/admin/users/lahei/{id}','Admin\UsersController@lahei');
 Route::post('/admin/users/huifu/{id}','Admin\UsersController@huifu');
 
 //后台登录页面路由
-Route::get('/admin/login','Admin\LoginController@index');
+Route::get('/admin/login/jiuding/ruilu/index','Admin\LoginController@index');
 
 //登录后台管理员验证路由
 Route::post('/admin/dologin','Admin\LoginController@dologin');
@@ -70,12 +70,7 @@ Route::post('/admin/advertise/disable/{id}','Admin\AdvertiseController@disable')
 Route::post('/admin/advertise/able/{id}','Admin\AdvertiseController@able');
 
 
-//前台主页模板路径
-//route::get('/','Home\HomeController@index');
-//前台留言板路由
-//route::get('/home/board','Home\HomeController@board');
-//前台关于我们路由
-//route::get('/home/about','Home\HomeController@about');
+
 //前台文章列表路由
 route::get('/home/article','Home\HomeController@article');
 //前台各文章列表路由
@@ -96,12 +91,8 @@ route::get('/home/articledetail/{id}','Home\HomeController@articledetail');
 //route::get('home/mydown/{id}','Home\HomeController@mydown');
 // 前台标签文章
 route::get('home/label/{label}','Home\HomeController@label');
-//前台登录
-//Route::controller('/home/login','Home\LoginController');
-//前台用户退出路由
-//Route::get('/home/logout','Home\HomeController@logout');
-//前台主页面
-//Route::get('/home/home','Home\LoginController@index');
+
+
 //前台检测登录
 Route::post('/home/ajax1',function(){
 
@@ -192,18 +183,7 @@ Route::get('/home/forget','Home\NewloginController@forget');
 Route::post('/home/forgetpassword','Home\NewloginController@forgetpassword');
 Route::post('/home/forgetcode','Home\NewloginController@forgetcode');
 Route::post('/home/forgetphone','Home\NewloginController@forgetphone');
-/*//前台检测登录
-Route::post('/home/newajax',function(){
 
-   // return $_POST['uname'];
-   $uname=$_POST['username'];
-   //return $name;
-   $res=DB::table('ungm_users')->where('username','=',$uname)->first();
-   if($res){return 1;}else{
-    return 0;
-   }
-
-});*/
 //前台用户退出路由
 Route::get('/home/logout','Home\NewloginController@logout');
 
@@ -292,8 +272,14 @@ Route::get('/home/buymessagefour/{id}','Home\NewhomeController@buymessagefour');
 
 
 //显示新个人中心的路由(信息管理)
-Route::get('/home/userinfo/index','Home\NewhomeController@usercenter');//显示新个人中心的路由(信息管理)
+Route::get('/home/userinfo/index','Home\NewhomeController@usercenter');//显示(采购)新个人中心的路由(信息管理)
+Route::get('/home/userinfo/indexed','Home\NewhomeController@usercentered');//显示(供应+采购)新个人中心的路由(信息管理)
+//普通用户的采购发布
 Route::post('/home/userinfo/adduser','Home\NewhomeController@adduser');
+//认证的供应商发布采购
+Route::post('/home/userinfo/adduser2','Home\NewhomeController@adduser2');
+//认证的供应商发布产品
+Route::post('/home/userinfo/addselleruser2','Home\NewhomeController@addselleruser2');
 //交易管理
 Route::get('/home/userinfo/transaction','Home\NewhomeController@transaction');
 //个人中心账户管理
@@ -308,9 +294,10 @@ Route::get('/center/addaddress','Center\CenterController@addaddress');
 //添加新增收货地址
 Route::post('/center/add/address','Center\CenterController@addbuyaddress');
 
+//前台发布产品确定用户身份是否认证(如果是认证直接跳转到个人中心->发布产品;如果未提交企业执照就先跳到供应商企业认证界面->提交申请表单)
+Route::get('/home/check/authentication','Center\CenterController@authentication');
 
-
-
+Route::post('/center/qiye/renzheng','Center\CenterController@qiyerenzheng');
 
 
 
@@ -333,7 +320,12 @@ Route::post('/admin/selloffer/yes/{id}','Admin\SellofferController@yes');
 //后台供应商审核否定路由
 Route::post('/admin/selloffer/no/{id}','Admin\SellofferController@no');
 
-
+// 后台供应商认证企业的路由
+Route::resource('/admin/seller','Admin\SellerController');
+//后台供应商审核通过路由
+Route::post('/admin/seller/yes/{id}','Admin\SellerController@yes');
+//后台供应商审核否定路由
+Route::post('/admin/seller/no/{id}','Admin\SellerController@no');
 
 
 

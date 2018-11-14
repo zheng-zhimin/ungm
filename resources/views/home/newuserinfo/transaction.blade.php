@@ -1,7 +1,7 @@
 @extends('home.layout.usercenter')
 
 @section('title')
-   交易管理
+   个人中心
 @endsection
 
 @section('content')
@@ -37,7 +37,7 @@
                     <a href="javascript:;" class="oneColor">收货地址</a>
                 </div>
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover">
+                    <table class="table table-bordered table-hover ">
                         <thead>
                             <tr>
                                 <th>收货人</th>

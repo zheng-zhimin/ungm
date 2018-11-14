@@ -25,8 +25,8 @@
             <div class="container">
                 <ul class="breadcrumb">
                     <li><a href="/">首页</a></li>
-                    <li><a href="">供应发布查询页面</a></li>
-                    <li class="curve1"><a href="">关键字搜索</a></li>
+                    <li><a href="javascript:;">已匹配的信息</a></li>
+                   
                 </ul>
             </div> 
         </div>

@@ -144,9 +144,10 @@ class NewloginController extends Controller
                     $phone = $request -> input('phone','15843321521');
                     $pass = Hash::make($request -> input('password','123456'));
                     $profile='/homeblog/img/dt.png';//给个默认头像
+
                     $token = str_random(50);
                     $id = Newusers::insertGetId(['profile'=>$profile,'username'=>$phone,'phone'=>$phone,'password'=>$pass,'token'=>$token]);
-                    Ungmuserdetail::insert(['phone'=>$phone,'uid'=>$id]);
+                    Ungmuserdetail::insert(['phone'=>$phone,'uid'=>$id,'head'=>$profile]);
 
                     // dd($id);
 

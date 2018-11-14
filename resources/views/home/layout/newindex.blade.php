@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
-    <link href="/ungmhome/images/ungm.png" type="image/x-iocn" rel="shortcut icon" />
+    <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
     
     <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
 
@@ -30,7 +30,7 @@
     border-bottom: 2px solid;
     }
     .blue li a:hover{
-       color:lightblue;
+       color:#3477ff;
     }
     
 </style>
@@ -54,7 +54,11 @@
                 
                 
                 <span class="">|</span>
-                <span class="">{{Cache::get('homeuser')->username}}</span>
+                @if(Cache::get('homeuser')->identity==1)
+                <span class=""><a href="/home/userinfo/index">{{Cache::get('homeuser')->username}}</a></span>
+                @else
+                 <span class=""><a href="/home/userinfo/indexed">{{Cache::get('homeuser')->username}}</a></span>
+                @endif
                 <span class="">|</span>
                 <span class=""><a href="/home/logout">退出</a></span>
                 <span class="">|</span>
@@ -67,7 +71,7 @@
         
         <!--第一部分：导航头部=头部+汉堡包-->
         <div class="navbar-header">
-            <img class="navbar-brand img-responsive" src="/ungmhome/images/ungm.png">
+            <img class="navbar-brand img-responsive" src="/ungmhome/images/ungm.png" style="padding:0px;margin-top: 4px;height:auto;">
             <a href="#menu" class="navbar-toggle" data-toggle="collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -76,12 +80,12 @@
         </div>
         <!--第二部分：导航折叠=导航-->
         <div id="menu"class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="margin-left: 30px;">
                 <li class="">
-                    <a class="a1" href="/">首页</a>
+                    <a class="a1 nn-1" href="/">首页</a>
                 </li>
                 <li class="dropdown">
-                    <a class="a2" href="/home/gt" >全球贸易</a>
+                    <a class="a2 nn-2" href="/home/gt" >全球贸易</a>
                     <ul class="dropdown-menu">
                         <li><a href="/home/gt/#1">UNGM</a></li>
                         <li><a href="/home/gt/#2">商务数据中心(进出口海关相关)</a></li>
@@ -89,7 +93,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="a3" href="/home/ct" >国内贸易</a>
+                    <a class="a3 nn-3" href="/home/ct" >国内贸易</a>
                     <ul class="dropdown-menu">
                         <li><a href="/home/ct/#1">商机服务</a></li>
                         <li><a href="/home/ct/#2">展会论坛</a></li>
@@ -98,7 +102,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="a4" href="/home/td" >招投标服务</a>
+                    <a class="a4 nn-4" href="/home/td" >招投标服务</a>
                     <ul class="dropdown-menu">
                         <li><a href="/home/td/#1">商机服务</a></li>
                         <li><a href="/home/td/#2">投标信息搜索</a></li>
@@ -106,23 +110,23 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a class="a5" href="/home/jk" >集客</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/home/jk/#1">1</a></li>
-                        <li><a href="/home/jk/#2">2</a></li>
-                        <li><a href="/home/jk/#3">3</a></li>
-                    </ul>
+                    <a class="a5 nn-5" href="/home/jk" >集客</a>
+                   <!--  <ul class="dropdown-menu">
+                      <li><a href="/home/jk/#1">1</a></li>
+                      <li><a href="/home/jk/#2">2</a></li>
+                      <li><a href="/home/jk/#3">3</a></li> 
+                   </ul> -->
                 </li>
                 <li class="dropdown">
-                    <a class="a6" href="/home/md" >会员发展</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/home/md/#1">1</a></li>
-                        <li><a href="/home/md/#2">2</a></li>
-                        <li><a href="/home/md/#3">3</a></li>
-                    </ul>
+                    <a class="a6 nn-6" href="/home/md" >会员发展</a>
+                   <!--  <ul class="dropdown-menu">
+                       <li><a href="/home/md/#1">1</a></li>
+                       <li><a href="/home/md/#2">2</a></li>
+                       <li><a href="/home/md/#3">3</a></li>
+                   </ul> -->
                 </li>
                 <li class="dropdown">
-                    <a class="a7" href="/home/cc" >货币换算</a>
+                    <a class="a7 nn-7" href="/home/cc" >货币换算</a>
                    
                 </li>
             </ul>
@@ -229,8 +233,8 @@
                     </ul>
                 </div>
                 <div class="row info">
-                    <p style="margin-bottom:6px;">公司名称：九鼎智成（北京）信息技术股份有限公司</p>
-                    <p style="margin-bottom:6px;">地址：北京市通州区万达广场C座</p>
+                    <p>公司名称：九鼎智成（北京）信息技术股份有限公司</p>
+                    <p>地址：北京市通州区万达广场C座</p>
                     <p>邮箱：ungm@ungm.org.cn</p>
                 </div>
             </div>

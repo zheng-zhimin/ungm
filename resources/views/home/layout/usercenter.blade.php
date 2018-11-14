@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/ungmhome/css/base.css">
     <link rel="stylesheet" href="/ungmhome/css/headeruser.css">
     <link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
-     <link href="/ungmhome/images/ungm.png" type="image/x-iocn" rel="shortcut icon" />
+     <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
     <link rel="stylesheet" href="/ungmhome/css/footer.css">
 
     
@@ -158,28 +158,15 @@
         </div>
         <!--第二部分：导航折叠=导航-->
         <div id="menu" class="collapse navbar-collapse">
-          <!--  <ul class="nav navbar-nav">
-              <li class="dropdown">
-                  <a data-toggle="dropdown" class="a1" href="/home/userinfo/index" >信息管理</a>
-                  
-              </li>
-              <li class="dropdown">
-                  <a data-toggle="dropdown" class="a2" href="/home/userinfo/transaction" >交易管理</a>
-                  
-              </li>
-                     
-              <li class="dropdown">
-                  <a class="a3" href="" data-toggle="dropdown">账户设置</a>
-                  
-              </li>
-              <li class="dropdown">
-                  
-                   <a href="/">返回首页</a>
-              </li>
-                     </ul> --> 
+     
         <ul class="nav navbar-nav">
               <li class="dropdown">
+              @if(Cache::get('homeuser')->identity==1)
                   <a  class="a1" href="/home/userinfo/index" >信息管理</a>
+              @elseif( Cache::get('homeuser')->identity==2 )
+                  <a href="/home/userinfo/indexed" >信息管理</a>
+              @endif
+
                   
               </li>
               <li class="dropdown">
@@ -245,23 +232,17 @@
     $(".a1").click(function(){
         $(".xxx").removeClass("xxx");
         $(".a1").addClass("xxx");
-        $(".menu1").show();
-        $(".menu2").hide();
-        $(".menu3").hide();
+
     })
     $(".a2").click(function(){
         $(".xxx").removeClass("xxx");
         $(".a2").addClass("xxx");
-        $(".menu1").hide();
-        $(".menu2").show();
-        $(".menu3").hide();
+
     })
     $(".a3").click(function(){
         $(".xxx").removeClass("xxx");
         $(".a3").addClass("xxx");
-        $(".menu1").hide();
-        $(".menu2").hide();
-        $(".menu3").show();
+
     })
     $(".b1").click(function(){
         $(".backcolor").removeClass("backcolor");
@@ -354,8 +335,8 @@
                 <div class="row">
                     <div class="copy">
                         <span style="padding-left:260px;">九鼎智成（北京）信息技术股份有限公司版权所有</span>
-                        <span style="color:#434a66;">Copyright@1999-2018 300.cn All Rights Reserved</span>
-                        <span style="color:#434a66;">京ICP备111111-1</span>
+                        <span >Copyright@1999-2018 300.cn All Rights Reserved</span>
+                        <span >京ICP备111111-1</span>
                     </div>
                 </div>
             </div>

@@ -93,7 +93,7 @@
                                 <div class="privacyTop privacyLine">
                                     <h4>隐私权保护</h4>
                                 </div>
-                                <div class="privacyTop privacyLine">
+                                <div class="privacyBot">
                                     <div class="privacyOne">
                                         <p>全球采购信息服务网尊重广大用户的隐私，未经用户的同意，我们不搜集用户的资料。对于因服务的需要而掌握的
                                             用户的电子邮件、信息和地址等我们承诺非经用户允许，不向任何第三方提供。</p>
@@ -121,7 +121,7 @@
                                 <div class="privacyTop privacyLine">
                                     <h4>免责声明</h4>
                                 </div>
-                                <div class="privacyTop privacyLine">
+                                <div class="privacyBot">
                                     <div class="privacyOne">
                                         <p>全球采购信息服务网在此特别声明对如下事宜不承担任何法律责任：</p>
                                         <p>（一）本公司不保证本网站所载述的任何内容以及使用这些内容可能得出的任何结果的准确性、及时性、完整性、

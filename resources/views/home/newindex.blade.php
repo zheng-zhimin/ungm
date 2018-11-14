@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html>
+
 
     @extends('home.layout.newindex')
 
-</html>
 
 
 @section('title')
@@ -14,9 +13,15 @@
 @section('content')
 
  
-
+<style>
+    .nn-1{
+    color: #3477ff !important;
+    border-bottom: 2px solid #3477ff;
+}
+  </style>
   <!--   <title>全球采购信息服务网</title> -->
    <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
+
     <link rel="stylesheet" href="/ungmhome/css/base.css">
    <link rel="stylesheet" href="/ungmhome/css/style.css">
    <!--  <link rel="stylesheet" href="/ungmhome/css/style.min.css">  -->
@@ -107,7 +112,7 @@
                                 <hr>
                                 <ul align="left">
                                     <li class="slh">发布时间：<span>{{$v['published']}}</span></li>
-                                    <li class="slh">戒指日期：<span>{{$v['deadline']}}</span></li>
+                                    <li class="slh">截至日期：<span>{{$v['deadline']}}</span></li>
                                     <li class="slh">采购类型：<span>{{$v['xingzhi']}}</span></li>
                                     <li class="slh">报价：<span>{{$v['price']}}</span></li>
                                 </ul>
@@ -120,6 +125,7 @@
 
 
                                                <div class="row-roll padd wrap" style="width: 704px;">
+
                                                     <div class="col-md-4 dowebok" align="left">
                                                        <ul>
                                                               @foreach($data2 as $v)  
@@ -130,8 +136,10 @@
                                                                 </a>
                                                             </li>
                                                             @endforeach
+
                                                         </ul>
                                                     </div>
+
                                                     <div class="col-md-4 dowebok" align="left">
                                                        <ul>
                                                               @foreach($data3 as $v)  
@@ -154,26 +162,41 @@
 
                                            <div class="row padd SUPPLIER-r-top" align="center">
 @if( ! Cache::has('homeuser') )
-  <div class="col-md-4" style="padding-bottom: 10px;">
+<div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
-  <div class="col-md-4 con"><p><a href="/home/product/second">发布产品</a></p><p><a href="">我的关注</a></p></div>
-  <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
+  
+  <div class="col-md-4 con">
+        <p><a href="/home/newlogin/login">发布产品</a></p>
+        <p><a href="/home/newlogin/login">我的订单</a></p>
+  </div>
+  <div class="col-md-4 con">
+        <p><a href="/home/newlogin/login">我的发布</a></p>
+        <p><a href="/home/newlogin/login">我的消息</a></p>
+  </div>
+  
   <div class="col-md-7" style="float:right;">
   <bottom class="btn btn-lg btn-success btn-block" style="float:right;margin-top: 15px;"><a href="/home/newlogin/login" style="line-height:0;color:#fff;">登录</a></bottom>
   </div>
-  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8;height:41px;"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
     <img class="img-responsive"src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
-    <div class="col-md-4 con"><p><a href="/home/product/second">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
+    <div class="col-md-4 con"><p><a href="/home/check/authentication">发布产品</a></p><p><a href="#"> 我的关注</a></p></div>
     <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
       <div class="col-md-12" > <p>
-        <a href="/home/userinfo/index" style="color:#fff;">
-            <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
-        </a>
+             @if(Cache::get('homeuser')->identity==1)
+                  <a style="color:#fff;"  href="/home/userinfo/index" >
+                    <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
+                  </a>
+              @elseif( Cache::get('homeuser')->identity==2 )
+                  <a href="/home/userinfo/indexed" >
+                    <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
+                  </a>
+              @endif
+      
     </p></div>
 @endif                                              
                                              
@@ -637,8 +660,15 @@
   <div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
-  <div class="col-md-4 con"><p><a href="/home/buymessage/second">发布产品</a></p><p><a href="#">我的订单</a></p></div>
-  <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">我的消息</a></p></div>
+
+  <div class="col-md-4 con">
+        <p><a href="/home/newlogin/login">发布产品</a></p>
+        <p><a href="/home/newlogin/login">我的订单</a></p>
+  </div>
+  <div class="col-md-4 con">
+        <p><a href="/home/newlogin/login">我的发布</a></p>
+        <p><a href="/home/newlogin/login">我的消息</a></p>
+  </div>
   
   <div class="col-md-7" style="float:right;">
   <bottom class="btn btn-lg btn-success btn-block" style="float:right;margin-top: 15px;"><a href="/home/newlogin/login" style="line-height:0;color:#fff;">登录</a></bottom>
@@ -649,13 +679,29 @@
     <div class="col-md-4" style="padding-bottom: 10px;">
     <img class="img-responsive" src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
-    <div class="col-md-4 con"><p><a href="/home/product/second">发布信息</a></p><p><a href="#"> 我的关注</a></p></div>
+
+    <div class="col-md-4 con">
+  @if(Cache::get('homeuser')->identity==1)
+    <p><a href="/home/userinfo/index">发布采购</a></p>
+  @else
+    <p><a href="/home/userinfo/indexed">发布采购</a></p>
+  @endif
+    <p><a href="#"> 我的关注</a></p>
+    
+    </div>
+
     <div class="col-md-4 con"><p><a href="#">我的发布</a></p><p><a href="#">  我的消息</a></p></div>
     <div class="col-md-12">
     <p>
-        <a href="/home/userinfo/index" style="color:#fff;">
-            <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
-        </a>
+             @if(Cache::get('homeuser')->identity==1)
+                  <a style="color:#fff;"  href="/home/userinfo/index" >
+                    <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
+                  </a>
+              @elseif( Cache::get('homeuser')->identity==2 )
+                  <a href="/home/userinfo/indexed" >
+                    <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
+                  </a>
+              @endif
     </p>
     </div>
 @endif

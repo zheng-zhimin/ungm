@@ -30,7 +30,7 @@
                 <div class="buyerSubpageDPone">
                     <div class="oneLt">
                         <div class="ltTop">
-                            <img src="/ungmhome/images/aaa.png" alt="">
+                            <img src="{{$data['articles_image_path']}}" alt="">
                         </div>
                         <div class="ltBot">
                             <ul>

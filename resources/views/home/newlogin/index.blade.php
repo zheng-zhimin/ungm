@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/ungmhome/css/base.css">
     <link rel="stylesheet" href="/ungmhome/css/header.css">
     <link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
-     <link href="/ungmhome/images/ungm.png" type="image/x-iocn" rel="shortcut icon" />
+      <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
     <link rel="stylesheet" href="/ungmhome/css/footer.css">
   
     
@@ -28,8 +28,7 @@
     }
     .loginNav img{
         display: inline;
-        width: 90px;
-        height: 20px;
+
     }
     .loginNav a{
        float: right;
@@ -100,6 +99,13 @@
     .login .btn-success{
         background-color: #00b7a1;
     }
+.loginNav img{
+    height:30px;
+}
+.loginNav{
+    padding-top: 8px;
+    height:46px;
+}
 </style>
 <body>
     <div class="main">
@@ -124,7 +130,7 @@
         <div class="loginNav">
             <div class="container">
                 <img src="/ungmhome/images/ungm.png" class="img-responsive" alt="">
-                <a href="/">返回首页</a>
+                <a href="/" style="margin-top:6px;">返回首页</a>
             </div>
         </div>
         <!--2.登录框-->
@@ -297,8 +303,8 @@
                 <div class="row">
                     <div class="copy">
                         <span style="padding-left:260px;">九鼎智成（北京）信息技术股份有限公司版权所有</span>
-                        <span style="color:#434a66;">Copyright@1999-2018 300.cn All Rights Reserved</span>
-                        <span style="color:#434a66;">京ICP备111111-1</span>
+                        <span >Copyright@1999-2018 300.cn All Rights Reserved</span>
+                        <span >京ICP备111111-1</span>
                     </div>
                 </div>
             </div>

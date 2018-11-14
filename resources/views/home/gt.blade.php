@@ -9,7 +9,12 @@
 @section('content')
 
        
-
+<style>
+    .nn-2{
+    color: #3477ff !important;
+    border-bottom: 2px solid #3477ff;
+}
+  </style>
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 
     <div class="main">
@@ -101,34 +106,36 @@
             </div>
             <!--图表展示区-->
             <div class="container">
-                <div class="text-center caption"><a  name="2"></a>
+                <div > </div>
+                <div class="text-center caption">
+                <a name="2"></a>
                     <img src="/ungmhome/images/globalTrade2.png" alt="">
                 </div>
                 <div class="dataOne text-center">
                     <h1>一、九月份货物进出口统计</h1>
-                    <div class="row">
-                        <div class="col-md-6 chartLt">
-                            <img src="/ungmhome/images/globalTrade3.png" alt="">
+                    <div class="row" style="margin: 0px;">
+                        <div class="col-md-6 chartLt" style="background-color: #ffffff;box-shadow: 0 1px 4px #0000002e;margin-top: 10px;padding: 30px 20px 30px 20px;">
+                            <div style="width: 100%;height: 470px;" id="aaa"></div>
                         </div>
-                        <div class="col-md-6 chartRt">
-                            <img src="/ungmhome/images/globalTrade4.png" alt="">
+                        <div class="col-md-6 chartRt" style="background-color: #ffffff;box-shadow: 0 1px 4px #0000002e;margin-top: 10px;padding: 30px 20px 30px 20px;">
+                            <div style="width: 100%;height: 470px;" id="char2"></div>
                         </div>
                     </div>
                 </div>
                 <div class="dataTwo text-center">
                     <h1>二、2018年度货物进出口统计</h1>
-                    <div class="chartTop">
-                        <img src="/ungmhome/images/globalTrade5.png" alt="">
+                    <div class="chartTop" style="width: 100%;height: 400px;" id="char3">
+
                     </div>
-                    <div  class="chartBot">
-                        <img src="/ungmhome/images/globalTrade6.png" alt="">
+                    <div  class="chartBot" style="width: 100%;height: 440px;padding-top:45px;padding-bottom:45px;" id="char4">
+
                     </div>
                 </div>
                 <div class="dataThree">
                     <div class="text-center">
                         <h1>三、2018年度货物进出口数据统计</h1>
-                        <div class="chartEnd">
-                            <img src="/ungmhome/images/globalTrade7.png" alt="">
+                        <div class="chartEnd char5" align="center" style="width: 100%" id="char5">
+                            <img class="" src="/ungmhome/images/globalTrade7.png">
                         </div>
                     </div>
                     <p>数据来源：中国海关总署</p>
@@ -145,21 +152,21 @@
                             <li>
                                 <h2>08-03</h2>
                                 <h5>2018</h5>
-                                <h3>商务部外贸司负责人就《关于在北京等22个城市设立跨境电子商务综合试验区的批复》进行解读</h3>
+                                <a href="/home/businesspolicy/one"><h3>商务部外贸司负责人就《关于在北京等22个城市设立跨境电子商务综合试验区的批复》进行解读</h3></a>
                                 <p>发展跨境电商等贸易新业态是推动外贸高质量发展的重要举措。党中央、国务院高度重视跨境电商等贸易新业态发展...</p>
                                 <a href="/home/businesspolicy/one"><span>查看更多&nbsp;></span></a>
                             </li>
                             <li>
                                 <h2>07-10</h2>
                                 <h5>2018</h5>
-                                <h3>商务部外贸司负责人就《关于扩大进口促进对外贸易平衡发展的意见》进行解读</h3>
+                                <a href="/home/businesspolicy/two"><h3>商务部外贸司负责人就《关于扩大进口促进对外贸易平衡发展的意见》进行解读</h3></a>
                                 <p>改革开放以来，我国对外贸易取得重大成就，已经连续9年保持全球货物贸易第一大出口国和第二大进口国地位。20...</p>
                                <a href="/home/businesspolicy/two"><span>查看更多&nbsp;></span></a>
                             </li>
                             <li>
                                 <h2>04-04</h2>
                                 <h5>2018</h5>
-                                <h3>商务部贸易救济局负责人关于《倾销及倾销幅度期间复审规则》的解读</h3>
+                                <a href="/home/businesspolicy/three"><h3>商务部贸易救济局负责人关于《倾销及倾销幅度期间复审规则》的解读</h3></a>
                                 <p>党的十九大以来，以习近平同志为核心的党中央对全面依法治国提出了明确要求。完善以宪法为核心的中国特色社会...</p>
                                 <a href="/home/businesspolicy/three"><span>查看更多&nbsp;></span></a>
                             </li>
@@ -173,6 +180,450 @@
         </div>
       
     </div>
+<script src="/ungmhome/js/echarts.js"></script>
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('aaa'));
+
+        // 指定图表的配置项和数据
+    option = {
+    title: {
+        x: 'center',
+        text: '货物进出口月度统计（金额统计）',
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        },
+        axisTick: {
+                alignWithLabel: true
+            }
+    },legend: {
+        data:['进出口金额','出口金额','进口金额'],
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['进出口金额(亿美元)','出口金额(亿美元)','进口金额(亿美元)'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    yAxis : {
+         min:1000,
+                max:5000,
+                axisLabel:{
+                    formatter: function (value) {
+                    var texts = [];
+                    if(value==0){
+                    texts.push('1000');
+                    }
+                    else if (value <=2000) {
+                    texts.push('2000');
+                    }
+                    else if (value<= 3000) {
+                    texts.push('3000');
+                    }
+                    else if(value<= 4000){
+                    texts.push('4000');
+                    }
+                    else{
+                    texts.push('5000');
+                    }
+                    return texts;
+
+                    }
+                }
+    },
+    series : [
+        {
+            name:'金额（亿美元）',
+            type:'bar',
+            barWidth: '60%',
+            itemStyle: {
+                normal: {
+                    color: function(params) {
+                        // build a color map as your need.
+                        var colorList = [
+                          '#55c1ff','#01a1ff','#0076ba'
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{b}\n{c}',
+                        "textStyle": {
+                            "fontSize": 14
+                        }
+                    }
+                }
+            },
+            data:[4216.8, 2266.9, 1950],
 
 
+        }
+    ]
+};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+</script>
+<script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('char2'));
+
+  option = {
+     title: {
+        x: 'center',
+        text: '货物进出口月度统计（同比统计）',
+
+    },
+    tooltip : {
+        trigger: 'axis',
+        axisPointer : {            // 坐标轴指示器，坐标轴触发有效
+            type : 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
+        },
+        "textStyle": {
+            "fontSize": 14
+        }
+    },legend: {
+        data:['进出口同比','出口同比','进口同比'],
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis : [
+        {
+            type : 'category',
+            data : ['进出口同比(%)','出口同比(%)','进口同比(%)'],
+            axisTick: {
+                alignWithLabel: true
+            }
+        }
+    ],
+    /*yAxis : [
+
+        {
+            type : 'value',
+            axisLabel: {  
+                  show: true,  
+                  interval: 'auto',  
+                  formatter: '{value} %'  
+                }, 
+        }
+    ],*/
+    yAxis: {
+                min:14.1,
+                max:14.5,
+                axisLabel:{
+                    formatter: function (value) {
+                    var texts = [];
+                    if(value==14.1){
+                    texts.push('14.1%');
+                    }
+                    else if (value <=14.2) {
+                    texts.push('14.2%');
+                    }
+                    else if (value<= 14.3) {
+                    texts.push('14.3%');
+                    }
+                    else if(value<= 14.4){
+                    texts.push('14.4%');
+                    }
+                    else{
+                    texts.push('14.5%');
+                    }
+                    return texts;
+
+                    }
+                }
+    },
+    series : [
+        {
+            name:'同比（%）',
+            type:'bar',
+            barWidth: '60%',
+            itemStyle: {
+                normal: {
+                    label: {  
+                        show: true,  
+                        position: 'top',  
+                        formatter: '{b}\n{c}%'  
+                    },
+                    color: function(params) {
+                        // build a color map as your need.
+                        var colorList = [
+                          '#55c1ff','#01a1ff','#0076ba'
+                        ];
+                        return colorList[params.dataIndex]
+                    },
+                    label: {
+                        show: true,
+                        position: 'top',
+                        formatter: '{b}\n{c}',
+                        "textStyle": {
+            "fontSize": 14
+        }
+                    }
+                }
+            },
+            data:[14.4, 14.5, 14.3],
+
+
+        }
+    ]
+};
+myChart.setOption(option);
+</script>
+<script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('char3'));
+
+   option = {
+     title: {
+        x: 'center',
+        text: '货物进出口月度统计（统计）'
+
+    },
+    tooltip : {
+        trigger: 'axis',
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+    legend: {
+        data:['进出口金额(亿美元)','出口金额(亿美元)','进口金额(亿美元)'],
+        bottom:'1',
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+    /*toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },*/
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['一月','二月','三月','四月','五月','六月','七月','八月','九月']
+        }
+    ],
+    yAxis : {
+         min:1000,
+                max:5000,
+                axisLabel:{
+                    formatter: function (value) {
+                    var texts = [];
+                    if(value==0){
+                    texts.push('1000');
+                    }
+                    else if (value <=2000) {
+                    texts.push('2000');
+                    }
+                    else if (value<= 3000) {
+                    texts.push('3000');
+                    }
+                    else if(value<= 4000){
+                    texts.push('4000');
+                    }
+                    else{
+                    texts.push('5000');
+                    }
+                    return texts;
+
+                    }
+                }
+    },
+    series : [
+        {
+            name:'进出口金额(亿美元)',
+            type:'line',
+            data:[3907, 3094.9,3532.3, 3729.9,4008.2,3981.7,4030.8,4069.5,4216.8],
+             //symbol:'star',//拐点样式
+                symbolSize: 8,//拐点大小
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            width:4,//折线宽度
+                            color:"#67c6f9"//折线颜色
+                        }
+                    }
+                }
+        },
+        {
+            name:'出口金额(亿美元)',
+            type:'line',
+            data:[2005.2,1716.2,1741.2,2004.4,2128.7,2167.4,2155.7,2174.3,2266.9],
+            //color: '#0098ff'
+            symbolSize: 8,//拐点大小
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            width:4,//折线宽度
+                            color:"#0098ff"//折线颜色
+                        }
+                    }
+                }
+        },
+        {
+            name:'进口金额(亿美元)',
+            type:'line',
+            data:[1801.8,1738.8,1791,1716.5,1779.5,1751.3,1875.2,1895.2,1950],
+            //color: '#0069ac'
+            symbolSize: 8,//拐点大小
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            width:4,//折线宽度
+                            color:"#0069ac"//折线颜色
+                        }
+                    }
+                }
+        }
+    ]
+};
+myChart.setOption(option);
+</script>
+<script type="text/javascript">
+     var myChart = echarts.init(document.getElementById('char4'));
+
+option = {
+     title: {
+        x: 'center',
+        text: '货物进出口月度统计（同比统计）'
+       
+    },
+
+    tooltip : {
+        trigger: 'axis',
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+
+    legend: {
+        data:['进出口金额（同比%）','出口金额（同比%）','进口金额（同比%）'],
+        bottom:'1',
+        "textStyle": {
+            "fontSize": 14
+        }
+    },
+    /*toolbox: {
+        show : true,
+        feature : {
+            mark : {show: true},
+            dataView : {show: true, readOnly: false},
+            magicType : {show: true, type: ['line', 'bar', 'stack', 'tiled']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },*/
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+            data : ['一月','二月','三月','四月','五月','六月','七月','八月','九月']
+        }
+    ],
+    yAxis: {
+                min:-10,
+                max:50,
+                axisLabel:{
+                    formatter: function (value) {
+                    var texts = [];
+                    if(value==-10){
+                    texts.push('-10%');
+                    }
+                    else if (value <=20) {
+                    texts.push('20%');
+                    }
+                    else if (value<= 30) {
+                    texts.push('30%');
+                    }
+                    else if(value<= 40){
+                    texts.push('40%');
+                    }
+                    else{
+                    texts.push('50%');
+                    }
+                    return texts;
+
+                    }
+                }
+    },
+    series : [
+        {
+            name:'进出口金额（同比%）',
+            type:'line',
+            data:[22,24.5,5.3,16.7,18.5,12.5,18.8,14.3,14.4],
+            //color: '#67c6f9'
+            symbolSize: 8,//拐点大小
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            width:4,//折线宽度
+                            color:"#67c6f9"//折线颜色
+                        }
+                    }
+                }
+        },
+        {
+            name:'出口金额（同比%）',
+            type:'line',
+            data:[11.1,44.5,-2.7,12.9,12.6,11.3,12.2,9.8,14.5],
+            //color: '#0098ff'
+            symbolSize: 8,//拐点大小
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            width:4,//折线宽度
+                            color:"#0098ff"//折线颜色
+                        }
+                    }
+                }
+        },
+        {
+            name:'进口金额（同比%）',
+            type:'line',
+            data:[36.9,6.3,14.4,21.5,26,14.1,27.3,20,14.3],
+            //color: '#0069ac'
+            symbolSize: 8,//拐点大小
+                itemStyle : {
+                    normal : {
+                        lineStyle:{
+                            width:4,//折线宽度
+                            color:"#0069ac"//折线颜色
+                        }
+                    }
+                }
+        }
+    ]
+};
+myChart.setOption(option);
+</script>
 @endsection

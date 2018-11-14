@@ -166,6 +166,14 @@
             <div id="mws-navigation">
                 <ul>
                    
+                    <li class="active">
+                      <a href="#"><i class="icon-list"></i> 文章管理</a>
+                      <ul>
+                          <li><a href="/admin/seller">供应商企业认证列表</a></li>
+                          
+                      </ul>
+                  </li>
+
                   <li class="active">
                       <a href="#"><i class="icon-list"></i> 文章管理</a>
                       <ul>

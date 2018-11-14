@@ -27,6 +27,7 @@ use App\Models\Admin\ungmuserdetail;
 use App\Models\Home\Newusers;
 use Hash;
 use App\Models\Home\Address;
+use App\Models\Admin\Sellerauthentication;
 
 class CenterController extends Controller
 {
@@ -171,6 +172,96 @@ class CenterController extends Controller
 
           
      }
+
+     //利用用户表查看供应商企业是否认证企业营业执照
+     public function authentication()
+     {
+        $id=Cache::get('homeuser')->id;
+        $data=Newusers::where('id',$id)->get()->toArray();
+        $identity=$data[0]['identity'];//1->是未认证;2->是认证过的企业
+
+        //查询是否在申请中
+        $ing=Sellerauthentication::where('uid',$id)->first();
+
+        if($identity==2){
+            return redirect('/home/userinfo/indexed');
+            //跳到个人中心即可(在个人中心那加个判断12的)
+        }else{
+            if($ing){
+                echo "<script>alert('您已提交企业资质申请,请耐心等待工作人员与您联系');history.go(-1);</script>";
+            }else{
+                return view('home.seller.post');
+            }
+            
+        }
+
+        //dd($identity);
+     }
+
+
+
+     //企业认证
+     public function qiyerenzheng(Request $request)
+     {  
+
+         $this->validate($request,[
+            'phone' => 'required',
+            'company' => 'required',
+            'number' => 'required',
+             'addr'=> 'required',
+             'pic'=>'required',
+            ],[
+            'phone.required' => '电话必填',
+            
+            'phone.required'=> '电话必填',
+            'company.required' => '公司名称必须输入',
+            'number.required' => '营业执照编号必须输入',
+            'addr.required' => '公司地址必须填入',
+            'pic.required' => '营业执照图片必须上传',
+            ]);
+
+
+
+        $data=new Sellerauthentication;
+        $data->uid=$request->input('id');
+        
+        $data->phone=$request->input('phone');
+        $data->company=$request->input('company');
+        $data->number=$request->input('number');
+        $data->addr=$request->input('addr');
+        
+        //处理上传的图片
+              if($request -> hasFile('pic')){
+            //获取上传的图片
+                $img = $request -> file('pic');
+            //获取后缀
+                $ext = $img -> getClientOriginalExtension();
+            //为图片起新的名字
+                $temp_name = time().rand(1000,9999).'.'.$ext;
+            //设置路径名称
+                $dir_name = '/articles_heads/'.date('Ymd',time());
+            //路径的拼接
+                $img_dir = $dir_name.'/'.$temp_name;
+            //图片上传
+                $img -> move('.'.$dir_name,$temp_name);
+            //把图片的路径存到数据中
+                $data -> pic = $img_dir;
+            }
+
+           // var_dump($data->pic);
+
+                //保存
+                $res=$data -> save();
+                if($res){
+                    echo "<script>alert('申请信息已经提交,请您保持电话畅通,我们会在1-2个工作日与您联系');window.location.href='/';</script>";
+                }else{
+                    echo "<script>alert('申请失败');window.location.href='/';</script>";
+                }
+
+      
+     }
+
+
 
 
 

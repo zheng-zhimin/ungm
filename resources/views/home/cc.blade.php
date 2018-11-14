@@ -1,7 +1,7 @@
 @extends('home.layout.newindex')
 
 @section('title')
-    货币换算器
+    货币换算
 @endsection
 
 
@@ -81,6 +81,10 @@
          -webkit-appearance:none;
          padding-right: 14px;
     }
+    .nn-7{
+    color: #3477ff !important;
+    border-bottom: 2px solid #3477ff;
+}
 </style>
 <body>
   

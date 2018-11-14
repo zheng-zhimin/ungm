@@ -55,7 +55,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 /*-----------------------货币换算-----------------*/
 .scaler .currencyTranslation-banner{
-    height: 9rem;
+    height: 100%;
 }
 .scaler .currencyTranslation{
     text-align: center;
@@ -1645,6 +1645,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     text-align: center;
     font-size: 0;
     display: block !important;
+    height:20px;
 }
 
 .domesticTrade .ft-carousel .carousel-indicators span {
@@ -2548,10 +2549,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 .buyerSubpage .buyerSubpageOne{
 	background-color: #ffffff;
-	box-shadow: 2px 4px 4px 0px 
+	box-shadow: 2px 0px 4px 0px 
 		rgba(0, 0, 0, 0.1);
 	margin-right:4px;
-	height:520px;
+	height:540px;
+    text-align:center;
 }
 .buyerSubpage .buyerSubpageOne li{
 	margin:0 20px;
@@ -2574,6 +2576,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	background-color: #3477ff;
 	color: #ffffff;
 	padding:0 18px;
+    border-radius:4px; 
+    margin-top:10px;
 }
 .buyerSubpage .buyerSubpageOne .buyerLi span{
 	float:right;
@@ -2749,13 +2753,13 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 .purchasingOne .purchasingTwo .col-md-2 img{
 	width:100%;
-	height:196px;
+	height:176px;
 	box-shadow: 2px 4px 4px 0px 
 		rgba(0, 0, 0, 0.1);
 	
 }
 .purchasingOne .purchasingTwo .col-md-10{
-	height: 198px;
+	height: 176px;
 	background-color: #ffffff;
 	box-shadow: 2px 4px 4px 0px 
 		rgba(0, 0, 0, 0.1);
@@ -3547,7 +3551,6 @@ a:hover, a:focus{
 /**密码管理**/
 .settingBtn{
 	float:left;
-	margin-top:40px;
 }
 .settingBtn p{
 	width: 120px;
@@ -3558,14 +3561,20 @@ a:hover, a:focus{
 	color: #ffffff;
 	text-align:center;
 }
+.settingBtn p:hover{
+    background-color: #00d6bc;
+}
 .settingBtn .btnColor{
 	background-color: #00d6bc;
+}
+.settingBtn .btnColor p:hover{
+    color:#00d6bc;
 }
 .accountSetting .lastPass{
 	display:none;
 }
 .accountSetting{
-	margin:40px 0 100px 150px;
+	margin:0px 0 100px 150px;
 	font-family: MicrosoftYaHei;
 	padding:10px 0 40px 30px;
 	background-color: #ffffff;
@@ -3708,7 +3717,7 @@ a:hover, a:focus{
 /**我的订单页面样式--------主页面**/
 .myManagement .myOrder{
 	font-family: MicrosoftYaHei;
-	margin:40px 0 100px 168px;
+	margin:0px 0 100px 150px;
 	padding:14px 0 0 30px;
 	height: 500px;
 	background-color: #ffffff;
@@ -3740,7 +3749,7 @@ a:hover, a:focus{
 /**售后**/
 .myManagement .myAfterSale{
 	font-family: MicrosoftYaHei;
-	margin:40px 0 100px 168px;
+	margin:0px 0 100px 150px;
 	height: 400px;
 	background-color: #ffffff;
 	box-shadow: 0 0 15px 1px 
@@ -3758,7 +3767,7 @@ a:hover, a:focus{
 /**收货地址**/
 .myManagement .myShippingAddress{
 	font-family: MicrosoftYaHei;
-	margin:40px 0 30px 168px;
+	margin:0px 0 30px 150px;
 	padding:0 30px 30px 30px;
 	background-color: #ffffff;
 	box-shadow: 0 0 15px 1px 
@@ -3789,6 +3798,7 @@ a:hover, a:focus{
 	background-color: #00b7a1;
 	text-align:center;
 	color: #ffffff;
+    border:none;
 }
 .myManagement .myShippingAddress .table-responsive tbody tr td{
 	padding:20px 0;
@@ -3813,8 +3823,7 @@ a:hover, a:focus{
 	background-color: #00b7a1;
 	border-radius: 4px;
 	float:right;
-	margin-right:30px;
-	margin-top:60px;
+	margin:60px 30px 100px 0;
 }
 .myManagement .addressTwo p{
 	font-family: MicrosoftYaHei-Bold;
@@ -3892,3 +3901,240 @@ a:hover, a:focus{
 	background: url(/ungmhome/images/no.png) no-repeat left center;
 	color: red;
 }
+
+/**供应商判断**/
+.supplierVerify{
+	font-family: MicrosoftYaHei-Bold;
+	margin:40px 100px 100px 100px;
+	background-color: #ffffff;
+	box-shadow: 2px 4px 4px 0px 
+		rgba(0, 0, 0, 0.1);
+	text-align:center;
+	color: #333333;
+}
+.supplierVerify .verifyOne{
+	padding:40px 0 20px 0;
+	border-bottom:2px solid #f9f9f9;
+}
+.supplierVerify .verifyOne span{
+	font-size: 20px;
+	font-weight: 600;
+}
+.supplierVerify .verifyTwo ul{
+    margin-top:50px;
+}
+.supplierVerify .verifyTwo ul li{
+    margin-bottom:30px;
+}
+.supplierVerify .verifyTwo ul li label{
+	font-size: 14px;
+	width:100px;
+	text-align:right;
+	margin-right:10px;
+}
+.supplierVerify .verifyTwo ul li input{
+	width: 336px;
+	height: 40px;
+	border-radius: 4px;
+	border: 1px solid #d8d8d8;
+	padding-left:10px;
+}
+.supplierVerify .verifyTwo .verifyBtn{
+	width: 336px;
+	height: 38px;
+	background-color: #00b7a1;
+	border:none;
+	margin:30px 0;
+	font-family: MicrosoftYaHei;
+	font-size: 16px;
+	letter-spacing: 4px;
+	color: #ffffff;
+}
+.supplierVerify .verifyTwo .licensePic .myLicensePic{
+	position: absolute;
+	width: 120px;
+	height: 120px;
+	opacity: 0;
+	z-index: 100;
+ }
+ .supplierVerify .verifyTwo .licensePic .delPic{
+	width: 37px;
+	height: 22px;
+	left: 110px;
+	z-index: 200;
+	cursor: pointer;
+}
+.supplierVerify .verifyTwo .licensePic input{
+	width: 120px;
+	height: 120px;
+	opacity: 0;
+	z-index: 100;
+}
+.supplierVerify .verifyTwo .licensePic .add{
+	width: 120px;
+	height: 120px;
+}
+.supplierVerify .verifyTwo .licensePic input{
+	margin-left:28%;
+}
+.supplierVerify .verifyTwo .licensePic .show{
+	margin-left:44%;
+}
+.supplierVerify .verifyTwo .licensePic p{
+	margin-top:10px;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333333;
+}
+
+/**会员中心页面样式**/
+.members{
+	margin:70px 0 220px 0;
+}
+.members .contactWay img{
+	width:200px;
+	height:174px;
+	z-index:9999;
+	position: fixed;
+	left: 1270px;
+	top: 500px;
+}
+.members .member{
+	margin-top:40px;
+}
+.members .memberUl:before,.members .memberUl:after{
+	content: "";
+	display: block;
+}
+.members .memberUl:after{
+	clear: both;
+	overflow: hidden;
+}
+.members .memberUl {
+	*zoom: 1;
+}
+.members ul{
+	width: 1200px;
+}
+.members .memberUl li {
+	float: left;
+	width: 290px;
+	text-align:center;
+	list-style: none;
+	background-color: #fff;
+	border: 1px solid rgba(223, 231, 239, .7);
+	transition: all .2s ease;
+	box-shadow: 0 0 15px 1px 
+		rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+}
+.members .memberUl li:nth-child(2):hover {
+	-webkit-transform: scale(1.05,1);
+	-moz-transform: scale(1.05,1);
+	transform: scale(1.05,1);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.members .memberUl li:nth-child(3):hover {
+	-webkit-transform: scale(1.05,1);
+	-moz-transform: scale(1.05,1);
+	transform: scale(1.05,1);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.members .memberUl li:nth-child(3):hover .memberThree{
+	position: relative;
+	bottom:6px;
+	transform: scaleY(1.2);
+}
+.members .memberUl li:nth-child(4):hover .memberFour{
+	position: relative;
+	bottom:6px;
+	transform: scaleY(1.2);
+}
+.members .memberUl li:nth-child(4):hover {
+	-webkit-transform: scale(1.05,1);
+	-moz-transform: scale(1.05,1);
+	transform: scale(1.05,1);
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.members .memberUl li:nth-child(3):hover{
+	border:1px solid #f09a37;
+}
+.members .memberUl li:nth-child(4):hover{
+	border:1px solid #59c55b;
+}
+.members .member ul li span{
+	display:block;
+	height: 66px;
+	border-top: 1px solid #d8d8d8;
+	font-size: 18px;
+	line-height: 66px;
+	color: #666666;
+}
+.members .member .memberLi span{
+	color: #333333;
+}
+.members .member .memberOne{
+	border-radius: 4px 4px 0px 0px;
+	font-size: 24px;
+	font-weight: 600;
+	border-top:none;
+}
+.members .member .memberTwo{
+	background-color: #d8d8d8;
+	border-top:none;
+	width: 289px;
+}
+.members .member .memberThree{
+	background-color: #f09a37;
+	color: #ffffff;
+	border-top:none;
+	width: 289px;
+}
+.members .member .memberFour{
+	background-color: #59c55b;
+	color: #ffffff;
+	border-top:none;
+	width: 289px;
+}
+.members .member .memberUl div{
+	border-top:1px solid #d8d8d8;
+	padding:20px;
+}
+.members .member .memberUl input{
+	width: 138px;
+	height: 46px;
+	background-color: #f09a37;
+	border-radius: 4px;
+	border:none;
+	font-family: MicrosoftYaHei-Bold;
+	font-size: 18px;
+	color: #ffffff;
+}
+.members .member .memberUl p{
+	color: #ee8625;
+	margin-top:20px;
+}
+.members .member .memberUl p img{
+	margin-right:8px;
+}
+.members .member .memberUl .memberBtn2 input{
+	background-color: #59c55b;
+}
+.members .member .memberUl .memberBtn2 p{
+	color: #59c55b;
+}
+.members .member .memberUl .memberBtn1{
+	display:none;
+}
+.members .member .memberUl .memberBtn2{
+	display:none;
+}
+
+/* 导航条控制选中样式蓝条 */

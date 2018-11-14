@@ -46,7 +46,7 @@
 .bot .bot-list li{
     float:left;
 }
-.bot .bot-list li a,b{
+.bot .bot-list li a, .bot .bot-list li b{
     font-family: "MicrosoftYaHei";
 	font-size: 14px;
 	color: #999999;

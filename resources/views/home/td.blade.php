@@ -7,7 +7,12 @@
 
 @section('content')
 
-       
+    <style>
+    .nn-4{
+    color: #3477ff !important;
+    border-bottom: 2px solid #3477ff;
+}
+  </style>   
 
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 
@@ -30,7 +35,7 @@
         rgba(0, 0, 0, 0.06);
 }
 .bid .bid-top .breadcrumb{
-    padding-top: 25px;
+    padding-top: 15px;
     padding-left: 0px;
     background-color: #ffffff;
 }
@@ -173,7 +178,7 @@
                                 display: inline-block;
                             }
                             .bid .Release{
-                                margin-right: 24px;
+                                margin-right: 40px;
                             }
                             .bid .zhi{
                                 margin: 0 5px;
@@ -321,15 +326,7 @@
     <!---内容开始-->
     <div class="content bid">
         <img src="/ungmhome/images/招投标服务.jpg" class="img-responsive banner bid-banner" alt="">
-        <div class="bid-top">
-            <div class="container">
-                <ul class="breadcrumb">
-                    <li><a href="#">全球贸易</a></li>
-                    <li><a href="#">UNGM</a></li>
-                    <li class="active">投标查询</li>
-                </ul>
-            </div>
-        </div>
+        
         <div class="bid-con">
             <div class="container">
                 <div class="tex" align="center"><a name="1"></a> 

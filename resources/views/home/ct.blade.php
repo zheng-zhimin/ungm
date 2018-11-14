@@ -7,7 +7,12 @@
 
 @section('content')
 
-       
+  <style>
+    .nn-3{
+    color: #3477ff !important;
+    border-bottom: 2px solid #3477ff;
+}
+  </style>
 <link rel="stylesheet" href="/ungmhome/css/style.css">
 <body>
    
@@ -474,21 +479,21 @@
                             <li>
                                 <h2>10-26</h2>
                                 <h5>2019</h5>
-                                <h3>国家邮政局：前9月快递业务量同比大增</h3>
+                                <a href="/home/businesshot/one"><h3>国家邮政局：前9月快递业务量同比大增</h3></a>
                                 <p>记者从国家邮政局获悉，1—9月，全国快递服务企业业务量累计完成347.4亿件，同比增长26.8%；业务收入累计完...</p>
                                 <a href="/home/businesshot/one"><span>查看更多&nbsp;></span></a>
                             </li>
                             <li>
                                 <h2>10-26</h2>
                                 <h5>2019</h5>
-                                <h3>我国将对小微企业融资担保业务实施降费奖补</h3>
+                               <a href="/home/businesshot/two"> <h3>我国将对小微企业融资担保业务实施降费奖补</h3></a>
                                 <p>新华社北京10月25日电（记者 胡璐、郁琼源）记者25日从财政部了解到，为了支持引导更多金融资源配置到小微企...</p>
                                 <a href="/home/businesshot/two"><span>查看更多&nbsp;></span></a>
                             </li>
                             <li>
                                 <h2>10-25</h2>
                                 <h5>2019</h5>
-                                <h3>物价不具备大幅上涨基础 全年涨幅在3%内问题不大</h3>
+                                <a href="/home/businesshot/three"><h3>物价不具备大幅上涨基础 全年涨幅在3%内问题不大</h3></a>
                                 <p>油价“四连涨”、食品价格涨幅连续4个月扩大、CPI涨幅创近7个月新高。近期，与居民生活密切相关的物价有所上...</p>
                                <a href="/home/businesshot/three"><span>查看更多&nbsp;></span></a>
                             </li>

@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>登 录</title>
+     <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
+    <title>找回密码</title>
+
     <link rel="stylesheet" href="/ungmhome/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="/ungmhome/css/base.css">
     <link rel="stylesheet" href="/ungmhome/css/header.css">
@@ -41,6 +43,20 @@
  .forgetpassword  #eliteregister .active{
     color: #f09b2b !important;
  }
+ .container .forgetpas {
+
+ }
+  .forgetpas {
+    background:#fff;
+  }
+    .forgetpas img{
+    height:31px;
+    display:inline;
+    }
+    .forgetpas a{
+    float:right;
+    margin-top:6px;
+  }
 </style>
 <body>
     <div class="main">
@@ -60,14 +76,15 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <!--------logo区---------->
-        <div class="loginNav">
-            <div class="container">
-                <img src="images/ungm.png" class="img-responsive" alt="">
-                <a href="/">返回首页</a>
+            <!--logo区-->
+            <div class="loginNav forgetpas">
+                <div class="container">
+                    <img src="/ungmhome/images/ungm.png" class="img-responsive" alt="">
+                    <a href="/">返回首页</a>
+                </div>
             </div>
         </div>
+       
         <!--2.登录框-->
         <div class="content forgetpassword">
             <div class="container">
@@ -159,7 +176,7 @@
         var y=$(".verification").val();
         if(!pho.match(/^1(3[0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|8[0-9]|9[89])\d{8}$/)) {
             alert("手机号码格式不正确！请重新输入");
-        $(".phone").focus();
+       
         }else{
 
         }
@@ -232,7 +249,7 @@
         // var sessioncode = session('phone_code');
         if(!pho.match(/^1(3[0-9]|4[579]|5[0-3,5-9]|6[6]|7[0135678]|8[0-9]|9[89])\d{8}$/)) {
             alert("手机号码格式不正确！请重新输入");
-        $(".phone").focus();
+       
         return 0;
         }else if(y==""){
             alert("请输入验证码");
@@ -579,8 +596,8 @@ $(".submit").click(function(){
                 <div class="row">
                     <div class="copy">
                         <span style="padding-left:260px;">九鼎智成（北京）信息技术股份有限公司版权所有</span>
-                        <span style="color:#434a66;">Copyright@1999-2018 300.cn All Rights Reserved</span>
-                        <span style="color:#434a66;">京ICP备111111-1</span>
+                        <span >Copyright@1999-2018 300.cn All Rights Reserved</span>
+                        <span >京ICP备111111-1</span>
                     </div>
                 </div>
             </div>
