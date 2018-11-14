@@ -21,6 +21,9 @@
 
 
 <style type="text/css">
+ .blue li a:hover{
+       color:#3477ff;
+    }
 .dropdown:hover .dropdown-menu{
     display: block;
 }
@@ -297,7 +300,7 @@
             </div>
             <div class="col-md-6 bot-last">
                 <div  class="row bot-list">
-                    <ul>
+                    <ul class="blue">
                         <li><a href="/home/about">关于我们</a><b>|</b></li>
                         <li><a href="/home/job">招纳贤士</a><b>|</b></li>
                         <li><a href="/home/contact">联系我们</a><b>|</b></li>
