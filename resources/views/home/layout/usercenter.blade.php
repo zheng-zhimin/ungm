@@ -125,7 +125,7 @@
                 <img class="img-responsive" src="/ungmhome/images/tel.png">
                 <img class="img-responsive" src="/ungmhome/images/mail.png">
             </div>
-@if( ! Cache::has('homeuser') )
+@if( ! Session::has('homeuser') )
             <div class="top-right">
                 <span class=""><a href="/home/newlogin/login">登录</a></span>
                 <span class="">|</span>
@@ -133,11 +133,11 @@
             </div>
 @else
             <div class="top-right">
-                <!-- <span class=""><img src="{{Cache::get('homeuser')->profile}}" ></span> -->
+                <!-- <span class=""><img src="{{Session::get('homeuser')->profile}}" ></span> -->
                 
                 
                 <span class="">|</span>
-                <span class="">{{Cache::get('homeuser')->username}}</span>
+                <span class="">{{Session::get('homeuser')->username}}</span>
                 <span class="">|</span>
                 <span class=""><a href="/home/logout">退出</a></span>
                 <span class="">|</span>
@@ -164,9 +164,9 @@
      
         <ul class="nav navbar-nav">
               <li class="dropdown">
-              @if(Cache::get('homeuser')->identity==1)
+              @if(Session::get('homeuser')->identity==1)
                   <a  class="a1" href="/home/userinfo/index" >信息管理</a>
-              @elseif( Cache::get('homeuser')->identity==2 )
+              @elseif( Session::get('homeuser')->identity==2 )
                   <a href="/home/userinfo/indexed" >信息管理</a>
               @endif
 
@@ -178,7 +178,7 @@
               </li>
           
               <li class="dropdown">
-                  <a class="a3" href="/home/userinfo/account/{{Cache::get('homeuser')->id}}" >账户设置</a>
+                  <a class="a3" href="/home/userinfo/account/{{Session::get('homeuser')->id}}" >账户设置</a>
                   
               </li>
               <li class="dropdown">
@@ -208,7 +208,7 @@
                </div>
                <div class="menu3 menuu">
                    <ul class="">
-                       <a href="/home/userinfo/account/{{Cache::get('homeuser')->id}}" ><li class="b5">基本资料</li></a>
+                       <a href="/home/userinfo/account/{{Session::get('homeuser')->id}}" ><li class="b5">基本资料</li></a>
                        <a href="#" ><li class="b6">密码管理</li></a>
                    </ul>
                </div> -->

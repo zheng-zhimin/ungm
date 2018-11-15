@@ -136,16 +136,14 @@
     color: #333333;
 }
 .bid .bid-con .tab-content .row .col-md-6{
-    padding:0px 60px ;
-    margin: 40px 0px;
+   
 }
 .bid .bid-con .tab-content .row .col-md-6:first-child{
     border-right: 1px solid #f9f9f9;
 }
 .bid .bid-con .tab-content .row .tender{
     padding:30px 40px ;
-    box-shadow: 2px 4px 4px 4px 
-        rgba(0, 0, 0, 0.06);
+
     height: 340px;
 }
 .bid .bid-con .tab-content .row .tender h4{
@@ -170,7 +168,7 @@
     font-stretch: normal;
     line-height: 30px;
     letter-spacing: 0px;
-
+    margin:0px;
 }
 </style>
 <style>
@@ -319,6 +317,20 @@
             border-right: 2px solid #f9f9f9;   
             padding: 0px;
         }
+        .bid-con .hidden-xs-down{
+            margin-top:15px;
+        }
+        .bid .SUPPLIER-r label input{
+            margin-right:5px;
+        }
+        .bid .btn1,  .bid .btn2{
+            font-size:15px;
+        }
+
+        .bid .bid-con .tab-content .row .SUPPLIER-r .tender-right span, .bid .bid-con .tab-content .row .SUPPLIER-r .tender-right h4, .bid .bid-con .tab-content .row .SUPPLIER-r .tender-right p, .bid .bid-con .tab-content .row .SUPPLIER-r .tender-right label{
+    color: #999999;
+}
+
 </style>
 <body>
     <!--1.网页头部-->
@@ -335,13 +347,13 @@
                 <div class="label">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item nav-item-left active"> <a class="nav-link " data-toggle="tab" href="#tenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">投标查询</span></a> </li>
-                        <li class="nav-item nav-item-right"> <a class="nav-link" data-toggle="tab" href="#UNGMtenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">UNGM投标查询</span></a> </li>               
+                        <li class="nav-item nav-item-right"> <a class="nav-link" data-toggle="tab" href="#UNGMtenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">UNGM商机查询</span></a> </li>               
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content tabcontent-border">
                         <div class="tab-pane active" id="tenderQuery" role="tabpanel">
                             <div class="row">
-                                
+                                <div class="border-gree row" style="border:1px solid #00b7a1;margin: 40px 60px;">
                                     <div class="col-md-6" align="center"> 
                                         <div class="tender tender-left">
                                             <h4 align="left">基本条件</h4>
@@ -373,6 +385,7 @@
         </div>  
                                         </div>            
                                     </div> 
+
                                     <div class="col-md-6 SUPPLIER-r" align="left">
                                          <div class="tender tender-right">
                                             <h4 align="left">高级条件</h4>
@@ -389,7 +402,8 @@
     <label><input name="Fruit" type="checkbox" value="" />拨款支持-征求建议书 </label> </div>
 </div> 
                                     </div>
-                                    <div class="col-md-12 butt" align="right">
+                                    </div>
+                                    <div class="col-md-12 butt" align="center">
 <button type="" class="btn btn-lg btn1"  onclick="cle()">清除全部</button>
 <button type="" class="btn btn-lg btn2" onclick="search()">立即搜索</button>
                                     </div>
@@ -399,7 +413,7 @@
                         
                        <div class="tab-pane  p-20" id="UNGMtenderQuery" role="tabpanel">
                             <div class="row">
-                                 
+                                <div class="border-gree row" style="border:1px solid #00b7a1;margin: 40px 60px;"> 
                                     <div class="col-md-6" align="center"> 
                                         <div class="tender tender-left">
                                             <h4 align="left">基本条件</h4>
@@ -457,7 +471,8 @@
     <label><input name="Fruit" type="checkbox" value="" />拨款支持-征求建议书 </label> </div>
     </div> 
 </div>
-<div class="col-md-12 butt" align="right">
+</div>
+<div class="col-md-12 butt" align="center">
          <button type="" class="btn btn-lg btn1" onclick="cle();">清除全部</button>
          <button type="" class="btn btn-lg btn2" onclick="ungmsearch()">立即搜索</button>
                                     </div>

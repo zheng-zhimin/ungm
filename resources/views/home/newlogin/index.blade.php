@@ -145,14 +145,14 @@
                         <img src="/ungmhome/images/log-u.png">
                         </button>
         
-        <input  class="form-control phone" name="username" placeholder="绑定手机号" id="u" type="text" value="{{ old('username') }}" placeholder="账号" >
+        <input  class="form-control phone" name="username" placeholder="请输入手机号" id="u" type="text" value="{{ old('username') }}" placeholder="账号" >
                         </li>
                         <li>
                         <button>
                         <img src="/ungmhome/images/log-p.png">
                         </button>
         
-        <input class="form-control pass" name="password" type="password" value="" id="p" placeholder="密码">
+        <input class="form-control pass" name="password" type="password" value="" id="p" placeholder="请输入密码">
                         </li>
                     </ul>
 

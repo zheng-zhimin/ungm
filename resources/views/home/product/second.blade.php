@@ -19,7 +19,7 @@
             <ul>
                 <li>
                     <img src="/ungmhome/images/供应商.png" class="picOne">
-        @if(Cache::has('homeuser'))
+        @if(Session::has('homeuser'))
          <a href="/home/check/authentication"><img src="/ungmhome/images/立即发布产品信息.png" class="picTwo buyerPic"></a>
          @else
         <a href="/home/newlogin/login"><img src="/ungmhome/images/立即发布产品信息.png" class="picTwo buyerPic"></a>

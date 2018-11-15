@@ -267,9 +267,11 @@ Route::post('/home/product/list','Home\NewhomeController@productlist');
 
 //供应商产品四级详情传递id的路由
 Route::get('/home/productfour/{id}','Home\NewhomeController@productfour');
+
 //采购商商信息四级详情传递id的路由
 Route::get('/home/buymessagefour/{id}','Home\NewhomeController@buymessagefour');
-
+//采购商产品四级详情传递id的路由(从文章出来的)
+Route::get('/home/buymessagefourart/{id}','Home\NewhomeController@buymessagefourart');
 
 //显示新个人中心的路由(信息管理)
 Route::get('/home/userinfo/index','Home\NewhomeController@usercenter');//显示(采购)新个人中心的路由(信息管理)

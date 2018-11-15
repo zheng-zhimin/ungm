@@ -189,16 +189,19 @@
                         <div class="tab-pane active" id="addProcurement" role="tabpanel">
 
                             <div class="two row">
-                                <select class="form-control" name="lanmu">
-                                   
-                                    <option value="28">工业品</option>
-                                    <option value="47">原材料</option>
-                                     <option value="58">消费品</option>
-                                    <option value="73">绿色食品</option>
-                                    <option value="84">商务服务</option>
-
-                                </select>
-                                <button type="button" class="l-b">信息标题</button>
+                                <from>
+        <select class="form-control" id="category" name="category" onchange="getcategory()" style="margin-right:10px;">
+                <option value="-1">行业分类</option>
+                <option value="工业品">工业品</option>
+                <option value="原材料">原材料</option>
+                <option value="消费品">消费品</option>
+                <option value="绿色食物">绿色食物</option>
+                <option value="商务服务">商务服务</option>
+        </select>
+        <select class="form-control" id="kind" name="kind" style="width:140px;">
+                <option value="-1">类别</option>
+        </select>
+    </from>
                                 <input type="text" class="form-control l-b" maxlength="20" name ="project" placeholder="点击输入文字">
                                 <b>(2-30个字)</b>
                             </div>
@@ -339,16 +342,19 @@
                                 <div class="tab-content tabcontent-border" style="margin-top: 20px;">
                                     <div class="tab-pane active" id="addProcurement-2" role="tabpanel">
                                         <div class="two row">
-                                           <select class="form-control" name="lanmu">
-                                   
-                                                <option value="28">工业品</option>
-                                                <option value="47">原材料</option>
-                                                 <option value="58">消费品</option>
-                                                <option value="73">绿色食品</option>
-                                                <option value="84">商务服务</option>
-
-                                            </select>
-                                           <button type="button" class="l-b">信息标题</button>
+                                           <from>
+        <select class="form-control" id="category1" name="category" onchange="getcategory1()" style="margin-right:10px;">
+                <option value="-1">行业分类</option>
+                <option value="工业品">工业品</option>
+                <option value="原材料">原材料</option>
+                <option value="消费品">消费品</option>
+                <option value="绿色食物">绿色食物</option>
+                <option value="商务服务">商务服务</option>
+        </select>
+        <select class="form-control" id="kind1" name="kind" style="width:140px;">
+                <option value="-1">类别</option>
+        </select>
+    </from>
                                             <input type="text" class="form-control l-b" maxlength="20" name ="project" placeholder="点击输入文字">
                                             <b>(2-30个字)</b>
                                         </div>
@@ -461,6 +467,80 @@
 </body>
 
 <script type="text/javascript" src="/ungmhome/js/jquery.js"></script>
+<script >
+    /*
+    var arr=new Array;
+    arr[0]=[new Option("市",'-1')];
+    arr[1]=[new Option("")]
+    function change(index){
+        var s=
+        */
+        var kind=[
+        ["机械及行业设备","仪器仪表", "照明工业", "安全防护","电工电气","电子元器件","五金工具","包装","环保","家装、建材","交通运输","医药保健",
+        "印刷","二手设备转让","加工","LED","个人防护","专用设备","其他"],
+        ["纸业","纺织及皮革", "化工","精细化学品","橡塑","家纺家饰","能源 ","家用电器","冶金矿产","钢铁","其他"],
+                ["汽车用品","办公文教", "电脑数码类产品", "箱包皮具","日用百货","母婴用品","美妆日化","家用电器","工艺品及礼品","气摩及配件","食品及饮料",
+                "玩具","运动户外","服装鞋帽","其他"],
+                ["特色农产品","生鲜蔬果", "粮油/干货", "调味品类","茗茶/冲饮","营养保健食品","休闲零食","饮料","牛奶乳品","美酒佳酿","其他"],
+                ["广电传媒","商务服务", "项目合作","代理","其他"]
+        ];
+    
+    
+    function getcategory(){
+    /*
+    var sltCity = document.getElementById('s2') ;
+        sltCity.innerHTML='';
+        for(i=0;i<city[index].length;i++){
+            sltCity.options[sltCity.options.length]=city[index][i];
+        }
+    
+    */
+        var sltCategory = document.getElementById("category") ;        
+        var sltKind = document.getElementById("kind") ;
+        var categoryKind = kind[sltCategory.selectedIndex - 1];         
+        sltKind.length = 1 ;
+        for ( i = 0 ; i < categoryKind.length ; i++ ) {
+            sltKind[i + 1] = new Option(categoryKind[i], categoryKind[i]) ;
+        }
+    }
+    </script>
+    <script >
+    /*
+    var arr=new Array;
+    arr[0]=[new Option("市",'-1')];
+    arr[1]=[new Option("")]
+    function change(index){
+        var s=
+        */
+        var kind1=[
+        ["机械及行业设备","仪器仪表", "照明工业", "安全防护","电工电气","电子元器件","五金工具","包装","环保","家装、建材","交通运输","医药保健",
+        "印刷","二手设备转让","加工","LED","个人防护","专用设备","其他"],
+        ["纸业","纺织及皮革", "化工","精细化学品","橡塑","家纺家饰","能源 ","家用电器","冶金矿产","钢铁","其他"],
+                ["汽车用品","办公文教", "电脑数码类产品", "箱包皮具","日用百货","母婴用品","美妆日化","家用电器","工艺品及礼品","气摩及配件","食品及饮料",
+                "玩具","运动户外","服装鞋帽","其他"],
+                ["特色农产品","生鲜蔬果", "粮油/干货", "调味品类","茗茶/冲饮","营养保健食品","休闲零食","饮料","牛奶乳品","美酒佳酿","其他"],
+                ["广电传媒","商务服务", "项目合作","代理","其他"]
+        ];
+    
+    
+    function getcategory1(){
+    /*
+    var sltCity = document.getElementById('s2') ;
+        sltCity.innerHTML='';
+        for(i=0;i<city[index].length;i++){
+            sltCity.options[sltCity.options.length]=city[index][i];
+        }
+    
+    */
+        var sltCategory1 = document.getElementById("category1") ;        
+        var sltKind1 = document.getElementById("kind1") ;
+        var categoryKind1 = kind[sltCategory1.selectedIndex - 1];         
+        sltKind1.length = 1 ;
+        for ( i = 0 ; i < categoryKind1.length ; i++ ) {
+            sltKind1[i + 1] = new Option(categoryKind1[i], categoryKind1[i]) ;
+        }
+    }
+    </script>
 <script>
     $(document).ready(function()
     {

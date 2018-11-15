@@ -12,7 +12,7 @@ use App\Models\Home\UserDetail;
 use DB;
 use Mail;
 use Hash;
-use Cache;
+use Session;
 use App\Models\Home\History;
 class NewloginController extends Controller
 {
@@ -72,8 +72,8 @@ class NewloginController extends Controller
                             {  
                                 session(['homeFlag'=>true]);
                                 session(['homeuser'=>$user]);
-                                Cache::put('homeuser',$user,720);
-                                //Cache::forget('homeuser');//退出是清除记录用法
+                                Session::put('homeuser',$user,720);
+                                //Session::forget('homeuser');//退出是清除记录用法
                                 echo 'success' ;     
                             }else{
                                 echo'后期维护时在这里发送数据库查询字段即可';
@@ -325,7 +325,7 @@ class NewloginController extends Controller
            public function logout()
             {
                  
-                 Cache::forget('homeuser');
+                 Session::forget('homeuser');
                  session(['homeFlag'=>false]);
                  return redirect('/');
             }

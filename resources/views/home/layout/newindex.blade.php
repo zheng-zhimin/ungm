@@ -42,7 +42,7 @@
                 <img class="img-responsive" src="/ungmhome/images/tel.png">
                 <img class="img-responsive" src="/ungmhome/images/mail.png">
             </div>
-@if( ! Cache::has('homeuser') )
+@if( ! Session::has('homeuser') )
             <div class="top-right">
                 <span class=""><a href="/home/newlogin/login">登录</a></span>
                 <span class="">|</span>
@@ -50,14 +50,14 @@
             </div>
 @else
             <div class="top-right">
-               <!--  <span class=""><img src="{{Cache::get('homeuser')->profile}}" ></span>  -->
+               <!--  <span class=""><img src="{{Session::get('homeuser')->profile}}" ></span>  -->
                 
                 
                 <span class="">|</span>
-                @if(Cache::get('homeuser')->identity==1)
-                <span class=""><a href="/home/userinfo/index">{{Cache::get('homeuser')->username}}</a></span>
+                @if(Session::get('homeuser')->identity==1)
+                <span class=""><a href="/home/userinfo/index">{{Session::get('homeuser')->username}}</a></span>
                 @else
-                 <span class=""><a href="/home/userinfo/indexed">{{Cache::get('homeuser')->username}}</a></span>
+                 <span class=""><a href="/home/userinfo/indexed">{{Session::get('homeuser')->username}}</a></span>
                 @endif
                 <span class="">|</span>
                 <span class=""><a href="/home/logout">退出</a></span>

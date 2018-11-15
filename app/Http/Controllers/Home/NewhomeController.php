@@ -21,10 +21,12 @@ use App\Models\Admin\Articles;//文章
 use App\Models\Admin\Label;//标签
 use App\Models\Home\Comment;//评论
 
-use Cache;
+use Session;
 use App\Models\Admin\Ungmuserdetail;
 use App\Models\Home\Address;
 use App\Models\Home\Newusers;
+use App\Models\Admin\Sellerauthentication;//认证表
+
 
 class NewhomeController extends Controller
 {
@@ -618,7 +620,7 @@ class NewhomeController extends Controller
               $id=$req->id;
               $data=Articles::where('id',$id)->get()->toArray();
       //少一个链表查这个人的电话之类的信息
-
+             
               return view('home.product.four',['data'=>$data['0'] ]);
 
           }
@@ -626,15 +628,46 @@ class NewhomeController extends Controller
    //四级采购信息商产品传递id显示详情的页面
           public function buymessagefour(Request $req)
           {
+                //$ip = $_SERVER['REMOTE_ADDR'];
+               
+              $id=$req->id;
+              $data=Buyoffer::find($id);
+              $uid=$data['uid'];
+              $times=$data['times'];
+
+              $seeid=Session('homeuser')->id;
+             
+              if($uid!==$seeid){
+                 $data-> times = $times+1;
+                $data->save();
+              }
+             
+              $renzheng=Sellerauthentication::where('uid',$uid)->first();
+              $renzheng=$renzheng['identity'];
+              $userdata=Newusers::where('id',$uid)->first();
+             $userdetaildata=Ungmuserdetail::where('uid',$uid)->first();
+             $addressdata=Address::where('uid',$uid)->where('defaultstatus','1')->first();
+
+
+             
+
+      //少一个链表查这个人的电话之类的信息
+
+              return view('home.buymessage.four',['data'=>$data ,'userdata'=>$userdata,'userdetaildata'=>$userdetaildata,'addressdata'=>$addressdata,'renzheng'=>$renzheng]);
+
+          }
+
+          //以文章列表找到的信息
+          //四级采购信息商产品传递id显示详情的页面
+          public function buymessagefourart(Request $req)
+          {
               $id=$req->id;
               $data=Articles::where('id',$id)->get()->toArray();
       //少一个链表查这个人的电话之类的信息
 
-              return view('home.buymessage.four',['data'=>$data['0'] ]);
+              return view('home.buymessage.fourart',['data'=>$data['0'] ]);
 
           }
-
-
 
 
 
@@ -812,8 +845,8 @@ public function meetingdetail($id)
    //显示个人中心的控制器(信息管理)
 public function usercenter()
 {
-        //从永久cache中拿出缓存的用户账号密码id信息
-    $user=Cache::get('homeuser');
+        //从永久Session中拿出缓存的用户账号密码id信息
+    $user=Session::get('homeuser');
     $id=$user->id;
     $username=$user->username;
     $phone=$user->phone;
@@ -858,8 +891,8 @@ public function usercenter()
  //显示个人中心的控制器(信息管理)
 public function usercentered()
 {
-        //从永久cache中拿出缓存的用户账号密码id信息
-    $user=Cache::get('homeuser');
+        //从永久Session中拿出缓存的用户账号密码id信息
+    $user=Session::get('homeuser');
     $id=$user->id;
     $username=$user->username;
     $phone=$user->phone;
@@ -920,7 +953,7 @@ public function adduser(Request $request)
             'img.required'=>'产品图片必须添加',
             ]);
          // echo(111);die;
-            $user=Cache::get('homeuser');
+            $user=Session::get('homeuser');
             $id=$user->id;
             $data = $request ->except('item','_token');
                 //接收修改供应商信息
@@ -983,8 +1016,10 @@ public function adduser(Request $request)
               //接收个人中心的数据(采购+产品)
     public function adduser2(Request $request)
     {
-        
-        
+        $category=$request->input('category');
+        $kind=$request->input('kind');
+        var_dump($category,$kind);
+        dd(111);
 
         $this->validate($request,[
             'project' => 'required',
@@ -1002,7 +1037,7 @@ public function adduser(Request $request)
             'img.required'=>'产品图片必须添加',
             ]);
          // echo(111);die;
-            $user=Cache::get('homeuser');
+            $user=Session::get('homeuser');
             $id=$user->id;
             $data = $request ->except('item','_token');
                 //接收修改供应商信息
@@ -1089,7 +1124,7 @@ public function adduser(Request $request)
             'company.required'=>'公司名称必须添加',
             ]);
          // echo(111);die;
-            $user=Cache::get('homeuser');
+            $user=Session::get('homeuser');
             $id=$user->id;
             $data = $request ->except('item','_token');
                 //接收修改供应商信息
@@ -1159,7 +1194,7 @@ public function adduser(Request $request)
  //显示交易管理的方法
         public function transaction()
         {
-            $id=Cache::get('homeuser')->id;
+            $id=Session::get('homeuser')->id;
             $address=Address::where('uid',$id)->get();
             $tiao=Address::where('uid',$id)->count();
 

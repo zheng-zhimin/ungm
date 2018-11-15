@@ -57,6 +57,18 @@
     float:right;
     margin-top:6px;
   }
+  input::-webkit-input-placeholder { /* WebKit browsers */ 
+color: #999; 
+} 
+input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+color: #999; 
+} 
+input::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+color: #999; 
+} 
+input:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+color: #999; 
+} 
 </style>
 <body>
     <div class="main">

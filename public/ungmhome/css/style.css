@@ -380,6 +380,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 #SUPPLIER .col-md-4 .advertising img{
     height: 94px;
 }
+#SUPPLIER .col-md-4 .padd .slh-p{
+    color:#bbb;
+}
 #SUPPLIER .col-md-4 .padd p{
     margin-bottom: 0px;
 }
@@ -2270,7 +2273,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	margin-left:10px;
 }
 .businessMore .businessMoreUl ul li .businessMoreLi{
-	color: #999999;
+	color: #d8d8d8;
 	font-weight: normal;
 	float:right;
 }
@@ -3634,8 +3637,6 @@ a:hover, a:focus{
 	padding-left:0px;
 }
 .accountSetting .myOne input{
-	border:none;
-	padding-left:0px;
 	width: 150px;
 }
 .accountSetting .mySite input{
@@ -3649,6 +3650,7 @@ a:hover, a:focus{
 	font-family: MicrosoftYaHei-Bold;
 	font-size: 14px;
 	color: #ffffff;
+    margin-right:20px;
 }
 .accountSetting .myCity select option{
 	background-color: #f4f4f4;
@@ -3998,8 +4000,8 @@ a:hover, a:focus{
 	height:174px;
 	z-index:9999;
 	position: fixed;
-	left: 1140px;
-	top: 400px;
+	left: 1270px;
+	top: 500px;
 }
 .members .member{
 	margin-top:40px;

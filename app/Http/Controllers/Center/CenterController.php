@@ -22,7 +22,7 @@ use App\Models\Admin\Articles;//文章
 use App\Models\Admin\Label;//标签
 use App\Models\Home\Comment;//评论
 
-use Cache;
+use Session;
 use App\Models\Admin\ungmuserdetail;
 use App\Models\Home\Newusers;
 use Hash;
@@ -148,6 +148,8 @@ class CenterController extends Controller
      //添加地址操作
      public function addbuyaddress(Request $req)
      {
+
+          
           $name=$req->input('name');
           $phone=$req->input('phone');
           $address=$req->input('address');
@@ -165,14 +167,14 @@ class CenterController extends Controller
 
             ]);
            //地址添加超过20条返回错误信息
-           $uid=Cache::get('homeuser')->id;
+           $uid=Session::get('homeuser')->id;
            $tiao=Address::where('uid',$uid)->count();
            
            if($tiao>=20){
              echo "<script>alert('您所添加的地址数量已达到20条,暂时不能继续添加了呢');history.go(-1);</script>";
            }else{
 
-                  $uid=Cache::get('homeuser')->id;
+                  $uid=Session::get('homeuser')->id;
                   $newadd=new Address;
                   $data=[
                     'uid'=>$uid,
@@ -244,7 +246,7 @@ class CenterController extends Controller
      //设置默认地址
      public function setdefault($id)
      {
-            $uid=Cache::get('homeuser')->id;
+            $uid=Session::get('homeuser')->id;
             $q=Address::where('uid',$uid)->where('defaultstatus','1')->first();
            
            
@@ -279,7 +281,7 @@ class CenterController extends Controller
      //利用用户表查看供应商企业是否认证企业营业执照
      public function authentication()
      {
-        $id=Cache::get('homeuser')->id;
+        $id=Session::get('homeuser')->id;
         $data=Newusers::where('id',$id)->get()->toArray();
         $identity=$data[0]['identity'];//1->是未认证;2->是认证过的企业
 

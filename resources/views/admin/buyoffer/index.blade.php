@@ -26,6 +26,7 @@
                       <div id="DataTables_Table_1_length" class="dataTables_length">
                         <label>显示
                           <select name="count" size="1" name="DataTables_Table_1_length" aria-controls="DataTables_Table_1">
+                          <option value="1" @if( isset($params) && !empty($params['count']) &&$params['count']==1) selected @endif>1</option>
                             <option value="5" @if( isset($params) && !empty($params['count']) &&$params['count']==5) selected @endif>5</option>
                             <option value="10" @if( isset($params) && !empty($params['count']) &&$params['count']==10) selected @endif>10</option>
                             <option value="15" @if( isset($params) && !empty($params['count']) &&$params['count']==15) selected @endif>15</option>
@@ -120,9 +121,7 @@
 
                         </tbody>
                       </table>
-                         <div class="page dataTables_paginate paging_full_numbers">
-                            {!! $data->render() !!}
-                        </div>
+                      
                     </div>
                   </div>
                 </div>

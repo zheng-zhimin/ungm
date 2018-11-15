@@ -17,6 +17,7 @@ class BuyofferController extends Controller
      */
     public function index(Request $request)
     {
+
         $data=Buyoffer::all()->except('_token')->toArray();
         
         //echo '<pre>';
@@ -27,8 +28,8 @@ class BuyofferController extends Controller
         $for = $request -> input('for','');
         $params = $request -> all();  // 以数组的形式接收所有的参数
 
-        $data=Buyoffer::
-        where('name','like','%'.$for.'%') -> paginate($count);
+        //$data=Buyoffer::
+        //where('name','like','%'.$for.'%') -> paginate($count);
         return view('admin.buyoffer.index',['title'=>'采购商发布的采购信息列表状态','data'=>$data,'params' => $params]);
 
     }

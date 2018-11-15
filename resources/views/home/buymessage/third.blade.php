@@ -65,7 +65,7 @@
                 "<p>地区全国:"+datas[i].area+"</p>"+
                 "<p>行业:"+datas[i].industry+"</p>"+
                 "<p>公司:"+datas[i].company+"</p>"+
-                "<a href='/home/buymessagefour/"+datas[i].id+"' method='post'>"+
+                "<a href='/home/buymessagefourart/"+datas[i].id+"' method='post'>"+
                 "<input type='button' value='立即报价'>"+
                 "</a>"+
                 "</div></div>";

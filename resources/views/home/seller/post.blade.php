@@ -53,7 +53,7 @@
         <form action="/center/qiye/renzheng" method="post" enctype = "multipart/form-data">
         {{csrf_field()}}
                 <ul>
-                    <input type="hidden" name="id" value="{{Cache::get('homeuser')->id}}">
+                    <input type="hidden" name="id" value="{{Session::get('homeuser')->id}}">
                     <li><label for="">公司名称：</label>
                         <input type="text" name="company">
 

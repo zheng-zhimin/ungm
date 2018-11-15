@@ -6,7 +6,7 @@
 
 
 @section('title')
-    首页
+    睿鹿网，为客户创造客户！
 @endsection
 
 
@@ -83,7 +83,7 @@
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs" role="tablist">
                                     <li class="nav-item nav-item-left active"> <a class="nav-link " data-toggle="tab" href="#SUPPLIER" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">供应商&nbsp;&nbsp;<span>SUPPLIER</span></span></a> </li>
-                                    <li class="nav-item nav-item-right"> <a class="nav-link" data-toggle="tab" href="#BUYERS" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">采购商&nbsp;&nbsp;<span>BUYERS</span></span></a> </li>
+                                    <li class="nav-item nav-item-right"> <a class="nav-link" data-toggle="tab" href="#BUYERS" role="tab" align="center" style="margin:0px;"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">采购商&nbsp;&nbsp;<span>BUYERS</span></span></a> </li>
                                    
                                 </ul>
                                 <!-- Tab panes -->
@@ -114,15 +114,19 @@
                         <div class="col-md-4" align="center">
                             <div class="padd">
                                 <h4 class="slh">{{$v['project']}}</h4>
-                                <p  class="slh">采购数量：{{$v['count']}}</p>
+                                <p  class="slh slh-p">采购数量：{{$v['count']}}</p>
                                 <hr>
                                 <ul align="left">
                                     <li class="slh">发布时间：<span>{{$v['published']}}</span></li>
+                                    @if($v['deadline']=='0000-00-00 00:00:00')
+                                     <li class="slh">截至日期：<span>长期有效</span></li>
+                                    @else
                                     <li class="slh">截至日期：<span>{{$v['deadline']}}</span></li>
+                                    @endif
                                     <li class="slh">采购类型：<span>{{$v['xingzhi']}}</span></li>
                                     <li class="slh">报价：<span>{{$v['price']}}</span></li>
                                 </ul>
-                                <a href="/home/buymessagefour/{{$v['uid']}}"><button type="" class="btn btn-lg btn-block btn-success">立即沟通</button></a>
+                                <a href="/home/buymessagefour/{{$v['id']}}"><button type="" class="btn btn-lg btn-block btn-success">立即沟通</button></a>
                             </div>
                         </div>
                       @endforeach
@@ -167,7 +171,7 @@
                                            <div class="col-md-4 SUPPLIER-r" align="center"> 
 
                                            <div class="row padd SUPPLIER-r-top" align="center">
-@if( ! Cache::has('homeuser') )
+@if( ! Session::has('homeuser') )
 <div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
@@ -188,7 +192,7 @@
 @else
 
     <div class="col-md-4" style="padding-right: 10px;">
-    <img class="img-responsive"src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
+    <img class="img-responsive"src="{{Session::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
     <div class="col-md-4 con">
       <p><a href="/home/check/authentication">发布产品</a></p>
@@ -199,11 +203,11 @@
       <!-- <p><a href="#">  我的消息</a></p> -->
     </div>
       <div class="col-md-6" style=" margin-left: 21px; margin-top:12px;"> <p>
-             @if(Cache::get('homeuser')->identity==1)
+             @if(Session::get('homeuser')->identity==1)
                   <a style="color:#fff;"  href="/home/userinfo/index" >
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
                   </a>
-              @elseif( Cache::get('homeuser')->identity==2 )
+              @elseif( Session::get('homeuser')->identity==2 )
                   <a href="/home/userinfo/indexed" >
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
                   </a>
@@ -493,10 +497,10 @@
                             <div class="row pic" >
                                 
                                 <div class="col-md-6 zzm">
-                                    <img  class="img-industrial " src="/uploads/20181109/15417540495299.jpg">
+                                    <img  class="img-industrial " src="/uploads/20181115/15422785286240.jpg">
                                 </div> 
                                 <div class="col-md-6 zzm">
-                                    <img  class="img-industrial " src="/uploads/20181109/15417541638071.jpg">
+                                    <img  class="img-industrial " src="/uploads/20181115/15422785406932.jpg">
                                 </div>
 
                             </div>
@@ -669,7 +673,7 @@
                                            <div class="col-md-4 SUPPLIER-r" align="center">
                                                <div class="row padd SUPPLIER-r-top" align="center">
 
-  @if( ! Cache::has('homeuser') )
+  @if( ! Session::has('homeuser') )
   <div class="col-md-4" style="padding-bottom: 10px;">
   <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
@@ -690,11 +694,11 @@
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
-    <img class="img-responsive" src="{{Cache::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
+    <img class="img-responsive" src="{{Session::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
     </div>
 
     <div class="col-md-4 con">
-  @if(Cache::get('homeuser')->identity==1)
+  @if(Session::get('homeuser')->identity==1)
     <p><a href="/home/userinfo/index">发布采购</a></p>
   @else
     <p><a href="/home/userinfo/indexed">发布采购</a></p>
@@ -705,7 +709,7 @@
 
     <div class="col-md-4 con">
      
-   @if(Cache::get('homeuser')->identity==1)
+   @if(Session::get('homeuser')->identity==1)
     <p><a href="/home/userinfo/index">我的发布</a></p>
    @else
     <p><a href="/home/userinfo/indexed">我的发布</a></p>
@@ -715,11 +719,11 @@
 
     <div class="col-md-6" style=" margin-left: 21px; margin-top:12px;">
               <p>
-             @if(Cache::get('homeuser')->identity==1)
+             @if(Session::get('homeuser')->identity==1)
                   <a style="color:#fff;"  href="/home/userinfo/index" >
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
                   </a>
-              @elseif( Cache::get('homeuser')->identity==2 )
+              @elseif( Session::get('homeuser')->identity==2 )
                   <a href="/home/userinfo/indexed" >
                     <bottom class="btn btn-lg btn-success btn-block">个人中心</bottom>
                   </a>
@@ -786,7 +790,7 @@
                                 <li class="als-item"><div class="als-item-4" style="width:296px;height: 500px;">
                                     <h4 class="">资信证明</h4>
                                     <p class="p-1">产品销往国内更多市场</p>
-                                    <p class="p-2">联合国交易成功后，企业会收到由联合国出具的资信报告。这份国际资信证明加之企业联合国指定供应商的身份，可以极大提升企业信誉度，给企业带来巨大的无形资产。企业进行招投标、融资、贷款或者承接国外订单，都起到很大的推动作用。</p>
+                                    <p class="p-2">联合国交易成功后，企业会收到由联合国出具的信息反馈。这份国际资信证明加之企业联合国指定供应商的身份，可以极大提升企业信誉度，给企业带来巨大的无形资产。企业进行招投标、融资、贷款或者承接国外订单，都起到很大的推动作用。</p>
                                 </div></li>
                                 <li class="als-item"><div class="als-item-5" style="width:296px;height: 500px;">
                                     <h4 class="">免费宣传</h4>

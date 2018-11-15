@@ -13,7 +13,6 @@
    <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
     
 </head>
-
 <body>
     <div class="main">
         <!--1.网页头部-->
@@ -56,7 +55,7 @@
 @endif
                 <div class="logOne">
                     <p>
-                        <span>注册全球购会员帐号</span>
+                        <span>注册睿鹿网会员帐号</span>
                         <span class="one">已有账号，去<a href="/home/newlogin/login">登录</a></span>
                     </p>
                     
@@ -108,7 +107,7 @@
                 </div>
                 <div class="readBtn">
                     <label for="">
-                        <input type="checkbox" class="sel" checked="checked"><span>阅读并接受<a href="/home/copy">《全球购网站服务协议》</a></span>
+                        <input type="checkbox" class="sel" checked="checked"><span>阅读并接受<a href="/home/copy">《睿鹿网网站服务协议》</a></span>
                     </label>
                 </div>
                 <div class="logBtn">
