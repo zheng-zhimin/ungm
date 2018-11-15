@@ -80,24 +80,24 @@
 
                 <div class="twoMRO">
                     <div class="ltMRO">
-                        <h1><a href="">福州市蓝象数控 双工位四工序加工中心开料机</a></h1>
+                        <h1><a href="">A4牛皮纸 账本凭证封面纸牛皮包装纸打印纸厚硬牛卡纸手工绘画纸 4K/8开加厚牛皮纸A3牛皮打印纸</a></h1>
                         <div class="">
-                            <ul>
-                                <li><label for="">供货数量</label><input type="text" value="10台"></li>
-                                <li class="threeMRO"><label for="">最少起订</label><input type="text" value="1台"></li>
-                                <li><label for="">型号</label><input type="text" value="1325数控雕刻机"></li>
-                                <li class="threeMRO"><label for="">雕刻范围(XYZ)</label><input type="text" value="1300*2500*200"></li>
-                                <li class="fourMRO"><label for="">工作电压</label><input type="text" value="380V/220V"></li>
-                                <li class="threeMRO fourMRO"><label for="">类型</label><input type="text" value="雕刻加工中心"></li>
+                           <ul>
+                                <li><label for="">供货数量</label><input type="text" readonly  value="5681"></li>
+                                <li class="threeMRO"><label for="">价格</label><input readonly type="text" value="100"></li>
+                                <li><label for="">颜色</label><input readonly  type="text" value="黄色白色重色"></li>
+                                
+                                <li class="fourMRO"><label for="">型号</label><input  readonly type="text" value="A4 A3"></li>
+                                <li class="threeMRO fourMRO"><label for="">类型</label><input readonly type="text" value="纸业"></li>
                             </ul>
                         </div>
-                        <p>更新时间： 2018-11-02  </p>
+                        <p>更新时间： 2018-11-15  </p>
                     </div>
                     <div class="rtMRO">
                         <h2>价格面议</h2>
-                        <p>济南蓝象数控机械有限公司</p>
-                        <p>所在地：山东-济南市</p>
-                        <p class="rtVip">普通会员</p>
+                        <p>北京恒业纸质股份有限公司</p>
+                        <p>所在地：北京市</p>
+                        <p class="rtVip">超级会员</p>
                         <input type="button" value="在线询价">
                     </div>
 </div>                

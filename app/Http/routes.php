@@ -293,6 +293,12 @@ Route::post('/center/pwd','Center\CenterController@pwd');
 Route::get('/center/addaddress','Center\CenterController@addaddress');
 //添加新增收货地址
 Route::post('/center/add/address','Center\CenterController@addbuyaddress');
+//显示修改地址回填路由
+Route::get('/center/editaddress/{id}','Center\CenterController@editaddress');
+//执行地址修改路由
+Route::post('/center/updateaddress','Center\CenterController@updateaddress');
+//设置默认地址
+Route::get('/center/setdefault/{id}','Center\CenterController@setdefault');
 //删除收货地址
 Route::get('/center/deladdress/{id}','Center\CenterController@deladdress');
 

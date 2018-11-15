@@ -197,6 +197,74 @@ class CenterController extends Controller
           
      }
 
+
+     //显示修改地址回填表单
+      public function editaddress($id)
+     {
+         $data=Address::where('id',$id)->first();
+           
+             return view('home.newuserinfo.editaddress',['data'=>$data]);  
+     }
+    
+     //执行修改地址操作
+     public function updateaddress(Request $req)
+     {
+          $id=$req->input('id');
+          $name=$req->input('name');
+          $phone=$req->input('phone');
+          $address=$req->input('address');
+          $area=$req->input('area');
+           $this->validate($req,[
+            'phone' => 'required|regex:/^1[3-9]{1}[\d]{9}$/',
+            'address' => 'required',
+            'name' => 'required',
+
+            ],[
+            'phone.required' => '电话号码必填,',
+            'phone.regex' => '电话格式不正确,',
+            'address.required' => '详细地址必填,',
+            'name.required' => '请填入昵称姓名,',
+
+            ]);
+            $data  = Address::find($id);
+           
+            $data -> name = $name;
+            $data -> phone = $phone;
+            $data -> address = $address;
+            $data -> area = $area;
+            $res=$data -> save();
+            if($res){
+              echo "<script>alert('修改成功'); window.location.href='/home/userinfo/transaction'; </script>";
+           }else{
+               echo "<script>alert('修改失败'); history.go(-1); </script>";
+           }
+
+          
+     }
+     //设置默认地址
+     public function setdefault($id)
+     {
+            $uid=Cache::get('homeuser')->id;
+            $q=Address::where('uid',$uid)->where('defaultstatus','1')->first();
+           
+           
+           if($q){
+                $id1=$q['id'];
+                $data1=Address::find($id1);
+                $data1-> defaultstatus =0;
+                $data1->save();
+           }
+            $data=Address::find($id);
+
+            $data-> defaultstatus =1;
+            $res=$data->save();
+             if($res){
+              echo "<script>alert('设置成功'); window.location.href='/home/userinfo/transaction'; </script>";
+           }else{
+               echo "<script>alert('设置失败'); history.go(-1); </script>";
+           }
+     }
+    
      //删除地址操作
      public function deladdress($id)
      {

@@ -58,12 +58,16 @@
                                 <td>{{$v->phone}}</td>
 
                                 <td style="width:100px;">
-                                    <a href="">修改</a>
+
+                                    <a href="/center/editaddress/{{$v->id}}">修改</a>
                                     <b>|</b>
                                     <a href="/center/deladdress/{{$v->id}}">删除</a>
                                 </td>
-
-                                <td><a href="">默认地址</a></td>
+                                @if($v->defaultstatus==0)
+                                <td><a href="/center/setdefault/{{$v->id}}">设为默认</a></td>
+                                @else
+                                  <td><div  style="background:#ddd;height:25px; opacity: 0.8;border-radius:30px;"><a>默认地址</a></div></td>
+                                @endif
                             </tr>
                            @endforeach
                         </tbody>

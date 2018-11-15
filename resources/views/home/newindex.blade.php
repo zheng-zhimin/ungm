@@ -184,7 +184,7 @@
   <div class="col-md-7" style="float:right;">
   <bottom class="btn btn-lg btn-success btn-block" style="float:right;margin-top: 15px;"><a href="/home/newlogin/login" style="line-height:0;color:#fff;">登录</a></bottom>
   </div>
-  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0; font-size:16px;">注册</a></bottom></p></div>
 @else
 
     <div class="col-md-4" style="padding-right: 10px;">
@@ -240,8 +240,9 @@
                                                <div class="row">
                                                     <div class="col-md-10">
                                                      {{csrf_field()}}
-                                                    <input style="height:40px;padding-right:0px;" class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商" name="">
+                                                    <input style="height:40px;padding-right:0px;" class="form-control" type="text" placeholder="请输入您的产品名称，为您匹配对应供应商"name="findsell">
                                                     </div>
+
                                                     <div class="col-md-2">
                                                     <button type="" class="btn btn-lg btn-block btn-s btn-success"><i class="glyphicon glyphicon-search"></i>
                                                     </button>
@@ -685,7 +686,7 @@
   <div class="col-md-7" style="float:right;">
   <bottom class="btn btn-lg btn-success btn-block" style="float:right;margin-top: 15px;"><a href="/home/newlogin/login" style="line-height:0;color:#fff;">登录</a></bottom>
   </div>
-  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0;">注册</a></bottom></p></div>
+  <div class="col-md-5"><p><bottom class="btn btn-lg btn-block" style="border:2px solid #d8d8d8"><a href="/home/newlogin/register" style="line-height:0;font-size:15px;">注册</a></bottom></p></div>
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
