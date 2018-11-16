@@ -66,7 +66,7 @@
                                 @if($v->defaultstatus==0)
                                 <td><a href="/center/setdefault/{{$v->id}}">设为默认</a></td>
                                 @else
-                                  <td><div  style="background:#ddd;height:25px; opacity: 0.8;border-radius:30px;"><a>默认地址</a></div></td>
+                                  <td><div  style="background:#00b7a1;height:35px;width:90px ;opacity: 0.8;border-radius:20px; margin-left:50px;line-height:35px;">默认地址</div></td>
                                 @endif
                             </tr>
                            @endforeach

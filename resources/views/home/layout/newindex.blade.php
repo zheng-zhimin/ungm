@@ -53,7 +53,7 @@
                <!--  <span class=""><img src="{{Session::get('homeuser')->profile}}" ></span>  -->
                 
                 
-                <span class="">|</span>
+                <span class=""></span>
                 @if(Session::get('homeuser')->identity==1)
                 <span class=""><a href="/home/userinfo/index">{{Session::get('homeuser')->username}}</a></span>
                 @else
@@ -61,7 +61,7 @@
                 @endif
                 <span class="">|</span>
                 <span class=""><a href="/home/logout">退出</a></span>
-                <span class="">|</span>
+                <span class=""></span>
             </div>
 @endif
         </div>
@@ -104,8 +104,8 @@
                 <li class="dropdown">
                     <a class="a4 nn-4" href="/home/td" >招投标服务</a>
                     <ul class="dropdown-menu">
-                        <li><a href="/home/td/#1">商机服务</a></li>
-                        <li><a href="/home/td/#2">投标信息搜索</a></li>
+                        <li class="select-ss"><a href="/home/td/#1">UNGM商机查询</a></li>
+                        <li id="select-s"><a href="/home/td/#2">招投标信息查询</a></li>
                        
                     </ul>
                 </li>
@@ -184,6 +184,7 @@
         $(".xxx").removeClass("xxx");
         $(".a6").addClass("xxx");
     })
+
 </script>
 
 

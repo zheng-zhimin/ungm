@@ -136,11 +136,11 @@
                 <!-- <span class=""><img src="{{Session::get('homeuser')->profile}}" ></span> -->
                 
                 
-                <span class="">|</span>
+               
                 <span class="">{{Session::get('homeuser')->username}}</span>
                 <span class="">|</span>
                 <span class=""><a href="/home/logout">退出</a></span>
-                <span class="">|</span>
+               
             </div>
 @endif
         </div>

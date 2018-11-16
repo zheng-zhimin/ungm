@@ -25,7 +25,9 @@ class SearchController extends Controller
         $starttime= empty($req->starttime) ? '2017-11-01 16:29:08':$req->starttime;
         $endtime=empty($req->endtime) ? '2020-11-01 16:29:08':$req->endtime;
 
-  
+        if(empty($title)&&empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)){
+            return $data=[];
+        }
 
         $data=Selloffer::whereDate('published', '>=',$starttime)->whereDate('deadline', '<=',$endtime)->where('name','like','%'.$title.'%')->where('descript','like','%'.$miaoshu.'%')->where('type','like','%'.$type.'%')->get();
                                 return $data;
@@ -46,7 +48,10 @@ class SearchController extends Controller
         $organization=$req->organization;
         $country=$req->country;
 
-       
+       //如果参数都为空,显示请添加参数的提示页面
+       if(empty($title)&&empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)&&empty($organization)&&empty($country)){
+            return $data=[];
+       }
 
         $title=empty($title) ? '' : $title;
         $miaoshu=empty($miaoshu) ? '' : $miaoshu;

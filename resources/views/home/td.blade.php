@@ -347,17 +347,18 @@
         
         <div class="bid-con">
             <div class="container">
-                <div class="tex" align="center"><a name="1"></a> 
+                <div class="tex" align="center"> 
                     <img class="img-responsive" src="/ungmhome/images/busser.png">
                 </div>
                 <div class="label">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item nav-item-left active"> <a class="nav-link " data-toggle="tab" href="#tenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">招投标查询</span></a> </li>
-                        <li class="nav-item nav-item-right"> <a class="nav-link" data-toggle="tab" href="#UNGMtenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">UNGM商机查询</span></a> </li>               
+                        <li class="nav-item nav-item-left selec"> <a class="nav-link " data-toggle="tab" href="#tenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">招投标查询</span></a> </li><a name="1"></a><a name="2"></a> 
+
+                        <li class="nav-item nav-item-right ungms active"> <a class="nav-link" data-toggle="tab" href="#UNGMtenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">UNGM商机查询</span></a> </li>               
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content tabcontent-border">
-                        <div class="tab-pane active" id="tenderQuery" role="tabpanel">
+                        <div class="tab-pane" id="tenderQuery" role="tabpanel">
                             <div class="row">
                                 <div class="border-gree row" style="border:1px solid #00b7a1;margin: 40px 60px;">
                                     <div class="col-md-6" align="center"> 
@@ -417,7 +418,7 @@
                             </div>
                         </div>
                         
-                       <div class="tab-pane  p-20" id="UNGMtenderQuery" role="tabpanel">
+                       <div class="tab-pane active p-20" id="UNGMtenderQuery" role="tabpanel">
                             <div class="row">
                                 <div class="border-gree row" style="border:1px solid #00b7a1;margin: 40px 60px;"> 
                                     <div class="col-md-6" align="center"> 
@@ -525,7 +526,8 @@
                               }
                         });  
                    
-                   
+                    $(".ungmselect-s-table").hide();
+                    $(".select-s-table").show();
                 }
 
 
@@ -566,7 +568,9 @@
                            " </div></div>";
                                   $('.res2').append(zzm);
                               }
-                        });  
+                        }); 
+                        $(".ungmselect-s-table").show();
+                        $(".select-s-table").hide(); 
                 }
 
 
@@ -578,9 +582,9 @@
 
         </script>
 
-            <div class="bid-paging">
+            <div class="bid-paging ungmselect-s-table">
                 <div class="container">
-                    <div class="tex" align="center"><a name="2"></a> 
+                    <div class="tex" align="center">
                         <img class="img-responsive" src="/ungmhome/images/bid-search.png">
                     </div> 
 
@@ -613,29 +617,29 @@
 
 
 
-                    <div class="res2">
-                           <div class="row row2 res1">
-                            
-                                <div align="center" class="col-md-3 sh">
-                                    <div><a href="#">GENERAL PROCUREMENT NOTICE TRANS – HINDUKUSH ROAD CONNECTIVITY PROJECT (THRCP) TRANSPORT SECTOR</a></div>
+                        <div class="res2">
+                               <div class="row row2 res1">
+                                
+                                    <div align="center" class="col-md-3 sh">
+                                        <div><a href="#"></a></div>
+                                    </div>
+                                    <div align="center" class="col-md-3 sh">
+                                        <div></div>
+                                    </div>
+                                    <div align="center" class="col-md-1 sh">
+                                        <div></div>
+                                    </div>    
+                                    <div align="center" class="col-md-2 sh">
+                                        <div></div>
+                                    </div>
+                                    <div align="center" class="col-md-1 sh">
+                                        <div></div>
+                                    </div>
+                                    <div align="center" class="col-md-1">
+                                        <div></div>
+                                    </div>
                                 </div>
-                                <div align="center" class="col-md-3 sh">
-                                    <div>2020-十二月-31 23:59 (GMT 4.30)</div>
-                                </div>
-                                <div align="center" class="col-md-1 sh">
-                                    <div>2015-八月-09</div>
-                                </div>    
-                                <div align="center" class="col-md-2 sh">
-                                    <div>联合国项目事务署</div>
-                                </div>
-                                <div align="center" class="col-md-1 sh">
-                                    <div>征求信息</div>
-                                </div>
-                                <div align="center" class="col-md-1">
-                                    <div>阿富汗</div>
-                                </div>
-                            </div>
-                    </div>
+                        </div>
 
 
                      
@@ -651,11 +655,89 @@
                                 
                             </div>
                         </form>
-                    </div>
                 </div>
-            </div>   
-        </div>
+            </div>
+
+            <div class="bid-paging select-s-table">
+                <div class="container">
+                    <div class="tex" align="center">
+                        <img class="img-responsive" src="/ungmhome/images/bid-search.png">
+                    </div> 
+
+                    <div class="paging">
+
+                        <div class="row row1 header1">
+                            <div class="header2">
+                                <div align="center" class="col-md-3 sh yc">
+                                    <div>标题</div>
+                                </div>
+                                <div align="center" class="col-md-3 sh yc">
+                                    <div>发布日期</div>
+                                </div>
+                                <div align="center" class="col-md-1 sh yc">
+                                    <div>截止日期</div>
+                                </div>    
+                                <div align="center" class="col-md-2 sh yc">
+                                    <div>联合国组织/机构</div>
+                                </div>
+                                <div align="center" class="col-md-1 sh yc">
+                                    <div>类型</div>
+                                </div>
+                                <div align="center" class="col-md-1 yc">
+                                    <div>受惠方国家</div>
+                                </div>
+                            </div>
+                          
+                        </div>
+
+
+
+
+                        <div class="res2">
+                               <div class="row row2 res1">
+                                
+                                    <div align="center" class="col-md-3 sh">
+                                        <div><a href="#"></a></div>
+                                    </div>
+                                    <div align="center" class="col-md-3 sh">
+                                        <div></div>
+                                    </div>
+                                    <div align="center" class="col-md-1 sh">
+                                        <div></div>
+                                    </div>    
+                                    <div align="center" class="col-md-2 sh">
+                                        <div></div>
+                                    </div>
+                                    <div align="center" class="col-md-1 sh">
+                                        <div></div>
+                                    </div>
+                                    <div align="center" class="col-md-1">
+                                        <div></div>
+                                    </div>
+                                </div>
+                        </div>
+
+
+                     
+
+                         
+
+                    </div>
+                        <!---fenye-->
+                        <form id="form1" runat="server">
+                            <div>
+                            </div>
+                            <div align="center">
+                                
+                            </div>
+                        </form>
+                </div>
+            </div>
+
+
+        </div>   
     </div>
+</div>
     <!--内容结束-->
 
 </body>
@@ -679,6 +761,26 @@ laydate.render({
 laydate.render({
   elem: '#vv5' //指定元素
 });
+
+$("#select-s").click(function(){
+        $(".ungms").removeClass("active");
+        $(".selec").addClass("active");
+    })
+$(".select-ss").click(function(){
+        $(".selec").removeClass("active");
+        $(".ungms").addClass("active");
+    })
+
+$(".ungmselect-s-table").hide();
+$(".select-s-table").hide();
+$(".ungms").click(function(){
+    $(".ungmselect-s-table").hide();
+    $(".select-s-table").hide();
+})
+$(".selec").click(function(){
+    $(".ungmselect-s-table").hide();
+    $(".select-s-table").hide();
+})
 
 </script>
 
