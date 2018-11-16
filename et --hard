@@ -1,0 +1,53 @@
+[33mcommit 754534dd61668d1e1e78cfbd00a41a39673c67a5[m[33m ([m[1;36mHEAD -> [m[1;32mlys[m[33m)[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Thu Nov 8 11:27:59 2018 +0800
+
+    添加了忘记密码和前台查询和五大产品遍历就是还没填数据
+
+[33mcommit 16b4f79a6104e4017e8c72bab5989c89c35d3594[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Tue Nov 6 09:49:59 2018 +0800
+
+    添加了供应商二级三级采购商二级三级页面
+
+[33mcommit d0bd53cd6a88fcb49f37705aaa94edbecd3fb915[m[33m ([m[1;32mmaster[m[33m)[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Fri Nov 2 16:55:37 2018 +0800
+
+    添加了国内国际贸易政策解读热点
+
+[33mcommit b75dde27ca36c03358ce807899c2f59b4026eb6d[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Thu Nov 1 10:42:31 2018 +0800
+
+    样式除了前台登录注册按钮基本都调试完毕
+
+[33mcommit 879ee3d3e896f070d737a9aeaf95239fd5351a9b[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Wed Oct 31 18:13:10 2018 +0800
+
+    添加了页脚页面和登录注册功能
+
+[33mcommit 3d3bdb959d390d7c4569b8c83a7ef050654b77c3[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Tue Oct 30 19:43:15 2018 +0800
+
+    广告大小样式,供应关系,可以用来复制功能代码,因为样式是错的
+
+[33mcommit df647ef5edfd1226676e37218229d2f9cd1d408f[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Tue Oct 30 15:38:20 2018 +0800
+
+    添加了首页广告和求购信息展示
+
+[33mcommit df75146663efe484db0611c0130d1f60d94eca36[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Tue Oct 30 08:07:41 2018 +0800
+
+    添加了前台关于我们和货币转换器
+
+[33mcommit 7f12d2b589c85588be62a982b6f4354cf27737bf[m
+Author: zheng-zhimin <1453175095@qq.com>
+Date:   Fri Oct 26 14:39:13 2018 +0800
+
+    master v1 新的laravel项目

@@ -46,7 +46,10 @@ class SearchController extends Controller
         $organization=$req->organization;
         $country=$req->country;
 
-       
+       //如果参数都为空,显示请添加参数的提示页面
+       if(empty($title)&&empty($miaoshu)&&empty($type)&&empty($starttime)&&empty($endtime)&&empty($organization)&&empty($country)){
+            return $data=[];
+       }
 
         $title=empty($title) ? '' : $title;
         $miaoshu=empty($miaoshu) ? '' : $miaoshu;
