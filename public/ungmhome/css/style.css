@@ -1372,6 +1372,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
         width: 560px;
         height: 150px;
         color: #333333;
+        background-color: #fff !important;
     }
     .domesticTrade .domestic .lump b{
         font-family: MicrosoftYaHei-Bold;
@@ -2064,7 +2065,22 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	height: 305px;
 }
 .tradeUl ul li:hover{
-	box-shadow:2px 2px 8px 2px #d6d6d6;
+	background: -webkit-linear-gradient(left, #00c6ff , #0072ff);
+    background: -o-linear-gradient(right, #00c6ff , #0072ff); 
+    background: -moz-linear-gradient(right, #00c6ff , #0072ff); 
+    background: linear-gradient(to right, #00c6ff , #0072ff); 
+}
+.tradeUl ul li:hover h2 span{
+	color:#fff;
+}
+.tradeUl ul li:hover h2 b{
+	color:#fff;
+}
+.tradeUl ul li:hover h3{
+	color:#fff;
+}
+.tradeUl ul li:hover p{
+	color:#fff;
 }
 .tradeUl li:nth-child(4n){
 	margin-right: 0;

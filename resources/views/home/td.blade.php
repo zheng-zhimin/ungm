@@ -11,11 +11,17 @@
     .nn-4{
     color: #3477ff !important;
     border-bottom: 2px solid #3477ff;
+
 }
+<style>
+    .demo-input{padding-left: 10px; height: 38px; line-height: 38px; border: 1px solid #e6e6e6;  background-color: #fff;  border-radius: 2px;}
+  .demo-footer{padding: 50px 0; color: #999; font-size: 14px;}
+  .demo-footer a{padding: 0 5px; color: #01AAED;}
+</style>
   </style>   
 
     <link rel="stylesheet" href="/ungmhome/css/style.css">
-
+    <link rel="stylesheet" href="/ungmhome/css/laydate.css">
 <style>
 .bid .row{
     margin: 0px;
@@ -176,7 +182,7 @@
                                 display: inline-block;
                             }
                             .bid .Release{
-                                margin-right: 40px;
+                                margin-right: 66px;
                             }
                             .bid .zhi{
                                 margin: 0 5px;
@@ -186,7 +192,7 @@
                             }
                             .bid .tender-left .rowledge-2 input{
                                 display: inline-block;
-                                width: 120px;
+                                width: 271px;
                                 height: 30px;
                                 background-color: #ffffff;
                                 border-radius: 4px;
@@ -346,7 +352,7 @@
                 </div>
                 <div class="label">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item nav-item-left active"> <a class="nav-link " data-toggle="tab" href="#tenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">投标查询</span></a> </li>
+                        <li class="nav-item nav-item-left active"> <a class="nav-link " data-toggle="tab" href="#tenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">招投标查询</span></a> </li>
                         <li class="nav-item nav-item-right"> <a class="nav-link" data-toggle="tab" href="#UNGMtenderQuery" role="tab" align="center"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down" style="font-weight: 600;">UNGM商机查询</span></a> </li>               
                     </ul>
                     <!-- Tab panes -->
@@ -373,13 +379,13 @@
             </div>
             <div id="" class="rowledge rowledge-2">
                 <span class="Release">发布日期：</span>
-                <input type="date" class="date_t form-control" name="" id="v4" value="" placeholder="Establishment time"/>
+                <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="v4">
                
             </div>
             
             <div id="" class="rowledge rowledge-2">
                 <span class="Release">截止日期：</span>
-                <input type="date" class="date_t form-control" name="" id="v5" value="" placeholder="Establishment time"/>
+                <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="v5">
                 
             </div>          
         </div>  
@@ -433,13 +439,13 @@
                 </div>
                 <div id="" class="rowledge rowledge-2">
                     <span class="Release">发布日期：</span>
-                    <input type="date" class="date_t form-control" name="vv4" id="" value="" placeholder="Establishment time"/>
+                    <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="vv4">
                    
                 </div>
                 
                 <div id="" class="rowledge rowledge-2">
                     <span class="Release">截止日期：</span>
-                    <input type="date" class="date_t form-control" name="" id="vv5" value="" placeholder="Establishment time"/>
+                    <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="vv5">
                    
                 </div>          
             </div>  
@@ -653,8 +659,28 @@
     <!--内容结束-->
 
 </body>
+<script src="/ungmhome/js/laydate.js"></script>
+<script>
+lay('#version').html('-v'+ laydate.v);
 
+//执行一个laydate实例
+laydate.render({
+  elem: '#v4' //指定元素
+});
 
+laydate.render({
+  elem: '#v5' //指定元素
+});
+
+laydate.render({
+  elem: '#vv4' //指定元素
+});
+
+laydate.render({
+  elem: '#vv5' //指定元素
+});
+
+</script>
 
 </html>
 

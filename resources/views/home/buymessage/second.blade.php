@@ -13,14 +13,19 @@
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 
     <div class="main">
-       
+    
         <!---2.图片区-->
         <div class="img-responsive purchasingPic">
             <ul>
                 <li>
                     <img src="/ungmhome/images/purchasing1.png" class="picOne">
-                     @if(Session::has('homeuser'))
-        <a href="/home/userinfo/index"><img src="/ungmhome/images/purchasing2.png" class="picTwo"></a>
+       @if(Session::has('homeuser'))
+          @if(Session::get('homeuser')->identity==1)
+           <a href="/home/userinfo/index"><img src="/ungmhome/images/purchasing2.png" class="picTwo"></a>
+          @else
+           <a href="/home/userinfo/indexed"><img src="/ungmhome/images/purchasing2.png" class="picTwo"></a>
+          @endif
+
          @else
         <a href="/home/newlogin/login"><img src="/ungmhome/images/purchasing2.png" class="picTwo buyerPic"></a>
          @endif

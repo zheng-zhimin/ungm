@@ -40,7 +40,7 @@
                                 <li><img src="/ungmhome/images/purchasing5.png" alt=""></li>
                             </ul>
                         </div>
-                        <div class=""><p>浏览次数：<?php echo rand(100,999);?>次</p></div>
+                        <div class=""><p>浏览次数：{{$data['times']}}次</p></div>
                     </div>
                     <div class="oneRt">
                         <h1>{{$data['title']}}</h1>

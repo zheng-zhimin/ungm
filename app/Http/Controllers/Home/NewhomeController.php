@@ -246,6 +246,8 @@ class NewhomeController extends Controller
     {
 
         $key=$req->input('findbuy');
+
+        
         $data=Buyoffer::where('project','like','%'.$key.'%')->paginate(5);
         //var_dump($data);
         return view('home.search.searchbuy',['data'=>$data]);
@@ -273,18 +275,9 @@ class NewhomeController extends Controller
 
                 $key=$req->input('findsell');
                 $data=Selloffer::where('project','like','%'.$key.'%')->paginate(5);
-//var_dump($data);
+                //var_dump($data);
                 return view('home.search.searchsell',['data'=>$data]);
             }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -634,13 +627,16 @@ class NewhomeController extends Controller
               $data=Buyoffer::find($id);
               $uid=$data['uid'];
               $times=$data['times'];
-
-              $seeid=Session('homeuser')->id;
-             
-              if($uid!==$seeid){
-                 $data-> times = $times+1;
-                $data->save();
+              if( Session::has('homeuser') )
+              {
+                  $seeid=Session('homeuser')->id;
+              
+                  if($uid!==$seeid){
+                     $data-> times = $times+1;
+                    $data->save();
+                  }
               }
+             
              
               $renzheng=Sellerauthentication::where('uid',$uid)->first();
               $renzheng=$renzheng['identity'];
@@ -649,9 +645,7 @@ class NewhomeController extends Controller
              $addressdata=Address::where('uid',$uid)->where('defaultstatus','1')->first();
 
 
-             
-
-      //少一个链表查这个人的电话之类的信息
+            //少一个链表查这个人的电话之类的信息
 
               return view('home.buymessage.four',['data'=>$data ,'userdata'=>$userdata,'userdetaildata'=>$userdetaildata,'addressdata'=>$addressdata,'renzheng'=>$renzheng]);
 
@@ -662,10 +656,22 @@ class NewhomeController extends Controller
           public function buymessagefourart(Request $req)
           {
               $id=$req->id;
-              $data=Articles::where('id',$id)->get()->toArray();
+              $data=Articles::where('id',$id)->first();
+              //dd($data);
       //少一个链表查这个人的电话之类的信息
-
-              return view('home.buymessage.fourart',['data'=>$data['0'] ]);
+              $uid=$data['uid'];
+              $times=$data['times'];
+              if( Session::has('homeuser') )
+              {
+                  $seeid=Session('homeuser')->id;
+              
+                  if($uid!==$seeid){
+                     $data-> times = $times+1;
+                    $data->save();
+                  }
+              }
+              
+              return view('home.buymessage.fourart',['data'=>$data ]);
 
           }
 

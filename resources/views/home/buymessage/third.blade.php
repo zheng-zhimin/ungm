@@ -58,7 +58,7 @@
                 var zzm= " <div class='oneMRO'>"+
                 "<img src='"+datas[i].articles_image_path+"'>"+
                 "</div><div class='twoMRO'><div class='ltMRO'>"+
-                "<h1 class='slh'><a href=''>"+datas[i].title+"</a></h1>"+
+                "<h1 class='slh'><a href='/home/buymessagefourart/"+datas[i].id+"'>"+datas[i].title+"</a></h1>"+
                 "<p>采购时间:"+datas[i].timezone+"</p>"+
                 "</div>"+
                 "<div class='rtMRO'>"+

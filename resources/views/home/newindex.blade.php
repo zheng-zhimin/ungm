@@ -140,9 +140,9 @@
                                                        <ul>
                                                               @foreach($data2 as $v)  
                                                               <li>
-                                                                <a href="#"> 
+                                                                
                                                                 <span>求购</span>
-                                                                <span>{{$v['project']}}</span> 
+                                                                <a href="/home/buymessagefour/{{$v['id']}}"><span>{{$v['project']}}</span> </a>
                                                                 </a>
                                                             </li>
                                                             @endforeach
@@ -154,9 +154,9 @@
                                                        <ul>
                                                               @foreach($data3 as $v)  
                                                               <li>
-                                                                <a href="#"> 
+                                                               
                                                                 <span>求购</span>
-                                                                <span>{{$v['project']}}</span> 
+                                                                 <a href="/home/buymessagefour/{{$v['id']}}"><span>{{$v['project']}}</span> </a>
                                                                 </a>
                                                             </li>
                                                             @endforeach

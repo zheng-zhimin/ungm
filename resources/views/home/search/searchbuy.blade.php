@@ -25,7 +25,7 @@
             <div class="container">
                 <ul class="breadcrumb">
                     <li><a href="/">首页</a></li>
-                    <li><a href="javascript:;">已匹配的信息</a></li>
+                    <li><a href="javascript:;">相关采购商信息</a></li>
                     
                 </ul>
             </div> 
@@ -33,8 +33,12 @@
         <!--4.关键字搜索区-->
         <div class="supplierMRO supplierPEKS">
             <div class="container">
-              
-
+       @if($data=="")
+            <div class="text-center">
+                <img src="/ungmhome/images/error.png" style="width:150px;">
+            </div>
+             
+       @else
             @foreach($data as $v)
                 <div class="oneMRO">
                     <img src="{{$v['img']}}" alt="">
@@ -54,7 +58,8 @@
                     </div>
                 </div>
             @endforeach
-                
+       @endif
+
                
                
             </div>
