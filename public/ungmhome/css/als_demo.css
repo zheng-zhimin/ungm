@@ -172,6 +172,7 @@ header {
 
 #lista1 .als-prev {
 	right: 1230px;
+    margin-right: 8px;
 }
 
 #lista1 .als-next {

@@ -231,10 +231,13 @@ $('#phone').blur(function(){
         $(this).siblings('i').show().addClass('active').text('号码格式不正确');
         $(this).val('');
     } else if($Val == ''){
-        $(this).siblings('i').show().addClass('active').text('输入不能为空');
+        return;
     } else {
         $(this).siblings('i').show().removeClass('active').text('');
     }
+})
+$('#phone').keyup(function(){
+    $(this).siblings('i').hide();
 })
 
 //设置密码
@@ -245,10 +248,13 @@ $('#password').blur(function(){
         $(this).siblings('i').show().addClass('active').text('密码格式不正确');
         $(this).val('');
     } else if($Val == ''){
-        $(this).siblings('i').show().addClass('active').text('输入不能为空');
+        return;
     } else {
         $(this).siblings('i').show().removeClass('active').text('');
     }
+})
+$('#password').keyup(function(){
+    $(this).siblings('i').hide();
 })
 
 //确认密码
@@ -258,10 +264,13 @@ $('#passwordagain').blur(function(){
         $(this).siblings('i').show().addClass('active').text('密码输入不一致');
         $(this).val('');
     } else if($Val == ''){
-        $(this).siblings('i').show().addClass('active').text('输入不能为空');
+        return;
     } else {
         $(this).siblings('i').show().removeClass('active').text('');
     }
+})
+$('#passwordagain').keyup(function(){
+    $(this).siblings('i').hide();
 })
 </script>
 

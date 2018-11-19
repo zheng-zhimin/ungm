@@ -191,7 +191,7 @@
                 if(msg=='success')
                  {
                     layer.msg('登录成功');
-                    window.location.href='/'; //直接跳到前台主页
+                    window.location.href='/#1'; //直接跳到前台主页的#1这个锚点上
                  }else{
                     layer.msg('登录失败');
                  }

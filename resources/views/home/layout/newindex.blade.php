@@ -104,9 +104,13 @@
                 <li class="dropdown">
                     <a class="a4 nn-4" href="/home/td" >招投标服务</a>
                     <ul class="dropdown-menu">
-                        <li class="select-ss"><a href="/home/td/#1">UNGM商机查询</a></li>
-                        <li id="select-s"><a href="/home/td/#2">招投标信息查询</a></li>
-                       
+                   @if(  $_SERVER['REQUEST_URI'] == '/home/td' )
+                        <li class="select-ss"><a href="#1">UNGM商机查询 </a></li>
+                        <li id="select-s"><a href="#2">招投标信息查询</a></li>   
+                   @else
+                        <li class="select-ss"><a href="/home/td/#1">UNGM商机查询 </a></li>
+                        <li id="select-s"><a href="/home/td/#2">招投标信息查询</a></li>   
+                    @endif    
                     </ul>
                 </li>
                 <li class="dropdown">

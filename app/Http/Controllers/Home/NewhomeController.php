@@ -1203,8 +1203,11 @@ public function adduser(Request $request)
             $id=Session::get('homeuser')->id;
             $address=Address::where('uid',$id)->get();
             $tiao=Address::where('uid',$id)->count();
-
-
+            foreach ($address as $k=>$v){
+                $fid = explode('-',$v['area']);
+                $v->area=DB::table('china_area')->where('id',$fid[0])->first()->name;
+                $v->city=DB::table('china_area')->where('id',$fid[1])->first()->name;
+            }
             return view('home.newuserinfo.transaction',['address'=>$address,'tiao'=>$tiao]);
         }
    //个人中心账户管理

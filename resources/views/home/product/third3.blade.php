@@ -80,7 +80,7 @@
 
                 <div class="twoMRO">
                     <div class="ltMRO">
-                        <h1><a href="">福州市蓝象数控 双工位四工序加工中心开料机</a></h1>
+                        <h1><a href="/home/productfour/241">福州市蓝象数控 双工位四工序加工中心开料机</a></h1>
                         <div class="">
                            <ul>
                                 <li><label for="">供货数量</label><input type="text" readonly  value="1000"></li>

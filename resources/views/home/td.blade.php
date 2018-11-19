@@ -245,7 +245,7 @@
                             }
                             .bid .btn1{
                                 background-color: #fff;
-                                border: 2px solid #00b7a1;
+                                border: 1px solid #00b7a1;
                                 border-radius: 4px;
                                 color: #666666;
                             }
@@ -585,7 +585,7 @@
             <div class="bid-paging ungmselect-s-table">
                 <div class="container">
                     <div class="tex" align="center">
-                        <img class="img-responsive" src="/ungmhome/images/bid-search.png">
+                        <img class="img-responsive" src="/ungmhome/images/bid-search2.png">
                     </div> 
 
                     <div class="paging">
@@ -666,25 +666,27 @@
 
                     <div class="paging">
 
+
+
                         <div class="row row1 header1">
                             <div class="header2">
                                 <div align="center" class="col-md-3 sh yc">
-                                    <div>标题</div>
+                                    <div>招标编号 </div>
                                 </div>
                                 <div align="center" class="col-md-3 sh yc">
-                                    <div>发布日期</div>
+                                    <div>截止日期</div>
                                 </div>
                                 <div align="center" class="col-md-1 sh yc">
-                                    <div>截止日期</div>
+                                    <div>所属地区</div>
                                 </div>    
                                 <div align="center" class="col-md-2 sh yc">
-                                    <div>联合国组织/机构</div>
+                                    <div>采购业主</div>
                                 </div>
                                 <div align="center" class="col-md-1 sh yc">
-                                    <div>类型</div>
+                                    <div>招标机构</div>
                                 </div>
                                 <div align="center" class="col-md-1 yc">
-                                    <div>受惠方国家</div>
+                                    <div>中标单位</div>
                                 </div>
                             </div>
                           

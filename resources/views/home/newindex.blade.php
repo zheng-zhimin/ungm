@@ -48,6 +48,15 @@
       text-overflow:ellipsis;
       white-space: nowrap;
     }
+    .activity{
+        position: relative;
+        overflow: hidden;
+        height: 60px;
+    }
+    .activity ul{
+        position: relative;
+        top: -15px;
+    }
 </style>
 
 <body>
@@ -70,8 +79,9 @@
         </div>
     </div>
      <!--1.内容-->
-    <div class="container">
+    <a name="1"><div class="container" > </a>
         <div class="tex" align="center">
+
             <h3>一触即达的全球贸易</h3>
             <img src="/ungmhome/images/GL.png"  alt="">
         </div>
@@ -482,7 +492,7 @@
                                 <li><a href="/home/product/third">交通运输</a></li>
                             </ul>
                             <ul >
-                                <li><a href="/home/product/third">医药保健</a></li>
+                               
                                 <li><a href="/home/product/third">印刷</a></li>
                                 <li><a href="/home/product/third">二手设备转让</a></li>
                                 <li><a href="/home/product/third">加工</a></li>
@@ -629,43 +639,37 @@
 
                                                </div>
                                                <div class="row-roll padd wrap wrap-1">
-                                                    <div class="col-md-3" align="center">
-                                                       <ul class="one">
-                                                            <li><span>诚信供应商推荐</span></li>
+                                                    <div class="col-md-4" align="center">
+                                                        <h4>诚信供应商推荐</h4>
+                                                        <div class="activity" id="J_Activity">
+                                                            <ul>
                                                           @foreach($credit as $v)
                                                             <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
-                                                           
-                                                        </ul>
+                                                            </ul>
+                                                        </div>
+                                                       
                                                     </div>
-                                                    <div class="col-md-3" align="center">
-                                                       <ul class="one">
-                                                            <li><span>活跃供应商推荐</span></li>
-                                                          @foreach($active as $v)
+                                                    <div class="col-md-4" align="center">
+                                                        <h4>UNGM供应商推荐</h4>
+                                                        <div class="activity" id="J_Activity1">
+                                                            <ul>
+                                                          @foreach($sup as $v)
                                                             <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
-                                                            
-                                                        </ul>
+                                                            </ul>
+                                                        </div>
+                                                       
                                                     </div>
-                                                    <div class="col-md-3" align="center">
-                                                       <ul class="one">
-                                                            <li><span>UNGM供应商推荐</span></li>
-
-                                                            @foreach($sup as $v)
+                                                    <div class="col-md-4" align="center">
+                                                        <h4>UNGM服务商推荐</h4>
+                                                        <div class="activity" id="J_Activity2">
+                                                            <ul>
+                                                          @foreach($server as $v)
                                                             <li><span >{{$v['name']}}</span></li>
                                                           @endforeach
-                                                          
-                                                        </ul>
-                                                    </div >
-                                                    <div class="col-md-3" align="center">
-                                                       <ul class="one">
-                                                            <li><span>UNGM服务商推荐</span></li>
-
-                                                            @foreach($server as $v)
-                                                            <li><span >{{$v['name']}}</span></li>
-                                                          @endforeach
-                                                          
-                                                        </ul>
+                                                            </ul>
+                                                        </div>
                                                     </div>
                                                </div>
                                            </div> 
@@ -861,6 +865,78 @@
     </style>
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
+<script type="text/javascript">
+$(function() {
+        var $this = $("#J_Activity");
+        var scrollTimer;
+        $this.hover(function() {
+            clearInterval(scrollTimer);
+        }, function() {
+            scrollTimer = setInterval(function() {
+                scrollNews($this);
+            }, 2000);
+        }).trigger("mouseleave");
+
+        function scrollNews(obj) {
+            var $self = obj.find("ul");
+            var lineHeight = $self.find("li:first").height(); 
+            $self.animate({
+                "marginTop": -lineHeight + "px"
+            }, 1000, function() {
+                $self.css({
+                    marginTop: 0
+                }).find("li:first").appendTo($self);
+            })
+        }
+    })
+    $(function() {
+        var $this = $("#J_Activity1");
+        var scrollTimer;
+        $this.hover(function() {
+            clearInterval(scrollTimer);
+        }, function() {
+            scrollTimer = setInterval(function() {
+                scrollNews($this);
+            }, 2000);
+        }).trigger("mouseleave");
+
+        function scrollNews(obj) {
+            var $self = obj.find("ul");
+            var lineHeight = $self.find("li:first").height(); 
+            $self.animate({
+                "marginTop": -lineHeight + "px"
+            }, 1000, function() {
+                $self.css({
+                    marginTop: 0
+                }).find("li:first").appendTo($self);
+            })
+        }
+    })
+    $(function() {
+        var $this = $("#J_Activity2");
+        var scrollTimer;
+        $this.hover(function() {
+            clearInterval(scrollTimer);
+        }, function() {
+            scrollTimer = setInterval(function() {
+                scrollNews($this);
+            }, 2000);
+        }).trigger("mouseleave");
+
+        function scrollNews(obj) {
+            var $self = obj.find("ul");
+            var lineHeight = $self.find("li:first").height(); 
+            $self.animate({
+                "marginTop": -lineHeight + "px"
+            }, 1000, function() {
+                $self.css({
+                    marginTop: 0
+                }).find("li:first").appendTo($self);
+            })
+        }
+    })
+</script>
+
 <script type="text/javascript" >
         $(".vtabs li").click(function() {
             $(".vtabs li a").removeClass("active");
@@ -877,10 +953,10 @@
                 orientation: "horizontal",
                 circular: "yes",
                 autoscroll: "yes",
-                interval: 5000,
+                interval: 3000,
                 speed: 500,
                 easing: "linear",
-                direction: "right",
+                direction: "left",
                 start_from: 0
             });
         });

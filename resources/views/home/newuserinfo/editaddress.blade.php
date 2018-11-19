@@ -30,49 +30,14 @@
            <ul> 
 
                 <li class="addressOne">
-                    <label for="">具体地区</label>
-                    <select name="area" >
-                            
-                           <option value="{{$data['area']}}" >{{$data['area']}}</option>
-                            <option value="北京" >北京</option>
-                           <option value="广东省">广东省 </option>
-                           <option value="上海市" >上海市 </option>
-                           <option value="天津市">天津市 </option>
-                           <option value="重庆市">重庆市 </option>
-                           <option value="辽宁省" >辽宁省</option>
-                           <option value="江苏省" >江苏省</option>
-                           <option value="湖北省" >湖北省</option>
-                           <option value="四川省" >四川省</option>
-                           <option value="陕西省" >陕西省</option>
-                           <option value="河北省" >河北省</option>
-                           <option value="山西省" >山西省</option>
-                           <option value="河南省" >河南省</option>
-                           <option value="吉林省" >吉林省</option>
-                           <option value="黑龙江" >黑龙江</option>
-                           <option value="内蒙古" >内蒙古</option>
-                           <option value="山东省" >山东省</option>
-                           <option value="安徽省" >安徽省</option>
-                           <option value="浙江省" >浙江省</option>
-                           <option value="福建省" >福建省</option>
-                           <option value="湖南省" >湖南省</option>
-                           <option value="广西省" >广西省</option>
-                           <option value="江西省" >江西省</option>
-                           <option value="贵州省" >贵州省</option>
-                           <option value="云南省" >云南省</option>
-                           <option value="西藏" >西藏</option>
-                           <option value="海南省" >海南省</option>
-                           <option value="甘肃省" >甘肃省</option>
-                           <option value="宁夏" >宁夏</option>
-                           <option value="青海省" >青海省</option>
-                           <option value="新疆" >新疆</option>
-                           <option value="香港" >香港</option>
-                           <option value="澳门" >澳门</option>
-                           <option value="台湾" >台湾</option>
-                           <option value="海外" >海外</option>
-                           <option value="其他" >其他</option>
-
+                    <label for="" style="float:left;">具体地区</label>
+                    <select name="area" id="province" style="float:left;">
+                        @foreach ($address as $add)
+                            <option value="{{$add->id}}" {{ $add->id == explode('-',$data['area'])[0] ? 'selected' : ''  }}>{{ $add->name }} </option>
+                        @endforeach
                     </select>
-                   
+                    <select class="form-control" id="city" name="city">
+                    </select>
                 </li>
             <li>
             <label for="">详细地址</label>
@@ -104,6 +69,71 @@
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
+<script>
+$(function(){
+
+        //发送一个post请求
+        $.ajax({
+            type:'post',
+            url:'/center/area',
+            data:{key:$("#province").val()},
+            dataType:'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(data){  //请求成功回调函数
+                var status = data.status; //获取返回值
+                var address = data.data;
+                if(status == 200){  //判断状态码，200为成功
+                    var option = '';
+                    for(var i=0;i<address.length;i++){  //循环获取返回值，并组装成html代码
+                        if( address[i]['id'] == {{ explode('-',$data['area'])[1] }}){
+                            option +='<option value='+address[i]['id']+' '+'selected >'+address[i]['name']+'</option>';
+                        }else{
+                            option +='<option value='+address[i]['id']+' >'+address[i]['name']+'</option>';
+                        }
+
+                    }
+                }else{
+                    var option = '<option>请选择城市</option>';  //默认值
+                }
+
+                $("#city").html(option);  //js刷新第二个下拉框的值
+            },
+        });
+
+
+        //初始化数据
+        var url = '/center/area';
+        $("#province").change(function(){
+            var address = $(this).val();
+            //发送一个post请求
+            $.ajax({
+                type:'post',
+                url:url,
+                data:{key:address},
+                dataType:'json',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success:function(data){  //请求成功回调函数
+                    var status = data.status; //获取返回值
+                    var address = data.data;
+                    if(status == 200){  //判断状态码，200为成功
+                        var option = '';
+                        for(var i=0;i<address.length;i++){  //循环获取返回值，并组装成html代码
+                            option +='<option value='+address[i]['id']+'>'+address[i]['name']+'</option>';
+                        }
+                    }else{
+                        var option = '<option>请选择城市</option>';  //默认值
+                    }
+
+                    $("#city").html(option);  //js刷新第二个下拉框的值
+                },
+            });
+        });
+});
+</script>
 <script>
 //手机号
 $('.myPhone').blur(function(){

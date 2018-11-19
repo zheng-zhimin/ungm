@@ -141,7 +141,35 @@ class CenterController extends Controller
      //显示新增收货地址页面index
      public function addaddress()
      {
-        return view('home.newuserinfo.addaddress');        
+         $address = DB::table('china_area')->where('pid','=', '0')->get();
+
+//        dd($address);
+
+        return view('home.newuserinfo.addaddress',['address'=>$address]);
+     }
+
+     public function area()
+     {
+
+         $key = $_POST['key'];
+//         dd($key);
+         $city = DB::table('china_area')->where('pid','=', $key)->get();
+         $arr = [];
+         foreach ($city as $k=>$v){
+             $arr[$k]['id'] = $v->id;
+             $arr[$k]['name'] = $v->name;
+         }
+//         dd($arr);
+
+         if(!empty($arr)){ //有值，组装数据
+             $result['status'] = 200;
+             $result['data'] = $arr;
+         }else{  //无值，返回状态码220
+             $result['status'] = 220;
+         }
+
+
+         echo json_encode($result);
      }
 
 
@@ -154,21 +182,28 @@ class CenterController extends Controller
           $phone=$req->input('phone');
           $address=$req->input('address');
           $area=$req->input('area');
+          $city=$req->input('city');
            $this->validate($req,[
             'phone' => 'required|regex:/^1[3-9]{1}[\d]{9}$/',
             'address' => 'required',
             'name' => 'required',
+            'area' => 'required',
+            'city' => 'required|min:2',
 
             ],[
             'phone.required' => '电话号码必填,',
             'phone.regex' => '电话格式不正确,',
             'address.required' => '详细地址必填,',
             'name.required' => '请填入昵称姓名,',
+            'city.required' => '请填入省/市,',
+            'city.min' => '请填入省/市,',
 
             ]);
            //地址添加超过20条返回错误信息
            $uid=Session::get('homeuser')->id;
            $tiao=Address::where('uid',$uid)->count();
+//           $area = DB::table('china_area')->where('id','=', $area)->first()->name;
+//           dd($area);
            
            if($tiao>=20){
              echo "<script>alert('您所添加的地址数量已达到20条,暂时不能继续添加了呢');history.go(-1);</script>";
@@ -181,10 +216,10 @@ class CenterController extends Controller
                     'name'=>$name,
                     'phone'=>$phone,
                     'address'=>$address,
-                    'area'=>$area,
+                    'area'=>$area.'-'.$city,
                    
                   ];
-                  
+//                  dd($data);
 
                   $res=$newadd->insert($data);
 
@@ -204,8 +239,9 @@ class CenterController extends Controller
       public function editaddress($id)
      {
          $data=Address::where('id',$id)->first();
+         $address = DB::table('china_area')->where('pid','=', '0')->get();
            
-             return view('home.newuserinfo.editaddress',['data'=>$data]);  
+             return view('home.newuserinfo.editaddress',['data'=>$data,'address'=>$address]);
      }
     
      //执行修改地址操作
@@ -216,6 +252,7 @@ class CenterController extends Controller
           $phone=$req->input('phone');
           $address=$req->input('address');
           $area=$req->input('area');
+          $city=$req->input('city');
            $this->validate($req,[
             'phone' => 'required|regex:/^1[3-9]{1}[\d]{9}$/',
             'address' => 'required',
@@ -233,7 +270,7 @@ class CenterController extends Controller
             $data -> name = $name;
             $data -> phone = $phone;
             $data -> address = $address;
-            $data -> area = $area;
+            $data -> area = $area.'-'.$city;
             $res=$data -> save();
             if($res){
               echo "<script>alert('修改成功'); window.location.href='/home/userinfo/transaction'; </script>";

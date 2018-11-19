@@ -212,7 +212,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     box-shadow: 2px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 /* -------------gundong */
-.wrap {height: 100px; background-color: #ffffff; box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.06); border: 1px solid #ddd; background: #f5f5f5;}
+.wrap {height: 87px; background-color: #ffffff; box-shadow: 2px 4px 4px 1px rgba(0, 0, 0, 0.06); border: 1px solid #ddd; background: #f5f5f5;}
 .dowebok {height: 90px !important}
 .dowebok li { overflow: hidden; zoom: 1;}
 .dowebok span { color: #333; text-decoration: none;}
@@ -335,11 +335,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     margin-right:10px;
 }
 #SUPPLIER .col-md-8 .row-roll{
-    margin-top: 20px;
+
     margin-bottom: 30px;
     border: 1px;
-    padding-top: 20px;
-    height: 138px;
+    padding-top: 15px;
+    height: 105px;
 }
 #SUPPLIER .col-md-8 .row-roll .col-md-4{
     padding:0px 20px 20px 24px;
@@ -371,7 +371,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     border-left: 2px solid #f9f9f9;
 }
 #SUPPLIER .col-md-4 .advertising{
-    width: 350px;
+    width: 330px;
     height: 88px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -442,7 +442,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
                                                             #BUYERS .row-down-1{
                                                                 margin: 2px;
                                                                 margin-top: 25px;
-                                                                margin-bottom: 25px;
+                                                                margin-bottom: 16px;
                                                             }
                                                             #BUYERS .vtabs-1 li{
                                                                 width: 130px;
@@ -467,7 +467,7 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
                                                             }
                                                             #BUYERS .industrial li a:hover{
                                                              
-                                                                color: #3477ff !important;;
+                                                                color: #3477ff !important;
                                                                 
                                                             }
                                                             #BUYERS .industrial ul li:first-child{
@@ -509,23 +509,25 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
                                                                 font-size: 12px;
                                                                 font-weight: normal;
                                                                 font-stretch: normal;
-                                                                line-height: 20px;
+                                                                line-height: 19px;
                                                                 letter-spacing: 0px;
                                                                 color: #666666;
                                                                 padding: 0px;                                                            
                                                             }
-                                                            #BUYERS .wrap-1 .col-md-3{
+                                                            #BUYERS .wrap-1 .col-md-4{
                                                                 border-left: 1px solid #f9f9f9;
                                                             }
-                                                            #BUYERS .wrap-1 .col-md-3:first-child{
-                                                                border:none;
-                                                            }
-                                                            #BUYERS .wrap-1 ul li:first-child{
-                                                                padding-bottom: 10px;
-                                                                font-size: 14px;
-                                                                color: #0a0a0a;
-                                                                font-weight: 800;
-                                                            }
+                                                            #BUYERS .wrap-1 h4{
+font-family: MicrosoftYaHei;
+padding-bottom: 10px;
+font-size: 14px;
+color: #0a0a0a;
+font-weight: 800;
+}
+#BUYERS .wrap-1 .col-md-4 li a{
+text-decoration:none;
+color: #666666;
+} 
                                                             #BUYERS .advertising{
                                                                 padding: 0;
                                                                 margin: 5px;
@@ -538,6 +540,12 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
                                                                 margin-bottom: 15px;
                                                                 margin-left: -6px;
                                                             }
+/*-------*/
+.GlobalTrade .nav-link{
+    border-left: 1px solid #d8d8d8;
+    border-top: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+}
 /* -------------- */
 .indexUngm{
     background-color: #f9f9f9;
@@ -741,7 +749,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 /*.bid .bid-banner{
     height: 600px;
 }*/
-
+.bid .nav-link {
+    border-left:1px solid #d8d8d8;
+    border-right:1px solid #d8d8d8;
+    border-top:1px solid #d8d8d8;
+}
 
 
 /**图片区**/
@@ -878,9 +890,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 }
 .btn-success{
 	background-color: #00b7a1;
+    border-color:#00b7a1;
 }
 .btn-success:hover{
 	background-color: #00b7a1;
+    border-color:#00b7a1;
 }
 /**左下边框**/
 .join-us .recruit .recruit-lt .lt-bot{
@@ -1291,8 +1305,8 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	margin-bottom:30px;
 }
 .logBox .readBtn input[type='checkbox']{
-    width: 14px;
-    height: 14px;
+    width: 32px;
+    height: 12px;
 	border-radius: 2px;
 }
 .logBox .readBtn label span{
@@ -1646,10 +1660,11 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
     position: absolute;
     right: 0;
     top: 20px;
-    text-align: center;
+    text-align: right;
     font-size: 0;
     display: block !important;
-    height:20px;
+    height:20px; 
+    margin-left: -120px;
 }
 
 .domesticTrade .ft-carousel .carousel-indicators span {
@@ -1761,6 +1776,9 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
             }
             .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump:hover{
                 color:#3477ff;
+            }
+            .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump:hover a{
+                color:#3477ff !important;
             }
             .domesticTrade .con-2 .example .carousel-inner .carousel-item .col-md-3 .lump:hover>.p1>span{
                 color:#3477ff;
@@ -2102,7 +2120,12 @@ input:-ms-input-placeholder { /* Internet Explorer 10+*/
 	color: #000000;
 	height: 46px;
 	line-height: 50px;
-	background: url(../images/bgBlue.png) no-repeat left bottom;
+	background-image: url(../images/bgBlue.png);
+	background-position:left bottom;
+	background-repeat:no-repeat;
+}
+.tradeUl li:hover h2 b{
+	background-image: url(../images/bgBlue1.png);
 }
 .tradeUl li h3{
 	font-size: 12px;

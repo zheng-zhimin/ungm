@@ -120,7 +120,7 @@
                                
                                     <a href="/home/buymessage/third">家装、建材</a><span>|</span>
                                     <a href="/home/buymessage/third">交通运输</a><span>|</span>
-                                    <a href="/home/buymessage/third">医药保健</a><span>|</span>
+                                   
                                     <a href="/home/buymessage/third">印刷</a>
                                 </li>
                                 <li>

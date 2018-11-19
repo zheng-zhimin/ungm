@@ -29,7 +29,7 @@
                         <div class="supplyDemand row lump">
                             <div class="col-md-2"></div>
                             <div class="col-md-3"></div>
-                            <div class="col-md-4"><b>供需询盘</b></div>
+                            <a href="/home/jk"><div class="col-md-4"><b>供需询盘</b></div></a>
                             <div class="col-md-3"></div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                         <div class="order row lump">
                             <div class="col-md-2"></div>
                             <div class="col-md-3"></div>
-                            <div class="col-md-4"><b>订单撮合</b></div>
+                            <a href="/home/jk"><div class="col-md-4"><b>订单撮合</b></div></a>
                             <div class="col-md-3"></div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                         <div class="market row lump">
                             <div class="col-md-2"></div>
                             <div class="col-md-3"></div>
-                            <div class="col-md-4"><b>销售通路</b></div>
+                            <a href="/home/jk"><div class="col-md-4"><b>销售通路</b></div></a>
                             <div class="col-md-3"></div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="NetworkStructures row lump">
                             <div class="col-md-2"></div>
                             <div class="col-md-3"></div>
-                            <div class="col-md-4"><b>人脉搭建</b></div>
+                            <a href="/home/jk"><div class="col-md-4"><b>人脉搭建</b></div></a>
                             <div class="col-md-3"></div>
                         </div>
                     </div>
@@ -522,6 +522,12 @@
                 },
                 function(){
                     $(this).find('span').css("color", "#666666");
+                },
+                function(){
+                    $(this).find('a').css("color", "#3477ff");
+                },
+                function(){
+                    $(this).find('a').css("color", "#666666");
                 }
             );
         });

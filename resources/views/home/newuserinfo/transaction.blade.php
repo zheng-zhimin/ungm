@@ -53,7 +53,7 @@
                            @foreach($address as $v)
                             <tr>
                                 <td>{{$v->name}}</td>
-                                <td style="width:100px;">{{$v->area}}</td>
+                                <td style="width:100px;">{{$v->area}}-{{$v->city}}</td>
                                 <td class="tabWidth">{{$v->address}}</td>
                                 <td>{{$v->phone}}</td>
 

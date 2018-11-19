@@ -303,7 +303,8 @@ Route::post('/center/updateaddress','Center\CenterController@updateaddress');
 Route::get('/center/setdefault/{id}','Center\CenterController@setdefault');
 //删除收货地址
 Route::get('/center/deladdress/{id}','Center\CenterController@deladdress');
-
+//查询省市二级地区路由
+Route::post('/center/area','Center\CenterController@area');
 //前台发布产品确定用户身份是否认证(如果是认证直接跳转到个人中心->发布产品;如果未提交企业执照就先跳到供应商企业认证界面->提交申请表单)
 Route::get('/home/check/authentication','Center\CenterController@authentication');
 
