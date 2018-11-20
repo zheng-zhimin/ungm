@@ -29,5 +29,8 @@ class Newusers extends Model
      {
         return $this->hasMany('App\Models\Admin\Address','uid');
      }
-
+      public function order()
+     {
+        return $this->hasMany('App\Models\Home\Order','uid');
+     }
 }
