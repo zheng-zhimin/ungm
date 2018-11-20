@@ -115,27 +115,27 @@
                 <div class="dataOne text-center">
                     <h1>一、九月份货物进出口统计</h1>
                     <div class="row" style="margin: 0px;">
-                        <div class="col-md-6 chartLt" style="background-color: #ffffff;box-shadow: 0 1px 4px #0000002e;margin-top: 10px;padding: 30px 20px 30px 20px;">
+                        <div class="col-md-6 chartLt block" style="background-color: #ffffff;box-shadow: 0 1px 4px #0000002e;margin-top: 10px;padding: 30px 20px 30px 20px;">
                             <div style="width: 100%;height: 470px;" id="aaa"></div>
                         </div>
-                        <div class="col-md-6 chartRt" style="background-color: #ffffff;box-shadow: 0 1px 4px #0000002e;margin-top: 10px;padding: 30px 20px 30px 20px;">
+                        <div class="col-md-6 chartRt block" style="background-color: #ffffff;box-shadow: 0 1px 4px #0000002e;margin-top: 10px;padding: 30px 20px 30px 20px;">
                             <div style="width: 100%;height: 470px;" id="char2"></div>
                         </div>
                     </div>
                 </div>
                 <div class="dataTwo text-center">
                     <h1>二、2018年度货物进出口统计</h1>
-                    <div class="chartTop" style="width: 100%;height: 400px;" id="char3">
+                    <div class="chartTop block" style="width: 100%;height: 400px;" id="char3">
 
                     </div>
-                    <div  class="chartBot" style="width: 100%;height: 440px;padding-top:45px;padding-bottom:45px;" id="char4">
+                    <div  class="chartBot block" style="width: 100%;height: 440px;padding-top:45px;padding-bottom:45px;" id="char4">
 
                     </div>
                 </div>
                 <div class="dataThree">
                     <div class="text-center">
                         <h1>三、2018年度货物进出口数据统计</h1>
-                        <div class="chartEnd char5" align="center" style="width: 100%" id="char5">
+                        <div class="chartEnd char5 block" align="center" style="width: 100%" id="char5">
                             <img class="" src="/ungmhome/images/globalTrade7.png">
                         </div>
                     </div>
@@ -182,7 +182,10 @@
       
     </div>
 <script src="/ungmhome/js/echarts.js"></script>
+<script src="/ungmhome/js/jquery.smoove.js"></script>
+<script>$('.block').smoove({offset:'40%'});</script>
 <script type="text/javascript">
+
     // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('aaa'));
 

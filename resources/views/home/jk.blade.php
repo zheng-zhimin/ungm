@@ -48,7 +48,7 @@
        //画月亮
       function drawMoon(){
          var moon = new Image();
-           moon.src = "/ungmhome/images/moon.jpg"
+           
            context.drawImage(moon,-5,-10);
       }
       //页面加载的时候
@@ -510,7 +510,7 @@ function playRains(){
         margin: 0;
         padding: 0;
     }
-    .swiper-container {
+        .swiper-container {
         width: 100%;
         height: 100%;
         margin-left: auto;
@@ -536,10 +536,17 @@ function playRains(){
         align-items: center;
         
     }
+    .castle{
+         
+    }
     .swiper-slide-1{
         backgroung-color: #42a0e0;
         background:url(/ungmhome/images/ban-bg.png) no-repeat;
     }
+    .swiper-slide-1 .text{
+        position: absolute;top:110px;text-align: left;left:300px; 
+    }
+        
     .swiper-slide-1 .animate-bounce-down img{
         width: 720px;
     }
@@ -559,22 +566,89 @@ function playRains(){
         backgroung-color: #42a0e0;
         background:url(/ungmhome/images/背景.png) no-repeat;
     }
+.swiper-slide-2 .animate-bounce-down .img{
+    width: 100%;
+}
+
     .swiper-slide-2 .big{
-        width: 100px;
+       
         height: auto;
     }
     .swiper-slide-2 .mid{
-        width: 60px;
+    
         height: auto;
     }
     .swiper-slide-2 .smll{
-        width: 44px;
+     
         height: auto;
     }
     .swiper-slide-2 .smll{
-        width: 44px;
+     
         height: auto;
     }
+
+@media screen and (max-width: 1920px) {
+   
+    .vie-1400{
+        display: none;
+    }
+    .vie-1920{
+        display: block;
+    }
+    .castle{
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 160px;
+    right: 720px;
+    }
+ .swiper-slide-2 .big{
+       width:100px;
+        height: auto;
+    }
+    .swiper-slide-2 .mid{
+      width:60px;
+        height: auto;
+    }
+    .swiper-slide-2 .smll{
+     width:40px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+   
+    .vie-1920{
+        display: none;
+    }
+    .vie-1400{
+        display: block;
+    }
+    .swiper-slide-1 .text{
+        left: 175px;
+    }
+    /*--*/
+    .castle{
+          height: 300px;
+          width: 300px;
+          position: absolute;
+          top: 115px;
+          right: 500px;
+    }
+.swiper-slide-1 .img-1{
+      position: absolute;
+    width: 84px;
+    right: 313px;
+    top: 420px;
+}
+.swiper-slide-1 .img-2 {
+    position: absolute;
+    width: 84px;
+    right: 484px;
+    top: 221px;
+}
+
+}
     </style>
 
    <script>
@@ -617,78 +691,149 @@ function playRains(){
                         
                     </div>
                 </div>
-                <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:160px;right: 720px;"> 
+                <div class="animate-bounce-down castle" style=""> 
                     <img src="/ungmhome/images/城堡.png"><img src="/ungmhome/images/城堡.png" style="position: absolute;top:0px;left: 0px;">
                 </div>
                 <img src="/ungmhome/images/转圆.png" class="img-1">
                 <img src="/ungmhome/images/转圆.png" class="img-2">
                <!--  <div id='text' style="position: absolute;top:370px;"></div> -->
             </div>
-            <div class="swiper-slide swiper-slide-2">
-                <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:270px;left: 570px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:226px;left: -30px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:54px;left: 22px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-9" style="position: absolute;top:300px;left: 528px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:216px;left: 116px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-2" style="position: absolute;top:248px;left: 310px;">
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-4" style="position: absolute;top:170px;left: 420px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:116px;left: 196px;">
-                </div>
-                <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:68px;right: 530px;"> 
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-7" style="position: absolute;top:120px;left: 244px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:234px;left: 248px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-4" style="position: absolute;top:218px;left: 366px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-2" style="position: absolute;top:300px;left: 390px;">
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-6" style="position: absolute;top:40px;left: 88px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-3" style="position: absolute;top:190px;left: 190px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:342px;left: 474px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-8" style="position: absolute;top:124px;left: 24px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-6" style="position: absolute;top:234px;left: 510px;">
-                </div>
-                <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:75px;right: 530px;"> 
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-10" style="position: absolute;top:64px;left: -80px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-5" style="position: absolute;top:124px;left: -202px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-7" style="position: absolute;top:376px;left: 518px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:358px;left: 640px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-4" style="position: absolute;top:86px;left: -142px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:28px;left: -124px;">
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-8" style="position: absolute;top:-20px;left: -270px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-6" style="position: absolute;top:72px;left: -262px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:-4px;left: -170px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-2" style="position: absolute;top:64px;left: -324px;">
-                </div>
-                <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-2" style="position: absolute;top:70px;left: -478px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-4" style="position: absolute;top:100px;left: -724px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:150px;left: -402px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:36px;left: -514px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-5" style="position: absolute;top:162px;left: -524px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:120px;left: -670px;">
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-6" style="position: absolute;top:30px;left: -430px;">
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-5" style="position: absolute;top:60px;left: -620px;">
 
+            <div class="swiper-slide swiper-slide-2">
+                <div class="vie-1920">
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:270px;left: 570px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:226px;left: -30px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:54px;left: 22px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-9" style="position: absolute;top:300px;left: 528px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:216px;left: 116px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-2" style="position: absolute;top:248px;left: 310px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-4" style="position: absolute;top:170px;left: 420px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:116px;left: 196px;">
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:68px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-7" style="position: absolute;top:120px;left: 244px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:234px;left: 248px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-4" style="position: absolute;top:218px;left: 366px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-2" style="position: absolute;top:300px;left: 390px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-6" style="position: absolute;top:40px;left: 88px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-3" style="position: absolute;top:190px;left: 190px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:342px;left: 474px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-8" style="position: absolute;top:124px;left: 24px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-6" style="position: absolute;top:234px;left: 510px;">
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:75px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-10" style="position: absolute;top:64px;left: -80px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-5" style="position: absolute;top:124px;left: -202px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-7" style="position: absolute;top:376px;left: 518px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:358px;left: 640px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-4" style="position: absolute;top:86px;left: -142px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:28px;left: -124px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-8" style="position: absolute;top:-20px;left: -270px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-6" style="position: absolute;top:72px;left: -262px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:-4px;left: -170px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-2" style="position: absolute;top:64px;left: -324px;">
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-2" style="position: absolute;top:70px;left: -478px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-4" style="position: absolute;top:100px;left: -724px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:150px;left: -402px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:36px;left: -514px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-5" style="position: absolute;top:162px;left: -524px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:120px;left: -670px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-6" style="position: absolute;top:30px;left: -430px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-5" style="position: absolute;top:60px;left: -620px;">
+
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:150px;left: -770px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:80px;left: -790px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:224px;left: -800px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-5" style="position: absolute;top:128px;left: -830px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:150px;left: -890px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-7" style="position: absolute;top:204px;left: -848px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:300px;left: -870px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:350px;left: -988px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-7" style="position: absolute;top:210px;left: -960px;">
+                        <img src="/ungmhome/images/祥云.png"  style="height:37px; position: absolute;top:57px;left: 473px;">
+                        <img src="/ungmhome/images/祥云.png"  style="height:17px;position: absolute;top:-33px;left: 0px;">
+                        <img src="/ungmhome/images/祥云.png"  style="height:27px;position: absolute;top:12px;left: -847px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:37px; position: absolute;top:-3px;left: 353px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:100px; position: absolute;top:87px;left: 576px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:97px;position: absolute;top:-33px;left:211px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:57px;position: absolute;top:-46px;left: -665px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:100px;position: absolute;top:12px;left: -979px;">
+                    </div>
+                    <img src="/ungmhome/images/floor.png" class="floor" style="position: absolute;top:358px;left: 0px;">
                 </div>
-                <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:150px;left: -770px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:80px;left: -790px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:224px;left: -800px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-5" style="position: absolute;top:128px;left: -830px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:150px;left: -890px;">
-                    <img src="/ungmhome/images/中.png" class="mid animate-floa-7" style="position: absolute;top:204px;left: -848px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:300px;left: -870px;">
-                    <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:350px;left: -988px;">
-                    <img src="/ungmhome/images/大.png" class="big animate-floa-7" style="position: absolute;top:210px;left: -960px;">
-                    <img src="/ungmhome/images/祥云.png"  style="height:37px; position: absolute;top:57px;left: 473px;">
-                    <img src="/ungmhome/images/祥云.png"  style="height:17px;position: absolute;top:-33px;left: 0px;">
-                    <img src="/ungmhome/images/祥云.png"  style="height:27px;position: absolute;top:12px;left: -847px;">
-                    <img src="/ungmhome/images/圆.png"  style="height:37px; position: absolute;top:-3px;left: 353px;">
-                    <img src="/ungmhome/images/圆.png"  style="height:100px; position: absolute;top:87px;left: 576px;">
-                    <img src="/ungmhome/images/圆.png"  style="height:97px;position: absolute;top:-33px;left:211px;">
-                    <img src="/ungmhome/images/圆.png"  style="height:57px;position: absolute;top:-46px;left: -665px;">
-                    <img src="/ungmhome/images/圆.png"  style="height:100px;position: absolute;top:12px;left: -979px;">
+                <div class="vie-1400">
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:270px;left: 670px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:226px;left: 70px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:54px;left: 122px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-9" style="position: absolute;top:300px;left: 628px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:216px;left: 216px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-2" style="position: absolute;top:248px;left: 410px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-4" style="position: absolute;top:170px;left: 520px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:116px;left: 296px;">
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:68px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-7" style="position: absolute;top:120px;left: 344px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:234px;left: 348px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-4" style="position: absolute;top:218px;left: 466px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-2" style="position: absolute;top:300px;left: 490px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-6" style="position: absolute;top:90px;left: 188px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-3" style="position: absolute;top:190px;left: 290px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:342px;left: 574px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-8" style="position: absolute;top:124px;left: 124px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-6" style="position: absolute;top:234px;left: 610px;">
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:75px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-10" style="position: absolute;top:64px;left: 20px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-5" style="position: absolute;top:124px;left: -102px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-7" style="position: absolute;top:376px;left: 618px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:358px;left: 740px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-4" style="position: absolute;top:86px;left: -42px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:181px;left: -24px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-8" style="position: absolute;top:106px;left: -170px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-6" style="position: absolute;top:181px;left: -162px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:223px;left: -70px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-2" style="position: absolute;top:143px;left: -224px;">
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:172px;right: 530px;"> 
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-2" style="position: absolute;top:87px;left: -378px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-4" style="position: absolute;top:342px;left: -624px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:82px;left: -302px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-1" style="position: absolute;top:192px;left: -414px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-5" style="position: absolute;top:280px;left: -424px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:309px;left: -570px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-6" style="position: absolute;top:108px;left: -330px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-5" style="position: absolute;top:152px;left: -520px;">
+
+                    </div>
+                    <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:150px;left: -670px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-9" style="position: absolute;top:80px;left: -690px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-8" style="position: absolute;top:224px;left: -700px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-5" style="position: absolute;top:128px;left: -730px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:150px;left: -790px;">
+                        <img src="/ungmhome/images/中.png" class="mid animate-floa-7" style="position: absolute;top:204px;left: -748px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:300px;left: -770px;">
+                        <img src="/ungmhome/images/小.png" class="smll animate-floa-10" style="position: absolute;top:350px;left: -888px;">
+                        <img src="/ungmhome/images/大.png" class="big animate-floa-7" style="position: absolute;top:210px;left: -860px;">
+                        <img src="/ungmhome/images/祥云.png"  style="height:37px; position: absolute;top:57px;left: 573px;">
+                        <img src="/ungmhome/images/祥云.png"  style="height:17px;position: absolute;top:-33px;left: 100px;">
+                        <img src="/ungmhome/images/祥云.png"  style="height:27px;position: absolute;top:12px;left: -747px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:37px; position: absolute;top:-3px;left: 453px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:100px; position: absolute;top:87px;left: 676px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:97px;position: absolute;top:-33px;left:311px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:57px;position: absolute;top:-46px;left: -565px;">
+                        <img src="/ungmhome/images/圆.png"  style="height:100px;position: absolute;top:12px;left: -879px;">
+                    </div>
+                    <img src="/ungmhome/images/floor.png" class="floor" style="position: absolute;top:358px;left: 0px;width: 100%;">
                 </div>
-                <img src="/ungmhome/images/floor.png" class="floor" style="position: absolute;top:358px;left: 0px;">
+
+
                 <div class="h-tex" style="position: absolute;top:358px;text-align:center;">
                     <img src="/ungmhome/images/招募令.png" >
                     <p class="p1" style="margin-top:50px;">1、近5年没有被相关部门标记不良记录</p>
@@ -697,6 +842,7 @@ function playRains(){
                 </div>
                 
             </div>
+
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
@@ -752,8 +898,10 @@ function playRains(){
         }
     </style>
     <!-- Swiper JS -->
+    <script src="/ungmhome/js/jquery.js"></script>
+    <script src="/ungmhome/js/jquery-2.1.1.min.js"></script> 
     <script src="/ungmhome/js/swiper.min.js"></script>
-    <script src="/ungmhome/js/jquery-2.1.1.min.js"></script>
+    
     <script>
     var str1 = '集客是一个圈子';
    var b = 0;
