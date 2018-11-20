@@ -562,14 +562,20 @@ function playRains(){
         right: 703px;
         top: 294px;
     }
+
+    .swiper-slide-2 .animate-bounce-down .img{
+    width: 100%;
+}
     .swiper-slide-2{
         backgroung-color: #42a0e0;
         background:url(/ungmhome/images/背景.png) no-repeat;
-    }
-.swiper-slide-2 .animate-bounce-down .img{
-    width: 100%;
-}
+      }
 
+
+    .swiper-slide-2 .big{
+       
+        height: auto;
+    }
     .swiper-slide-2 .big{
        
         height: auto;
@@ -614,9 +620,12 @@ function playRains(){
      width:40px;
         height: auto;
     }
+    .h-tex img{
+            margin-top: 60px;
+        }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1440px) {
    
     .vie-1920{
         display: none;
@@ -647,7 +656,9 @@ function playRains(){
     right: 484px;
     top: 221px;
 }
-
+.h-tex img{
+            margin-top: 0px;
+        }
 }
     </style>
 
@@ -764,9 +775,9 @@ function playRains(){
                         <img src="/ungmhome/images/圆.png"  style="height:57px;position: absolute;top:-46px;left: -665px;">
                         <img src="/ungmhome/images/圆.png"  style="height:100px;position: absolute;top:12px;left: -979px;">
                     </div>
-                    <img src="/ungmhome/images/floor.png" class="floor" style="position: absolute;top:358px;left: 0px;">
+                    <img src="/ungmhome/images/floor.png" class="floor" style="position: absolute;top:358px;left: 0px;width:100%;">
                 </div>
-                <div class="vie-1400">
+                <div class="vie-1440">
                     <div class="animate-bounce-down" style="height:300px;width:300px;position: absolute;top:78px;right: 530px;"> 
                         <img src="/ungmhome/images/大.png" class="big animate-floa-1" style="position: absolute;top:270px;left: 670px;">
                         <img src="/ungmhome/images/小.png" class="smll animate-floa-3" style="position: absolute;top:226px;left: 70px;">
@@ -889,9 +900,7 @@ function playRains(){
             margin: 15px;
             text-align: left;
         }
-        .h-tex img{
-            margin-top: 60px;
-        }
+        
         .link--mallki{
             color: #fde668;
             text-shadow: 1px 6px 0px #f73a35;

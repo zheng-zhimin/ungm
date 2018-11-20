@@ -863,7 +863,7 @@
                         <div class="cooperation-ph">
                             <img class="img-responsive" src="/ungmhome/images/6.png">
                         </div>
-                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=837495362&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="有事点这里" /></a>
+                        <a onclick="resize_window()"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="点击在线咨询" /></a>
                     </div>
                 </div>
             </div>
@@ -877,6 +877,10 @@
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
 <script type="text/javascript">
+function resize_window() {
+        window.open ('http://wpa.qq.com/msgrd?v=3&uin=837495362&site=qq&menu=yes','newwindow','height=599,width=599,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
+}
+
 $(function() {
         var $this = $("#J_Activity");
         var scrollTimer;
