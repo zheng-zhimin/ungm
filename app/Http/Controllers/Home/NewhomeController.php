@@ -1216,12 +1216,9 @@ public function adduser(Request $request)
             $onlyID=Newusers::where('id',$id)->first();
             $onlyID=$onlyID->code;
             $data=Ungmuserdetail::where('uid',$id)->first();
-            $add=Address::where('uid',$id)->where('defaultstatus','1')->first();
-            //dd($data);
-
             $address = DB::table('china_area')->where('pid','=', '0')->get();
 
-            return view('home.newuserinfo.account',['addr'=>$add,'data'=>$data,'address'=>$address,'onlyID'=>$onlyID]);
+            return view('home.newuserinfo.account',['data'=>$data,'address'=>$address,'onlyID'=>$onlyID]);
         }
 
 

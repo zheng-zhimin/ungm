@@ -77,7 +77,9 @@ class CenterController extends Controller
         $userdetail->sex=$req->input('sex');
         $userdetail->name=$req->input('name');
         $userdetail->qq=$req->input('qq');
-        
+        $area=$req->input('province').'-'.$req->input('city');
+        $userdetail->area=$area;
+
         $res= $userdetail->save();
         
          if($res){

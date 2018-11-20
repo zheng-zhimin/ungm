@@ -83,11 +83,15 @@
                 <li class="myCity">
                     <label for="" style="float:left;">所在地区</label>
                     <select class="form-control" id="province" name="province" style="float:left;">
+                        <option value="-1">省份</option>
                         @foreach ($address as $add)
-                            <option value="{{$add->id}}" {{ $add->id == explode('-',$addr['area'])[0] ? 'selected' : ''  }}>{{ $add->name }} </option>
+                            <option value="{{$add->id}}" {{ $add->id == explode('-',$data->area)[0] ? 'selected' : ''  }}>{{ $add->name }} </option>
                         @endforeach
                     </select>
+                    <input type="hidden" id="oldcity" value="{{substr($data->area,strripos($data->area,"-")+1)}}">
                     <select class="form-control myTwo" id="city" name="city">
+                        <option value="-1">城市</option>
+
                     </select>
                </li>
                
@@ -95,8 +99,6 @@
                <label for="">联系地址</label>
                <input type="text" name="addr" value="{{$data->addr}}">
                </li>
-               
-               
                
                <li>
                <label for="">手机号码</label>
@@ -192,72 +194,78 @@
 
 
 </script>
-    <script >
-           
-        $(function(){
+<script >
+$(function(){
+    var oldaddress = '{{$data->area}}';
+    if(oldaddress != ''){
+        if(oldaddress){
+            var city = $('#oldcity').val();
+        }
 
-            //发送一个post请求
-            $.ajax({
-                type:'post',
-                url:'/center/area',
-                data:{key:$('#province').val()},
-                dataType:'json',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                success:function(data){  //请求成功回调函数
-                    var status = data.status; //获取返回值
-                    var address = data.data;
-                    if(status == 200){  //判断状态码，200为成功
-                        var option = '';
-                        for(var i=0;i<address.length;i++){  //循环获取返回值，并组装成html代码
-                            if( address[i]['id'] == {{explode('-',$addr['area'])[1]}} ){
-                                option +='<option value='+address[i]['id']+' '+'selected >'+address[i]['name']+'</option>';
-                            }else{
-                                option +='<option value='+address[i]['id']+' >'+address[i]['name']+'</option>';
-                            }
-
-                        }
-                    }else{
-                        var option = '<option>请选择城市</option>';  //默认值
-                    }
-
-                    $("#city").html(option);  //js刷新第二个下拉框的值
-                },
-            });
-
-
-            //初始化数据
-            var url = '/center/area';
-            $("#province").change(function(){
-                var address = $(this).val();
-                //发送一个post请求
-                $.ajax({
-                    type:'post',
-                    url:url,
-                    data:{key:address},
-                    dataType:'json',
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    success:function(data){  //请求成功回调函数
-                        var status = data.status; //获取返回值
-                        var address = data.data;
-                        if(status == 200){  //判断状态码，200为成功
-                            var option = '';
-                            for(var i=0;i<address.length;i++){  //循环获取返回值，并组装成html代码
-                                option +='<option value='+address[i]['id']+'>'+address[i]['name']+'</option>';
-                            }
+        //发送一个post请求
+        $.ajax({
+            type:'post',
+            url:'/center/area',
+            data:{key:$('#province').val()},
+            dataType:'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(data){  //请求成功回调函数
+                var status = data.status; //获取返回值
+                var address = data.data;
+                if(status == 200){  //判断状态码，200为成功
+                    var option = '';
+                    for(var i=0;i<address.length;i++){  //循环获取返回值，并组装成html代码
+                        if( address[i]['id'] == city ){
+                            option +='<option value='+address[i]['id']+' '+'selected >'+address[i]['name']+'</option>';
                         }else{
-                            var option = '<option>请选择城市</option>';  //默认值
+                            option +='<option value='+address[i]['id']+' >'+address[i]['name']+'</option>';
                         }
 
-                        $("#city").html(option);  //js刷新第二个下拉框的值
-                    },
-                });
-            });
+                    }
+                }else{
+                    var option = '<option>请选择城市</option>';  //默认值
+                }
+
+                $("#city").html(option);  //js刷新第二个下拉框的值
+            },
         });
-    </script>
+    }
+
+
+
+    //初始化数据
+    var url = '/center/area';
+    $("#province").change(function(){
+        var address = $(this).val();
+        //发送一个post请求
+        $.ajax({
+            type:'post',
+            url:url,
+            data:{key:address},
+            dataType:'json',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            success:function(data){  //请求成功回调函数
+                var status = data.status; //获取返回值
+                var address = data.data;
+                if(status == 200){  //判断状态码，200为成功
+                    var option = '';
+                    for(var i=0;i<address.length;i++){  //循环获取返回值，并组装成html代码
+                        option +='<option value='+address[i]['id']+'>'+address[i]['name']+'</option>';
+                    }
+                }else{
+                    var option = '<option>请选择城市</option>';  //默认值
+                }
+
+                $("#city").html(option);  //js刷新第二个下拉框的值
+            },
+        });
+    });
+});
+</script>
    
 <script>
 //手机号
