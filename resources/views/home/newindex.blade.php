@@ -83,6 +83,7 @@
         <div class="tex" align="center">
 
             <h3>一触即达的全球贸易</h3>
+
             <img src="/ungmhome/images/GL.png"  alt="">
         </div>
         <div class="globalTrade GlobalTrade content">
@@ -862,10 +863,12 @@
                         <div class="cooperation-ph">
                             <img class="img-responsive" src="/ungmhome/images/6.png">
                         </div>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=837495362&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="有事点这里" /></a>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
      <!--1.内容结束-->
 

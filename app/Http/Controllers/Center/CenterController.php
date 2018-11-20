@@ -411,9 +411,29 @@ class CenterController extends Controller
 
 
 
+public function column(Request $request){
+            //接收栏目信息
+            // dd(111);
+         $data = $request -> data;
+        // echo $data ;
+         $lanmu = Column::where('pid',$data)->get();
 
-
-
+         $arr = [];
+         foreach ($lanmu as $k=>$v){
+             $arr[$k]['id'] = $v->id;
+             $arr[$k]['cname'] = $v->cname;
+         }
+       
+           if(!empty($arr)){ 
+           //有值，组装数据
+             $result['code'] = 10000;
+             $result['data'] = $arr;
+         }else{ 
+          //无值，返回状态码220
+             $result['code'] = 10001;
+         }
+        return $result;
+        }
 
 
 }

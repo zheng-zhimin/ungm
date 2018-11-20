@@ -346,8 +346,13 @@ Route::post('/admin/seller/no/{id}','Admin\SellerController@no');
 
 
 
+//接收栏目信息
+Route::post('/center/column','Center\CenterController@column');
 
-
+//订单页面
+Route::get('/order/order','Order\OrderController@index');
+//接收订单信息
+Route::post('/order/order','Order\OrderController@store');
 
 
 //测试一下
