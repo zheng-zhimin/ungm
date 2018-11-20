@@ -947,7 +947,7 @@ public function usercentered()
     $countold = Buyoffer::where('uid',$id)->where('status','3')->count();
         //dd($user);
       //获取column所有信息
-    $column = Column::where('pid',0)->get();
+    $column = Column::where('pid',0)->limit('5')->get();
         //dd($id);
     return view('home.newuserinfo.newindexed',['user'=>$user,
         'userdetail'=>$userdetail,
@@ -967,6 +967,7 @@ public function usercentered()
       //接收个人中心的数据(普通采购商的)
 public function adduser(Request $request)
 {
+        
          $this->validate($request,[
             'project' => 'required',
             'price' => 'required',
@@ -1048,8 +1049,9 @@ public function adduser(Request $request)
     {
         $category=$request->input('category');
         $kind=$request->input('kind');
-        var_dump($category,$kind);die;
-
+        // var_dump($kind);die;
+        $selected = "$category-$kind";
+        // dd($selected);
         $this->validate($request,[
             'project' => 'required',
             'price' => 'required',
@@ -1079,7 +1081,10 @@ public function adduser(Request $request)
            $data -> descript=$request->input('descript');
            $data -> count=$request->input('count');
            $data -> descript=$request->input('descript');
+
            $data -> lanmu=$request->input('lanmu');
+           $data -> selected = $selected;
+
            $data -> uid = $id;//
            $data-> published = date('Y-m-d H:i:s',time());
 
@@ -1131,7 +1136,10 @@ public function adduser(Request $request)
     public function addselleruser2(Request $request)
     {
         
-        
+         $category1=$request->input('category');
+        $kind1=$request->input('kind');
+        // var_dump($category1,$kind1);die;
+        $selected = "$category1-$kind1";
 
         $this->validate($request,[
             'project' => 'required',
@@ -1139,7 +1147,7 @@ public function adduser(Request $request)
             'descript' => 'required',
              'address'=> 'required',
              'count'=>'required',
-             'img'=>'required',
+             // 'img'=>'required',
              'industry'=>'required',
              'company'=>'required',
             ],[
@@ -1148,7 +1156,7 @@ public function adduser(Request $request)
             'descript.required' => '详细描述必须输入',
             'address.required' => '地址必须填入',
             'count.required' => '数量必须填入',
-            'img.required'=>'产品图片必须添加',
+            // 'img.required'=>'产品图片必须添加',
             'industry.required'=>'行业必须添加',
             'company.required'=>'公司名称必须添加',
             ]);
@@ -1167,6 +1175,7 @@ public function adduser(Request $request)
            $data -> count=$request->input('count');
            $data -> descript=$request->input('descript');
            $data -> lanmu=$request->input('lanmu');
+            // $data -> selected = $selected;
            $data -> uid = $id;//
            $data-> published = date('Y-m-d H:i:s',time());
            $data -> industry = $request ->input('industry');//行业 
