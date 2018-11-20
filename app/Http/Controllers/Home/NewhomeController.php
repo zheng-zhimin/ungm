@@ -947,7 +947,7 @@ public function usercentered()
     $countold = Buyoffer::where('uid',$id)->where('status','3')->count();
         //dd($user);
       //获取column所有信息
-    $column = Column::where('pid',0)->get();
+    $column = Column::where('pid',0)->limit('5')->get();
         //dd($id);
     return view('home.newuserinfo.newindexed',['user'=>$user,
         'userdetail'=>$userdetail,
