@@ -211,8 +211,8 @@
 
 
                             <div class="row">
-                                <span class="tex col-md-1">产品图片 </span>
-                                <div class="tex-r uploading col-md-10">
+                                <span class="tex col-md-1"><p>产品图片</p><p style="color:#666666">非必填项</p> </span>
+                                <div class="tex-r uploading col-md-10">`
                                     <div class="col-md-2">
                                         <label for="test" >
                                           <input type="file" class="form-control myUpload" id="test" name="img">

@@ -863,7 +863,11 @@
                         <div class="cooperation-ph">
                             <img class="img-responsive" src="/ungmhome/images/6.png">
                         </div>
+<<<<<<< HEAD
                         <a onclick="resize_window()"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="点击在线咨询" /></a>
+=======
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=837495362&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="有事点这里" /></a>
+>>>>>>> origin/lys
                     </div>
                 </div>
             </div>

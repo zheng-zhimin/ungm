@@ -967,21 +967,23 @@ public function usercentered()
       //接收个人中心的数据(普通采购商的)
 public function adduser(Request $request)
 {
-        
+         $category=$request->input('category');
+        $kind=$request->input('kind');
+        // var_dump($kind);die;
+        $selected = "$category-$kind";
          $this->validate($request,[
             'project' => 'required',
             'price' => 'required',
             'descript' => 'required',
              'address'=> 'required',
-             'count'=>'required',
-             'img'=>'required',
+             'count'=>'required', 'img'=>'required',
             ],[
             'project.required' => '标题必填',
             'price.required' => '价格必须输入',
             'descript.required' => '详细描述必须输入',
             'address.required' => '地址必须填入',
             'count.required' => '数量必须填入',
-            'img.required'=>'产品图片必须添加',
+            
             ]);
          // echo(111);die;
             $user=Session::get('homeuser');
@@ -998,6 +1000,7 @@ public function adduser(Request $request)
            $data -> count=$request->input('count');
            $data -> descript=$request->input('descript');
            $data -> lanmu=$request->input('lanmu');
+            $data -> selected = $selected;
            $data -> uid = $id;//
            $data-> published = date('Y-m-d H:i:s',time());
 
@@ -1058,14 +1061,14 @@ public function adduser(Request $request)
             'descript' => 'required',
              'address'=> 'required',
              'count'=>'required',
-             'img'=>'required',
+             
             ],[
             'project.required' => '标题必填',
             'price.required' => '价格必须输入',
             'descript.required' => '详细描述必须输入',
             'address.required' => '地址必须填入',
             'count.required' => '数量必须填入',
-            'img.required'=>'产品图片必须添加',
+            
             ]);
          // echo(111);die;
             $user=Session::get('homeuser');
@@ -1165,17 +1168,17 @@ public function adduser(Request $request)
             $id=$user->id;
             $data = $request ->except('item','_token');
                 //接收修改供应商信息
-            $data = new Buyoffer;
+            $data = new Selloffer;
           //修改数据库字段
            $data -> project = $request ->input('project');//招标项目名称
            $data -> price = $request ->input('price');//招标项目价格
            $data -> deadline = $request ->input('deadline') ? $request ->input('deadline') : '长期有效';
            //招标截至时间
            $data -> descript=$request->input('descript');
-           $data -> count=$request->input('count');
+           // $data -> count=$request->input('count');
            $data -> descript=$request->input('descript');
            $data -> lanmu=$request->input('lanmu');
-            // $data -> selected = $selected;
+            $data -> selected = $selected;
            $data -> uid = $id;//
            $data-> published = date('Y-m-d H:i:s',time());
            $data -> industry = $request ->input('industry');//行业 
