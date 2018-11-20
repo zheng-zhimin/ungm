@@ -41,7 +41,7 @@ class CenterController extends Controller
         //var_dump($id);
        
         //处理上传的图片
-        if($req -> hasFile('head')){
+       /* if($req -> hasFile('head')){
             //获取上传的图片
             $head = $req -> file('head');
             //获取后缀
@@ -63,7 +63,7 @@ class CenterController extends Controller
             $user->profile =$head_dir;
             $user->save();
 
-        }
+        }*/
         $userdetail =  ungmuserdetail::where('uid',$id) -> first();
         $userdetail->vipname=$req->input('vipname');
         $userdetail->nicename=$req->input('nicename');
@@ -76,6 +76,7 @@ class CenterController extends Controller
         $userdetail->vx=$req->input('vx');
         $userdetail->sex=$req->input('sex');
         $userdetail->name=$req->input('name');
+        $userdetail->qq=$req->input('qq');
         
         $res= $userdetail->save();
         

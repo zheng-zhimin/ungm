@@ -183,7 +183,7 @@
                                            <div class="row padd SUPPLIER-r-top" align="center">
 @if( ! Session::has('homeuser') )
 <div class="col-md-4" style="padding-bottom: 10px;">
-  <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
+  <img class="img-responsive" src="/ungmhome/images/man.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
   
   <div class="col-md-4 con">
@@ -202,7 +202,11 @@
 @else
 
     <div class="col-md-4" style="padding-right: 10px;">
-    <img class="img-responsive"src="{{Session::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
+        @if(Session::get('homeuser')->sex == 1)
+             <img class="img-responsive"src="/ungmhome/images/man.png/" style="background-color:#f6f6f6;border-radius:4px;"> 
+        @else
+              <img class="img-responsive"src="/ungmhome/images/woman.png" style="background-color:#f6f6f6;border-radius:4px;"> 
+        @endif
     </div>
     <div class="col-md-4 con">
       <p><a href="/home/check/authentication">发布产品</a></p>
@@ -679,7 +683,7 @@
 
   @if( ! Session::has('homeuser') )
   <div class="col-md-4" style="padding-bottom: 10px;">
-  <img class="img-responsive" src="/ungmhome/images/user.png" style="background-color:#f6f6f6;border-radius:4px;">
+  <img class="img-responsive" src="/ungmhome/images/man.png" style="background-color:#f6f6f6;border-radius:4px;">
   </div>
 
   <div class="col-md-4 con">
@@ -698,7 +702,11 @@
 @else
 
     <div class="col-md-4" style="padding-bottom: 10px;">
-    <img class="img-responsive" src="{{Session::get('homeuser')->profile}}" style="background-color:#f6f6f6;border-radius:4px;">    
+       @if(Session::get('homeuser')->sex == 1)
+             <img class="img-responsive"src="/ungmhome/images/man.png/" style="background-color:#f6f6f6;border-radius:4px;"> 
+        @else
+              <img class="img-responsive"src="/ungmhome/images/woman.png" style="background-color:#f6f6f6;border-radius:4px;"> 
+        @endif  
     </div>
 
     <div class="col-md-4 con">

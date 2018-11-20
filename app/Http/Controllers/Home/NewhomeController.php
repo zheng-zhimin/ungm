@@ -1211,11 +1211,17 @@ public function adduser(Request $request)
             return view('home.newuserinfo.transaction',['address'=>$address,'tiao'=>$tiao]);
         }
    //个人中心账户管理
-        public function account($id)
+       public function account($id)
         {
+            $onlyID=Newusers::where('id',$id)->first();
+            $onlyID=$onlyID->code;
             $data=Ungmuserdetail::where('uid',$id)->first();
+            $add=Address::where('uid',$id)->where('defaultstatus','1')->first();
+            //dd($data);
 
-            return view('home.newuserinfo.account',['data'=>$data]);
+            $address = DB::table('china_area')->where('pid','=', '0')->get();
+
+            return view('home.newuserinfo.account',['addr'=>$add,'data'=>$data,'address'=>$address,'onlyID'=>$onlyID]);
         }
 
 

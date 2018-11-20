@@ -3638,8 +3638,9 @@ a:hover, a:focus{
 	padding-right:30px;
 }
 .accountSetting ul li img{
-	width:200px;
-	height:200px;
+	width:160px;
+	height:160px;
+    margin:40px 0 0 140px;
 }
 .accountSetting ul li input{
 	padding-left:10px;

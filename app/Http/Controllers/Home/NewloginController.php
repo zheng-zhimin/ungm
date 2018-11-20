@@ -146,9 +146,11 @@ class NewloginController extends Controller
                     $profile='/homeblog/img/dt.png';//给个默认头像
 
                     $token = str_random(50);
-                    $id = Newusers::insertGetId(['profile'=>$profile,'username'=>$phone,'phone'=>$phone,'password'=>$pass,'token'=>$token]);
+                    $code = 'RLW'.time();
+                    $id = Newusers::insertGetId(['profile'=>$profile,'username'=>$phone,'phone'=>$phone,'password'=>$pass,'token'=>$token,'code'=>$code]);
                     Ungmuserdetail::insert(['phone'=>$phone,'uid'=>$id,'head'=>$profile]);
-
+                    
+                   
                     // dd($id);
 
                     

@@ -374,19 +374,16 @@
                 <span>描述：</span>
                 <input type="text" class="form-control" name="" id="v2" value=""/>
             </div>
-            <div id="" class="rowledge rowledge-1">
-                <span>类型：</span>
-                <input type="text" class="form-control" name="" id="v3" value=""/>
-            </div>
+          
             <div id="" class="rowledge rowledge-2">
                 <span class="Release">发布日期：</span>
-                <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="v4">
+                <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="v3">
                
             </div>
             
             <div id="" class="rowledge rowledge-2">
                 <span class="Release">截止日期：</span>
-                <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="v5">
+                <input type="text" class="demo-input date_t form-control" placeholder="请选择日期" id="v4">
                 
             </div>          
         </div>  
@@ -495,35 +492,38 @@
                 function search()
                 {
                     var title= $("#v1").val();
-                    var miaoshu= $("#v2").val();
-                    var type= $("#v3").val();
-                    var starttime= $("#v4").val();
-                    var endtime= $("#v5").val();
-                        $.post('/home/query/mess',{'title':title,'miaoshu':miaoshu,'type':type,'starttime':starttime,'endtime':endtime,'_token':'{{csrf_token()}}'}, function(datas) {       
+                    var descript= $("#v2").val();
+                    var published= $("#v3").val();
+                    var deadline= $("#v4").val();
+                  
+                        $.post('/home/query/mess',{'title':title,'descript':descript,'published':published,'deadline':deadline,'_token':'{{csrf_token()}}'}, function(datas) {       
                         $('.res2').empty();
-                            //alert(datas);
-                            for(var i=0;i<datas.length;i++){
+                            alert(datas);
+                         /* for(var i=0;i<datas.length;i++){
                                 var zzm="<div class='row row2'>"+
-                            "<div align='center' class='col-md-3 sh'>"+
-                            "<div><a href='#'>"+datas[i].name+"</a></div>"+
+                                "<div align='center' class='col-md-2 sh'>"+
+                            "<div><a href='#'>"+datas[i].code+"</a></div>"+
+                            "</div>"+
+                            "<div align='center' class='col-md-2 sh'>"+
+                            "<div><a href='#'>"+datas[i].title+"</a></div>"+
                             "</div>"+
                             "<div align='center' class='col-md-3 sh'>"+
-                            "    <div>"+datas[i].published+"</div>"+
+                            "    <div>"+datas[i].deadline+"</div>"+
                            " </div>"+
                             "<div align='center' class='col-md-1 sh'>"+
-                                "<div>"+datas[i].deadline+"</div>"+
+                                "<div>"+datas[i].area+"</div>"+
                            "</div>    "+
                            " <div align='center' class='col-md-2 sh'>"+
-                             "<div>无</div>"+
+                             "<div>"+datas[i].manager+"</div>"+
                             "</div>"+
                            " <div align='center' class='col-md-1 sh'>"+
-                             "   <div>"+datas[i].type+"</div>"+
+                             "   <div>"+datas[i].organ+"</div>"+
                            " </div>"+
                            " <div align='center' class='col-md-1'>"+
-                           "     <div>无</div>"+
+                           "     <div>"+datas[i].unit+"</div>"+
                            " </div></div>";
                                   $('.res2').append(zzm);
-                              }
+                              }*/
                         });  
                    
                     $(".ungmselect-s-table").hide();
@@ -670,9 +670,15 @@
 
                         <div class="row row1 header1">
                             <div class="header2">
-                                <div align="center" class="col-md-3 sh yc">
+
+                                <div align="center" class="col-md-2 sh yc">
                                     <div>招标编号 </div>
+                                </div> 
+
+                                <div align="center" class="col-md-2 sh yc">
+                                    <div>标题</div>
                                 </div>
+                                
                                 <div align="center" class="col-md-3 sh yc">
                                     <div>截止日期</div>
                                 </div>
@@ -698,8 +704,11 @@
                         <div class="res2">
                                <div class="row row2 res1">
                                 
-                                    <div align="center" class="col-md-3 sh">
+                                    <div align="center" class="col-md-2 sh">
                                         <div><a href="#"></a></div>
+                                    </div>
+                                     <div align="center" class="col-md-2 sh">
+                                        <div></div>
                                     </div>
                                     <div align="center" class="col-md-3 sh">
                                         <div></div>

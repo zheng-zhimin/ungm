@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Home\Ungmquery;
-use App\Models\Admin\Selloffer;
+use App\Models\Home\Queryzhaobiao;
 class SearchController extends Controller
 {
 
 //构造查询条件和结果及猜想用户查找了什么关键字
-    public function query(Request $req)
+   /* public function query(Request $req)
     {
         $title=$req->title;
         $miaoshu=$req->miaoshu;
@@ -34,7 +34,22 @@ class SearchController extends Controller
         
 
         
+    }*/
+
+    public function query(Request $req)
+    {
+
+        $title=$req->title;
+        $descript=$req->descript;
+        $published=$req->published;
+        $deadline=$req->deadline;
+        if(empty($title)&&empty($descript)&&empty($published)&&empty($deadline)){
+            return $data=[];
+        }
+        $data=Queryzhaobiao::where('title','like','%'.$title.'%')->where('descript','like','%'.$descript.'%')->get();
+        return $data;
     }
+
 
     public function ungmquery(Request $req)
     {
