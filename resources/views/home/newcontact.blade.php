@@ -23,7 +23,7 @@
                     <p>地址：北京市通州区万达广场C座14层</p>
                     <p>网址(Web)：www.ungm.org.cn</p>
                     <p>客户服务热线：86-10-66111661</p>
-                    <p>客户服务邮箱：ungm@ungm.org.cn</p>
+                    <p>客户服务邮箱：hr@jodn.com.cn</p>
                 </div>
             </div>
             <div class="map">

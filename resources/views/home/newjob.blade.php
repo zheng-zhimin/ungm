@@ -78,7 +78,7 @@
                     </div>
                 </div>
                 <div class="mail">
-                    <span>您可以将自己的简历发送至邮箱<a href="">&nbsp;ungm@ungm.org.cn</a></span>
+                    <span>您可以将自己的简历发送至邮箱<a href="">&nbsp;hr@jodn.com.cn</a></span>
                 </div>
             </div>
         </div>   

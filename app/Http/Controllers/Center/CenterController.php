@@ -80,6 +80,7 @@ class CenterController extends Controller
         $area=$req->input('province').'-'.$req->input('city');
         $userdetail->area=$area;
 
+
         $res= $userdetail->save();
         
          if($res){

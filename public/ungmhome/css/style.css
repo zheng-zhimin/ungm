@@ -1289,6 +1289,23 @@ color: #666666;
 	font-size: 14px;
 	color: #999999;
 }
+.logBox .logTwo ul li .logPwd{
+	width:300px;
+	border-right:none;
+    border-radius: 4px 0 0 4px;
+}
+.logBox .logTwo ul li a{
+	border:1px solid #d8d8d8;
+	border-radius: 0 4px 4px 0;
+	border-left:none;
+	background-color:#ffffff;
+	margin-left:-6px;
+	padding:10.5px 8px;
+	margin-right:6px;
+}
+.logBox .logTwo ul li a img{
+	width:19px;
+}
 .logBox .logTwo ul li .code1{
 	width:230px;
 	border-radius: 4px 0 0 4px;

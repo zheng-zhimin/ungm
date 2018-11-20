@@ -11,14 +11,26 @@
     <link rel="stylesheet" type="text/css" href="/ungmhome/css/style.css">
     <link rel="stylesheet" href="/ungmhome/css/footer.css">
    <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
-    
+    <style type="text/css">
+        button{
+            font: 15px Verdana,Helvetica,Arial,sans-serif;
+        }
+        input:focus,button:focus{
+            outline:none;
+            
+        }
+       /*  input {
+           background:url(/ungmhome/images/logImg1.png);
+       } */
+
+    </style>
 </head>
 <body>
     <div class="main">
         <!--1.网页头部-->
         <div class="top">
             <div class="container">
-            <!--------顶部---------->
+            <!--------顶部-->
                 <div class="top-left">
                     <img class="img-responsive" src="/ungmhome/images/tel.png">
                     <img class="img-responsive" src="/ungmhome/images/mail.png">
@@ -70,14 +82,23 @@
                             <input type="phone" name="phone" id="phone" value="{{ old('phone') }}" placeholder="手机号码做为登录账号"/>
                             <i></i>
                         </li>
+
                         <li>
                             <label for=""><span>设置密码 :</span></label>
-                            <input type="password" name="password" id="password" value="{{ old('password') }}" placeholder="建议使用至少两种字符组合6位数以上的密码格式"/>
+                            <input type="password" name="password" class="logPwd" id="password" value="{{ old('password') }}" placeholder="建议使用两种字符组合6位数以上的密码格式"/>
+                            <a>
+                                <img src="/ungmhome/images/logImg1.png" alt="" class="eyesHide1">
+                                <img src="/ungmhome/images/logImg2.png" alt="" style="display:none;" class="eyesShow1">
+                            </a>
                             <i></i>
                         </li>
                         <li>
                             <label for=""><span>确认密码 :</span></label>
-                            <input type="password" name="repassword" id="passwordagain" value="{{ old('repassword') }}" placeholder="再次输入密码"/>
+                            <input type="password" name="repassword" class="logPwd" id="passwordagain" value="{{ old('repassword') }}" placeholder="再次输入密码"/>
+                            <a>
+                                <img src="/ungmhome/images/logImg1.png" alt="" class="eyesHide2">
+                                <img src="/ungmhome/images/logImg2.png" alt="" style="display:none;" class="eyesShow2">
+                            </a>
                             <i></i>
                         </li>
 
@@ -146,7 +167,7 @@
                 <div class="row info">
                     <p style="margin-bottom:6px;">公司名称：九鼎智成（北京）信息技术股份有限公司</p>
                     <p style="margin-bottom:6px;">地址：北京市通州区万达广场C座</p>
-                    <p>邮箱：ungm@ungm.org.cn</p>
+                  <p>邮箱：ruilu@51ruilu.com</p>
                 </div>
             </div>
             <div class="col-md-3 qw">
@@ -183,6 +204,36 @@
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
+<script>
+$(".eyesHide1").click(function(){
+    if($("#password").attr("type")=="password"){
+        $("#password").attr('type','text');
+        $(".eyesShow1").show();
+        $(".eyesHide1").hide();
+    }
+});
+$(".eyesShow1").click(function(){
+    if($("#password").attr("type")=="text"){
+        $("#password").attr('type','password');
+        $(".eyesShow1").hide();
+        $(".eyesHide1").show();
+    }
+});
+$(".eyesHide2").click(function(){
+    if($("#passwordagain").attr("type")=="password"){
+        $("#passwordagain").attr('type','text');
+        $(".eyesShow2").show();
+        $(".eyesHide2").hide();
+    }
+});
+$(".eyesShow2").click(function(){
+    if($("#passwordagain").attr("type")=="text"){
+        $("#passwordagain").attr('type','password');
+        $(".eyesShow2").hide();
+        $(".eyesHide2").show();
+    }
+});
+</script>
 <script>
 $(".logon").click(function(){
     var phone=$("#phone").val();
@@ -229,7 +280,6 @@ $('#phone').blur(function(){
     let patrn=/^[1][3,4,5,7,8][0-9]{9}$/;
     if(!patrn.test($Val) && $Val != ''){
         $(this).siblings('i').show().addClass('active').text('号码格式不正确');
-        $(this).val('');
     } else if($Val == ''){
         return;
     } else {
@@ -246,7 +296,6 @@ $('#password').blur(function(){
     let patrn=/^(?![a-zA-Z]+$)(?![^\da-zA-Z]+$).{6,20}$/;
     if(!patrn.test($Val) && $Val != ''){
         $(this).siblings('i').show().addClass('active').text('密码格式不正确');
-        $(this).val('');
     } else if($Val == ''){
         return;
     } else {
@@ -262,7 +311,6 @@ $('#passwordagain').blur(function(){
     let $Val = $(this).val();
     if($Val != $('#password').val()){
         $(this).siblings('i').show().addClass('active').text('密码输入不一致');
-        $(this).val('');
     } else if($Val == ''){
         return;
     } else {

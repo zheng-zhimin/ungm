@@ -549,7 +549,8 @@
                             for(var i=0;i<datas.length;i++){
                                 var zzm="<div class='row row2'>"+
                             "<div align='center' class='col-md-1 sh'>"+
-                            "<div><a style='cursor:pointer'  id='"+i+"' onclick='like("+datas[i].id+")'>感兴趣</a>"+
+                            "<div><a style='cursor:pointer'  id='"+i+"' onclick='like("+datas[i].id+")'>"+
+                            "感兴趣</a>"+
                             "</div>"+
                             "</div>"+
                             "<div align='center' class='col-md-2 sh'>"+
@@ -590,8 +591,9 @@
         <script>
             function like(obj)
             {
+              
                 alert(obj);
-                
+
             }
 
         </script>

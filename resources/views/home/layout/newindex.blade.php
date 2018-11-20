@@ -240,7 +240,7 @@
                 <div class="row info">
                     <p>公司名称：九鼎智成（北京）信息技术股份有限公司</p>
                     <p>地址：北京市通州区万达广场C座</p>
-                    <p>邮箱：ungm@ungm.org.cn</p>
+                    <p>邮箱：ruilu@51ruilu.com</p>
                 </div>
             </div>
             <div class="col-md-3 qw">
