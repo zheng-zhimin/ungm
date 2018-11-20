@@ -498,8 +498,8 @@
                   
                         $.post('/home/query/mess',{'title':title,'descript':descript,'published':published,'deadline':deadline,'_token':'{{csrf_token()}}'}, function(datas) {       
                         $('.res2').empty();
-                            alert(datas);
-                         /* for(var i=0;i<datas.length;i++){
+                            //alert(datas);
+                          for(var i=0;i<datas.length;i++){
                                 var zzm="<div class='row row2'>"+
                                 "<div align='center' class='col-md-2 sh'>"+
                             "<div><a href='#'>"+datas[i].code+"</a></div>"+
@@ -523,7 +523,7 @@
                            "     <div>"+datas[i].unit+"</div>"+
                            " </div></div>";
                                   $('.res2').append(zzm);
-                              }*/
+                              }
                         });  
                    
                     $(".ungmselect-s-table").hide();
@@ -548,7 +548,11 @@
                             //alert(datas);
                             for(var i=0;i<datas.length;i++){
                                 var zzm="<div class='row row2'>"+
-                            "<div align='center' class='col-md-3 sh'>"+
+                            "<div align='center' class='col-md-1 sh'>"+
+                            "<div><a style='cursor:pointer'  id='"+i+"' onclick='like("+datas[i].id+")'>感兴趣</a>"+
+                            "</div>"+
+                            "</div>"+
+                            "<div align='center' class='col-md-2 sh'>"+
                             "<div><a href='#'>"+datas[i].title+"</a></div>"+
                             "</div>"+
                             "<div align='center' class='col-md-3 sh'>"+
@@ -580,6 +584,16 @@
                   
                 }
 
+
+        </script>
+
+        <script>
+            function like(obj)
+            {
+                alert(obj);
+                
+            }
+
         </script>
 
             <div class="bid-paging ungmselect-s-table">
@@ -592,7 +606,10 @@
 
                         <div class="row row1 header1">
                             <div class="header2">
-                                <div align="center" class="col-md-3 sh yc">
+                               <div align="center" class="col-md-1 sh yc">
+                                    <div>表达兴趣</div>
+                                </div>
+                                <div align="center" class="col-md-2 sh yc">
                                     <div>标题</div>
                                 </div>
                                 <div align="center" class="col-md-3 sh yc">
@@ -758,11 +775,11 @@ lay('#version').html('-v'+ laydate.v);
 
 //执行一个laydate实例
 laydate.render({
-  elem: '#v4' //指定元素
+  elem: '#v3' //指定元素
 });
 
 laydate.render({
-  elem: '#v5' //指定元素
+  elem: '#v4' //指定元素
 });
 
 laydate.render({
