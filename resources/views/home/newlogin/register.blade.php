@@ -12,17 +12,13 @@
     <link rel="stylesheet" href="/ungmhome/css/footer.css">
    <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
     <style type="text/css">
-        button{
-            font: 15px Verdana,Helvetica,Arial,sans-serif;
-        }
-        input:focus,button:focus{
-            outline:none;
-            
-        }
+        
        /*  input {
            background:url(/ungmhome/images/logImg1.png);
        } */
-
+        input:focus{
+            outline:none;
+        }
     </style>
 </head>
 <body>
@@ -85,20 +81,14 @@
 
                         <li>
                             <label for=""><span>设置密码 :</span></label>
-                            <input type="password" name="password" class="logPwd" id="password" value="{{ old('password') }}" placeholder="建议使用两种字符组合6位数以上的密码格式"/>
-                            <a>
-                                <img src="/ungmhome/images/logImg1.png" alt="" class="eyesHide1">
-                                <img src="/ungmhome/images/logImg2.png" alt="" style="display:none;" class="eyesShow1">
-                            </a>
+                            <input type="password" name="password" class="" id="password" value="{{ old('password') }}" placeholder="建议使用两种字符组合6位数以上的密码格式"/>
+                            <div class="eyeBtn"></div>
                             <i></i>
                         </li>
                         <li>
                             <label for=""><span>确认密码 :</span></label>
-                            <input type="password" name="repassword" class="logPwd" id="passwordagain" value="{{ old('repassword') }}" placeholder="再次输入密码"/>
-                            <a>
-                                <img src="/ungmhome/images/logImg1.png" alt="" class="eyesHide2">
-                                <img src="/ungmhome/images/logImg2.png" alt="" style="display:none;" class="eyesShow2">
-                            </a>
+                            <input type="password" name="repassword" class="" id="passwordagain" value="{{ old('repassword') }}" placeholder="再次输入密码"/>
+                            <div class="eyeBtn"></div>
                             <i></i>
                         </li>
 
@@ -205,7 +195,7 @@
 <script src="/ungmhome/js/jquery.js"></script>
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
 <script>
-$(".eyesHide1").click(function(){
+/*$(".eyesHide1").click(function(){
     if($("#password").attr("type")=="password"){
         $("#password").attr('type','text');
         $(".eyesShow1").show();
@@ -232,7 +222,25 @@ $(".eyesShow2").click(function(){
         $(".eyesShow2").hide();
         $(".eyesHide2").show();
     }
-});
+});*/
+
+//输入密码的时候显示小眼睛
+$('#password , #passwordagain').keyup(function(){
+    $(this).addClass('logImg');
+    $(this).siblings('.eyeBtn').show();
+})
+
+//点击小眼睛
+
+$('.eyeBtn').click(function(){
+    $(this).toggleClass('active');
+    var that =$(this);
+    if($(this).siblings('input').attr('type') == 'password'){
+        that.siblings('input').attr('type','text');
+    } else{
+        that.siblings('input').attr('type','password');
+    }
+})
 </script>
 <script>
 $(".logon").click(function(){

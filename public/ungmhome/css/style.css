@@ -1203,6 +1203,23 @@ color: #666666;
 }
 
 /**注册页面样式**/
+.logBox .logTwo ul li .logImg{
+	width:300px;
+	border-right: none;
+	border-radius: 4px 0 0 4px;
+}
+.logBox .logTwo ul li div.eyeBtn{
+	display: none;
+	width:36px;
+	height:40px;
+	border:1px solid #d8d8d8;
+	border-radius: 0 4px 4px 0;
+	border-left:none;
+	background: url(/ungmhome/images/logImg1.png) no-repeat center;
+}
+.logBox .logTwo ul li div.active{
+	background: url(/ungmhome/images/logImg2.png) no-repeat center;
+}
 .logNav{
 	background-color: #ffffff;
 }
@@ -1263,11 +1280,12 @@ color: #666666;
 	margin:0 auto;
 }
 .logBox .logTwo ul{
-	overflow: hidden;
 	margin-top:56px;
 }
 .logBox .logTwo ul li{
     margin-bottom: 30px;
+    display: box;
+    display: -webkit-box;
 }
 .logBox .logTwo ul li span{
 	font-family: "MicrosoftYaHei-Bold";
@@ -1289,23 +1307,13 @@ color: #666666;
 	font-size: 14px;
 	color: #999999;
 }
+
 .logBox .logTwo ul li .logPwd{
+	border-radius: 4px 0 0 4px;
 	width:300px;
 	border-right:none;
-    border-radius: 4px 0 0 4px;
 }
-.logBox .logTwo ul li a{
-	border:1px solid #d8d8d8;
-	border-radius: 0 4px 4px 0;
-	border-left:none;
-	background-color:#ffffff;
-	margin-left:-6px;
-	padding:10.5px 8px;
-	margin-right:6px;
-}
-.logBox .logTwo ul li a img{
-	width:19px;
-}
+
 .logBox .logTwo ul li .code1{
 	width:230px;
 	border-radius: 4px 0 0 4px;
@@ -1361,15 +1369,15 @@ color: #666666;
 .logTwo ul li i{
 	display:none;
 	padding-left: 24px;
-	height: 20px;
+	height: 40px;
+	line-height: 40px;
 	background: url(/ungmhome/images/yes.png) no-repeat left center;
 	color: #999;
-	
+	margin-left: 10px;
 }
 .logTwo ul li i.active{
 	background: url(/ungmhome/images/no.png) no-repeat left center;
 	color: red;
-	
 }
 
 
