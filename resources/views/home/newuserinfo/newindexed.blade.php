@@ -191,14 +191,14 @@
                             <div class="two row">
                                 <from>
         <select class="form-control" id="category" name="category"  style="margin-right:10px;">
-                <option value="-1">行业分类</option>
+                <option value="0">行业分类</option>
                   @foreach($column as $v)
                 <option value="{{$v->id}}">{{$v->cname}}</option>
                 @endforeach
                
         </select>
-        <select class="form-control" id="kind" name="cname" style="width:140px;">
-                <option value="-1">类别</option>
+        <select class="form-control" id="kind" name="kind" style="width:140px;">
+                <option value="0">类别</option>
         </select>
     </from>
                                 <input type="text" class="form-control l-b" maxlength="20" name ="project" placeholder="点击输入文字">
@@ -343,7 +343,7 @@
                                         <div class="two row">
                                            <from>
         <select class="form-control" id="category1" name="category" style="margin-right:10px;">
-                <option value="-1">行业分类</option>
+                <option value="0">行业分类</option>
 
                 @foreach($column as $v)
                 <option value="{{$v->id}}">{{$v->cname}}</option>
@@ -352,7 +352,7 @@
               
         </select>
         <select class="form-control" id="kind1" name="kind" style="width:140px;">
-                <option value="-1">类别</option>
+                <option value="0">类别</option>
         </select>
     </from>
                                             <input type="text" class="form-control l-b" maxlength="20" name ="project" placeholder="点击输入文字">
@@ -364,7 +364,7 @@
                                             <textarea name="descript" placeholder="点击输入商品详细信息" class="form-control col-md-10"></textarea>
                                         </div>
 
-                                        <div class="row">
+                                        <!-- <div class="row">
                                             <span class="tex col-md-1">产品图片 </span>
                                             <div class="tex-r uploading col-md-10">
                                                 <div class="col-md-2">
@@ -374,10 +374,25 @@
                                                       <img class="show hide"/>
                                                       <p>点击上传</p>
                                                     </label>
-
+                                        
                                                   <p><button type="button" class="btn btn-default btn-xs">上传记录</button><button type="reset" class="btn btn-default closes btn-xs hide">删除</button></p>
+                                        
+                                              </div> -->
 
-                                              </div>
+                                              <div class="row">
+                                <span class="tex col-md-1">产品图片 </span>
+                                <div class="tex-r uploading col-md-10">
+                                    <div class="col-md-2">
+                                        <label for="test" >
+                                          <input type="file" class="form-control myUpload" id="test" name="img">
+                                          <img src="/ungmhome/images/个人中心1.png" class="add"/>
+                                          <img class="show hide"/>
+                                          <p>点击上传</p>
+                                        </label>
+
+                                      <p><button type="button" class="btn btn-default btn-xs">上传记录</button><button type="reset" class="btn btn-default closes btn-xs hide">删除</button></p>
+
+                                  </div>
                                                 <div class="col-md-2">
                                                     <img src="/ungmhome/images/个人中心2.png"/>
                                                     <p>点击上传</p>
@@ -488,6 +503,7 @@
                     if (status == 10000) {
                         var option = '';
                         for(var i=0;i<column.length;i++){  //循环获取返回值，并组装成html代码
+                            // alert(column[i]['id']);
                         option +='<option value='+column[i]['id']+'>'+column[i]['cname']+'</option>';
                         }
                     }else{
