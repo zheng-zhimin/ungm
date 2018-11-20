@@ -696,38 +696,60 @@ class NewhomeController extends Controller
         public function thirdbuymessage()
         {
             $column = Column::where('pid',28)->get()->toArray();
-            
-            return view('home.buymessage.third',['column'=>$column]);
+            //默认展示页数据
+         $data = Articles::where('lanmu',29)->where('relation',2)->first();
+            return view('home.buymessage.third',[
+            'column'=>$column,
+            'data' => $data,
+        ]);
         }
 
 //原材料
         public function third1buymessage()
         {
-         $column = Column::where('pid',47)->get()->toArray();
+             $column = Column::where('pid',47)->get()->toArray();
+             //默认展示页数据
+             $data = Articles::where('lanmu',48)->where('relation',2)->first();
+                return view('home.buymessage.third',[
+                'column'=>$column,
+                'data' => $data,
+            ]);
          
-         return view('home.buymessage.third1',['column'=>$column]);
-         
-     }
+        }
    //消费品
      public function third2buymessage()
      {
          $column = Column::where('pid',58)->get()->toArray();
-         
-         return view('home.buymessage.third2',['column'=>$column]);
+          //默认展示页数据
+             $data = Articles::where('lanmu',59)->where('relation',2)->first();
+                return view('home.buymessage.third2',[
+                'column'=>$column,
+                'data' => $data,
+            ]);
      } 
    //绿色食品
      public function third3buymessage()
      {
         $column = Column::where('pid',73)->get()->toArray();
         
-        return view('home.buymessage.third3',['column'=>$column]);
+         //默认展示页数据
+             $data = Articles::where('lanmu',74)->where('relation',2)->first();
+                return view('home.buymessage.third3',[
+                'column'=>$column,
+                'data' => $data,
+            ]);
     }
    //商务服务
     public function third4buymessage()
     {
      $column = Column::where('pid',84)->get()->toArray();
      
-     return view('home.buymessage.third4',['column'=>$column]);
+      //默认展示页数据
+             $data = Articles::where('lanmu',85)->where('relation',2)->first();
+                return view('home.buymessage.third4',[
+                'column'=>$column,
+                'data' => $data,
+            ]);
  } 
   //查找分配采购信息列表
  public function buymessagelist(Request $req)
@@ -1026,8 +1048,7 @@ public function adduser(Request $request)
     {
         $category=$request->input('category');
         $kind=$request->input('kind');
-        var_dump($category,$kind);
-        dd(111);
+        var_dump($category,$kind);die;
 
         $this->validate($request,[
             'project' => 'required',
