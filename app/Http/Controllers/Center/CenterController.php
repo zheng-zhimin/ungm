@@ -420,28 +420,16 @@ public function column(Request $request){
              $arr[$k]['id'] = $v->id;
              $arr[$k]['cname'] = $v->cname;
          }
-        // dd($arr);
-
-         /*if(!empty($arr)){ //有值，组装数据
-            $res = [
-              'code' => 1000,
-              'data' => $arr,
-            ];
-             $result['status'] = 200;
+       
+           if(!empty($arr)){ 
+           //有值，组装数据
+             $result['code'] = 10000;
              $result['data'] = $arr;
-         }else{  //无值，返回状态码220
-              $res = [
-               'code' => 1001,
-              ];
-         }*/
-           if(!empty($arr)){ //有值，组装数据
-             $result['code'] = 200;
-             $result['data'] = $arr;
-         }else{  //无值，返回状态码220
-             $result['code'] = 220;
+         }else{ 
+          //无值，返回状态码220
+             $result['code'] = 10001;
          }
-
-         echo json_encode($result);
+        return $result;
         }
 
 

@@ -342,7 +342,7 @@
                                     <div class="tab-pane active" id="addProcurement-2" role="tabpanel">
                                         <div class="two row">
                                            <from>
-        <select class="form-control" id="category1" name="category" onchange="getcategory1()" style="margin-right:10px;">
+        <select class="form-control" id="category1" name="category" style="margin-right:10px;">
                 <option value="-1">行业分类</option>
 
                 @foreach($column as $v)
@@ -484,11 +484,11 @@
                 success : function(data){
                     var status = data.code; //获取返回值
                     var column = data.data;
-                    alert(status);
-                    if (status == 200) {
+                    // alert(status);
+                    if (status == 10000) {
                         var option = '';
                         for(var i=0;i<column.length;i++){  //循环获取返回值，并组装成html代码
-                        option +='<option value='+column[i]['id']+'>'+column[i]['name']+'</option>';
+                        option +='<option value='+column[i]['id']+'>'+column[i]['cname']+'</option>';
                         }
                     }else{
                         var option = '<option>请选择</option>';  //默认值
@@ -498,7 +498,33 @@
             });
         });
                 
-  
+         $("#category1").change(function(){
+            var url = '/center/column';
+            var data = $(this).val();
+                $.ajax({
+                url : url,
+                type : 'post',
+                datatype : 'json',
+                data : {
+                    data,
+                    '_token':'{{csrf_token()}}',
+                },
+                success : function(data){
+                    var status = data.code; //获取返回值
+                    var column = data.data;
+                    // alert(status);
+                    if (status == 10000) {
+                        var option = '';
+                        for(var i=0;i<column.length;i++){  //循环获取返回值，并组装成html代码
+                        option +='<option value='+column[i]['id']+'>'+column[i]['cname']+'</option>';
+                        }
+                    }else{
+                        var option = '<option>请选择</option>';  //默认值
+                    }
+                    $("#kind1").html(option);  //js刷新第二个下拉框的值
+                }
+            });
+        });
     </script>
   
 <script>
