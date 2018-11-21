@@ -48,7 +48,7 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">快递单号</label>
                         <div class="mws-form-item">
-                            <input type="text" name="tracking_no" class="small" placeholder="快递单号" value="">
+                            <input type="text" name="tracking_no" class="small" placeholder="快递单号" value="{{ $data->tracking_no }}">
                         </div>
                     </div>
                     <div class="mws-form-row" style="width: 800px;">
@@ -56,32 +56,17 @@
                         <div class="mws-form-item">
 
                             <select name="logistics_id" class="large">
+                                @if($data->logistics_id == '')
                                 <option value="1" selected>请选择快递公司</option>
+                                @endif
                                 @foreach($logistics as $k=>$v)
-                                    <option value="{{ $v->id }}" >{{ $v->company }}</option>
+                                    <option value="{{ $v->com_code }}" {{ $v->com_code == $data->logistics_id ? "selected" : '' }} >{{ $v->company }}</option>
                                 @endforeach
                             </select>
 
                         </div>
                     </div>
 
-                    <div class="mws-form-row" style="width: 800px;">
-                       <label class="mws-form-label">类型</label>
-                       <div class="mws-form-item">
-                   
-                           <select name="type" class="large">
-                           @if($data->type==1)
-                               <option value="1" selected>供应类型</option>
-                               <option value="2" >采购类型</option>
-                           @else
-                               <option value="2" selected>采购类型</option>
-                               <option value="1" >供应类型</option>
-                           @endif
-                   
-                           </select>
-                   
-                       </div>
-                   </div>
                     <div class="mws-form-row" style="width: 800px;">
                         <label class="mws-form-label">状态</label>
                         <div class="mws-form-item">

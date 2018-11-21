@@ -364,7 +364,8 @@ Route::get('/order/order','Order\OrderController@index');
 Route::post('/order/order','Order\OrderController@store');
 
 
-
+//订单物流信息
+Route::get('/order/order/logistics/{id}','Order\OrderController@logistics');
 
 //后台订单列表
 Route::resource('/admin/order','Admin\OrderController');
