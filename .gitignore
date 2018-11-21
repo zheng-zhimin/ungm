@@ -3,3 +3,8 @@
 Homestead.yaml
 Homestead.json
 .env
+.idea/lamp202.iml
+.idea/php.xml
+.idea/workspace.xml
+.gitignore
+.DS_Store

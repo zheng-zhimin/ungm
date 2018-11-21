@@ -362,6 +362,11 @@ Route::get('/order/order','Order\OrderController@index');
 Route::post('/order/order','Order\OrderController@store');
 
 
+
+//后台订单列表
+Route::resource('/admin/order','Admin\OrderController');
+
+
 //测试一下
 
 

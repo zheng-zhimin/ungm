@@ -207,6 +207,13 @@
                     </li>
 
                     <li class="active">
+                        <a href="#"><i class="icon-list"></i>订单信息</a>
+                        <ul>
+                            <li><a href="/admin/order">订单列表</a></li>
+                            {{--<li><a href="/admin/order/create">订单添加</a></li>--}}
+                        </ul>
+                    </li>
+                    <li class="active">
                         <a href="#"><i class="icon-user"></i>管理员账号管理</a>
                         <ul>
                             <li><a href="/admin/users">管理员列表</a></li>
