@@ -595,7 +595,7 @@ function playRains(){
 
 @media screen and (max-width: 1920px) {
    
-    .vie-1400{
+    .vie-1440{
         display: none;
     }
     .vie-1920{
@@ -630,7 +630,7 @@ function playRains(){
     .vie-1920{
         display: none;
     }
-    .vie-1400{
+    .vie-1440{
         display: block;
     }
     .swiper-slide-1 .text{

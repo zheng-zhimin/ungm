@@ -258,7 +258,14 @@ Route::get('/home/buymessage/third4','Home\NewhomeController@third4buymessage');
 Route::get('/home/meeting/list','Home\NewhomeController@meetinglist');
 //国内贸易->会议展示文章详情
 Route::get('/home/meeting/detail/{id}','Home\NewhomeController@meetingdetail');
-
+//国内贸易->考察展示全部栏目下的文章
+Route::get('/home/observe/list','Home\NewhomeController@observelist');
+//国内贸易->考察展示文章详情
+Route::get('/home/observe/detail/{id}','Home\NewhomeController@observedetail');
+//国内贸易->展览展示全部栏目下的文章
+Route::get('/home/exhibition/list','Home\NewhomeController@exhibitionlist');
+//国内贸易->展览展示文章详情
+Route::get('/home/exhibition/detail/{id}','Home\NewhomeController@exhibitiondetail');
 
 //采购信息列表内容点击
 Route::post('/home/buymessage/list','Home\NewhomeController@buymessagelist');

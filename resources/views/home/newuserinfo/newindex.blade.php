@@ -138,14 +138,41 @@
 
     <!---采购商内容开始-->
     <div class="content puma-addPurchasing">      
-        <div class="container">   
+        <div class="container"> 
+        <!-- 显示完善资料的信息-->
+                @if ( isset($identity) && $identity==1 )
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                        <ul class="text-warning">
+                           
+                                 <span ><p class="text-center">建议完善资料,以便客户与您联系</p></span>
+                          
+                        </ul>
+                    </div>
+               
+                @endif  
+
+                @if(isset($vip) && $vip==1 )
+                <!-- 显示发布提交的信息-->
+                @if ( isset($counting) && $counting >=1 )
+                 
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                        <ul class="text-warning">
+                           
+                                 <span ><p class="text-center">您发布的采购数量已经达到免费会员上限1条,如需发布更多求购信息请升级会员等级</p></span>
+                          
+                        </ul>
+                    </div>
+                  
+                    @endif
+
+              
+            @endif
                   <!-- 显示错误的信息-->
                 @if (count($errors) > 0)
                     <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
                         <ul class="text-warning">
                             @foreach ($errors->all() as $error)
-                                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                 <span >{{ $error }}</span>
+                                 <span ><p class="text-center">{{ $error }}</p></span>
                             @endforeach
                         </ul>
                     </div>

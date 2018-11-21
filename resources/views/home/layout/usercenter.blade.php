@@ -181,11 +181,12 @@
                   <a class="a3" href="/home/userinfo/account/{{Session::get('homeuser')->id}}" >账户设置</a>
                   
               </li>
-              <li class="dropdown">
+              
+          </ul> 
+          <li class="dropdown" style="float: right;margin-top: 15px;">
                   
                    <a href="/">返回首页</a>
-              </li>
-          </ul>  
+          </li> 
         </div> 
     </div>
 </div>

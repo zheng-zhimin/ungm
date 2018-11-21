@@ -393,19 +393,19 @@
 
                     <div class="col-md-4">
                         <div class="con-3-lump">
-                            <div class="lump1"><span>会议</span><a href="/home/meeting/list"><b>更多&nbsp;></b></a></div>
+                            <div class="lump1"><span>考察</span><a href="/home/observe/list"><b>更多&nbsp;></b></a></div>
 
                             <div class="tex">
-                               <a href="/home/meeting/detail/142"> <p class="p1">2019成都国际充电站（桩）技术设备展...</p>
+                               <a href="/home/observe/detail/142"> <p class="p1">2019成都国际充电站（桩）技术设备展...</p>
                                 <p class="p2">2019.1.01 - 2019.1.07</p> </a>
                                 <hr>
-                                <a href="/home/meeting/detail/133"><p class="p1">2019第16届中国（上海）国际保温、防水材料 与节能技术展览会...</p>
+                                <a href="/home/observe/detail/133"><p class="p1">2019第16届中国（上海）国际保温、防水材料 与节能技术展览会...</p>
                                 <p class="p2">2019.1.05 - 2019.1.08</p> </a>
                                 <hr>
-                                <a href="/home/meeting/detail/134"><p class="p1">2019年第二届新疆亚欧（国际）节能环保博览会...</p>
+                                <a href="/home/observe/detail/134"><p class="p1">2019年第二届新疆亚欧（国际）节能环保博览会...</p>
                                 <p class="p2">2019.1.06 - 2019.1.07</p></a>
                                 <hr>
-                                 <a href="/home/meeting/detail/135"><p class="p1">2019第二届武汉国际水利水电博览会...</p>
+                                 <a href="/home/observe/detail/135"><p class="p1">2019第二届武汉国际水利水电博览会...</p>
                                 <p class="p2">2019.2.02 - 2019.2.04</p></a>
 
                             </div>
@@ -415,19 +415,19 @@
         
          <div class="col-md-4">
                         <div class="con-3-lump">
-                            <div class="lump1"><span>会议</span><a href="/home/meeting/list"><b>更多&nbsp;></b></a></div>
+                            <div class="lump1"><span>展览</span><a href="/home/exhibition/list"><b>更多&nbsp;></b></a></div>
 
                            <div class="tex">
-                                 <a href="/home/meeting/detail/136"><p class="p1">2019天津工博会——天津机床展...</p>
+                                 <a href="/home/exhibition/detail/136"><p class="p1">2019天津工博会——天津机床展...</p>
                                 <p class="p2">2019.3.05 - 2019.3.07</p> </a>
                                 <hr>
-                                <a href="/home/meeting/detail/137"><p class="p1">第十届“一带一路”核电前沿高峰论坛...</p>
+                                <a href="/home/exhibition/detail/137"><p class="p1">第十届“一带一路”核电前沿高峰论坛...</p>
                                 <p class="p2">2019.2.04 - 2019.2.07</p> </a>
                                 <hr>
-                                <a href="/home/meeting/detail/138"><p class="p1">2019第七届中国（广州）国际自助售货系统与设施博览交易会...</p>
+                                <a href="/home/exhibition/detail/138"><p class="p1">2019第七届中国（广州）国际自助售货系统与设施博览交易会...</p>
                                 <p class="p2">2019.1.05 - 2019.2.08</p></a>
                                 <hr>
-                                <a href="/home/meeting/detail/139"> <p class="p1">2019中国国际（成都）锅炉及燃烧系统展...</p>
+                                <a href="/home/exhibition/detail/139"> <p class="p1">2019中国国际（成都）锅炉及燃烧系统展...</p>
                                 <p class="p2">2019.3.05 - 2019.3.10</p></a>
 
                             </div>

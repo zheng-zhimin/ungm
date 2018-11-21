@@ -870,6 +870,215 @@ public function meetingdetail($id)
     
 }          
 
+ //国内贸易->考察展示全部栏目下的文章
+public function observelist()
+{
+         // 获取文章数据,按添加时间倒序排序
+    $data = Articles::where('lanmu',95)->orderBy('created_at','desc')->paginate(10);
+        // 获取文章数据,按评论数量排序
+    $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 获取一级栏目的数据
+    $column = Column::where('pid',0)-> get();
+
+
+        // 获取所有的标签
+    $label = Label::get();
+    $labels = array();
+    foreach ($label as $k => $v) {
+        array_push($labels,$v -> label);
+    }
+    $mylabel = implode(',', $labels);
+    $mylabel = explode(',', $mylabel);
+    $mylabel = array_unique($mylabel);
+    $mylabel = array_flip($mylabel);
+    $labelength = count($mylabel);
+    if ($labelength < 15) {
+        $mylabels = array_rand($mylabel,$labelength);
+    }else{
+        $mylabels = array_rand($mylabel,15);
+    }
+    $rand = rand(0,9);
+
+
+        // 遍历去除内容中的图片
+    foreach ($data as $k => $v) {
+        $content=$v['content'];
+        $preg = "/<img(.*?)>/i"     ;
+        $v['content'] = preg_replace($preg,'', $content);
+        $v['content'] = strip_tags($v['content']);
+    }
+
+        // 显示模板,传递数据
+    return view('home.observe.list',['data' => $data,'column' => $column,'hot' => $hot,'mylabels' => $mylabels,'rand' => $rand]);
+    
+}
+    //国内贸易->考察展示文章详情
+public function observedetail($id)
+{
+         // 获取该文章的评论信息,按添加时间倒序排序,每10条一页
+    $comment = Comment::where('aid',$id)->orderby('created_at','desc')->paginate(5);
+    $cid = array();
+    foreach ($comment as $key => $value) {
+        array_push($cid,$value['id']);
+    }
+        // 获取该文章的标签
+    if ($label = Label::where('aid',$id) -> first()) {
+        $label = Label::where('aid',$id) -> first() -> label;
+        $labels = explode(',',$label);
+    }else{
+        $labels = array();
+    }
+
+
+        // 获取文章数据,按评论数量排序
+    $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 遍历去除评论内容中的html代码
+    foreach ($comment as $k => $v) {
+        $comment[$k] -> content = strip_tags($comment[$k] -> content);
+    }
+        // 获取登录用户是否收藏该文章
+    $collect=DB::table('collect')->where('aid',$id)->where('uid',session('homeuser')['id'])->first();
+        // 获取当前用户举报的评论数据
+    $jubao = DB::table('report') -> where('uid',session('homeuser')['id']) ->get();
+    $jubao1 = array();
+    foreach ($jubao as $key => $value) {
+        array_push($jubao1,$value -> cid);
+    }
+
+
+        // 获取当前用户顶过的评论数据
+    $up = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','1') ->get();
+    $up1 = array();
+    foreach ($up as $key => $value) {
+        array_push($up1,$value -> cid);
+    }
+        // 获取当前用户踩过的评论数据
+    $down = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','2') ->get();
+    $down1 = array();
+    foreach ($down as $key => $value) {
+        array_push($down1,$value -> cid);
+    }
+
+
+        // 上一篇下一篇文章
+    $detail=Articles::find($id);
+    $previd= Articles::where('id', '<', $id)->max('id');
+    $prev = Articles::find($previd);
+    $nextid=Articles::where('id', '>', $id)->min('id');
+    $next = Articles::find($nextid);
+        // 显示模板,传递数据
+    
+    return view('home.observe.detail', ['detail' => $detail,'prev'=>$prev,'next'=>$next,'comment'=>$comment,'collect'=>$collect,'hot' => $hot,'jubao' => $jubao1,'up' => $up1,'down' => $down1,'labels' => $labels]);
+    
+    
+    
+    
+}     
+   //国内贸易->展览展示全部栏目下的文章
+public function exhibitionlist()
+{
+         // 获取文章数据,按添加时间倒序排序
+    $data = Articles::where('lanmu',94)->orderBy('created_at','desc')->paginate(10);
+        // 获取文章数据,按评论数量排序
+    $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 获取一级栏目的数据
+    $column = Column::where('pid',0)-> get();
+
+
+        // 获取所有的标签
+    $label = Label::get();
+    $labels = array();
+    foreach ($label as $k => $v) {
+        array_push($labels,$v -> label);
+    }
+    $mylabel = implode(',', $labels);
+    $mylabel = explode(',', $mylabel);
+    $mylabel = array_unique($mylabel);
+    $mylabel = array_flip($mylabel);
+    $labelength = count($mylabel);
+    if ($labelength < 15) {
+        $mylabels = array_rand($mylabel,$labelength);
+    }else{
+        $mylabels = array_rand($mylabel,15);
+    }
+    $rand = rand(0,9);
+
+
+        // 遍历去除内容中的图片
+    foreach ($data as $k => $v) {
+        $content=$v['content'];
+        $preg = "/<img(.*?)>/i"     ;
+        $v['content'] = preg_replace($preg,'', $content);
+        $v['content'] = strip_tags($v['content']);
+    }
+
+        // 显示模板,传递数据
+    return view('home.exhibition.list',['data' => $data,'column' => $column,'hot' => $hot,'mylabels' => $mylabels,'rand' => $rand]);
+    
+}
+    //国内贸易->展览展示文章详情
+public function exhibitiondetail($id)
+{
+         // 获取该文章的评论信息,按添加时间倒序排序,每10条一页
+    $comment = Comment::where('aid',$id)->orderby('created_at','desc')->paginate(5);
+    $cid = array();
+    foreach ($comment as $key => $value) {
+        array_push($cid,$value['id']);
+    }
+        // 获取该文章的标签
+    if ($label = Label::where('aid',$id) -> first()) {
+        $label = Label::where('aid',$id) -> first() -> label;
+        $labels = explode(',',$label);
+    }else{
+        $labels = array();
+    }
+
+
+        // 获取文章数据,按评论数量排序
+    $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
+        // 遍历去除评论内容中的html代码
+    foreach ($comment as $k => $v) {
+        $comment[$k] -> content = strip_tags($comment[$k] -> content);
+    }
+        // 获取登录用户是否收藏该文章
+    $collect=DB::table('collect')->where('aid',$id)->where('uid',session('homeuser')['id'])->first();
+        // 获取当前用户举报的评论数据
+    $jubao = DB::table('report') -> where('uid',session('homeuser')['id']) ->get();
+    $jubao1 = array();
+    foreach ($jubao as $key => $value) {
+        array_push($jubao1,$value -> cid);
+    }
+
+
+        // 获取当前用户顶过的评论数据
+    $up = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','1') ->get();
+    $up1 = array();
+    foreach ($up as $key => $value) {
+        array_push($up1,$value -> cid);
+    }
+        // 获取当前用户踩过的评论数据
+    $down = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','2') ->get();
+    $down1 = array();
+    foreach ($down as $key => $value) {
+        array_push($down1,$value -> cid);
+    }
+
+
+        // 上一篇下一篇文章
+    $detail=Articles::find($id);
+    $previd= Articles::where('id', '<', $id)->max('id');
+    $prev = Articles::find($previd);
+    $nextid=Articles::where('id', '>', $id)->min('id');
+    $next = Articles::find($nextid);
+        // 显示模板,传递数据
+    
+    return view('home.exhibition.detail', ['detail' => $detail,'prev'=>$prev,'next'=>$next,'comment'=>$comment,'collect'=>$collect,'hot' => $hot,'jubao' => $jubao1,'up' => $up1,'down' => $down1,'labels' => $labels]);
+    
+    
+    
+    
+}      
+
    //显示个人中心的控制器(信息管理)
 public function usercenter()
 {
@@ -880,8 +1089,9 @@ public function usercenter()
     $phone=$user->phone;
 
     //查一下用户表里这个人的企业认证身份1企业未认证,2是认证
-    $identity=Newusers::where('id',$id)->get()->toArray();
-    $identity=$identity[0]['identity'];
+    $xinxi=Newusers::where('id',$id)->get()->toArray();
+    $identity=$xinxi[0]['identity'];
+    $vip=$xinxi[0]['vip'];
     //dd($identity);
         //关联用户详情表查询所查字段头像地址邮箱等信息(随便查所需要的字段)  
     $userdetail=Ungmuserdetail::where('uid',$id)->get();
@@ -912,7 +1122,8 @@ public function usercenter()
         'counting'=>$counting,
         'countun'=>$countun,
         'countold'=>$countold,
-        'identity'=>$identity
+        'identity'=>$identity,
+        'vip'=>$vip
     ]);
 }
 
@@ -926,14 +1137,26 @@ public function usercentered()
     $phone=$user->phone;
 
     //查一下用户表里这个人的企业认证身份1企业未认证,2是认证
-    $identity=Newusers::where('id',$id)->get()->toArray();
-    $identity=$identity[0]['identity'];
+    $xinxi=Newusers::where('id',$id)->get()->toArray();
+    $identity=$xinxi[0]['identity'];
+    $vip=$xinxi[0]['vip'];
+
     //dd($identity);
         //关联用户详情表查询所查字段头像地址邮箱等信息(随便查所需要的字段)  
     $userdetail=Ungmuserdetail::where('uid',$id)->get();
     
         //供应发布动态
     $selloffer=Selloffer::where('uid',$id)->get();
+    //0就是审核中;1是审核通过页面展示以发布;2是未通过;3已过期
+    $selloffered = Selloffer::where('uid',$id)->where('status','1')->get();
+    $selloffering = Selloffer::where('uid',$id)->where('status','0')->get();
+    $sellofferun = Selloffer::where('uid',$id)->where('status','2')->get();
+    $sellofferold=Selloffer::where('uid',$id)->where('status','3')->get();
+
+    $scounted = Selloffer::where('uid',$id)->where('status','1')->count();
+    $scounting = Selloffer::where('uid',$id)->where('status','0')->count();
+    $scountun = Selloffer::where('uid',$id)->where('status','2')->count();
+    $scountold = Selloffer::where('uid',$id)->where('status','3')->count();
        // dd($selloffer);
         //发布的采购信息
     $buyoffered = Buyoffer::where('uid',$id)->where('status','1')->get();
@@ -947,10 +1170,12 @@ public function usercentered()
     $countold = Buyoffer::where('uid',$id)->where('status','3')->count();
         //dd($user);
       //获取column所有信息
+     
     $column = Column::where('pid',0)->limit('5')->get();
         //dd($id);
     return view('home.newuserinfo.newindexed',['user'=>$user,
         'userdetail'=>$userdetail,
+
         'buyoffered'=>$buyoffered,
         'buyoffering'=>$buyoffering,
         'buyofferun'=>$buyofferun,
@@ -959,8 +1184,19 @@ public function usercentered()
         'counting'=>$counting,
         'countun'=>$countun,
         'countold'=>$countold,
+       
+        'selloffered'=>$selloffered,
+        'selloffering'=>$selloffering,
+        'sellofferun'=>$sellofferun,
+        'sellofferold'=>$sellofferold,
+        'scounted'=>$scounted,
+        'scounting'=>$scounting,
+        'scountun'=>$scountun,
+        'scountold'=>$scountold,
+
         'column'=>$column,
-        'identity'=>$identity
+        'identity'=>$identity,
+        'vip'=>$vip
     ]);
 }
 
@@ -1050,9 +1286,19 @@ public function adduser(Request $request)
               //接收个人中心的数据(采购+产品)
     public function adduser2(Request $request)
     {
+        //添加首先判断vip等级
+        $vip=Session::get('homeuser')->vip;
+        //联合判断发布的产品和采购的数量
+        $id=Session::get('homeuser')->id;
+        $counting = Buyoffer::where('uid',$id)->where('status','0')->count();
+        //$scounting = Selloffer::where('uid',$id)->where('status','0')->count();
+        if($vip==1 && $counting>=1){
+            return back()->withErrors(['您的免费会员发布采购信息的次数已经用完!采购信息正在审核中!']);
+        }
+        
         $category=$request->input('category');
         $kind=$request->input('kind');
-        // var_dump($kind);die;
+         //var_dump($kind);die;
         $selected = "$category-$kind";
         // dd($selected);
         $this->validate($request,[
@@ -1138,7 +1384,15 @@ public function adduser(Request $request)
      //接收个人中心的数据(采购+产品的发布)
     public function addselleruser2(Request $request)
     {
-        
+        //添加首先判断vip等级
+        $vip=Session::get('homeuser')->vip;
+        //联合判断发布的产品和采购的数量
+        $id=Session::get('homeuser')->id;
+        $scounting = Selloffer::where('uid',$id)->where('status','0')->count();
+        //$scounting = Selloffer::where('uid',$id)->where('status','0')->count();
+        if($vip==1 && $scounting>=1){
+            return back()->withErrors(['您的免费会员所发布产品信息的条数已经用完!产品信息正在审核中!']);
+        }
          $category1=$request->input('category');
         $kind1=$request->input('kind');
         // var_dump($category1,$kind1);die;

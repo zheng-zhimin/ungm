@@ -139,13 +139,38 @@
     <!---采购商内容开始-->
     <div class="content puma-addPurchasing">      
         <div class="container">   
+        @if(isset($vip) && $vip==1 )
+                <!-- 显示发布提交的信息-->
+                @if ( isset($counting) && $counting >=1 )
+                 
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                        <ul class="text-warning">
+                           
+                                 <span ><p class="text-center">您发布的采购数量已经达到免费会员上限1条,如需发布更多求购信息请升级会员等级</p></span>
+                          
+                        </ul>
+                    </div>
+                  
+                @endif
+
+                 @if ( isset($scounting) && $scounting >=1 )
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                        <ul class="text-warning">
+                           
+                                 <span ><p class="text-center">您发布的产品数量已经达到免费会员上限1条,如需发布更多产品信息请升级会员等级</p></span>
+                          
+                        </ul>
+                    </div>
+                @endif
+        @endif
+           
                   <!-- 显示错误的信息-->
                 @if (count($errors) > 0)
                     <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
                         <ul class="text-warning">
                             @foreach ($errors->all() as $error)
-                                <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                                 <span >{{ $error }}</span>
+                                
+                                 <span ><p class="text-center">{{ $error }}<p></span>
                             @endforeach
                         </ul>
                     </div>
@@ -311,16 +336,16 @@
                                         <a class="nav-link " data-toggle="tab" href="#addProcurement-2" role="tab" align="center"><span class="zzzzz" style="font-weight: 600;">发布产品<span></span></span></a> 
                                     </li>
                                     <li class="nav-item nav-item-2"> 
-                                        <a class="nav-link" data-toggle="tab" href="#released-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">已发布（<span>0</span>）</span></a> 
+                                        <a class="nav-link" data-toggle="tab" href="#released-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">已发布（<span>{{$scounted}}</span>）</span></a> 
                                     </li>
                                     <li class="nav-item nav-item-3"> 
-                                        <a class="nav-link " data-toggle="tab" href="#inReview-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">审核中（<span>0</span>）</span></a> 
+                                        <a class="nav-link " data-toggle="tab" href="#inReview-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">审核中（<span>{{$scounting}}</span>）</span></a> 
                                     </li>
                                     <li class="nav-item nav-item-4"> 
-                                        <a class="nav-link" data-toggle="tab" href="#notPass-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">未通过（<span>0</span>）</span></a> 
+                                        <a class="nav-link" data-toggle="tab" href="#notPass-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">未通过（<span>{{$scountun}}</span>）</span></a> 
                                     </li>
                                     <li class="nav-item nav-item-5"> 
-                                        <a class="nav-link " data-toggle="tab" href="#expired-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">已过期（<span>0</span>）</span></a> 
+                                        <a class="nav-link " data-toggle="tab" href="#expired-2" role="tab" align="center"><span class="hidden-xs-down" style="font-weight: 600;">已过期（<span>{{$countold}}</span>）</span></a> 
                                     </li>
                                 </ul>
 

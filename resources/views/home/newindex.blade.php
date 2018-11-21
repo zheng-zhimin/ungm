@@ -863,11 +863,11 @@
                         <div class="cooperation-ph">
                             <img class="img-responsive" src="/ungmhome/images/6.png">
                         </div>
-<<<<<<< HEAD
+
                         <a onclick="resize_window()"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="点击在线咨询" /></a>
-=======
-                        <a href="http://wpa.qq.com/msgrd?v=3&uin=837495362&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="有事点这里" /></a>
->>>>>>> origin/lys
+
+                       
+
                     </div>
                 </div>
             </div>
@@ -880,7 +880,12 @@
     </style>
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
+<script>(function(){var c=document.createElement("script"),s=document.getElementsByTagName("script")[0];c.src="//kefu.ziyun.com.cn/vclient/?webid=142149";s.parentNode.insertBefore(c,s);})();</script>
 <script type="text/javascript">
+
+
+
+
 function resize_window() {
         window.open ('http://wpa.qq.com/msgrd?v=3&uin=837495362&site=qq&menu=yes','newwindow','height=599,width=599,top=0,left=0,toolbar=no,menubar=no,scrollbars=no, resizable=no,location=no, status=no')
 }
