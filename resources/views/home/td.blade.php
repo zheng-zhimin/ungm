@@ -422,6 +422,7 @@
                                         <div class="tender tender-left">
                                             <h4 align="left">基本条件</h4>
                                                 <hr>
+            <input type="hidden" name="uid" id="uid" value="{{ Session('homeuser')->id }}">
             <div class="import" align="left">
                 <div id="" class="rowledge rowledge-1">
                     <span>标题：</span>
@@ -503,10 +504,10 @@
                           for(var i=0;i<datas.length;i++){
                                 var zzm="<div class='row row2'>"+
                                 "<div align='center' class='col-md-2 sh'>"+
-                            "<div><a href='#'>"+datas[i].code+"</a></div>"+
+                            "<div>"+datas[i].code+"</div>"+
                             "</div>"+
                             "<div align='center' class='col-md-2 sh'>"+
-                            "<div><a href='#'>"+datas[i].title+"</a></div>"+
+                            "<div>"+datas[i].title+"</div>"+
                             "</div>"+
                             "<div align='center' class='col-md-3 sh'>"+
                             "    <div>"+datas[i].deadline+"</div>"+
@@ -555,7 +556,7 @@
                             "</div>"+
                             "</div>"+
                             "<div align='center' class='col-md-2 sh'>"+
-                            "<div><a href='#'>"+datas[i].title+"</a></div>"+
+                            "<div>"+datas[i].title+"</div>"+
                             "</div>"+
                             "<div align='center' class='col-md-3 sh'>"+
                             "    <div>"+datas[i].published+"</div>"+
@@ -583,7 +584,7 @@
                 function cle()
                 {
                     var a= $('input[type=text]').val("");
-                  
+                   
                 }
 
 
@@ -593,9 +594,11 @@
             function like(obj)
             {
                 var id = $(obj).attr('id');
-                var a2 = $(obj).parent().parent().next().children().find('a').text();
+                var uid=$("#uid").val();
+                var title = $(obj).parent().parent().next().children().text();
+
                // alert('您已对'+a2+'项目感兴趣');
-                 $.post('/home/like/ungmproject',{'id':id,'_token':'{{csrf_token()}}'}, function(datas) {
+                 $.post('/home/like/ungmproject',{'id':id,'uid':uid,'title':title,'_token':'{{csrf_token()}}'}, function(datas) {
                         alert(datas);
                   })
 

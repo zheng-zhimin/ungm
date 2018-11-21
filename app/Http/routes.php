@@ -143,18 +143,52 @@ Route::post('/home/ler/uploads','Home\LerController@uploads');
 
 //前台主页模板路径
 route::get('/','Home\NewhomeController@index');
-//前台全球贸易(Global-Trade)的路由
-route::get('/home/gt','Home\NewhomeController@gt');
-//前台国内贸易(China-Trade)的路由
-route::get('/home/ct','Home\NewhomeController@ct');
-//前台招投标服务(Tender 投标)路由
-route::get('/home/td','Home\NewhomeController@td');
-//前台会员发展(Member Development)路由
-route::get('/home/md','Home\NewhomeController@md');
-//前台货币换算器(Currency converter)路由
-route::get('/home/cc','Home\NewhomeController@cc');
-//前台集客路由
-route::get('/home/jk','Home\NewhomeController@jk');
+
+
+//中间件设置跳转登录的页面都应该放在这里面
+Route::group(['middleware'=>'login'], function(){
+    //前台全球贸易(Global-Trade)的路由
+    route::get('/home/gt','Home\NewhomeController@gt');
+    //前台国内贸易(China-Trade)的路由
+    route::get('/home/ct','Home\NewhomeController@ct');
+    //前台会员发展(Member Development)路由
+    route::get('/home/md','Home\NewhomeController@md');
+    //前台货币换算器(Currency converter)路由
+    route::get('/home/cc','Home\NewhomeController@cc');
+    //前台集客路由
+    route::get('/home/jk','Home\NewhomeController@jk');
+    //前台招投标服务(Tender 投标)路由
+    route::get('/home/td','Home\NewhomeController@td');
+
+    //q前台超级搜索
+    Route::post('/home/searchbuy','Home\NewhomeController@searchbuy');
+    Route::post('/home/searchsell','Home\NewhomeController@searchsell');
+
+    //前台产品列表二级页面
+    Route::get('/home/product/second','Home\NewhomeController@secondproduct');
+    //前台点击产品分类表直接跳到产品的全部(详细)三级页面
+    Route::get('/home/product/third','Home\NewhomeController@thirdproduct');
+    Route::get('/home/product/third1','Home\NewhomeController@third1product');
+    Route::get('/home/product/third2','Home\NewhomeController@third2product');
+    Route::get('/home/product/third3','Home\NewhomeController@third3product');
+    Route::get('/home/product/third4','Home\NewhomeController@third4product');
+
+
+    //前台求购的二级页
+    Route::get('/home/buymessage/second','Home\NewhomeController@secondbuymessage');
+    //前台求购的三级页
+    Route::get('/home/buymessage/third','Home\NewhomeController@thirdbuymessage');
+    Route::get('/home/buymessage/third1','Home\NewhomeController@third1buymessage');
+    Route::get('/home/buymessage/third2','Home\NewhomeController@third2buymessage');
+    Route::get('/home/buymessage/third3','Home\NewhomeController@third3buymessage');
+    Route::get('/home/buymessage/third4','Home\NewhomeController@third4buymessage');
+
+
+});
+
+
+
+
 //前台联系我们的路由
 route::get('/home/contact','Home\NewhomeController@contact');
 //前台关于我们的路由
@@ -200,9 +234,7 @@ Route::post('/list/son','Home\NewhomeController@son');//前台获取分类栏目
 Route::post('/list/pic','Home\NewhomeController@pic');//获取栏目下广告图片的ajax路由,后期这些都可以加缓存
 /*Route::post('/list/fb','Home\NewhomeController@findbuy');//获取搜索框查询采购商的ajax路由,后期这些都可以加缓存
 Route::post('/list/fs','Home\NewhomeController@findsell');//获取搜索框查询供应商的ajax路由,后期这些都可以加缓存*/
-//q前台超级搜索
-Route::post('/home/searchbuy','Home\NewhomeController@searchbuy');
-Route::post('/home/searchsell','Home\NewhomeController@searchsell');
+
 
 
 
@@ -228,7 +260,7 @@ Route::get('/home/businesspolicy/more','Home\NewhomeController@pmore');
 //前台政策解读文章列表专属路由
 Route::get('/home/article/businesspolicy/{id}','Home\NewhomeController@pmoredetail');
 
-//前台普通用户招标信息查询
+ //前台普通用户招标信息查询
 Route::post('/home/query/mess','Home\SearchController@query');
 //前台ungm招标信息查询
 Route::post('/home/query/ungmmess','Home\SearchController@ungmquery');
@@ -236,24 +268,7 @@ Route::post('/home/query/ungmmess','Home\SearchController@ungmquery');
 Route::post('/home/like/ungmproject','Home\SearchController@ungmproject');
 
 
-//前台产品列表二级页面
-Route::get('/home/product/second','Home\NewhomeController@secondproduct');
-//前台点击产品分类表直接跳到产品的全部(详细)三级页面
-Route::get('/home/product/third','Home\NewhomeController@thirdproduct');
-Route::get('/home/product/third1','Home\NewhomeController@third1product');
-Route::get('/home/product/third2','Home\NewhomeController@third2product');
-Route::get('/home/product/third3','Home\NewhomeController@third3product');
-Route::get('/home/product/third4','Home\NewhomeController@third4product');
 
-
-//前台求购的二级页
-Route::get('/home/buymessage/second','Home\NewhomeController@secondbuymessage');
-//前台求购的三级页
-Route::get('/home/buymessage/third','Home\NewhomeController@thirdbuymessage');
-Route::get('/home/buymessage/third1','Home\NewhomeController@third1buymessage');
-Route::get('/home/buymessage/third2','Home\NewhomeController@third2buymessage');
-Route::get('/home/buymessage/third3','Home\NewhomeController@third3buymessage');
-Route::get('/home/buymessage/third4','Home\NewhomeController@third4buymessage');
 
 
 //国内贸易->会议展示全部栏目下的文章

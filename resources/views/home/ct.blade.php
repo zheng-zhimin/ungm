@@ -67,7 +67,7 @@
                     <div class="example">
                         <div class="ft-carousel" id="carousel_1">        
                                 <a class="a"></a>
-                                <b>展会推荐</b>
+                                <b>热点推荐</b>
                            <ul class="carousel-inner">
                                 <li class="carousel-item">
                                     <div class="row">

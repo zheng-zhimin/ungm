@@ -20,16 +20,9 @@
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 </head>
 <style type="text/css" media="screen">
-    .inp{
+     .inp{
         float: right;
-        width: 70px;
-        height: 38px;
-        
-        border-radius: 0px 4px 4px 0px;   
-    }
-    .inpa{
-        float: right;
-        width: 70px;
+        width: 12%;
         height: 38px;
         background-color: #00b7a1;
         border-radius: 0px 4px 4px 0px;   
@@ -38,19 +31,14 @@
         margin: 0 auto;
         margin-top: 5px;
     }
-     
-    .inpa img{
-        margin: 0 auto;
-        margin-top: 5px;
-    }
     .duihuan{
         float: left;
-        width: 530px;
+        width: 88%;
         border: 1px solid #d8d8d8;
     }
     .duihuan-1{
         display:inline-block; 
-        width: 455px;
+
         height: 36px;
         border: none;
     }
@@ -60,7 +48,7 @@
     }
     .selectpicker-1{
         display:inline-block; 
-        width: 523px;
+        width: 84%;
         height: 36px;
         border: none;
     }
@@ -71,23 +59,19 @@
         margin-left: 5px;
     }
     input{outline:none;}
-    input:focus { outline: none !import ;} 
+    input:focus { outline: none;!import } 
     .selectpicker-1{outline:none; border:none;}
-    .selectpicker-1:focus { outline: none !import; } 
-    .select{ 
-        background: url("/ungmhome/images/ds.png") no-repeat scroll right center transparent;
+    .selectpicker-1:focus { outline: none;!import } 
+    select{
          appearance:none;  
-         -moz-appearance:none;  
-         -webkit-appearance:none;
+        -moz-appearance:none;  
+        -webkit-appearance:none;
+         background: url("/ungmhome/images/ds.png") no-repeat scroll right center transparent;
          padding-right: 14px;
     }
-    .nn-7{
-    color: #3477ff !important;
-    border-bottom: 2px solid #3477ff;
-}
 </style>
 <body>
-  
+ 
     <!---内容开始-->
     <div class="content scaler">
         <img src="/ungmhome/images/货币换算.jpg" class="img-responsive banner currencyTranslation-banner" alt="">
@@ -97,7 +81,7 @@
             </div>
             <div class="scalerinput">
                 <div class="inputt">
-                        <div class="input-group input-group-1" style="width: 600px">
+                        <div class="input-group input-group-1" style="width:100%">
                         <label class="lab">原始货币:</label>
                         <select name="selectA" id="selectA" class="selectpicker selectpicker-1 select">
                             
@@ -126,7 +110,7 @@
                         </select>
                         </div>
                         <br>
-                        <div class="input-group" style="width: 600px">
+                        <div class="input-group" style="width: 100%">
                             <div class="duihuan">
                                 <label class="lab">兑换数额:</label>
                                 <input  type="text" class="duihuan-1" id="count"placeholder="请输入数字" onkeyup="num(this)">
@@ -141,12 +125,12 @@
                                 </script>
 
                             </div>
-                            <span class=" inpa">
+                            <span class="inp">
                                 <img class="img-responsive"src="/ungmhome/images/exchangeRate.png">
                             </span>
                         </div>
                         <br>
-                        <div class="input-group input-group-1" style="width: 600px">
+                        <div class="input-group input-group-1" style="width: 100%">
                             <div class="duihuan"style="border:1px;" >
                                 <label class="lab">目标货币:</label>
                                 <input type="text" class="duihuan-1"  value="人民币" readonly="readonly">

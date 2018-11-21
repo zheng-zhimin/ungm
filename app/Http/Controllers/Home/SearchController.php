@@ -101,9 +101,25 @@ class SearchController extends Controller
 
     public function ungmproject(Request $req)
     {
-        $id=$req->id;
-        //return $id;
-            $data=Ungmungmlike::where('id','1')->first();
+             $id=$req->id;//ungm招标文件的id编号
+             $uid=$req->uid;//session中用户的id编号
+             $title=$req->title;
+             //$id1=Ungmungmlike::where('ungmid',$id)->first();
+
+             $data= new Ungmungmlike;
+
+             $data->uid=$uid;
+             $data->ungmid=$id;
+             $res=$data->save();
+
+             if($res){
+                return $result='已向后台表达了您对'.$title.'项目的兴趣,客服会在1-2个工作日内与您沟通';
+             }else{
+                return $result='表达兴趣失败';
+             }
+            //return $uid;
+            //
+
             
            
     }
