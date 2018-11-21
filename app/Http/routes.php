@@ -366,6 +366,12 @@ Route::post('/order/order','Order\OrderController@store');
 
 
 
+//后台订单列表
+Route::resource('/admin/order','Admin\OrderController');
+
+
+
+
 
 //-------------------new 网站的路由结束----------------------//
 
