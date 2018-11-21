@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <link rel="stylesheet" href="/ungmhome/css/style.css">
+    <link rel="stylesheet" href="/ungmhome/css/style.css?v=111">
     <style>
         .myPurchaseOrder table thead tr th {
             padding: 10px 0;
@@ -61,9 +61,9 @@
                                     <td>{{$val->order_sn}}</td>
                                     <td>{{$val->order_amount}}</td>
                                     <td>{{$val->pay_status == 0 ? '未支付' : '已支付' }}</td>
-                                    <td>{{$val->goods_id }}</td>
+                                    <td>{{$val->act->title }}</td>
                                     <td>{{$val->tracking_no }}</td>
-                                    <td onclick="wuliu(this)" id="{{$val->id}}">查看物流</td>
+                                    <td style="cursor: pointer" onclick="wuliu(this)" id="{{$val->id}}">查看物流</td>
                                 </tr>
                             @endforeach
                             </tbody>
@@ -72,7 +72,24 @@
                     </div>
                     <div class="mySupplyOrder hintOne"><p>您暂无供应订单交易</p></div>
                     <div class="myInvoice hintOne"><p>您暂无可申请的发票</p></div>
-                    <div class="myLogistics hintOne"><p>物流暂未开通</p></div>
+                    <div class="myLogistics hintOne">
+                        <p class="default">请点击采购订单</p>
+                        <ul class="logistics">
+                        {{--<ul class="">
+                            <li class="logistics1"><div></div><b>2018-11-20</b><span>09:00:00</span><span>您的订单已经开始处理</span></li>
+                            <li class="logistics3"><span>|</span></li>
+                            <li><div></div><span class="logistics2">09:30:00 </span><span>卖家发货</span></li>
+                            <li class="logistics3"><span>|</span></li>
+                            <li><div></div><span class="logistics2">09:45:00 </span><span>【德邦物流】已收寄</span></li>
+                            <li class="logistics3"><span>|</span></li>
+                            <li class="logistics1"><div></div><b>2018-11-21</b><span>15:00:00</span><span> 离开【北京物流处理中心】 下一站 【河北保定物流中心】</span></li>
+                            <li class="logistics3"><span>|</span></li>
+                            <li><div></div><span class="logistics2">20:30:00</span><span>到达【河北保定物流中心】</span></li>
+                            <li class="logistics3"><span>|</span></li>
+                            <li class="myColor logistics4"><div></div><span class="logistics2">23:50:00</span><span>离开【河北保定物流中心】  下一站 【山东济南物流中心】</span></li>
+                        </ul>
+                        <span class="logistics5">以上为快递公司原文信息</span>--}}
+                    </div>
                 </div>
             </div>
             <div class="myShippingAddress managementUl">
@@ -130,13 +147,43 @@
 <script src="/ungmhome/js/jquery.js"></script>
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
 <script>
+    $('body').click(function(){
+        $(".logistics").empty();
+    })
+    $('.myHint').click(function(){
+        return false;
+    })
 
 function wuliu(obj) {
     var id = $(obj).attr('id');
-    alert(id)
+    var info = '';
+    // alert(id)
+    $.ajax({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        type: 'POST',
+        url: '/order/order/logistics',
+        data: {id:id},
+        dataType: 'json',
+        success: function(data){
+
+            for(var i=0;i<data.length-1;i++){
+                info +='<li class="logistics1"><div></div><b>'+data[i].datetime.split(' ')[0]+'</b><span>'+data[i].datetime.split(' ')[1]+'</span><span>'+data[i].remark+'</span></li>';
+
+            }
+            var infos = '<span class="logistics5">以上为快递公司原文信息</span>';
+            $(".default").remove();
+            $(".logistics").append(info);
+            $(".logistics li:last-child").addClass('myColor').css({'line-hight':'30px'});
+            $(".logistics").append(infos);
+        },
+    });
     $('#wuliu').addClass('btnColor').siblings().removeClass('btnColor');
     $('.myHint .hintOne').eq(3).show().siblings('.hintOne').hide();
 }
+
+
 
 </script>
 <script>
@@ -149,6 +196,12 @@ $('.myNav span').click(function(){
     var _index = $(this).index();
     $(this).addClass('btnColor').siblings().removeClass('btnColor');
     $('.myHint .hintOne').eq(_index).show().siblings('.hintOne').hide();
+    if(_index == 3){
+        // alert($(".default").text());
+        if($(".default").text() == ''){
+            // $(".myLogistics").append('<p class="default">请点击采购订单</p>');
+        }
+    }
 })
 </script>
 </html>

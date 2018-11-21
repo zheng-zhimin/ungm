@@ -135,8 +135,9 @@ class OrderController extends Controller
         curl_close($ch);
         return $data;
     }
-    public function logistics($id)
+    public function logistics(Request $request)
     {
+        $id = $request->input('id');
         $param = DB::table('API')->where('code','物流信息')->first();
 
         $url = 'http://v.juhe.cn/exp/index';
@@ -154,8 +155,11 @@ class OrderController extends Controller
 
         $res = $this->request_post($url, $post_data);
         $data = json_decode($res,true);
-        echo "<pre>";
-        print_r($data['result']['list']);
+        $res = $data['result']['list'];
+//        dd($res);
+        echo json_encode($res);
+
+
 
     }
 

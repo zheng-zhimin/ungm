@@ -60,11 +60,11 @@
                             <tr>
                                 <td>{{ $v->order_sn  }}</td>
                                 <td>{{ $v->order_amount  }}</td>
-                                <td>{{ $v->uid  }}</td>
+                                <td>{{ $v->users->username  }}</td>
                                 <td>{{ $v->pay_status == 0 ? '未支付' : '已支付' }}</td>
-                                <td>{{ $v->goods_id  }}</td>
+                                <td>{{ $v->act->title  }}</td>
                                 <td>{{ $v->tracking_no  }}</td>
-                                <td style="width:310px">
+                                <td>
                                     <div style="float:left; margin-right:5px;">
                                         <form action="/admin/order/{{  $v->id  }}" method="post">
                                             {{ csrf_field() }}

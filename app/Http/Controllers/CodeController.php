@@ -100,6 +100,57 @@ class CodeController extends Controller
     {
         //
     }
+  /**
+     * @param string $url
+     * @param string $param
+     * @return bool|mixed
+     * 物流信息接口调用
+     */
+    public function request_post($url = '', $param = '')
+    {
+        if (empty($url) || empty($param)) {
+            return false;
+        }
+
+        $postUrl = $url;
+        $curlPost = $param;
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL,$postUrl);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POST, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $curlPost);
+        $data = curl_exec($ch);//运行curl
+        curl_close($ch);
+        return $data;
+    }
+    public function logistics(Request $request)
+    {
+        $id = $request->input('id');
+        $param = DB::table('API')->where('code','物流信息')->first();
+
+        $url = 'http://v.juhe.cn/exp/index';
+        $post_data['key'] = $param->key;
+
+        $order = order::where('id', '=', $id)->first();
+        $post_data['no']  = $order->tracking_no;
+        $post_data['com'] = $order->logistics_id;
+        $o = "";
+        foreach ( $post_data as $k => $v )
+        {
+            $o.= "$k=" . urlencode( $v ). "&" ;
+        }
+        $post_data = substr($o,0,-1);
+
+        $res = $this->request_post($url, $post_data);
+        $data = json_decode($res,true);
+        $res = $data['result']['list'];
+//        dd($res);
+        echo json_encode($res);
+
+
+
+    }
 
 
 
