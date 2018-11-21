@@ -56,16 +56,14 @@
                 var zzm= " <div class='oneMRO'>"+
                 "<img src='"+datas[i].articles_image_path+"'>"+
                 "</div><div class='twoMRO'><div class='ltMRO'>"+
-                "<h1 class='slh'><a href='/home/productfour/"+datas[i].id+"'>"+datas[i].title+"</a></h1>"+
+                "<h1 class='slh'><a href='/home/product/order'>"+datas[i].title+"</a></h1>"+
                 "<p>上架时间:"+datas[i].timezone+"</p>"+
                 "<div class='rtMRO'>"+
                 "<h2>价格面议</h2>"+
                 "<p>地区全国:"+datas[i].area+"</p>"+
                 "<p>行业:"+datas[i].industry+"</p>"+
                 "<p>公司:"+datas[i].company+"</p>"+
-                "<a href='/home/productfour/"+datas[i].id+"' method='post'>"+
-                "<input type='button' value='在线询价'>"+
-                "</a>"+
+                "<a href='/home/productcart/241'> <input type='button' value='在线询价'></a>"+
                 "</div></div>";
             $('.ABC').append(zzm);
          }
@@ -79,7 +77,7 @@
 
                 <div class="twoMRO">
                     <div class="ltMRO">
-                        <h1><a href="">福州市蓝象数控 双工位四工序加工中心开料机</a></h1>
+                        <h1><a href="/home/product/order">商务服务</a></h1>
                         <div class="">
                             <ul>
                                 <li><label for="">服务办公室</label><input type="text" readonly  value="即租即用"></li>
@@ -98,7 +96,7 @@
                         <p>所在地：北京</p>
                         <p class="rtVip">普通会员</p>
                         
-                        <input type="button" value="在线询价">
+                        <a href="/home/productcart/241"> <input type="button" value="在线询价"></a>
 
                     </div>
 </div>                

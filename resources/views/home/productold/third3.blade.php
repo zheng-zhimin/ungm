@@ -56,7 +56,7 @@
                 var zzm= " <div class='oneMRO'>"+
                 "<img src='"+datas[i].articles_image_path+"'>"+
                 "</div><div class='twoMRO'><div class='ltMRO'>"+
-                "<h1 class='slh'><a href='/home/product/order'>"+datas[i].title+"</a></h1>"+
+                "<h1 class='slh'><a href='/home/productfour/"+datas[i].id+"'>"+datas[i].title+"</a></h1>"+
                 "<p>上架时间:"+datas[i].timezone+"</p>"+
                 "</div>"+
                 "<div class='rtMRO'>"+
@@ -64,7 +64,9 @@
                 "<p>地区全国:"+datas[i].area+"</p>"+
                 "<p>行业:"+datas[i].industry+"</p>"+
                 "<p>公司:"+datas[i].company+"</p>"+
-                "<a href='/home/productcart/241'> <input type='button' value='在线询价'></a>"+
+                "<a href='/home/productfour/"+datas[i].id+"' method='post'>"+
+                "<input type='button' value='在线询价'>"+
+                "</a>"+
                 "</div></div>";
             $('.ABC').append(zzm);
          }
@@ -78,7 +80,7 @@
 
                 <div class="twoMRO">
                     <div class="ltMRO">
-                        <h1><a href="/home/product/order">食品</a></h1>
+                        <h1><a href="/home/productfour/241">福州市蓝象数控 双工位四工序加工中心开料机</a></h1>
                         <div class="">
                            <ul>
                                 <li><label for="">供货数量</label><input type="text" readonly  value="1000"></li>
@@ -96,7 +98,7 @@
                         <p>科右旗恒佳果业有限公司</p>
                         <p>所在地：内蒙古兴安盟科右前旗俄体镇</p>
                         <p class="rtVip">普通会员</p>
-                        <a href="/home/productcart/241"> <input type="button" value="在线询价"></a>
+                        <input type="button" value="在线询价">
                     </div>
 </div>                
 

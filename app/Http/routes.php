@@ -385,9 +385,15 @@ Route::get('/order/order/logistics/{id}','Order\OrderController@logistics');
 //后台订单列表
 Route::resource('/admin/order','Admin\OrderController');
 
+//订单详情页
+Route::get('/home/product/order','Home\NewhomeController@orderproduct');
+//诚信供应商
+Route::get('/home/integrity','Home\NewhomeController@integrity');
 
-
-
+//立即询价
+Route::get('/home/productcart/{id}','Home\NewhomeController@productcart');
+//接收立即询价信息
+Route::post('/home/productcartsave','Home\NewhomeController@productcartsave');
 
 //-------------------new 网站的路由结束----------------------//
 

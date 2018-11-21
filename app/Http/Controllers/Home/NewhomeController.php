@@ -1513,7 +1513,38 @@ public function adduser(Request $request)
         }
 
 
+        public function integrity()
+        {
+            //诚信供应商
+            return view("home.integrity");
+        }
+
+        public function orderproduct()
+        {
+            //订单详情展示
+            return view('home.product.order');
+        }
+        //立即询价页面展示
+            public function productcart(Request $req)
+            {
+              $id=$req->id;
+              $data=Articles::where('id',$id)->get()->toArray();
+      //少一个链表查这个人的电话之类的信息
+             
+              return view('home.product.cart',['data'=>$data ]);
+
+          }
+
+   //接收立即询价信息
+            public function productcartsave(Request $req)
+            {
+             // $title = $request -> title;
+             echo "<script>alert('您的信息我们已经接收,会在一至两个工作日内给您回复。');window.location.href='/';</script>";
+
+            }
 
 
-        
+
+
+
     }

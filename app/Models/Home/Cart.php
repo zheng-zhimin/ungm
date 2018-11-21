@@ -4,10 +4,8 @@ namespace App\Models\Home;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Cart extends Model
 {
     //
-     public $table='ungm_order';
-     //多对一
-   
+    protected $table = 'ungm_cart';
 }

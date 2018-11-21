@@ -132,6 +132,168 @@
     height:63px;
 }
 .supplierReleaseOrder{}
+
+.tab-content{
+    overflow:auto;
+    margin-top:0px !important;
+}
+
+ .puma-addPurchasing .top-menu-3, .puma-addPurchasing .top-menu-4{
+        padding-left: 30px;
+        padding-top: 10px;
+        padding-right: 30px;
+    }
+    .puma-addPurchasing .top-menu-3 .row, .puma-addPurchasing .top-menu-4 .row{
+        margin: 0 auto !important;
+    }
+    .puma-addPurchasing .top-menu-3 h3, .puma-addPurchasing .top-menu-4 h3{
+        font-family: MicrosoftYaHei;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+
+        letter-spacing: 0px;
+        color: #3477ff;
+        margin-bottom: 38px;
+        
+    }
+    .puma-addPurchasing .top-menu-3 .row .col-md-1 span, .puma-addPurchasing .top-menu-4 .row .col-md-1 span{
+        font-family: MicrosoftYaHei;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+
+        letter-spacing: 0px;
+        color: #ffffff;
+    }
+    .puma-addPurchasing .top-menu-3 .row .tex-1 label, .puma-addPurchasing .top-menu-3 .row .tex-1 input, .puma-addPurchasing .top-menu-4 .row .tex-1 label, .puma-addPurchasing .top-menu-4 .row .tex-1 input{
+        margin: 0px;
+    }
+    .puma-addPurchasing .top-menu-3 .row .tex-2, .puma-addPurchasing .top-menu-4 .row .tex-2{
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+
+    }
+    .puma-addPurchasing .top-menu-3 .row .tex-2{
+        color: #ffffff;
+    }
+    .puma-addPurchasing .top-menu-3 .row .tex-2{
+        color: #fff;
+    }
+    .puma-addPurchasing .top-menu-3 .row .tex-2, .puma-addPurchasing .top-menu-3 .row .col-md-1{
+        background-color: #00b7a1;
+    }
+    .puma-addPurchasing .top-menu-3 .row .col-md-1, .puma-addPurchasing .top-menu-3 .row .col-md-6, .puma-addPurchasing .top-menu-3 .row .col-md-2, .puma-addPurchasing .top-menu-3 .row .col-md-3, .puma-addPurchasing .top-menu-3 .row .col-md-12{
+        padding-bottom: 20px;
+        padding-top: 20px;
+        
+    }
+
+    .puma-addPurchasing .top-menu-3 .companyName{
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+
+        letter-spacing: 0px;
+        color: #333333;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        height: 56px;
+    }
+    .puma-addPurchasing .top-menu-3 .commodityContent{
+
+        border-radius: 4px;
+        border: solid 1px #d8d8d8;
+
+    }
+    .puma-addPurchasing .top-menu-3 .commodityContent .col-md-7{
+        padding-top: 20px;
+    }
+    .puma-addPurchasing .top-menu-3 .commodityContent .col-md-7 img{
+        width: 100px;
+        height: 100px;
+    }
+    .puma-addPurchasing .top-menu-3 .commodityContent .may{
+
+        font-family: MicrosoftYaHei;
+        font-size: 20px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 30px;
+        letter-spacing: 0px;
+        color: #00b7a1;
+        padding-top: 40px;
+
+    }
+    .puma-addPurchasing .top-menu-3 .commodityContent .may i{
+        color: #d8d8d8;
+    }
+    .puma-addPurchasing .top-menu-3 .commodityContent .col-md-2{
+        height: 140px;
+        border-left: 1px solid #d8d8d8;
+        border-right: 1px solid #d8d8d8;
+    }
+    .puma-addPurchasing .top-menu-3 .row .line p{
+        float: right;
+    }
+
+
+    .puma-addPurchasing .top-menu-4 .btn{
+         height: 33px;
+        background-color: #00b7a1;
+        color: #fff;
+    }
+    .puma-addPurchasing .top-menu-4 .btn2{
+        height: 33px;
+        width: 50px;
+    }
+    .puma-addPurchasing .top-menu-4 .form-control{
+        width: 270px;
+
+        border-radius: 4px;
+        border: solid 1px #d8d8d8;
+        display: inline; 
+        margin-left: 30px;
+        margin-right: 10px;
+    }
+    .puma-addPurchasing .top-menu-4 .row-headline{
+        background-color: #f4f4f4;
+        font-family: MicrosoftYaHei-Bold;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        letter-spacing: 0px;
+        color: #666666;
+        margin-top: 30px !important;
+    }
+    .puma-addPurchasing .top-menu-4 .row-content{
+        border-bottom: 1px solid #d8d8d8;
+        font-family: MicrosoftYaHei;
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        line-height: 30px;
+        letter-spacing: 0px;
+        color: #666666;
+    }
+    .puma-addPurchasing .top-menu-4 .row .col-md-1, .puma-addPurchasing .top-menu-4 .row .col-md-6, .puma-addPurchasing .top-menu-4 .row .col-md-2, .puma-addPurchasing .top-menu-4 .row .col-md-3, .puma-addPurchasing .top-menu-4 .row .col-md-12{
+        padding-bottom: 10px;
+        padding-top: 10px;
+        
+    }
+    .puma-addPurchasing .top-menu-4 .row .col-md-4{
+        padding-top: 10px;
+    } 
+
+
+
+
+
+
 </style>
 
 <body>
@@ -182,6 +344,8 @@
                     <ul class="">
                         <a href="#" ><li class="b1 bac">采购管理</li></a>
                         <a href="#" ><li class="b2 ">供应管理</li></a>
+                        <a href="#" ><li class="b3 ">我的收藏</li></a>
+                        <a href="#" ><li class="b4 ">我的购物车</li></a>
                     </ul>
                 </div>
             </div>
@@ -496,7 +660,65 @@
                                 </div>
 
             </div>
-
+            <div class="top-menu row top-menu-3" style="width:960px;">
+                <h3>我的购物车</h3>
+                <div class="row">
+                    <div class="row" style="height: 60px;">
+                        <div class="col-md-1 tex-1 ">
+                            <label><input type="checkbox" name="" value=""><span style="color: #fff;"> 全选 </span></label>
+                        </div>
+                        <div class="col-md-6 tex-2"><span style="margin-left: 165px;"> 货品 </span></div>
+                        <div class="col-md-2 tex-2"><span style="margin-left: 31px;"> 单价(元) </span></div>
+                        <div class="col-md-3 tex-2"><span style="margin-left: 31px;"> 金额 </span></div>
+                    </div>
+                    <div class="row" style="height: 60px;">
+                        <div class="col-md-12 companyName" >
+                            <label><input type="checkbox" name="" value=""><span style="color:#333333;"> 济宁山重新能源有限公司</span></label>
+                        </div>
+                    </div>
+                    <div class="row commodityContent">
+                        <div class="col-md-7">
+                            <label style="padding-bottom: 0px;">
+                                <input type="checkbox" name="" value="">
+                                <img src="/ungmhome/images/挖掘机.png">
+                                <span style="color:#666666;"> 山重建机GC498 全新液压履带挖掘机</span>
+                            </label>
+                        </div>
+                        <div class="col-md-2 "><span class="may" style="margin-left: 31px;"> 面议 </span></div>
+                        <div class="col-md-3 "><span class="may" style="margin-left: 31px;"> 面议 </span><i style="float: right;" class="glyphicon glyphicon-remove"></i></div>
+                    </div>
+                    
+                    <div class="col-md-12 line">
+                        <label><input type="checkbox" name="" value="">全选<span style="color:#999999;"> 删除选中商品</span></label>
+                        <p>共计 <span style="color:#00b7a1;">1</span> 件货品 (  不含运费 ）：价格面议</p>
+                    </div>
+                </div> 
+            </div>
+            <!---->
+            <div class="top-menu row top-menu-4" style="width:960px;">
+                <h3>我的收藏</h3>
+                <p><button class="btn">商品搜索</button><input class="form-control" placeholder="商品名称/订单号"><button class="btn btn2"><i class="glyphicon glyphicon-search"></i></button></p>
+                <div class="row">
+                    <div class="row row-headline" style="height: 40px;">
+                        <div class="col-md-2 tex-1 ">
+                            <label><input type="checkbox" name="" value=""><span style=""> 全选 </span></label>
+                        </div>
+                        <div class="col-md-6 tex-2"><span style=""> 标题 </span></div>
+                        <div class="col-md-4 tex-2"><span style=""> 添加时间 </span></div>
+                    </div>
+                    <div class="row row-content" style="height: 55px;">
+                        <div class="col-md-2 tex-1 ">
+                            <label><input type="checkbox" name="" value=""><span style=""> 产品 </span></label>
+                        </div>
+                        <div class="col-md-6 tex-2"><span style=""> 山重建机GC498 全新液压履带挖掘机 </span></div>
+                        <div class="col-md-4 tex-2"><span style=""> 2018-11-20 &nbsp; 13:33 </span></div>
+                    </div>
+                    
+                    <div class="col-md-12 line">
+                        <p>当前选中：   <span style="">0/1</span> <span style="color:#00b7a1;margin-left: 20px;">删除</span></p>
+                    </div>
+                </div> 
+            </div>
             
         </div> 
     </div>
@@ -610,18 +832,42 @@
     }
 
     $(".top-menu-2").hide();
+    $(".top-menu-3").hide();
+        $(".top-menu-4").hide();
     $(".b1").click(function(){
-        $(".bac").removeClass("bac");
+     $(".bac").removeClass("bac");
         $(".backcolor").removeClass("backcolor");
         $(".b1").addClass("backcolor");
         $(".top-menu-1").show();
         $(".top-menu-2").hide();
+        $(".top-menu-3").hide();
+        $(".top-menu-4").hide();
     })
     $(".b2").click(function(){
-        $(".bac").removeClass("bac");
+$(".bac").removeClass("bac");
         $(".backcolor").removeClass("backcolor");
         $(".b2").addClass("backcolor");
         $(".top-menu-2").show();
+        $(".top-menu-1").hide();
+        $(".top-menu-3").hide();
+        $(".top-menu-4").hide();
+    })
+    $(".b3").click(function(){
+$(".bac").removeClass("bac");
+        $(".backcolor").removeClass("backcolor");
+        $(".b3").addClass("backcolor");
+        $(".top-menu-3").show();
+        $(".top-menu-2").hide();
+        $(".top-menu-1").hide();
+        $(".top-menu-4").hide();
+    })
+    $(".b4").click(function(){
+$(".bac").removeClass("bac");
+        $(".backcolor").removeClass("backcolor");
+        $(".b4").addClass("backcolor");
+        $(".top-menu-4").show();
+        $(".top-menu-2").hide();
+        $(".top-menu-3").hide();
         $(".top-menu-1").hide();
     })
 </script>
