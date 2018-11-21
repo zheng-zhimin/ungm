@@ -25,6 +25,7 @@ use Session;
 use App\Models\Admin\Ungmuserdetail;
 use App\Models\Home\Address;
 use App\Models\Home\Newusers;
+use App\Models\Home\Order;
 use App\Models\Admin\Sellerauthentication;//认证表
 
 
@@ -1497,7 +1498,8 @@ public function adduser(Request $request)
                 $v->area=DB::table('china_area')->where('id',$fid[0])->first()->name;
                 $v->city=DB::table('china_area')->where('id',$fid[1])->first()->name;
             }
-            return view('home.newuserinfo.transaction',['address'=>$address,'tiao'=>$tiao]);
+            $order = order::where('uid',$id)->get();
+            return view('home.newuserinfo.transaction',['address'=>$address,'tiao'=>$tiao,'order'=>$order]);
         }
    //个人中心账户管理
        public function account($id)

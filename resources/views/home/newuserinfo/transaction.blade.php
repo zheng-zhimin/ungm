@@ -8,6 +8,24 @@
 
 
     <link rel="stylesheet" href="/ungmhome/css/style.css">
+    <style>
+        .myPurchaseOrder table thead tr th {
+            padding: 10px 0;
+            height: 28px;
+            background-color: #00b7a1;
+            text-align: center;
+            color: #ffffff;
+            border: none;
+        }
+        .myPurchaseOrder{
+            width:95%;
+            text-align: center;
+        }
+        .myPurchaseOrder .table{
+            margin-top: 50px;
+        }
+    </style>
+
 
 <body>
     <div class="container">
@@ -22,10 +40,36 @@
                     <span class="btnColor">采购订单</span>
                     <span>供应订单</span>
                     <span>申请发票</span>
-                    <span>我的物流</span>
+                    <span id="wuliu">我的物流</span>
                 </div>
                 <div class="myHint">
-                    <div class="myPurchaseOrder hintOne"><p>您暂无采购订单交易</p></div>
+                    <div class="myPurchaseOrder hintOne">
+                        <table class="table table-bordered table-hover ">
+                            <thead>
+                            <tr>
+                                <th>订单编号</th>
+                                <th>订单金额</th>
+                                <th>订单支付状态</th>
+                                <th>订单商品</th>
+                                <th>订单物流单号</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @foreach($order as $val)
+                                <tr>
+                                    <td>{{$val->order_sn}}</td>
+                                    <td>{{$val->order_amount}}</td>
+                                    <td>{{$val->pay_status == 0 ? '未支付' : '已支付' }}</td>
+                                    <td>{{$val->goods_id }}</td>
+                                    <td>{{$val->tracking_no }}</td>
+                                    <td onclick="wuliu(this)" id="{{$val->id}}">查看物流</td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+
+                    </div>
                     <div class="mySupplyOrder hintOne"><p>您暂无供应订单交易</p></div>
                     <div class="myInvoice hintOne"><p>您暂无可申请的发票</p></div>
                     <div class="myLogistics hintOne"><p>物流暂未开通</p></div>
@@ -85,6 +129,16 @@
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
 <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
+<script>
+
+function wuliu(obj) {
+    var id = $(obj).attr('id');
+    alert(id)
+    $('#wuliu').addClass('btnColor').siblings().removeClass('btnColor');
+    $('.myHint .hintOne').eq(3).show().siblings('.hintOne').hide();
+}
+
+</script>
 <script>
 $('.settingBtn p').click(function(){
     var _index = $(this).index();
