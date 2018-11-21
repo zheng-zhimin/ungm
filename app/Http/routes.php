@@ -93,7 +93,7 @@ route::get('/home/articledetail/{id}','Home\HomeController@articledetail');
 route::get('home/label/{label}','Home\HomeController@label');
 
 
-//前台检测登录
+/*//前台检测登录
 Route::post('/home/ajax1',function(){
 
    // return $_POST['uname'];
@@ -104,7 +104,7 @@ Route::post('/home/ajax1',function(){
     return 0;
    }
 
-});
+});*/
 //邮箱激活路由
 //Route::get('/home/jihuo','Home\LoginController@jihuo');
 //用户点击头像显示个人中心路由
@@ -232,6 +232,8 @@ Route::get('/home/article/businesspolicy/{id}','Home\NewhomeController@pmoredeta
 Route::post('/home/query/mess','Home\SearchController@query');
 //前台ungm招标信息查询
 Route::post('/home/query/ungmmess','Home\SearchController@ungmquery');
+//前台接收用户对ungm招标信息的感兴趣
+Route::post('/home/like/ungmproject','Home\SearchController@ungmproject');
 
 
 //前台产品列表二级页面
@@ -362,7 +364,6 @@ Route::get('/order/order','Order\OrderController@index');
 Route::post('/order/order','Order\OrderController@store');
 
 
-//测试一下
 
 
 

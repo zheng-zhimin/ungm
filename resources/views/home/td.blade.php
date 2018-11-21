@@ -491,6 +491,7 @@
         <script type="text/javascript">
                 function search()
                 {
+                    
                     var title= $("#v1").val();
                     var descript= $("#v2").val();
                     var published= $("#v3").val();
@@ -591,10 +592,15 @@
         <script>
             function like(obj)
             {
-                var a1 = $(obj).attr('id');
+                var id = $(obj).attr('id');
                 var a2 = $(obj).parent().parent().next().children().find('a').text();
-                console.log(a1);
-                console.log(a2);
+               // alert('您已对'+a2+'项目感兴趣');
+                 $.post('/home/like/ungmproject',{'id':id,'_token':'{{csrf_token()}}'}, function(datas) {
+                        alert(datas);
+                  })
+
+               
+                //console.log(a2);
 
             }
 
