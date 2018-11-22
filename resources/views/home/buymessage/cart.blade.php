@@ -111,7 +111,7 @@
                             <ul>
                                 <li><label for="">产地</label>{{$data->num}}</li>
                                 <li><label for="">产品认证</label>暂无数据</li>
-                                <li><label for="">驱动方式</label>内燃机驱动</li>
+                                <li><label for="">驱动方式</label>暂无数据</li>
                                 <li><label for="">新旧程度</label>暂无数据</li>
                                 <li><label for="">用途</label>暂无数据</li>
                                 <li><label for="">执行标准</label>暂无数据</li>
@@ -194,6 +194,7 @@ $('.rtBot1').click(function(){
     alert('加入购物车成功');
 })
 $('.rtBot3').click(function(){
+    
     alert('收藏成功');
 })
 $(function(){

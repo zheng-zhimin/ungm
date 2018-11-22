@@ -58,14 +58,14 @@
                 var zzm= " <div class='oneMRO'>"+
                 "<img src='"+datas[i].articles_image_path+"'>"+
                 "</div><div class='twoMRO'><div class='ltMRO'>"+
-                "<h1 class='slh'><a href='/home/buymessagefourart/"+datas[i].id+"'>"+datas[i].title+"</a></h1>"+
+                "<h1 class='slh'><a href='/home/buymessagedetail/"+datas[i].id+"'>"+datas[i].title+"</a></h1>"+
                 "<p>采购时间:"+datas[i].timezone+"</p>"+
                 "</div>"+
                 "<div class='rtMRO'>"+
                 "<p>地区全国:"+datas[i].area+"</p>"+
                 "<p>行业:"+datas[i].industry+"</p>"+
                 "<p>公司:"+datas[i].company+"</p>"+
-                 "<a href='/home/buymessagefourart/"+datas[i].id+"' method='post'>"+
+                 "<a href='/home/buymessagecart/"+datas[i].id+"' method='post'>"+
                 "<input type='button' value='立即报价'>"+
                 "</a>"+
                 "</div></div>";
@@ -82,7 +82,7 @@
             
                 <div class="twoMRO">
                     <div class="ltMRO">
-                        <h1><a href="">暂无数据</a></h1>
+                        <h1><a href="/home/buymessagedetail/{{$data->id}}">暂无数据</a></h1>
                         <p>采购时间：暂无数据</p>
                         <p>采购详情：暂无数据</p>
                     </div>
@@ -90,7 +90,7 @@
                             <p>地区：暂无数据</p>
                             <p>行业：暂无数据</p>
                             <p>公司：暂无数据</p>
-                            <input type="button" value="立即报价">
+                           <a href="/home/buymessagecart/{{$data->id}}"> <input type="button" value="立即报价"></a>
                         </div>
                 </div>
 </div>
