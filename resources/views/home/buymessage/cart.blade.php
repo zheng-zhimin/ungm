@@ -95,7 +95,12 @@
                         <div class="rtBot">
                             <input type="button" value="加入购物车" class="rtBot1"/>
                             <a href="/home/productcart/{{$data->id}}"><input type="button" value="立即询价" class="rtBot2"/></a>
-                            <input type="button" value="立即收藏" class="rtBot3"/>
+                               <a onclick="resize_window()"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="点击在线咨询" /></a>
+                               <form action="/home/collect" method="post">
+                                {{csrf_field()}}
+                            <input type="hidden" name = "id" value="{{$data->id}}" />
+                            <input type="submit" value="立即收藏" class="rtBot3"/>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -179,7 +184,8 @@
 
 <script src="js/jquery.js"></script>
 <script src="bootstrap/js/bootstrap.js"></script>
-
+<script>(function(){var c=document.createElement("script"),s=document.getElementsByTagName("script")[0];c.src="//kefu.ziyun.com.cn/vclient/?webid=142149";s.parentNode.insertBefore(c,s);})();</script>
+<script type="text/javascript">
 <script>
 $('.ltBot ul li img').click(function(){
     $('.ltTop img').attr('src',$(this).attr('src'));

@@ -76,7 +76,7 @@
     letter-spacing: 0px;
 }
 .puma-addPurchasing{
-    height: 1240px;
+    
 }
 .active a{
     color:#00b7a1 !important;
@@ -331,7 +331,7 @@
 </form>
 
 
-            <div class="top-menu row top-menu-2" style="width:960px;height: 1180px;">
+            <div class="top-menu row top-menu-2" style="width:960px;">
       <!--->
             <!- Nav tabs -->
                                

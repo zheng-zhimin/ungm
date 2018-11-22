@@ -1513,37 +1513,85 @@ public function adduser(Request $request)
         }
 
 
-        public function integrity()
+               //诚信供应商 
+        public function integrity(Request $request)
         {
-            //诚信供应商
+            //诚信供应商需要从数据表加字段判断
             return view("home.integrity");
         }
 
-        public function orderproduct()
+        
+        //发布询价
+        public function orderproduct(Request $request)
         {
-            //订单详情展示
+            $id = $request -> id; 
+            $data = Articles::where('id',$id) -> first();
             return view('home.product.order');
         }
-        //立即询价页面展示
-            public function productcart(Request $req)
-            {
-              $id=$req->id;
-              $data=Articles::where('id',$id)->get()->toArray();
-      //少一个链表查这个人的电话之类的信息
-             
-              return view('home.product.cart',['data'=>$data ]);
+        
+       
+         //供应商购物车页面
+        public function productdetail(Request $request)
+        {
+            $id = $request -> id; 
+          $data = Articles::where('id',$id) -> first();
+         
+          return view('home.product.cart',['data'=> $data ]);
+        }
+         //供应商商品购物车页面
+        public function productcart(Request $request)
+        {
+          $id = $request -> id;
+          $data = Articles::where('id',$id) -> first();
 
-          }
+          return view('home.product.order',['data'=> $data ]);
 
-   //接收立即询价信息
-            public function productcartsave(Request $req)
-            {
-             // $title = $request -> title;
-             echo "<script>alert('您的信息我们已经接收,会在一至两个工作日内给您回复。');window.location.href='/';</script>";
+        }
 
-            }
+        //接收立即询价信息
+        public function productcartsave(Request $request)
+        {
+         // $title = $request -> title;
+         echo "<script>alert('您的信息我们已经接收,会在一至两个工作日内给您回复。');history.go(-2);</script>";
 
+        }
 
+        //采购商购物车页面
+        public function buymessagedetail(Request $request)
+        {
+            
+            $id = $request -> id; 
+          $data = Articles::where('id',$id) -> first();
+         
+          return view('home.buymessage.cart',['data'=> $data ]);
+        }
+
+        //采购商商品购物车页面
+        public function buymessagecart(Request $request)
+        {
+          $id = $request -> id;
+          $data = Articles::where('id',$id) -> first();
+
+          return view('home.buymessage.order',['data'=> $data ]);
+
+        }
+
+        //接收立即询价信息
+        public function buymessagecartsave(Request $request)
+        {
+         // $title = $request -> title;
+         echo "<script>alert('您的信息我们已经接收,会在一至两个工作日内给您回复。');history.go(-2);</script>";
+
+        }
+        //接收立即询价信息
+        public function shoucang(Request $request)
+        {
+          $id = $request -> id;
+
+         echo "<script>alert('您的信息我们已经接收,会在一至两个工作日内给您回复。');history.go(-2);</script>";
+
+        }
+        
 
 
 

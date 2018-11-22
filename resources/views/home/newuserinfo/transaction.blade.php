@@ -167,8 +167,8 @@ function wuliu(obj) {
         data: {id:id},
         dataType: 'json',
         success: function(data){
-
-            for(var i=0;i<data.length-1;i++){
+            // console.log(data);
+            for(var i=0;i<data.length;i++){
                 info +='<li class="logistics1"><div></div><b>'+data[i].datetime.split(' ')[0]+'</b><span>'+data[i].datetime.split(' ')[1]+'</span><span>'+data[i].remark+'</span></li>';
 
             }
@@ -184,7 +184,6 @@ function wuliu(obj) {
 }
 
 
-
 </script>
 <script>
 $('.settingBtn p').click(function(){
@@ -197,9 +196,8 @@ $('.myNav span').click(function(){
     $(this).addClass('btnColor').siblings().removeClass('btnColor');
     $('.myHint .hintOne').eq(_index).show().siblings('.hintOne').hide();
     if(_index == 3){
-        // alert($(".default").text());
         if($(".default").text() == ''){
-            // $(".myLogistics").append('<p class="default">请点击采购订单</p>');
+            $(".myLogistics").append('<p class="default">请点击采购订单</p>');
         }
     }
 })

@@ -51,9 +51,9 @@
                                 <li><label>地区</label><b>{{$data['area']}}</b></li>
                                 <li><label>行业</label><b>{{$data['industry']}}</b></li>
                                 <li><label>联系人</label><b>刘（先生）</b></li>
-                                <li><label>邮件</label><b>357232958@qq.com</b></li>
-                                <li><label>电话 </label><b>15172223139</b></li>
-                                <li><label>手机</label><b>15172223139</b></li>
+                                <li><label>邮件</label><b>暂无数据</b></li>
+                                <li><label>电话 </label><b>暂无数据</b></li>
+                                <li><label>手机</label><b>暂无数据</b></li>
                             </ul>
                         </div>
                         
