@@ -1,0 +1,201 @@
+/*1?ó??ùê?*/
+@charset "utf-8";
+
+/*
+@font-face {
+    font-family: Helvetica;
+    src:url('pictos/pictos-web.woff'),
+}
+*/
+/*注册表de样式*/  
+        body{
+            padding: 15px;
+        }
+        .page1 .toptext{
+            font-size:14px;
+            color:#808080;
+        }
+        .page1 .toptext span{
+            font-size:14px;
+            color:red;
+        }
+        .page1 .import input, .page2 .import input, .page3 .import input, .page4 .import input{  
+            border: blue;
+        }
+        input::-webkit-input-placeholder{  
+            color:#d8d8d8;
+            font-size: 12px;
+        }
+        textarea::-webkit-input-placeholder{ 
+            color:#d8d8d8;
+            font-size: 12px;
+        }
+        .page1 .import span, .page2 .import span, .page3 .import span, .page4 .import span{  
+            font-size:14px;
+            color:#808080;
+        }
+        .page1 .import p, .page2 .import p, .page3 .import p, .page4 .import p{  
+            font-size:14px;
+            color:#808080;
+        }
+        .page1 .import hr, .page2 .import hr, .page3 .import hr, .page4 .import hr{  
+            border: 1px solid #f9f9f9;
+        }
+        .page1 button, .page2 button, .page3 button, .page4 button{  
+            background: #00c4ff;
+            border: 0;
+            border-radius: 5px;
+            color: #fff;
+            height: 50px;
+            width: 150px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        .page1 .btn, .page2 .btn, .page3 .btn, .page4 .btn{  
+            margin-right: 20px;
+        }
+        .page1 .import, .page2 .import, .page3 .import, .page4 .import{
+            border-radius: 10px;
+            box-shadow: 0 1px 4px #0000002e;
+            padding:18px 20px;
+            margin-top: 10px;
+            overflow: auto;
+           
+        }
+        .page1 .import .choice, .page2 .import .choice, .page3 .import .choice, .page4 .import .choice{
+            float:left;
+            overflow:auto;
+            margin-right: 58px;
+        }
+        .page1 .import .clearboth, .page2 .import .clearboth, .page3 .import .clearboth, .page4 .import .clearboth{
+            clear: both;
+        }
+        .page2 .income input, .page4 .import .information input{
+            width: 90px;
+        }
+        .page3 .import .presentation span{
+            margin: 0 57px;
+        } 
+        .page3 .import .rowspacing, .page4 .import .rowspacing, .page4 .import .information {
+            margin: 10px 0;
+        }
+
+/*-------上传文件---------*/
+
+        .file-box{
+                display: inline-block;
+                position: relative;
+                padding: 13px 0px 0px 0px;
+                overflow: hidden;
+                color:#fff;
+                background-color: #00B7A1;
+                width: 120px;
+                margin: 20px 31%;
+                border-radius: 5px;
+                height: 40px;
+                text-align: center;
+        }
+        .file-btn{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                outline: none;
+                background-color: transparent;
+                filter:alpha(opacity=0);
+                -moz-opacity:0;
+                -khtml-opacity: 0;
+                opacity: 0;
+        }
+
+
+/*商机搜索*/
+        .page1 .import .rowledge{
+            line-height:40px;
+        }
+        .page1 .import .rowledge1{
+            line-height:25px;
+            margin-top:20px;
+        }
+        .page1 .import .rowledge2{
+            line-height:25px;
+            margin-bottom:10px;
+        }
+        .page1 .import .date_t{
+            width: 96px;
+        }
+
+
+
+/*采购订单查询*/
+
+        .order_inquiry .import .order_text{
+            color:#00c5ff;
+        }
+        .order_inquiry .recommendtender{
+            display: none;
+        }
+        .order_inquiry .import img{
+            text-align: center;
+            width: 30px;
+        }
+/*-----------------手机号码提交--------------------------*/
+.popout{
+    font:.85em/1.4 "微软雅黑","Microsoft Yahei",'Arial','san-serif';
+    color:#666;
+}
+.popout img{
+    max-width:100%;
+    height:auto;
+    width:auto9;
+    -ms-interpolation-mode:bicubic;
+    vertical-align:middle;
+    margin-bottom: 580px;
+}
+.popout button,.popout input{
+    -webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+.popout input{
+    border:0 none;
+    -webkit-appearance:none;
+}
+.popout ul,.popout p{
+    padding:0 10px;
+    margin:0;
+}
+
+.popout ul,.popout li{
+    list-style:none;
+}
+.popout a{
+    color:#666;
+}
+.popout a,.popout a:hover{
+    text-decoration:none;
+}
+.popout a:focus{
+    outline:none;
+}
+.popout form{
+    padding-top: 7px;
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+#dialogBg{width:100%;height:100%;background-color:#0000009e;filter:alpha(opacity=60);position:fixed;top:0;left:0;z-index:9999;display:none;}
+#dialog{ width: 300px; height: 210px; margin: 0 auto; display: none; background-color: #ffffff; position: fixed; top: 50%; left: 50%; margin: -120px 0 0 -150px; z-index: 10000; border: 1px solid #ccc; border-radius: 10px; -webkit-border-radius: 10px; box-shadow: 3px 2px 4px rgba(0,0,0,0.2); -webkit-box-shadow: 3px 2px 4px rgba(0,0,0,0.2); }
+.dialogTop{width:90%;margin:15px auto;border-bottom:1px dotted #ccc;letter-spacing:1px;padding:10px 0;text-align:right;}
+.dialogIco{width:50px;height:50px;position:absolute;top:-25px;left:50%;margin-left:-25px;}
+.editInfos{padding:15px 0;}
+.editInfos li{width:90%;margin:8px auto auto;}
+.ipt{border:1px solid #ccc;padding:5px;border-radius:3px;-webkit-border-radius:3px;box-shadow:0 0 3px #ccc inset;-webkit-box-shadow:0 0 3px #ccc inset;margin-left:5px;}
+.ipt:focus{outline:none;border-color:#66afe9;box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);-webkit-box-shadow:0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);}
+.submitBtn{width:91%;height:40px;line-height:30px;font-family:"微软雅黑","microsoft yahei";cursor:pointer;margin-top:10px;display:inline-block;border-radius:5px;-webkit-border-radius:5px;text-align:center;background-color:#00c5ff;color:#fff;}
+.verification{width: 60px;width: 90px;margin-right: 10px;}

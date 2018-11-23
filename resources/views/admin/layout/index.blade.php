@@ -129,7 +129,7 @@
                     </div>
                     <ul>
                         <li><a href="#">头像</a></li>
-                        <li><a href="/admin/repwd">修改密码</a></li>
+                        <li><a href="/admin/repwd/{{ session('adminUser')->id }}">修改密码</a></li>
                         <li><a href="/admin/logout">退出</a></li>
                     </ul>
                 </div>

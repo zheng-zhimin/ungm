@@ -200,6 +200,8 @@ class AdvertiseController extends Controller
         //修改 广告big大小
         $advertise->big = $data['big'];
         
+        //修改广告名
+        $advertise->title=$data['title'];
         //保存
         $res = $advertise->save();
 

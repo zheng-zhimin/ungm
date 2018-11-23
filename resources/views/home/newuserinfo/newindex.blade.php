@@ -139,9 +139,11 @@
     <!---采购商内容开始-->
     <div class="content puma-addPurchasing">      
         <div class="container"> 
+
         <!-- 显示完善资料的信息-->
                 @if ( isset($identity) && $identity==1 )
-                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                   <div  class="alert alert-danger" data-dismiss="" aria-label="" id="info" style="cursor: pointer;">
+
                         <ul class="text-warning">
                            
                                  <span ><p class="text-center">建议完善资料,以便客户与您联系</p></span>
@@ -299,7 +301,7 @@
                             </div>
                            
                             <p>建议详细填写交易条件，以便符合要求的卖家与您取得联系</p>
-                            <p>点击提交表示您已阅读并同意<a href="#">《睿鹿网网服务协议》</a></p>
+                            <p>点击提交表示您已阅读并同意<a href="/homedns">《睿鹿网服务协议》</a></p>
                             <button type="" class="btn btn-danger">提交</button>
                         </div>
                     </div>
@@ -356,7 +358,7 @@
                             </form>
 
                                     <div class="tab-pane" id="released-2" roleinReview="tabpanel">
-                                       <div class="text" ><a href="/home/check/authentication"><p>您暂无供应权限,请点击此链接前往提交企业认证资料</p></a></div>
+                                       <div class="text" ><a href="/home/check/authentication"><p>完善企业资料</p></a></div>
                                     </div>
                                 </div>
 
@@ -464,6 +466,9 @@
         $(".b2").addClass("backcolor");
         $(".top-menu-2").show();
         $(".top-menu-1").hide();
+    })
+    $("#info").click(function () {
+        window.location.href='/home/check/authentication';
     })
 </script>
 </html>

@@ -22,8 +22,8 @@
                 <div class="information">
                     <p>地址：北京市通州区万达广场C座14层</p>
                     <p>网址(Web)：www.jodn.com.cn</p>
-                    <p>客户服务热线：86-10-66111661</p>
-                    <p>客户服务邮箱：ruilu@51ruilu.com</p>
+                    <p>人力资源部电话：86-10-66111669</p>
+                    <p>人力资源部邮箱：hr@jodn.com.cn</p>
                 </div>
             </div>
             <div class="map">

@@ -229,7 +229,7 @@
                 <div  class="row bot-list">
                     <ul class="blue">
                         <li ><a href="/home/about">关于我们</a><b>|</b></li>
-                        <li ><a href="/home/job">招纳贤士</a><b>|</b></li>
+                        <li ><a href="/home/job">招贤纳士</a><b>|</b></li>
                         <li ><a href="/home/contact">联系我们</a><b>|</b></li>
                         <li ><a href="/home/dns">使用协议</a><b>|</b></li>
                         <li ><a href="/home/copy">版权隐私</a><b>|</b></li>
@@ -238,7 +238,6 @@
                     </ul>
                 </div>
                 <div class="row info">
-                    <p>公司名称：九鼎智成（北京）信息技术股份有限公司</p>
                     <p>地址：北京市通州区万达广场C座</p>
                     <p>邮箱：ruilu@51ruilu.com</p>
                 </div>
@@ -265,8 +264,8 @@
                 <div class="row">
                     <div class="copy">
                         <span style="padding-left:260px;">九鼎智成（北京）信息技术股份有限公司版权所有</span>
-                        <span>Copyright@1999-2018 300.cn All Rights Reserved</span>
-                        <span>京ICP备111111-1</span>
+                        <span>Copyright@2018 睿鹿网 All Rights Reserved</span>
+                        <span>京ICP备16021025号-2</span>
                     </div>
                 </div>
             </div>

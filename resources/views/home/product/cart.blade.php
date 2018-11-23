@@ -128,7 +128,7 @@
                                 <img src="images/lineItem6.png" alt="">
                             </div>
                             <p>
-                                {{$data->content}}
+                                {!!$data->content!!}
                             </p>
                             
                         </div>

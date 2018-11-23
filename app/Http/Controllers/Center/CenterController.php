@@ -23,7 +23,7 @@ use App\Models\Admin\Label;//标签
 use App\Models\Home\Comment;//评论
 
 use Session;
-use App\Models\Admin\ungmuserdetail;
+use App\Models\Admin\Ungmuserdetail;
 use App\Models\Home\Newusers;
 use Hash;
 use App\Models\Home\Address;

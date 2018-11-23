@@ -142,6 +142,7 @@ class UsersController extends Controller
         // 获取文章内容
         $data=User::find($id);
         // 模版
+        
         return view('admin.users.show',['data' => $data,'title' => '详细信息']);
     }
 

@@ -1,4 +1,4 @@
-@extends('Admin.layout.index')
+@extends('admin.layout.index')
 @section('content')
 <!-- 内容开始 -->
 <div class="container">

@@ -48,7 +48,7 @@
                
                <li class="myOne">
                <label for="">ID</label>
-               <input type="span" name="onlyID" value="{{$onlyID}}" disabled>
+               <input type="span" name="onlyID" value="{{$onlyID}}" disabled style="border:1px;background:#fff;">
                </li>
 
                <li class="myOne">

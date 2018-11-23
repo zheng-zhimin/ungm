@@ -35,7 +35,7 @@
     <div class="container">
         <div class="supplierVerify">
             <div class="verifyOne">
-                <span>申请供应商资质</span>
+                <span>完善企业资料</span>
             </div>
 <!-- 显示错误的信息-->
 @if (count($errors) > 0)

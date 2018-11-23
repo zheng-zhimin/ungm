@@ -18,6 +18,12 @@
     color: #3477ff !important;
     border-bottom: 2px solid #3477ff;
 }
+
+.clo-png{
+        display: none;
+    }
+
+
 .one li{
             width: 146px;
             overflow: hidden;/*超出部分隐藏*/
@@ -30,10 +36,12 @@
 
     <link rel="stylesheet" href="/ungmhome/css/base.css">
    <link rel="stylesheet" href="/ungmhome/css/style.css">
+   <link rel="stylesheet" href="/ungmhome/css/弹框.css">
    <!--  <link rel="stylesheet" href="/ungmhome/css/style.min.css">  -->
    <link rel="stylesheet" type="text/css" href="/ungmhome/css/CSSreset.min.css" />
    <link rel="stylesheet" type="text/css" media="screen" href="/ungmhome/css/als_demo.css" />
   <link rel="stylesheet" href="/ungmhome/css/swiper.min.css"> 
+  <link rel="stylesheet" href="/ungmhome/css/弹框.css"> 
 
 <style type="text/css" media="screen">
     .als-item div{
@@ -79,6 +87,14 @@
         </div>
     </div>
      <!--1.内容-->
+
+<div class="popout">
+        <div id="dialogBg" style="text-align: center;padding-top:80px;margin:0px;">
+          <img src="/ungmhome/images/上线.png" class="img-responsive" style="display: inline;text-align: center;padding:0px;margin: 0px;height:800px;">
+          <img src="/ungmhome/images/cha.png" class="online img-responsive" style="display: inline;height:80px;">
+        </div>
+        </div>
+
     <a name="1"><div class="container" > </a>
         <div class="tex" align="center">
 
@@ -239,7 +255,7 @@
                                                <div class="row" align="center">
                                                 @foreach($data4 as $v)
                                                    <div class="col-md-12 padd advertising">
-                                                   <a href="{{$v->advertise_https}}" target="blank" >
+                                                   <a href="javascript:;" target="blank"; style="cursor:default;">
                                                      <img style="height:92px;width:330px;" class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
                                                    </a>
                                                    
@@ -649,7 +665,7 @@
                                                         <div class="activity" id="J_Activity">
                                                             <ul>
                                                           @foreach($credit as $v)
-                                                            <li><span >{{$v['name']}}</span></li>
+                                                            <a href="/home/integrity">  <li><span >{{$v['name']}}</span></li></a>
                                                           @endforeach
                                                             </ul>
                                                         </div>
@@ -751,7 +767,7 @@
 
                                                    @foreach($data5 as $v)
                                                    <div class="col-md-12 padd advertising">
-                                                   <a href="{{$v->advertise_https}}" target="blank" >
+                                                  <a href="javascript:;" target="blank"; style="cursor:default;">
                                                      <img style="height:92px;width:330px;" class="img-responsive"  src="{{$v->image_path}}" alt="{{$v->title}}" title="{{$v->title}}">  
                                                    </a>
                                                    
@@ -793,7 +809,7 @@
                                 <li class="als-item"><div class="als-item-2" style="width:296px;height: 500px;">
                                     <h4 class="">拓宽国际市场</h4>
                                     <p class="p-1">产品直接进军联合国各成员国市场</p>
-                                    <p class="p-2">联合国现有的193个成员国，会优先介绍指定供应商目并作为采购援助物品被优先选择。</p>
+                                    <p class="p-2">联合国现有的193个成员国，会优先考虑指定供应商目录并作为采购援助物品被优先选择。</p>
                                 </div></li>
                                 <li class="als-item"><div class="als-item-3" style="width:296px;height: 500px;">
                                     <h4 class="">拓宽国内市场</h4>
@@ -803,7 +819,7 @@
                                 <li class="als-item"><div class="als-item-4" style="width:296px;height: 500px;">
                                     <h4 class="">资信证明</h4>
                                     <p class="p-1">产品销往国内更多市场</p>
-                                    <p class="p-2">联合国交易成功后，企业会收到由联合国出具的信息反馈。这份国际资信证明加之企业联合国指定供应商的身份，可以极大提升企业信誉度，给企业带来巨大的无形资产。企业进行招投标、融资、贷款或者承接国外订单，都起到很大的推动作用。</p>
+                                    <p class="p-2">联合国交易成功后，企业会收到由联合国出具的信息反馈。这份信息反馈加之企业联合国指定供应商的身份，可以极大提升企业信誉度，给企业带来巨大的无形资产。企业进行招投标、融资、贷款或者承接国外订单，都起到很大的推动作用。</p>
                                 </div></li>
                                 <li class="als-item"><div class="als-item-5" style="width:296px;height: 500px;">
                                     <h4 class="">免费宣传</h4>
@@ -864,7 +880,7 @@
                             <img class="img-responsive" src="/ungmhome/images/6.png">
                         </div>
 
-                        <a onclick="resize_window()"><img border="0" src="http://wpa.qq.com/pa?p=2:837495362:51" alt="点击在线咨询" /></a>
+                      
 
                        
 
@@ -880,7 +896,7 @@
     </style>
 </body>
 <script src="/ungmhome/js/jquery.js"></script>
-<script>(function(){var c=document.createElement("script"),s=document.getElementsByTagName("script")[0];c.src="//kefu.ziyun.com.cn/vclient/?webid=142149";s.parentNode.insertBefore(c,s);})();</script>
+<script src="/ungmhome/js/registe.js"></script>
 <script type="text/javascript">
 
 
@@ -1012,6 +1028,17 @@ $(function() {
           },
         });
     </script>
+    <script>
+  
+   $(document).ready(function()
+    {
+       
+        $(".online").click(function(){
+          $(".popout").addClass('clo-png');
+        });
+
+    });
+</script>
 <script src="bootstrap/js/bootstrap.js"></script>
 
 

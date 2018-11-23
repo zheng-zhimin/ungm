@@ -141,6 +141,15 @@ class NewhomeController extends Controller
          {
             return view('home.newcontact');
         }      
+            /**
+     * Show the form for creating a new resource.
+     *前台联系我们()
+     * @return \Illuminate\Http\Response
+     */
+         public function contact1(Request $request)
+         {
+            return view('home.contact1');
+        }      
     /**
      * Show the form for creating a new resource.
      *前台招贤纳士
@@ -247,9 +256,14 @@ class NewhomeController extends Controller
     {
 
         $key=$req->input('findbuy');
-
+       if($key==''){
+          $data='';
+       }else{
+         $data=Buyoffer::where('project','like','%'.$key.'%')->paginate(5);
+       }
         
-        $data=Buyoffer::where('project','like','%'.$key.'%')->paginate(5);
+       
+
         //var_dump($data);
         return view('home.search.searchbuy',['data'=>$data]);
 
@@ -275,7 +289,12 @@ class NewhomeController extends Controller
             {
 
                 $key=$req->input('findsell');
-                $data=Selloffer::where('project','like','%'.$key.'%')->paginate(5);
+                 if($key==''){
+                   $data='';
+                   }else{
+                     $data=Selloffer::where('project','like','%'.$key.'%')->paginate(5);
+                   }
+                    
                 //var_dump($data);
                 return view('home.search.searchsell',['data'=>$data]);
             }
@@ -916,60 +935,12 @@ public function observelist()
     //国内贸易->考察展示文章详情
 public function observedetail($id)
 {
-         // 获取该文章的评论信息,按添加时间倒序排序,每10条一页
-    $comment = Comment::where('aid',$id)->orderby('created_at','desc')->paginate(5);
-    $cid = array();
-    foreach ($comment as $key => $value) {
-        array_push($cid,$value['id']);
-    }
-        // 获取该文章的标签
-    if ($label = Label::where('aid',$id) -> first()) {
-        $label = Label::where('aid',$id) -> first() -> label;
-        $labels = explode(',',$label);
-    }else{
-        $labels = array();
-    }
-
-
-        // 获取文章数据,按评论数量排序
-    $hot = Articles::orderBy('comment','desc') -> take(5) -> get();
-        // 遍历去除评论内容中的html代码
-    foreach ($comment as $k => $v) {
-        $comment[$k] -> content = strip_tags($comment[$k] -> content);
-    }
-        // 获取登录用户是否收藏该文章
-    $collect=DB::table('collect')->where('aid',$id)->where('uid',session('homeuser')['id'])->first();
-        // 获取当前用户举报的评论数据
-    $jubao = DB::table('report') -> where('uid',session('homeuser')['id']) ->get();
-    $jubao1 = array();
-    foreach ($jubao as $key => $value) {
-        array_push($jubao1,$value -> cid);
-    }
-
-
-        // 获取当前用户顶过的评论数据
-    $up = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','1') ->get();
-    $up1 = array();
-    foreach ($up as $key => $value) {
-        array_push($up1,$value -> cid);
-    }
-        // 获取当前用户踩过的评论数据
-    $down = DB::table('like') -> where('uid',session('homeuser')['id']) -> where('status','2') ->get();
-    $down1 = array();
-    foreach ($down as $key => $value) {
-        array_push($down1,$value -> cid);
-    }
-
-
-        // 上一篇下一篇文章
+     
     $detail=Articles::find($id);
-    $previd= Articles::where('id', '<', $id)->max('id');
-    $prev = Articles::find($previd);
-    $nextid=Articles::where('id', '>', $id)->min('id');
-    $next = Articles::find($nextid);
+
         // 显示模板,传递数据
     
-    return view('home.observe.detail', ['detail' => $detail,'prev'=>$prev,'next'=>$next,'comment'=>$comment,'collect'=>$collect,'hot' => $hot,'jubao' => $jubao1,'up' => $up1,'down' => $down1,'labels' => $labels]);
+    return view('home.observe.detail', ['detail' => $detail]);
     
     
     

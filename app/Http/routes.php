@@ -48,7 +48,7 @@ Route::get('/admin/logout','Admin\LoginController@logout');
 Route::resource('/admin/articles','Admin\ArticlesController');
 
 //后台头部显示修改登陆后管理人员的密码
-Route::get('/admin/repwd','Admin\IndexController@writepwd');
+Route::get('/admin/repwd/{id}','Admin\IndexController@writepwd');
 
 //跳转到执行后台修改密码的控制器方法
 Route::post('/admin/resetpwd/{id}','Admin\IndexController@resetpwd');
@@ -191,6 +191,9 @@ Route::group(['middleware'=>'login'], function(){
 
 //前台联系我们的路由
 route::get('/home/contact','Home\NewhomeController@contact');
+//前台招聘的路由
+route::get('/home/contact1','Home\NewhomeController@contact1');
+
 //前台关于我们的路由
 route::get('/home/about','Home\NewhomeController@about');
 //前台招贤纳士的路由

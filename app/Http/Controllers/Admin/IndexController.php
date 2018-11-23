@@ -26,18 +26,18 @@ class IndexController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function writepwd(Request $request)
+    public function writepwd($id)
     {
 
-
-       if( session() ){
-            $id = session('adminUser')->id;
-
+      
+       if( session('adminUser') ){
+            $id = $id;
+        return view('admin.resetpwd.resetpwd',['id'=>$id,'title'=>'修改密码']);
          }
- 
+   
        
 
-        return view('admin.resetpwd.resetpwd',['id'=>$id,'title'=>'修改密码']);
+      
 
     }
 
@@ -49,20 +49,23 @@ class IndexController extends Controller
    public function resetpwd(Request $request,$id)
     {
 
-
+       
         $oldpwd=$request->input('oldpwd');
         $newpwd=$request->input('newpwd');
         $confirmpwd=$request->input('confirmpwd');
-        if($oldpwd==null || $newpwd==null || $confirmpwd==null)
+
+        /*if($oldpwd==null || $newpwd==null || $confirmpwd==null)
         {
              return back()->withInput();
-        }
+        }*/
 
         $user=User::where('id',$id)->first();
+
         $datapwd=$user->password;
 
-        $res=Hash::check($oldpwd,$datapwd);
 
+        $res=Hash::check($oldpwd,$datapwd);
+  
         if(!$res)
         {
             return back()->withInput();
@@ -75,7 +78,7 @@ class IndexController extends Controller
 
         $user->password=Hash::make($newpwd);
         $user->save();
-        return redirect('/admin/login');
+        return redirect('/admin/login/jiuding/ruilu/index');
 
     }
 
