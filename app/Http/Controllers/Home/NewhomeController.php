@@ -86,7 +86,11 @@ class NewhomeController extends Controller
      */
     public function ct(Request $request)
     {
-        return view('home.ct');
+        $kaocha = Articles::limit(4)->where('lanmu','=','95')->get();
+        $zhanlan = Articles::limit(4)->where('lanmu','=','94')->get();
+        $huiyi = Articles::limit(4)->where('lanmu','=','92')->get();
+//        dd($kaocha);
+        return view('home.ct',['kaocha'=>$kaocha,'zhanlan'=>$zhanlan,'huiyi'=>$huiyi]);
     }
 
       /**

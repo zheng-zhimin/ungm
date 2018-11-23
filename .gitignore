@@ -8,3 +8,6 @@ Homestead.json
 .idea/workspace.xml
 .gitignore
 .DS_Store
+public/test_access_log
+public/test_error_log
+
