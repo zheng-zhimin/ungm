@@ -13,7 +13,11 @@
                
                {{$userdetail[0]->email}} -->
 
-
+<style>
+    .info-mana{
+      background:#00d6bc !important;
+    }
+</style>
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 <style type="text/css" media="screen">
          .myUpload

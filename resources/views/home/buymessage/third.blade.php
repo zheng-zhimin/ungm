@@ -82,8 +82,8 @@
             
                 <div class="twoMRO">
                     <div class="ltMRO">
-                        <h1><a href=""> {{$data->title}} </a></h1>
-                        <p>采购时间：{{$data->title}}</p>
+                        <h1><a href=""> xxoo</a></h1>
+                        <p>采购时间：xxoo</p>
                         <p>采购详情：暂无数据</p>
                     </div>
                         <div class="rtMRO">

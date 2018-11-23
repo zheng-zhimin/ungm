@@ -24,6 +24,9 @@
         .myPurchaseOrder .table{
             margin-top: 50px;
         }
+        .exc-mana{
+          background:#00d6bc !important;
+        }
     </style>
 
 

@@ -7,7 +7,11 @@
 @endsection
 
 @section('content')
-
+<style>
+    .cont-mana{
+      background:#00d6bc !important;
+    }
+</style>
     <link rel="stylesheet" href="/ungmhome/css/style.css">
 
 <body>

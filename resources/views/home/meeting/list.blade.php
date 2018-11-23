@@ -10,6 +10,12 @@
 
 
     <link rel="stylesheet" href="/ungmhome/css/style.css">
+    <style type="text/css">
+         .pagination > .active > span,.pagination > .active > span:hover{
+            background-color: #00b7a1;
+            border-color: #00b7a1;
+         }
+    </style>
 </head>
 <body>
     <div class="main">
@@ -48,7 +54,7 @@
            
 
                 </div>
-                     <div class="page dataTables_paginate paging_full_numbers text-center" style="margin-top:-10px;">
+                     <div class="page dataTables_paginate paging_full_numbers text-center" style="margin-top:-10px;" >
                      {!! $data->render() !!}
                      </div>
                 </div>

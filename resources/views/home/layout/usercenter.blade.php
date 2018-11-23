@@ -165,20 +165,20 @@
         <ul class="nav navbar-nav">
               <li class="dropdown">
               @if(Session::get('homeuser')->identity==1)
-                  <a  class="a1" href="/home/userinfo/index" >信息管理</a>
+                  <a  class="a1 info-mana" href="/home/userinfo/index" >信息管理</a>
               @elseif( Session::get('homeuser')->identity==2 )
-                  <a href="/home/userinfo/indexed" >信息管理</a>
+                  <a href="/home/userinfo/indexed" class="info-mana">信息管理</a>
               @endif
 
                   
               </li>
               <li class="dropdown">
-                  <a  class="a2" href="/home/userinfo/transaction" >交易管理</a>
+                  <a  class="a2 exc-mana" href="/home/userinfo/transaction" >交易管理</a>
                   
               </li>
           
               <li class="dropdown">
-                  <a class="a3" href="/home/userinfo/account/{{Session::get('homeuser')->id}}" >账户设置</a>
+                  <a class="a3 cont-mana" href="/home/userinfo/account/{{Session::get('homeuser')->id}}" >账户设置</a>
                   
               </li>
               

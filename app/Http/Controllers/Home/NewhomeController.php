@@ -717,7 +717,7 @@ class NewhomeController extends Controller
         {
             $column = Column::where('pid',28)->get()->toArray();
             //默认展示页数据
-         $data = Articles::where('lanmu',29)->where('relation',2)->first();
+            $data = Articles::where('lanmu',29)->where('relation',2)->first();
             return view('home.buymessage.third',[
             'column'=>$column,
             'data' => $data,
