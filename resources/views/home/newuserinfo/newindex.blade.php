@@ -142,8 +142,12 @@
 
         <!-- 显示完善资料的信息-->
                 @if ( isset($identity) && $identity==1 )
+<<<<<<< HEAD
                    <div  class="alert alert-danger" data-dismiss="" aria-label="" id="info" style="cursor: pointer;">
 
+=======
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="" id="info" style="cursor: pointer;">
+>>>>>>> origin/xia
                         <ul class="text-warning">
                            
                                  <span ><p class="text-center">建议完善资料,以便客户与您联系</p></span>
@@ -468,7 +472,11 @@
         $(".top-menu-1").hide();
     })
     $("#info").click(function () {
+<<<<<<< HEAD
         window.location.href='/home/check/authentication';
+=======
+        window.location.href='/home/userinfo/account/{{$user->id}}';
+>>>>>>> origin/xia
     })
 </script>
 </html>
