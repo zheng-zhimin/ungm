@@ -156,7 +156,46 @@ class OrderController extends Controller
         $res = $this->request_post($url, $post_data);
         $data = json_decode($res,true);
         $res = $data['result']['list'];
-//        dd($res);
+        /*$res= array (
+            0 => array (
+            "datetime" => "2018-11-18 16:33:19",
+            "remark" => "[上海浦东分拨中心]进行揽件扫描",
+            "zone" => ""
+            ),
+            1 => array(
+                "datetime" => "2018-11-18 16:37:32",
+            "remark" => "[上海浦东分拨中心]进行中转集包扫描，发往：北京网点包",
+            "zone" => ""
+            ),
+            2 => array(
+                "datetime" => "2018-11-18 18:00:00",
+            "remark" => "[上海主城区公司浦东新区金桥罗网服务部]进行揽件扫描",
+            "zone" => ""
+            ),
+            3 => array(
+                "datetime" => "2018-11-18 18:20:10",
+            "remark" => "[上海浦东分拨中心]进行装车扫描，发往：北京分拨中心",
+            "zone" => ""
+            ),
+            4 => array(
+                "datetime" => "2018-11-19 23:33:48",
+            "remark" => "[北京分拨中心]在分拨中心进行卸车扫描",
+            "zone" => ""
+            ),
+            5 => array(
+                "datetime" => "2018-11-19 23:42:15",
+            "remark" => "[北京分拨中心]从站点发出，本次转运目的地：北京主城区公司通州区东关服务部",
+            "zone" => ""
+            ),
+            6 => array(
+                "datetime" => "2018-11-20 08:10:31",
+            "remark" => "[北京主城区公司通州区东关服务部]进行派件扫描；派送业务员：王亚宁；联系电话：17316091514",
+            "zone" => ""),
+            7 => array(
+                "datetime" => "2018-11-20 09:39:19",
+            "remark" => "[北京主城区公司通州区东关服务部]快件已被 三元村小区西门南侧原e栈暂不支持寄件FC0105358 代签收如有问题请联系王亚宁【17316091514】。",
+            "zone" => ""),
+        );*/
         echo json_encode($res);
 
 

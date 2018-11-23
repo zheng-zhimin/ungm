@@ -3786,7 +3786,7 @@ a:hover, a:focus{
 	font-family: MicrosoftYaHei;
 	margin:0px 0 100px 150px;
 	padding:14px 0 0 30px;
-	height: 500px;
+	height: 700px;
 	background-color: #ffffff;
 	box-shadow: 0 0 15px 1px 
 		rgba(0, 0, 0, 0.1);
@@ -4468,55 +4468,50 @@ a:hover, a:focus{
 	width:400px;
 }
 
-/**个人中心-我的物流**/
+
+/**个人中心-我的物流--新**/
 .myManagement .myLogistics ul{
     padding:46px 0 0 12px;
 }
 .myManagement .myLogistics ul li{
+    width:750px;
     font-family: MicrosoftYaHei-Bold;
     font-size: 16px;
-    line-height: 14px;
+    line-height: 20px;
     color: #666666;
-    margin-bottom:20px;
 }
-.myManagement .myLogistics ul li>div{
+.myManagement .myLogistics ul li:first-child{
+    margin-bottom:-12px;
+}
+.myManagement .myLogistics ul li:last-child{
+    display:none;
+}
+.myManagement .myLogistics .logistics1 .col-md-1>div{
     width: 14px;
     height: 14px;
     background-color: #cdcdcd;
     border:3px solid #dbdbdb;
     border-radius:50%;
-    float:left;
+    margin:2px 0 0 6px;
 }
-.myManagement .myLogistics .logistics1 b{
-    margin:0 60px 0 30px;
-}
-.myManagement .myLogistics .logistics1 span{
-    margin-right:30px;
-}
-.myManagement .myLogistics .logistics2{
-    margin:0 30px 0 246px;
-}
-.myManagement .myLogistics .logistics3 span{
-    margin-left:4px;
-    color:#d8d8d8;
-    line-height: 14px;
-    font-size: 24px;
-}
-.myManagement .myLogistics .myColor>div{
+.myManagement .myLogistics .logistics1 .myColor>div{
     background-color: #00d6bc;
     border:3px solid #00b7a1;
 }
-.myManagement .myLogistics .logistics4{
-    border-bottom:1px solid #d8d8d8;
-    margin-right:100px;
-    padding-bottom:50px;
+.myManagement .myLogistics .logistics2{
+    color:#d8d8d8;
+    line-height: 14px;
+    font-size: 22px;
+    margin:10px;
 }
-.myManagement .myLogistics .logistics5{
-    float:right;
-    margin-right:100px;
-    font-size: 14px;
+.myManagement .myLogistics .logistics3{
+    border-top:1px solid #d8d8d8;
+    font-family: MicrosoftYaHei;
+    font-size: 16px;
     color: #999999;
-    margin-top: 10px;
+    padding-top:20px;
+    margin:50px 100px 0 50px;
 }
-
-
+.myManagement .myLogistics .logistics3>span{
+    float:right;
+}

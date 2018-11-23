@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <link rel="stylesheet" href="/ungmhome/css/style.css?v=111">
+    <link rel="stylesheet" href="/ungmhome/css/style.css?v=1">
     <style>
         .myPurchaseOrder table thead tr th {
             padding: 10px 0;
@@ -73,22 +73,37 @@
                     <div class="mySupplyOrder hintOne"><p>您暂无供应订单交易</p></div>
                     <div class="myInvoice hintOne"><p>您暂无可申请的发票</p></div>
                     <div class="myLogistics hintOne">
-                        <p class="default">请点击采购订单</p>
+                        {{--<p class="default">请点击采购订单</p>--}}
                         <ul class="logistics">
-                        {{--<ul class="">
-                            <li class="logistics1"><div></div><b>2018-11-20</b><span>09:00:00</span><span>您的订单已经开始处理</span></li>
-                            <li class="logistics3"><span>|</span></li>
-                            <li><div></div><span class="logistics2">09:30:00 </span><span>卖家发货</span></li>
-                            <li class="logistics3"><span>|</span></li>
-                            <li><div></div><span class="logistics2">09:45:00 </span><span>【德邦物流】已收寄</span></li>
-                            <li class="logistics3"><span>|</span></li>
-                            <li class="logistics1"><div></div><b>2018-11-21</b><span>15:00:00</span><span> 离开【北京物流处理中心】 下一站 【河北保定物流中心】</span></li>
-                            <li class="logistics3"><span>|</span></li>
-                            <li><div></div><span class="logistics2">20:30:00</span><span>到达【河北保定物流中心】</span></li>
-                            <li class="logistics3"><span>|</span></li>
-                            <li class="myColor logistics4"><div></div><span class="logistics2">23:50:00</span><span>离开【河北保定物流中心】  下一站 【山东济南物流中心】</span></li>
+                            {{--<li class="logistics1">
+                                <div class="row">
+                                    <div class="col-md-1"><div></div></div>
+                                    <div class="col-md-2"><b>2018-11-20</b></div>
+                                    <div class="col-md-2">09:00:00</div>
+                                    <div class="col-md-7">您的订单已经开始处理</div>
+                                </div>
+                            </li>
+                            <li class="logistics2"><span>|</span></li>
+                            <li class="logistics1">
+                                <div class="row">
+                                    <div class="col-md-1"><div></div></div>
+                                    <div class="col-md-2"><b>2018-11-20</b></div>
+                                    <div class="col-md-2">09:00:00</div>
+                                    <div class="col-md-7">您的订单已经开始处理</div>
+                                </div>
+                            </li>
+                            <li class="logistics2"><span>|</span></li>
+                            <li class="logistics1">
+                                <div class="row">
+                                    <div class="col-md-1 myColor"><div></div></div>
+                                    <div class="col-md-2"><b>2018-11-20</b></div>
+                                    <div class="col-md-2">09:00:00</div>
+                                    <div class="col-md-7">您的订单已经开始处理</div>
+                                </div>
+                            </li>
+                            <li class="logistics2"><span>|</span></li>
+                        <div class="logistics3"><span>以上为快递公司原文信息</span></div>--}}
                         </ul>
-                        <span class="logistics5">以上为快递公司原文信息</span>--}}
                     </div>
                 </div>
             </div>
@@ -167,15 +182,25 @@ function wuliu(obj) {
         data: {id:id},
         dataType: 'json',
         success: function(data){
-            // console.log(data);
+            console.log(data);
             for(var i=0;i<data.length;i++){
-                info +='<li class="logistics1"><div></div><b>'+data[i].datetime.split(' ')[0]+'</b><span>'+data[i].datetime.split(' ')[1]+'</span><span>'+data[i].remark+'</span></li>';
+                //info +='<li class="logistics1"><div></div><b>'+data[i].datetime.split(' ')[0]+'</b><span>'+data[i].datetime.split(' ')[1]+'</span><span>'+data[i].remark+'</span></li>';
+                info += '<li class="logistics1">\n' +
+                    '                                <div class="row">\n' +
+                    '                                    <div class="col-md-1"><div></div></div>\n' +
+                    '                                    <div class="col-md-2"><b>'+data[i].datetime.split(' ')[0]+'</b></div>\n' +
+                    '                                    <div class="col-md-2">'+data[i].datetime.split(' ')[1]+'</div>\n' +
+                    '                                    <div class="col-md-7">'+data[i].remark+'</div>\n' +
+                    '                                </div>\n' +
+                    '                            </li>\n' +
+                    '                            <li class="logistics2"><span>|</span></li>';
 
             }
-            var infos = '<span class="logistics5">以上为快递公司原文信息</span>';
+            var infos = '<div class="logistics3"><span>以上为快递公司原文信息</span></div>';
             $(".default").remove();
             $(".logistics").append(info);
-            $(".logistics li:last-child").addClass('myColor').css({'line-hight':'30px'});
+            $(".logistics li:last-child").prev().children().children().addClass('myColor');
+            $(".logistics li:last-child").hide();
             $(".logistics").append(infos);
         },
     });
@@ -195,11 +220,11 @@ $('.myNav span').click(function(){
     var _index = $(this).index();
     $(this).addClass('btnColor').siblings().removeClass('btnColor');
     $('.myHint .hintOne').eq(_index).show().siblings('.hintOne').hide();
-    if(_index == 3){
-        if($(".default").text() == ''){
-            $(".myLogistics").append('<p class="default">请点击采购订单</p>');
-        }
-    }
+    // if(_index == 3){
+    //     if($(".default").text() == ''){
+    //         $(".myLogistics").append('<p class="default">请点击采购订单</p>');
+    //     }
+    // }
 })
 </script>
 </html>

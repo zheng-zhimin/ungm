@@ -141,7 +141,7 @@
         <div class="container"> 
         <!-- 显示完善资料的信息-->
                 @if ( isset($identity) && $identity==1 )
-                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="Close">
+                    <div  class="alert alert-danger" data-dismiss="alert" aria-label="" id="info" style="cursor: pointer;">
                         <ul class="text-warning">
                            
                                  <span ><p class="text-center">建议完善资料,以便客户与您联系</p></span>
@@ -464,6 +464,9 @@
         $(".b2").addClass("backcolor");
         $(".top-menu-2").show();
         $(".top-menu-1").hide();
+    })
+    $("#info").click(function () {
+        window.location.href='/home/userinfo/account/{{$user->id}}';
     })
 </script>
 </html>
