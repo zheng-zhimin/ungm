@@ -19,7 +19,6 @@ Route::get('/check','CodeController@checkcode');
 Route::get('/show','CodeController@show');
 Route::post('/store','CodeController@store');
 //后台登录页面路由
-//    Route::get('/admin/login/jiuding/ruilu/index', 'Admin\LoginController@index');
 Route::get('/admin/login', 'Admin\LoginController@index');
 //验证码测试结束测试结束
 Route::group(['middleware'=>'Adminlogin'], function() {
