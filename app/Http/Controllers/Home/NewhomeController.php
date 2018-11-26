@@ -1060,6 +1060,9 @@ public function usercenter()
 {
         //从永久Session中拿出缓存的用户账号密码id信息
     $user=Session::get('homeuser');
+  if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  }
     $id=$user->id;
     $username=$user->username;
     $phone=$user->phone;

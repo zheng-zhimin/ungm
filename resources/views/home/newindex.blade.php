@@ -12,7 +12,7 @@
 
 @section('content')
 
- 
+
 <style>
     .nn-1{
     color: #3477ff !important;

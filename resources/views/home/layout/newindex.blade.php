@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name=keywords content="睿鹿,睿鹿网,B2B,电子商务,网上贸易,批发,采购,网上贸易,供求信息,求购信息,供应信息,公司黄页,行业资讯,采购批发,行业门户,中国指定供应商,联合国采购供应商,联合国采购,ungm">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title')</title>
     <link href="/ungmhome/images/icon.png" type="image/x-iocn" rel="shortcut icon" />
@@ -15,6 +16,7 @@
     
     <script src="/ungmhome/js/jquery.js"></script>
     <script src="/ungmhome/bootstrap/js/bootstrap.js"></script>
+
 
 
 
