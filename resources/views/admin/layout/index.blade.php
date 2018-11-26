@@ -202,7 +202,9 @@
                         <a href="#"><i class="icon-list"></i>栏目管理</a>
                         <ul>
                             <li><a href="/admin/column">栏目列表</a></li>
-                            <li><a href="/admin/column/create">栏目添加</a></li>
+                            @if(session('adminUser')->identity == 1)
+                                <li><a href="/admin/column/create">栏目添加</a></li>
+                            @endif
                         </ul>
                     </li>
 
@@ -217,7 +219,9 @@
                         <a href="#"><i class="icon-user"></i>管理员账号管理</a>
                         <ul>
                             <li><a href="/admin/users">管理员列表</a></li>
-                            <li><a href="/admin/users/create">管理员添加</a></li>
+                            @if(session('adminUser')->identity == 1)
+                                <li><a href="/admin/users/create">管理员添加</a></li>
+                            @endif
                         </ul>
                     </li>
                     <li class="active">

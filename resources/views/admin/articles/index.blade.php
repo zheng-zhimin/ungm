@@ -76,16 +76,18 @@
                             <td>{{$v->created_at}}</td>
                             <td>{{$v->updated_at}}</td>
                             <td>
-                          <form action="/admin/articles/{{$v->id}}" method="post" style="display: inline;">
-                              {{ csrf_field() }}
-                              {{ method_field('DELETE') }}
-                              <input type="submit" value="删除" class="btn btn-danger">
-                          </form>
+                                @if(session('adminUser')->identity == 1)
+                                  <form action="/admin/articles/{{$v->id}}" method="post" style="display: inline;">
+                                      {{ csrf_field() }}
+                                      {{ method_field('DELETE') }}
+                                      <input type="submit" value="删除" class="btn btn-danger">
+                                  </form>
 
-                          <form action="/admin/articles/{{$v->id}}/edit" method="get"  style="display: inline;">
-                              {{ csrf_field() }}
-                              <input type="submit" class="btn btn-warning"  value="修改">
-                           </form>
+                                  <form action="/admin/articles/{{$v->id}}/edit" method="get"  style="display: inline;">
+                                      {{ csrf_field() }}
+                                      <input type="submit" class="btn btn-warning"  value="修改">
+                                   </form>
+                                @endif
                                 <a href="/admin/articles/{{$v->id}}" class="btn btn-info">查看文章内容</a>
                             </td>
                         </tr>

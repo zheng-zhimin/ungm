@@ -82,26 +82,28 @@
                            </td> -->
                             <td style="width:150px">
                             <div style="float:left; margin-right:5px;">
-                            <form action="/admin/buyoffer/{{$v['id']}}" method="post">
-                               {{ csrf_field() }}
-                               {{ method_field('DELETE') }}
-                               <input type="submit" id="sub" class="btn btn-danger" value="删除" onclick="return confirm('确认要删除该用户吗?');" >
-                            </form>
-                            </div>
+                            @if(session('adminUser')->identity == 1)
+                                <form action="/admin/buyoffer/{{$v['id']}}" method="post">
+                                   {{ csrf_field() }}
+                                   {{ method_field('DELETE') }}
+                                   <input type="submit" id="sub" class="btn btn-danger" value="删除" onclick="return confirm('确认要删除该用户吗?');" >
+                                </form>
+                                </div>
 
-                              <div  style="float:left;  margin-right:5px; ">
-                             @if( $v['status']==0)
-                             <form action="/admin/buyoffer/yes/{{$v['id']}}" method="post">
-                            {{ csrf_field() }}
-                          
-                            <input type="submit" id="yes" class="btn btn-success" value="通过" onclick="return confirm('确认要审核通过该采购商的发布信息吗?');" >
-                             </form> 
-                            @else
-                             <form action="/admin/buyoffer/no/{{$v['id']}}" method="post">
-                               {{ csrf_field() }}
+                                  <div  style="float:left;  margin-right:5px; ">
+                                 @if( $v['status']==0)
+                                 <form action="/admin/buyoffer/yes/{{$v['id']}}" method="post">
+                                {{ csrf_field() }}
 
-                               <input type="submit" id="no" class="btn btn-danger"  value="撤销" onclick="return confirm('确认撤销该采购商的发布信息吗?');" >
-                            </form>
+                                <input type="submit" id="yes" class="btn btn-success" value="通过" onclick="return confirm('确认要审核通过该采购商的发布信息吗?');" >
+                                 </form>
+                                @else
+                                 <form action="/admin/buyoffer/no/{{$v['id']}}" method="post">
+                                   {{ csrf_field() }}
+
+                                   <input type="submit" id="no" class="btn btn-danger"  value="撤销" onclick="return confirm('确认撤销该采购商的发布信息吗?');" >
+                                </form>
+                                @endif
                             @endif
 
                             </div>

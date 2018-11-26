@@ -82,7 +82,7 @@ class LoginController extends Controller
     {
         session()->flush();
         session(['adminFlag'=>false]);
-        return redirect('admin/login/jiuding/ruilu/index');
+        return redirect('admin/login');
     }
     /**
      * Show the form for creating a new resource.

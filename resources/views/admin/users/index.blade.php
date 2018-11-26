@@ -62,35 +62,41 @@
                             </td>
                             <td style="width:310px">
                             <div style="float:left; margin-right:5px;">
-                            <form action="/admin/users/{{$v->id}}" method="post">
-                               {{ csrf_field() }}
-                               {{ method_field('DELETE') }}
-                               <input type="submit" id="sub" class="btn btn-danger" value="删除" onclick="return confirm('确认要删除该用户吗?');" >
-                            </form>
+                                @if($adminUser->identity == 1 )
+                                <form action="/admin/users/{{$v->id}}" method="post">
+                                   {{ csrf_field() }}
+                                   {{ method_field('DELETE') }}
+                                   <input type="submit" id="sub" class="btn btn-danger" value="删除" onclick="return confirm('确认要删除该用户吗?');" >
+                                </form>
+                                @endif
                             </div>
 
                               <div  style="float:left;  margin-right:5px; ">
-                             @if( $v->usersdetail['status']==1)
-                            <form action="/admin/users/lahei/{{$v->id}}" method="post">
-                               {{ csrf_field() }}
+                                  @if($adminUser->identity == 1 )
+                                    @if( $v->usersdetail['status']==1)
+                                    <form action="/admin/users/lahei/{{$v->id}}" method="post">
+                                       {{ csrf_field() }}
 
-                               <input type="submit" id="lahei" class="btn btn-danger" value="拉黑" onclick="return confirm('确认要拉黑该用户吗?');" >
-                            </form>
-                            @else
-                             <form action="/admin/users/huifu/{{$v->id}}" method="post">
-                               {{ csrf_field() }}
+                                       <input type="submit" id="lahei" class="btn btn-danger" value="拉黑" onclick="return confirm('确认要拉黑该用户吗?');" >
+                                    </form>
+                                    @else
+                                     <form action="/admin/users/huifu/{{$v->id}}" method="post">
+                                       {{ csrf_field() }}
 
-                               <input type="submit" id="huifu" class="btn btn-success" value="恢复" onclick="return confirm('确认恢复该用户吗?');" >
-                            </form>
-                            @endif
+                                       <input type="submit" id="huifu" class="btn btn-success" value="恢复" onclick="return confirm('确认恢复该用户吗?');" >
+                                    </form>
+                                    @endif
+                                  @endif
 
                             </div>
 
                             <div style="float:left">
-                            <form  action="/admin/users/{{$v->id}}/edit" method="get">
-                            {{ csrf_field() }}
-                            <input type="submit" class="btn btn-warning"  value="修改">
-                            </form>
+                                @if($adminUser->id == $v->id || $adminUser->identity == 1)
+                                <form  action="/admin/users/{{$v->id}}/edit" method="get">
+                                {{ csrf_field() }}
+                                <input type="submit" class="btn btn-warning"  value="修改">
+                                </form>
+                                @endif
                             </div>
 
                             <a style="float:right" href="/admin/users/{{$v->id}}" class="btn btn-info">查看用户详细信息</a>

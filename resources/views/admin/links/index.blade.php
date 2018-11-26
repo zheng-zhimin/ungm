@@ -62,36 +62,37 @@
                                     <img class="img-circle img-thumbnail img-responsive" style="width:50px; height:60px" src="{{url('/').$v->image_path}}" alt="">
                                 </td>
                                 <td style="width:310px">
-                                    <div style="float:left; margin-right:5px;">
-                                            <form action="/admin/friendlylink/{{  $v->id  }}" method="post">
-                                            {{ csrf_field() }}
-                                            {{ method_field('DELETE') }}
-                                            <input type="submit" id="sub" class="btn btn-danger" value="删除"  onclick="return confirm('确认要删除该链接吗?');">
-                                        </form>
-                                    </div>
+                                    @if(session('adminUser')->identity == 1)
+                                        <div style="float:left; margin-right:5px;">
+                                                <form action="/admin/friendlylink/{{  $v->id  }}" method="post">
+                                                {{ csrf_field() }}
+                                                {{ method_field('DELETE') }}
+                                                <input type="submit" id="sub" class="btn btn-danger" value="删除"  onclick="return confirm('确认要删除该链接吗?');">
+                                            </form>
+                                        </div>
 
-                                    <div  style="float:left;  margin-right:5px; ">
-                                        @if( $v->status ==1)
-                                        <form action="/admin/friendlylink/disable/{{  $v->id   }}" method="post">
-                                            {{ csrf_field() }}
+                                        <div  style="float:left;  margin-right:5px; ">
+                                            @if( $v->status ==1)
+                                            <form action="/admin/friendlylink/disable/{{  $v->id   }}" method="post">
+                                                {{ csrf_field() }}
 
-                                            <input type="submit" id="disable" class="btn btn-info" value="禁用" onclick="return confirm('确认要禁用该链接吗?');" >
-                                        </form>
-                                        @else
-                                        <form action="/admin/friendlylink/able/{{  $v->id   }}" method="post">
-                                            {{ csrf_field() }}
+                                                <input type="submit" id="disable" class="btn btn-info" value="禁用" onclick="return confirm('确认要禁用该链接吗?');" >
+                                            </form>
+                                            @else
+                                            <form action="/admin/friendlylink/able/{{  $v->id   }}" method="post">
+                                                {{ csrf_field() }}
 
-                                            <input type="submit" id="able" class="btn btn-success" value="启用" onclick="return confirm('确认要启用该链接吗?');" >
-                                        </form>
-                                        @endif
-                                    </div>
-                                    <div style="float:left">
-                                        <form  action="/admin/friendlylink/{{  $v->id }}/edit" method="get">
-                                            {{ csrf_field() }}
-                                            <input type="submit" class="btn btn-warning"  value="修改">
-                                        </form>
-                                    </div>
-
+                                                <input type="submit" id="able" class="btn btn-success" value="启用" onclick="return confirm('确认要启用该链接吗?');" >
+                                            </form>
+                                            @endif
+                                        </div>
+                                        <div style="float:left">
+                                            <form  action="/admin/friendlylink/{{  $v->id }}/edit" method="get">
+                                                {{ csrf_field() }}
+                                                <input type="submit" class="btn btn-warning"  value="修改">
+                                            </form>
+                                        </div>
+                                    @endif
                                 </td>
                             </tr>
                         @endforeach

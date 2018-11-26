@@ -10,6 +10,7 @@ use DB;
 use App\User;
 use App\Models\Admin\Usersdetail;
 use Hash;
+use Session;
 class UsersController extends Controller
 {
     /**
@@ -19,6 +20,7 @@ class UsersController extends Controller
      */
    public function index(Request $request)
     {
+
         //接收分页数据
         $count = $request -> input('count',5);
         $for = $request -> input('for','');
@@ -26,9 +28,10 @@ class UsersController extends Controller
 
         $data=User::
         where('username','like','%'.$for.'%') -> paginate($count);
-
+        $adminUser = Session::get('adminUser');
+//        dd($adminUser);
         // 查询
-        return view('admin.users.index',['title' => '用户列表','data' => $data,'params' => $params]);
+        return view('admin.users.index',['title' => '用户列表','data' => $data,'params' => $params,'adminUser'=>$adminUser]);
     }
 
     /**
@@ -80,6 +83,7 @@ class UsersController extends Controller
             ]);
 
         $data = $request;
+
 
         if($request->hasFile('profile')){
             $profile=$request->file('profile');

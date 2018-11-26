@@ -71,26 +71,28 @@
                         
                             <td style="width:150px">
                             <div style="float:left; margin-right:5px;">
-                            <form action="/admin/seller/{{$v['id']}}" method="post">
-                               {{ csrf_field() }}
-                               {{ method_field('DELETE') }}
-                               <input type="submit" id="sub" class="btn btn-danger" value="删除" onclick="return confirm('确认要删除该条企业注册信息吗?');" >
-                            </form>
-                            </div>
+                            @if(session('adminUser')->identity == 1)
+                                <form action="/admin/seller/{{$v['id']}}" method="post">
+                                   {{ csrf_field() }}
+                                   {{ method_field('DELETE') }}
+                                   <input type="submit" id="sub" class="btn btn-danger" value="删除" onclick="return confirm('确认要删除该条企业注册信息吗?');" >
+                                </form>
+                                </div>
 
-                              <div  style="float:left;  margin-right:5px; ">
-                             @if( $v['identity']==1)
-                             <form action="/admin/seller/yes/{{$v['uid']}}" method="post">
-                            {{ csrf_field() }}
-                          
-                            <input type="submit" id="yes" class="btn btn-success" value="认证" onclick="return confirm('确认要审核通过该供应商的企业资质吗?');" >
-                             </form> 
-                            @else
-                             <form action="/admin/seller/no/{{$v['uid']}}" method="post">
-                               {{ csrf_field() }}
+                                  <div  style="float:left;  margin-right:5px; ">
+                                 @if( $v['identity']==1)
+                                 <form action="/admin/seller/yes/{{$v['uid']}}" method="post">
+                                {{ csrf_field() }}
 
-                               <input type="submit" id="no" class="btn btn-danger"  value="取消" onclick="return confirm('确认撤销认证该供应商的企业资质吗?');" >
-                            </form>
+                                <input type="submit" id="yes" class="btn btn-success" value="认证" onclick="return confirm('确认要审核通过该供应商的企业资质吗?');" >
+                                 </form>
+                                @else
+                                 <form action="/admin/seller/no/{{$v['uid']}}" method="post">
+                                   {{ csrf_field() }}
+
+                                   <input type="submit" id="no" class="btn btn-danger"  value="取消" onclick="return confirm('确认撤销认证该供应商的企业资质吗?');" >
+                                </form>
+                                @endif
                             @endif
 
                             </div>
