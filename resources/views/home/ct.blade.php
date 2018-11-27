@@ -73,7 +73,7 @@
                                     <div class="row">
                                        <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left" style="padding:60px 20px 50px 26px ;">
-                                                 <a href="/home/meeting/detail/133"><p class="p1">2019第16届中国（上海）国际保温、防水材料 与节能技术展览会</p></a>
+                                                <p class="p1">2019第16届中国（上海）国际保温、防水材料 与节能技术展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -85,7 +85,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a href="/home/meeting/detail/134"><p class="p1">2019年第二届新疆亚欧（国际）节能环保博览会</p></a>
+                                                <p class="p1">2019年第二届新疆亚欧（国际）节能环保博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -97,7 +97,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a href="/home/meeting/detail/135"> <p class="p1">2019第二届武汉国际水利水电博览会</p></a>
+                                                <p class="p1">2019第二届武汉国际水利水电博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>电力煤炭</span></p>
@@ -109,7 +109,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a href="/home/meeting/detail/136"><p class="p1">2019天津工博会——天津机床展</p></a>
+                                               <p class="p1">2019天津工博会——天津机床展</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -123,7 +123,7 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left" style="padding:60px 20px 50px 26px ;">
-                                               <a href="/home/meeting/detail/137"> <p class="p1">第十届“一带一路”核电前沿高峰论坛</p></a>
+                                              <p class="p1">第十届“一带一路”核电前沿高峰论坛</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -135,7 +135,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a href="/home/meeting/detail/138"><p class="p1">2019第七届中国（广州）国际自助售货系统与设施博览交易会</p></a>
+                                               <p class="p1">2019第七届中国（广州）国际自助售货系统与设施博览交易会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -147,7 +147,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a href="/home/meeting/detail/139"><p class="p1">2019中国国际（成都）锅炉及燃烧系统展</p></a>
+                                               <p class="p1">2019中国国际（成都）锅炉及燃烧系统展</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -159,7 +159,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a href="/home/meeting/detail/140"><p class="p1">第七届中国国际建筑工程新技术、新材料、新工艺及新装备博览会</p></a>
+                                               <p class="p1">第七届中国国际建筑工程新技术、新材料、新工艺及新装备博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>工程建材</span></p>
@@ -175,7 +175,7 @@
                                     <div class="row">
                                        <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left" style="padding:60px 20px 50px 26px ;">
-                                                <a helf = "/home/meeting/detail/149"> <p class="p1">2019中国国际（成都）供热暖通展</p></a>
+                                               <p class="p1">2019中国国际（成都）供热暖通展</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -187,7 +187,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a helf = "/home/meeting/detail/150"><p class="p1">2019成都国际充电站（桩）技术设备展</p></a>
+                                               <p class="p1">2019成都国际充电站（桩）技术设备展</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -199,7 +199,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a helf = "/home/meeting/detail/151"> <p class="p1">2019新疆国际新风、空气及净水设备展览会</p></a>
+                                               <p class="p1">2019新疆国际新风、空气及净水设备展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -211,7 +211,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a href="/home/meeting/detail/152"><p class="p1">2019第15届国际锅炉暖通通风空调制冷设备展览会</p></a>
+                                               <p class="p1">2019第15届国际锅炉暖通通风空调制冷设备展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -225,7 +225,7 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left" style="padding:60px 20px 50px 26px ;">
-                                               <a helf = "/home/meeting/detail/145"> <p class="p1">2019第十六届中国国际橡胶技术（青岛）展览会</p></a>
+                                               <p class="p1">2019第十六届中国国际橡胶技术（青岛）展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>石油化工</span></p>
@@ -237,7 +237,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a helf = "/home/meeting/detail/146"> <p class="p1">2019东北（长春）第十七届国际消防产品设备展览会</p></a>
+                                               <p class="p1">2019东北（长春）第十七届国际消防产品设备展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>安防</span></p>
@@ -249,7 +249,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a helf = "/home/meeting/detail/147;"> <p class="p1">2019中国（河北）国际现代物流产业博览会</p></a>
+                                               <p class="p1">2019中国（河北）国际现代物流产业博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>交通运输</span></p>
@@ -261,7 +261,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a helf = "/home/meeting/detail/148"> <p class="p1">2019第二届中国（石家庄）国际粮油产业博览会</p></a>
+                                                <p class="p1">2019第二届中国（石家庄）国际粮油产业博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>轻纺消费</span></p>
@@ -277,7 +277,7 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left" style="padding:60px 20px 50px 26px ;">
-                                                <a href="/home/meeting/detail/149"><p class="p1">2019中国国际（成都）锅炉及燃烧系统展</p></a>
+                                               <p class="p1">2019中国国际（成都）锅炉及燃烧系统展</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -289,7 +289,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a helf = "/home/meeting/detail/150"><p class="p1">2019成都国际充电站（桩）技术设备展</p></a>
+                                               <p class="p1">2019成都国际充电站（桩）技术设备展</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -301,7 +301,7 @@
                                         </div>
                                        <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                 <a helf = "/home/meeting/detail/151"><p class="p1">2019新疆国际新风、空气及净水设备展览会</p></a>
+                                                <p class="p1">2019新疆国际新风、空气及净水设备展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>节能环保</span></p>
@@ -313,7 +313,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a href="/home/meeting/detail/152"> <p class="p1">2019第15届国际锅炉暖通通风空调制冷设备展览会</p></a>
+                                               <p class="p1">2019第15届国际锅炉暖通通风空调制冷设备展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>机械设备</span></p>
@@ -327,7 +327,7 @@
                                     <div class="row">
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left" style="padding:60px 20px 50px 26px ;">
-                                               <a helf = "/home/meeting/detail/153"> <p class="p1">2019第十六届中国国际橡胶技术（青岛）展览会</p></a>
+                                                <p class="p1">2019第十六届中国国际橡胶技术（青岛）展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>石油化工</span></p>
@@ -339,7 +339,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a helf = "/home/meeting/detail/154"> <p class="p1">2019东北（长春）第十七届国际消防产品设备展览会</p></a>
+                                               <p class="p1">2019东北（长春）第十七届国际消防产品设备展览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>安防</span></p>
@@ -351,7 +351,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                                <a helf = "/home/meeting/detail/148"><p class="p1">2019中国（河北）国际现代物流产业博览会</p></a>
+                                                <p class="p1">2019中国（河北）国际现代物流产业博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>交通运输</span></p>
@@ -363,7 +363,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             <div class="lump con-2-lump" align="left">
-                                               <a helf = "/home/meeting/detail/142"> <p class="p1">2019第二届中国（石家庄）国际粮油产业博览会</p></a>
+                                               <p class="p1">2019第二届中国（石家庄）国际粮油产业博览会</p></a>
                                                 <img class="img-responsive" src="/ungmhome/images/across.png">
                                                 <div align="left">
                                                     <p class="p1">所属行业：<span>轻纺消费</span></p>

@@ -665,7 +665,7 @@
                                                         <div class="activity" id="J_Activity">
                                                             <ul>
                                                           @foreach($credit as $v)
-                                                            <a href="/home/integrity">  <li><span >{{$v['name']}}</span></li></a>
+                                                           <li><span> <a href="/home/sall/credit/{{$v['id']}}">{{$v['name']}}</a></span></li>
                                                           @endforeach
                                                             </ul>
                                                         </div>
@@ -676,7 +676,7 @@
                                                         <div class="activity" id="J_Activity1">
                                                             <ul>
                                                           @foreach($sup as $v)
-                                                            <li><span >{{$v['name']}}</span></li>
+                                                            <li><span> <a href="/home/sall/ungm/{{$v['id']}}">{{$v['name']}}</a></span></li>
                                                           @endforeach
                                                             </ul>
                                                         </div>
@@ -687,7 +687,7 @@
                                                         <div class="activity" id="J_Activity2">
                                                             <ul>
                                                           @foreach($server as $v)
-                                                            <li><span >{{$v['name']}}</span></li>
+                                                             <li><span> <a href="/home/sall/server/{{$v['id']}}">{{$v['name']}}</a></span></li>
                                                           @endforeach
                                                             </ul>
                                                         </div>

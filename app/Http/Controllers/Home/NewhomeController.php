@@ -14,7 +14,6 @@ use App\Models\Admin\Column;//用到了栏目
 
 use App\Models\Sup\Sup;   //四个供应商推荐表
 use App\Models\Sup\Server;//四个供应商推荐表
-use App\Models\Sup\Active;//四个供应商推荐表
 use App\Models\Sup\Credit;//四个供应商推荐表
 
 use App\Models\Admin\Articles;//文章
@@ -60,12 +59,12 @@ class NewhomeController extends Controller
         $server=Server::limit(3)->get()->toArray();
         $sup   =   Sup::limit(3)->get()->toArray();
         $credit=Credit::limit(3)->get()->toArray();
-        $active=Active::limit(3)->get()->toArray();
+      
        /* echo '<pre>';
         var_dump($server,$sup,$credit,$active);
         dd(0);*/
         
-        return view('home.newindex',['data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5,'buyinfo'=>$buyinfo,'server'=>$server,'sup'=>$sup,'credit'=>$credit,'active'=>$active]);
+        return view('home.newindex',['data2'=>$data2,'data3'=>$data3,'data4'=>$data4,'data5'=>$data5,'buyinfo'=>$buyinfo,'server'=>$server,'sup'=>$sup,'credit'=>$credit]);
     }
 
     /**
@@ -101,7 +100,7 @@ class NewhomeController extends Controller
       public function td(Request $request)
       {
         return view('home.td');
-    }
+     }
 
       /**
      * Show the form for creating a new resource.
@@ -111,7 +110,7 @@ class NewhomeController extends Controller
       public function md(Request $request)
       {
         return view('home.md');
-    }  
+     }  
 
       /**
      * Show the form for creating a new resource.
@@ -121,7 +120,7 @@ class NewhomeController extends Controller
       public function cc(Request $request)
       {
         return view('home.cc');
-    } 
+     } 
        /**
      * Show the form for creating a new resource.
      *前台集客
@@ -130,11 +129,11 @@ class NewhomeController extends Controller
        public function jk(Request $request)
        {
         return view('home.jk');
-    }
+     }
     public function about(Request $request)
     {
         return view('home.newabout');
-    }
+     }
 
          /**
      * Show the form for creating a new resource.
@@ -1057,7 +1056,10 @@ public function exhibitiondetail($id)
 
    //显示个人中心的控制器(信息管理)
 public function usercenter()
-{
+{ 
+    if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  }
         //从永久Session中拿出缓存的用户账号密码id信息
     $user=Session::get('homeuser');
   if(!Session::has('homeuser') ) {
@@ -1109,6 +1111,10 @@ public function usercenter()
  //显示个人中心的控制器(信息管理)
 public function usercentered()
 {
+
+     if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  } 
         //从永久Session中拿出缓存的用户账号密码id信息
     $user=Session::get('homeuser');
     $id=$user->id;
@@ -1201,7 +1207,13 @@ public function adduser(Request $request)
             
             ]);
          // echo(111);die;
+          if(!Session::has('homeuser') ) {
+         echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+     }
             $user=Session::get('homeuser');
+             if(!Session::has('homeuser') ) {
+        echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+    }
             $id=$user->id;
             $data = $request ->except('item','_token');
                 //接收修改供应商信息
@@ -1265,6 +1277,9 @@ public function adduser(Request $request)
               //接收个人中心的数据(采购+产品)
     public function adduser2(Request $request)
     {
+         if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  }
         //添加首先判断vip等级
         $vip=Session::get('homeuser')->vip;
         //联合判断发布的产品和采购的数量
@@ -1363,6 +1378,9 @@ public function adduser(Request $request)
      //接收个人中心的数据(采购+产品的发布)
     public function addselleruser2(Request $request)
     {
+     if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+    }
         //添加首先判断vip等级
         $vip=Session::get('homeuser')->vip;
         //联合判断发布的产品和采购的数量
@@ -1468,6 +1486,9 @@ public function adduser(Request $request)
  //显示交易管理的方法
         public function transaction()
         {
+             if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  }
             $id=Session::get('homeuser')->id;
             $address=Address::where('uid',$id)->get();
             $tiao=Address::where('uid',$id)->count();
@@ -1491,12 +1512,12 @@ public function adduser(Request $request)
         }
 
 
-               //诚信供应商 
+        /*       //诚信供应商 
         public function integrity(Request $request)
         {
             //诚信供应商需要从数据表加字段判断
             return view("home.integrity");
-        }
+        }*/
 
         
         //发布询价
@@ -1571,6 +1592,37 @@ public function adduser(Request $request)
         }
         
 
+        //ungm
+        public function sallungm($id)
+        {
+            $data=Sup::where('id',$id)->first();
+           
+            return view('home.sallungm',['data'=>$data]);
+        }
+        //server
+         public function sallserver($id)
+        {
+            $data=Server::where('id',$id)->first();
+           
+            return view('home.sallserver',['data'=>$data]);
+        }
+        //credit
+        public function sallcredit($id)
+        {
+            $data=Credit::where('id',$id)->first();
+
+            return view('home.sallcredit',['data'=>$data]);
+        }
+
+       
+
+
+
+
 
 
     }
+
+
+
+

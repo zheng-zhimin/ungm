@@ -73,6 +73,7 @@ class NewloginController extends Controller
                                 session(['homeFlag'=>true]);
                                 session(['homeuser'=>$user]);
                                 Session::put('homeuser',$user,720);
+                                
                                 //Session::forget('homeuser');//退出是清除记录用法
                                 echo 'success' ;     
                             }else{

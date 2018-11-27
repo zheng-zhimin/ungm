@@ -204,6 +204,9 @@ class CenterController extends Controller
 
             ]);
            //地址添加超过20条返回错误信息
+            if(!Session::has('homeuser') ) {
+        echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+      }
            $uid=Session::get('homeuser')->id;
            $tiao=Address::where('uid',$uid)->count();
 //           $area = DB::table('china_area')->where('id','=', $area)->first()->name;
@@ -286,7 +289,10 @@ class CenterController extends Controller
      }
      //设置默认地址
      public function setdefault($id)
-     {
+     { 
+        if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  }
             $uid=Session::get('homeuser')->id;
             $q=Address::where('uid',$uid)->where('defaultstatus','1')->first();
            
@@ -322,6 +328,9 @@ class CenterController extends Controller
      //利用用户表查看供应商企业是否认证企业营业执照
      public function authentication()
      {
+         if(!Session::has('homeuser') ) {
+    echo "<script>alert('您的登录信息已过期,请重新登录!');window.location.href='/home/newlogin/login'</script>";
+  }
         $id=Session::get('homeuser')->id;
         $data=Newusers::where('id',$id)->get()->toArray();
         $identity=$data[0]['identity'];//1->是未认证;2->是认证过的企业

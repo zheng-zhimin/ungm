@@ -141,7 +141,51 @@ route::get('/','Home\NewhomeController@index');
 
 //中间件设置跳转登录的页面都应该放在这里面
 Route::group(['middleware'=>'login'], function(){
-    //前台全球贸易(Global-Trade)的路由
+  
+    //前台招投标服务(Tender 投标)路由
+    route::get('/home/td','Home\NewhomeController@td');
+            //显示新个人中心的路由(信息管理)
+        Route::get('/home/userinfo/index','Home\NewhomeController@usercenter');//显示(采购)新个人中心的路由(信息管理)
+        Route::get('/home/userinfo/indexed','Home\NewhomeController@usercentered');//显示(供应+采购)新个人中心的路由(信息管理)
+        //普通用户的采购发布
+        Route::post('/home/userinfo/adduser','Home\NewhomeController@adduser');
+        //认证的供应商发布采购
+        Route::post('/home/userinfo/adduser2','Home\NewhomeController@adduser2');
+        //认证的供应商发布产品
+        Route::post('/home/userinfo/addselleruser2','Home\NewhomeController@addselleruser2');
+        //交易管理
+        Route::get('/home/userinfo/transaction','Home\NewhomeController@transaction');
+        //个人中心账户管理
+        Route::get('/home/userinfo/account/{id}','Home\NewhomeController@account');
+        //修改个人信息
+        Route::post('/center/update','Center\CenterController@userdetailupdate');
+
+        //密码修改路由
+        Route::post('/center/pwd','Center\CenterController@pwd');
+        //显示新增收货地址
+        Route::get('/center/addaddress','Center\CenterController@addaddress');
+        //添加新增收货地址
+        Route::post('/center/add/address','Center\CenterController@addbuyaddress');
+        //显示修改地址回填路由
+        Route::get('/center/editaddress/{id}','Center\CenterController@editaddress');
+        //执行地址修改路由
+        Route::post('/center/updateaddress','Center\CenterController@updateaddress');
+        //设置默认地址
+        Route::get('/center/setdefault/{id}','Center\CenterController@setdefault');
+        //删除收货地址
+        Route::get('/center/deladdress/{id}','Center\CenterController@deladdress');
+        //查询省市二级地区路由
+        Route::post('/center/area','Center\CenterController@area');
+        //前台发布产品确定用户身份是否认证(如果是认证直接跳转到个人中心->发布产品;如果未提交企业执照就先跳到供应商企业认证界面->提交申请表单)
+        Route::get('/home/check/authentication','Center\CenterController@authentication');
+
+        Route::post('/center/qiye/renzheng','Center\CenterController@qiyerenzheng');
+
+ 
+
+});
+
+ //前台全球贸易(Global-Trade)的路由
     route::get('/home/gt','Home\NewhomeController@gt');
     //前台国内贸易(China-Trade)的路由
     route::get('/home/ct','Home\NewhomeController@ct');
@@ -151,9 +195,6 @@ Route::group(['middleware'=>'login'], function(){
     route::get('/home/cc','Home\NewhomeController@cc');
     //前台集客路由
     route::get('/home/jk','Home\NewhomeController@jk');
-    //前台招投标服务(Tender 投标)路由
-    route::get('/home/td','Home\NewhomeController@td');
-
     //q前台超级搜索
     Route::post('/home/searchbuy','Home\NewhomeController@searchbuy');
     Route::post('/home/searchsell','Home\NewhomeController@searchsell');
@@ -178,10 +219,6 @@ Route::group(['middleware'=>'login'], function(){
     Route::get('/home/buymessage/third4','Home\NewhomeController@third4buymessage');
 
 
-});
-
-
-
 
 //前台联系我们的路由
 route::get('/home/contact','Home\NewhomeController@contact');
@@ -200,6 +237,12 @@ route::get('/home/dns','Home\NewhomeController@dns');
 route::get('/home/copy','Home\NewhomeController@copy');
 //前台广告服务的路由
 route::get('/home/adv','Home\NewhomeController@adv');
+
+//前台诚信供应商,ungm供应商详情展示的路由
+Route::get('/home/sall/credit/{id}','Home\NewhomeController@sallcredit');
+Route::get('/home/sall/ungm/{id}','Home\NewhomeController@sallungm');
+Route::get('/home/sall/server/{id}','Home\NewhomeController@sallserver');
+
 
 //前台百度地图页面路由
 Route::get('/home/map',function(){
@@ -294,42 +337,7 @@ Route::get('/home/buymessagefour/{id}','Home\NewhomeController@buymessagefour');
 //采购商产品四级详情传递id的路由(从文章出来的)
 Route::get('/home/buymessagefourart/{id}','Home\NewhomeController@buymessagefourart');
 
-//显示新个人中心的路由(信息管理)
-Route::get('/home/userinfo/index','Home\NewhomeController@usercenter');//显示(采购)新个人中心的路由(信息管理)
-Route::get('/home/userinfo/indexed','Home\NewhomeController@usercentered');//显示(供应+采购)新个人中心的路由(信息管理)
-//普通用户的采购发布
-Route::post('/home/userinfo/adduser','Home\NewhomeController@adduser');
-//认证的供应商发布采购
-Route::post('/home/userinfo/adduser2','Home\NewhomeController@adduser2');
-//认证的供应商发布产品
-Route::post('/home/userinfo/addselleruser2','Home\NewhomeController@addselleruser2');
-//交易管理
-Route::get('/home/userinfo/transaction','Home\NewhomeController@transaction');
-//个人中心账户管理
-Route::get('/home/userinfo/account/{id}','Home\NewhomeController@account');
-//修改个人信息
-Route::post('/center/update','Center\CenterController@userdetailupdate');
 
-//密码修改路由
-Route::post('/center/pwd','Center\CenterController@pwd');
-//显示新增收货地址
-Route::get('/center/addaddress','Center\CenterController@addaddress');
-//添加新增收货地址
-Route::post('/center/add/address','Center\CenterController@addbuyaddress');
-//显示修改地址回填路由
-Route::get('/center/editaddress/{id}','Center\CenterController@editaddress');
-//执行地址修改路由
-Route::post('/center/updateaddress','Center\CenterController@updateaddress');
-//设置默认地址
-Route::get('/center/setdefault/{id}','Center\CenterController@setdefault');
-//删除收货地址
-Route::get('/center/deladdress/{id}','Center\CenterController@deladdress');
-//查询省市二级地区路由
-Route::post('/center/area','Center\CenterController@area');
-//前台发布产品确定用户身份是否认证(如果是认证直接跳转到个人中心->发布产品;如果未提交企业执照就先跳到供应商企业认证界面->提交申请表单)
-Route::get('/home/check/authentication','Center\CenterController@authentication');
-
-Route::post('/center/qiye/renzheng','Center\CenterController@qiyerenzheng');
 
 
 
@@ -382,8 +390,8 @@ Route::post('/homeoucang','Home\NewhomeController@shoucang');
 
 //订单详情页
 // Route::get('/home/product/order','Home\NewhomeController@orderproduct');
-//诚信供应商
-Route::get('/home/integrity','Home\NewhomeController@integrity');
+/*//诚信供应商
+Route::get('/home/integrity','Home\NewhomeController@integrity');*/
 
 //接收立即询价信息
 Route::post('/home/productcartsave','Home\NewhomeController@productcartsave');
