@@ -25,6 +25,9 @@ Route::group(['middleware'=>'Adminlogin'], function() {
     //后台首页路由
     Route::get('/admin/admin', 'Admin\IndexController@index');
 
+    //后台查看登录历史记录
+    Route::get('/admin/history', 'Admin\IndexController@history');
+
     //后台 评论的路由
     Route::resource('/admin/column', 'Admin\ColumnController');
 

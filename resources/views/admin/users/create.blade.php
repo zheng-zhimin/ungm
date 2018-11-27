@@ -30,8 +30,8 @@
                     </div>
                     <ul class="mws-form-list inline" style="margin-bottom: -10px;">
                         身份:
-                        <li><input type="radio" checked="checked" name="identity" value='2'> <label>用户</label></li>
-                        <li><input type="radio" name="identity" value='1'> <label>管理员</label></li>
+                        <li><input disabled="disabled" type="radio" checked="checked" name="identity" value='2'> <label>用户</label></li>
+                        <li><input disabled="disabled" type="radio" name="identity" value='1'> <label>管理员</label></li>
                     </ul>
                 </div>
                 <div class="mws-form-row">
@@ -41,9 +41,13 @@
                     </div>
                 </div>
                 <div class="mws-form-row">
-                    <label class="mws-form-label">性别:</label>
+                    <label class="mws-form-label" for="sex">性别</label>
                     <div class="mws-form-item">
-                        <input type="text" name="sex" class="small" placeholder="性别" value="{{old('sex')}}">
+                        <select class="small" name="sex">
+                                <option value="0" >女</option>
+                                <option value="1">男</option>
+
+                        </select>
                     </div>
                 </div>
 

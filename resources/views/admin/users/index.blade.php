@@ -44,6 +44,7 @@
                         <tr>
                             <td>ID</td>
                             <td>用户名</td>
+                            <td>身份</td>
                             <td>邮箱</td>
                             <td>头像</td>
                             <td>操作</td>
@@ -56,6 +57,7 @@
                         <tr>
                             <td>{{$v->id}}</td>
                             <td>{{$v->username}}</td>
+                            <td>{{$v->identity == 1 ? '管理员':'普通用户' }}</td>
                             <td>{{$v->usersdetail['email']}}</td>
                             <td>
                             <img class="img-circle img-thumbnail img-responsive" style="width:50px; height:60px" src="{{url('/').$v->profile}}" alt="">
@@ -91,7 +93,7 @@
                             </div>
 
                             <div style="float:left">
-                                @if($adminUser->id == $v->id || $adminUser->identity == 1)
+                                @if($adminUser->id == $v->id && $adminUser->identity == 1)
                                 <form  action="/admin/users/{{$v->id}}/edit" method="get">
                                 {{ csrf_field() }}
                                 <input type="submit" class="btn btn-warning"  value="修改">

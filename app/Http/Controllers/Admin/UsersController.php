@@ -59,7 +59,7 @@ class UsersController extends Controller
         // 自动验证
 
         $this->validate($request,[
-            'username' => 'required|unique:users|regex:/^[a-zA-Z]{1}[\w]{4,15}$/',
+            'username' => 'required|unique:users',
             'phone' => 'required|regex:/^1[3-9]{1}[\d]{9}$/',
             'email' => 'required|email',
             'password' => 'required|between:6,12',
@@ -79,7 +79,6 @@ class UsersController extends Controller
             'repassword.required' => '确认密码必须输入',
             'password.between' => '密码格式不正确',
             'repassword.same' => '密码不一致',
-            'username.regex' => '用户账号格式不正确',
             ]);
 
         $data = $request;
@@ -196,7 +195,12 @@ class UsersController extends Controller
         $user = User::find($id);
         $user -> username = $data['username'];
         $user -> identity = $data['identity'];
-       $user -> save();
+        if(!empty($data['profile'])){
+            $user -> profile = $data['profile'];
+        }
+
+        $user -> save();
+
 
         $user2 = Usersdetail::where('uid',$id) -> first();
        

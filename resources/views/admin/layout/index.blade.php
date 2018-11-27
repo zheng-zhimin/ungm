@@ -232,10 +232,9 @@
                         </ul>
                     </li>
                     <li class="active">
-                        <a href="#"><i class="icon-list"></i>广告位</a>
+                        <a href="#"><i class="icon-list"></i>历史记录</a>
                         <ul>
-                            <li><a href="/admin/advertise">广告列表</a></li>
-                            <li><a href="/admin/advertise/create">广告添加</a></li>
+                            <li><a href="/admin/history">查看历史记录</a></li>
                         </ul>
                     </li> 
                     <li class="active">

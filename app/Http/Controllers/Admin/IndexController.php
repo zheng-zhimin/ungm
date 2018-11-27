@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Admin\History;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\User;
 use Hash;
+
 class IndexController extends Controller
 {
     /**
@@ -17,8 +19,43 @@ class IndexController extends Controller
      */
     public function index()
     {
-       //加载后台页面
-       return view('admin.index.index');
+        //加载后台页面
+        return view('admin.index.index');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * 查看登录历史记录
+     */
+    public function history(Request $request)
+    {
+
+        //接收分页数据 默认为5
+        $count=$request->input('count',5);
+
+        //接收搜索数据 默认为空
+        $for = $request -> input('uid','');
+
+        //以数组的形式接收分页和搜索数据，目的是返回给主页面
+        $params=$request->all();
+
+        if(empty($for)){
+            $data = History::paginate($count);
+        }else{
+            $data = History::where('uid','like','%'.$for.'%')->paginate($count);
+        }
+
+        foreach ($data as $v){
+            $v->username = \DB::table('users')->where('id','=',$v->uid)->first()->username;
+        }
+        $History = new History;
+        $History->uid = $for;
+        if($History){
+            return view('admin.index.history',['data'=>$data,'History'=>$for,'params'=>$params]);
+        }else{
+            return view('admin.index.history',['data'=>$data,'params'=>$params]);
+        }
+
     }
 
      /**

@@ -63,7 +63,16 @@
                 <div class="mws-form-row">
                     <label class="mws-form-label" for="sex">性别</label>
                     <div class="mws-form-item">
-                    <input type="text" class="small" name="sex" id="username" placeholder="sex" value="{{$data2->sex}}">
+                        <select class="small" name="sex">
+                            @if($data->sex == 0)
+                                <option value="0" selected >女</option>
+                                <option value="1">男</option>
+                            @else
+                                <option value="0" >女</option>
+                                <option value="1" selected>男</option>
+                            @endif
+
+                        </select>
                     </div>
                 </div>
 

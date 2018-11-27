@@ -26,7 +26,7 @@
                 @if($data->identity==1)
                     <th  colspan="2"><font style="font-family:STFangsong" color="#006600"  size="4">管理员</font></th>
                  @else
-                    <th   colspan="2"><font style="font-family:STFangsong" color="#006600"  size="4">用户</font></th>
+                    <th   colspan="2"><font style="font-family:STFangsong" color="#006600"  size="4">普通用户</font></th>
                  @endif
             </tr>
             <tr>
@@ -39,7 +39,11 @@
             </tr>
             <tr>
                 <th  height="50px" ><font style="font-family:STFangsong" color="#006600"  size="4">性别</font></th>
-                <th  height="50px" ><font style="font-family:STFangsong" color="#006600"  size="4">{{$data->usersdetail['sex']}}</font></th>
+                @if($data->usersdetail['sex']==1)
+                    <th  colspan="2"><font style="font-family:STFangsong" color="#006600"  size="4">男</font></th>
+                @else
+                    <th   colspan="2"><font style="font-family:STFangsong" color="#006600"  size="4">女</font></th>
+                @endif
             </tr>
             <tr>
                 <th   ><font style="font-family:STFangsong" color="#006600"  size="4">邮箱</font></th>
