@@ -85,6 +85,8 @@ class UsersController extends Controller
         $data = $request;
 
 
+
+
         if($request->hasFile('profile')){
             $profile=$request->file('profile');
             // 处理图片路径和图片名称
@@ -102,15 +104,16 @@ class UsersController extends Controller
         // 存入数据库
         // 存放数据
         $user = new User;
-
         $data = [
             'profile' => $name,  // 图片路径存放
             'username' => $request -> input('username',''),
             'password' => Hash::make($request->input('password','')),
             'token' => str_random(50),  // 随机50位加密字符串
             'identity' => $request -> input('identity',''),//默认2是普通用户
+            'created_at' => date("Y-m-d H:i:s",time()),
 
         ];
+//        dd($data);
 
         $uid = $user -> insertGetId($data);
         $userdetail = new Usersdetail;
